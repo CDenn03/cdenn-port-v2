@@ -40,7 +40,6 @@ const useTheme = () => {
   return { theme, toggleTheme };
 };
 
-// --- Scroll Progress Hook ---
 const useScrollProgress = () => {
   const [progress, setProgress] = useState(0);
 
@@ -48,7 +47,7 @@ const useScrollProgress = () => {
     const updateProgress = () => {
       const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
       const scrolled = (window.scrollY / scrollHeight) * 100;
-      setProgress(Math.min(Math.max(scrolled, 0), 100)); // Clamp between 0 and 100
+      setProgress(Math.min(Math.max(scrolled, 0), 100));
     };
 
     window.addEventListener("scroll", updateProgress);
@@ -58,7 +57,6 @@ const useScrollProgress = () => {
   return progress;
 };
 
-// --- Animations Component ---
 const Reveal = ({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) => {
   return (
     <motion.div
@@ -73,7 +71,6 @@ const Reveal = ({ children, delay = 0, className = "" }: { children: React.React
   );
 };
 
-// --- Data ---
 const experiences = [
   {
     company: "E&M Technologies",
@@ -182,8 +179,14 @@ export default function Portfolio() {
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
-    document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    // Change "" to "auto"
+    document.body.style.overflow = mobileMenuOpen ? "hidden" : "auto";
+    document.documentElement.style.overflow = mobileMenuOpen ? "hidden" : "auto";
+
+    return () => {
+      document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto";
+    };
   }, [mobileMenuOpen]);
 
   const scrollToTop = () => {
@@ -194,12 +197,32 @@ export default function Portfolio() {
 
   return (
     <main className={`min-h-screen overflow-x-hidden relative transition-colors duration-300 ${isDark ? "bg-zinc-950 text-zinc-100" : "bg-zinc-50 text-slate-900"}`}>
-      
-      {/* --- SCROLL PROGRESS INDICATOR --- */}
-      {/* Fixed to top, high z-index, small height */}
-      <div className="fixed top-0 left-0 w-full h-1.5 z-[100]">
+      <style jsx global>{`
+    /* Webkit Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: ${isDark ? "#18181b" : "#f4f4f5"}; /* zinc-900 / zinc-100 */
+    }
+    ::-webkit-scrollbar-thumb {
+      background: ${isDark ? "#3f3f46" : "#d4d4d8"}; /* zinc-700 / zinc-300 */
+      border-radius: 5px;
+      border: 2px solid ${isDark ? "#18181b" : "#f4f4f5"}; 
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #10b981; /* emerald-500 */
+    }
+    
+    /* Firefox Scrollbar */
+    html {
+      scrollbar-width: thin;
+      scrollbar-color: ${isDark ? "#3f3f46 #18181b" : "#d4d4d8 #f4f4f5"};
+    }
+  `}</style>
+      <div className="fixed top-0 left-0 w-full h-1 z-100">
         <motion.div
-          className="h-full bg-gradient-to-r from-emerald-500 to-emerald-400 origin-left"
+          className="h-full bg-linear-to-r from-emerald-500 to-emerald-400 origin-left"
           style={{ scaleX: scrollProgress / 100 }}
           initial={{ scaleX: 0 }}
         />
@@ -215,9 +238,9 @@ export default function Portfolio() {
       <nav className={`fixed top-0 w-full z-50 border-b transition-colors duration-300 ${isDark ? "border-zinc-800 bg-zinc-950/80" : "border-zinc-200 bg-zinc-50/80"} backdrop-blur-md`}>
         <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className={`text-xl font-bold tracking-tighter ${isDark ? "text-zinc-100" : "text-slate-900"}`}>
-            CHRIS DENNISON<span className="text-emerald-500">.</span>
+            CDENN<span className="text-emerald-500">.</span>
           </div>
-          
+
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
@@ -229,7 +252,7 @@ export default function Portfolio() {
                 {link.label}
               </a>
             ))}
-            
+
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
@@ -238,7 +261,7 @@ export default function Portfolio() {
             >
               {isDark ? <Sun size={18} /> : <Moon size={18} />}
             </button>
-            
+
             <button className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold transition-colors ${isDark ? "bg-zinc-100 text-zinc-900 hover:bg-white" : "bg-slate-900 text-white hover:bg-slate-800"}`}>
               <Download size={14} /> Resume
             </button>
@@ -304,29 +327,30 @@ export default function Portfolio() {
       {/* --- HERO SECTION --- */}
       <section className="min-h-screen flex items-center px-6 pt-24 pb-12">
         <div className="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-16 items-center">
-          
+
           {/* Left: Text */}
           <div>
             <Reveal>
+              {/* Updated Badge: Neutral enough for any role */}
               <div className={`inline-flex items-center gap-2 px-4 py-2 mb-6 border rounded-full text-xs font-semibold tracking-wide uppercase ${isDark ? "border-emerald-500/30 bg-emerald-950/50 text-emerald-400" : "border-emerald-500/30 bg-emerald-50 text-emerald-700"}`}>
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                 </span>
-                Available for Freelance · Remote Worldwide
+                Open to Opportunities
               </div>
             </Reveal>
 
             <Reveal delay={0.1}>
               <h1 className={`text-4xl md:text-6xl font-bold tracking-tight leading-[1.1] mb-8 ${isDark ? "text-zinc-100" : "text-slate-900"}`}>
-                I craft high-performance <br />
-                React applications.
+                Engineering high-performance <br />
+                web applications at scale.
               </h1>
             </Reveal>
 
             <Reveal delay={0.2}>
               <p className={`text-lg md:text-xl max-w-xl leading-relaxed mb-10 ${isDark ? "text-zinc-400" : "text-zinc-600"}`}>
-                I help startups and businesses launch fast, scalable web applications that users love. Specializing in Next.js and Design Systems.
+                I specialize in building robust, scalable frontend solutions using React and Next.js. I help teams and businesses deliver exceptional user experiences with clean, maintainable architecture.
               </p>
             </Reveal>
 
@@ -340,25 +364,25 @@ export default function Portfolio() {
                 >
                   Start a Project <ArrowRight size={20} />
                 </motion.a>
-                <a href="#solutions" className={`px-8 py-4 border rounded-full text-lg font-bold transition-all ${isDark ? "border-zinc-700 hover:bg-zinc-800 hover:border-zinc-600 text-zinc-100" : "border-zinc-300 hover:bg-zinc-100 hover:border-zinc-400 text-slate-900"}`}>
-                  View Case Studies
+
+                <a href="#experience" className={`px-8 py-4 border rounded-full text-lg font-bold transition-all ${isDark ? "border-zinc-700 hover:bg-zinc-800 hover:border-zinc-600 text-zinc-100" : "border-zinc-300 hover:bg-zinc-100 hover:border-zinc-400 text-slate-900"}`}>
+                  View Experience
                 </a>
               </div>
             </Reveal>
           </div>
 
-          {/* Right: Photo Section */}
           <Reveal delay={0.4}>
             <div className="relative group">
-              <div className={`absolute -inset-4 rounded-2xl blur-xl transition duration-500 ${isDark ? "bg-gradient-to-tr from-emerald-900/30 to-zinc-900 opacity-50 group-hover:opacity-75" : "bg-gradient-to-tr from-emerald-100 to-white opacity-50 group-hover:opacity-75"}`}></div>
-              
+              <div className={`absolute -inset-4 rounded-2xl blur-xl transition duration-500 ${isDark ? "bg-linear-to-tr from-emerald-900/30 to-zinc-900 opacity-50 group-hover:opacity-75" : "bg-linear-to-tr from-emerald-100 to-white opacity-50 group-hover:opacity-75"}`}></div>
+
               <div className={`relative rounded-2xl overflow-hidden aspect-4/5 md:aspect-3/4 shadow-2xl ${isDark ? "bg-zinc-900 border border-zinc-800" : "bg-white border border-zinc-200"}`}>
-                <img 
-                  src="/assets/images/port-photo.png" 
-                  alt="Chris Dennison - Frontend Developer" 
+                <img
+                  src="/assets/images/port-photo-4.png"
+                  alt="Chris Dennison - Frontend Developer"
                   className="object-cover w-full h-full hover:scale-105 transition-transform duration-700 ease-out"
                 />
-                
+
                 <div className={`absolute bottom-6 left-6 right-6 backdrop-blur-md p-4 rounded-xl ${isDark ? "bg-zinc-900/90 border border-zinc-800" : "bg-white/95 border border-zinc-100"}`}>
                   <p className={`text-xs font-mono mb-1 text-zinc-500`}>Current Focus</p>
                   <p className={`text-base font-semibold ${isDark ? "text-zinc-100" : "text-slate-900"}`}>React Server Components & Performance</p>
@@ -369,7 +393,6 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* --- STATISTICS SECTION --- */}
       <div className={`py-12 border-y transition-colors duration-300 ${isDark ? "border-zinc-800 bg-zinc-900/50" : "border-zinc-200 bg-white/50"}`}>
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
@@ -388,7 +411,6 @@ export default function Portfolio() {
         </div>
       </div>
 
-      {/* --- ABOUT SECTION --- */}
       <section id="about" className="py-32 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16">
           <div>
@@ -434,7 +456,6 @@ export default function Portfolio() {
             </Reveal>
           </div>
 
-          {/* Tech Stack Card */}
           <div className={`rounded-3xl p-8 h-fit transition-colors duration-300 ${isDark ? "bg-zinc-900 border border-zinc-800" : "bg-white border border-zinc-200 shadow-sm"}`}>
             <Reveal>
               <h3 className={`text-xl font-bold mb-6 flex items-center gap-2 ${isDark ? "text-zinc-100" : "text-slate-900"}`}>
@@ -480,7 +501,6 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* --- EXPERIENCE SECTION --- */}
       <section id="experience" className={`py-20 px-6 transition-colors duration-300 ${isDark ? "bg-zinc-900/60" : "bg-white/60"}`}>
         <div className="max-w-4xl mx-auto">
           <Reveal>
@@ -510,7 +530,6 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* --- SOLUTIONS SECTION (Case Studies) --- */}
       <section id="solutions" className="py-32 px-6">
         <div className="max-w-6xl mx-auto">
           <Reveal>
@@ -522,8 +541,7 @@ export default function Portfolio() {
             {solutions.map((project, i) => (
               <Reveal key={i}>
                 <div className={`grid md:grid-cols-12 gap-12 items-center ${project.layout === 'right' ? 'md:flex-row-reverse' : ''}`}>
-                  
-                  {/* Image Column */}
+
                   <div className={`md:col-span-7 group relative ${project.layout === 'right' ? 'md:order-last' : ''}`}>
                     <div className={`aspect-video rounded-2xl overflow-hidden relative shadow-md ${isDark ? "bg-zinc-900 border border-zinc-800" : "bg-white border border-zinc-200"}`}>
                       <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
@@ -531,7 +549,6 @@ export default function Portfolio() {
                     </div>
                   </div>
 
-                  {/* Content Column */}
                   <div className={`md:col-span-5 ${project.layout === 'right' ? 'md:order-first' : ''}`}>
                     <h3 className={`text-2xl md:text-3xl font-bold mb-4 group-hover:text-emerald-500 transition-colors ${isDark ? "text-zinc-100" : "text-slate-900"}`}>{project.title}</h3>
                     <p className={`text-base mb-6 ${isDark ? "text-zinc-400" : "text-zinc-600"}`}>{project.description}</p>
@@ -551,7 +568,7 @@ export default function Portfolio() {
                         <h5 className={`text-xs font-bold uppercase mb-3 ${isDark ? "text-zinc-500" : "text-zinc-500"}`}>The Results</h5>
                         <div className="flex flex-wrap gap-3">
                           {project.results.map((res, idx) => (
-                            <div key={idx} className={`px-3 py-2 rounded shadow-sm min-w-[80px] ${isDark ? "bg-zinc-800 border border-zinc-700" : "bg-white border border-zinc-200"}`}>
+                            <div key={idx} className={`px-3 py-2 rounded shadow-sm min-w-20 ${isDark ? "bg-zinc-800 border border-zinc-700" : "bg-white border border-zinc-200"}`}>
                               <span className="text-emerald-500 font-bold text-lg block">{res.value}</span>
                               <span className={`text-xs ${isDark ? "text-zinc-400" : "text-zinc-600"}`}>{res.label}</span>
                             </div>
@@ -642,9 +659,9 @@ export default function Portfolio() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16">
           <div>
             <Reveal>
-              <h2 className={`text-3xl md:text-4xl font-bold mb-8 ${isDark ? "text-zinc-100" : "text-slate-900"}`}>Let's Build Something Great.</h2>
+              <h2 className={`text-3xl md:text-4xl font-bold mb-8 ${isDark ? "text-zinc-100" : "text-slate-900"}`}>Let&apos;s Build Something Great.</h2>
               <p className={`text-lg md:text-xl mb-10 ${isDark ? "text-zinc-400" : "text-zinc-600"}`}>
-                Have a project in mind? I'd love to hear about it. Fill out form or book a call directly.
+                Have a project in mind? I&apos;d love to hear about it. Fill out form or book a call directly.
               </p>
             </Reveal>
 
@@ -695,8 +712,8 @@ export default function Portfolio() {
                 <div>
                   <label className={`block text-sm font-bold mb-2 ${isDark ? "text-zinc-300" : "text-zinc-700"}`}>Project Type</label>
                   <select className={`w-full border rounded-xl px-4 py-3 text-base focus:outline-none focus:border-emerald-500 transition-colors appearance-none ${isDark ? "bg-zinc-900 border-zinc-700 text-zinc-100" : "bg-white border-zinc-300 text-slate-900"}`}>
-                    <option>New Website</option>
-                    <option>Redesign</option>
+                    <option>Freelance / Contract</option>
+                    <option>Full-time Opportunity</option>
                     <option>Consultation</option>
                   </select>
                 </div>
@@ -730,7 +747,7 @@ export default function Portfolio() {
           <div className="grid md:grid-cols-4 gap-12 mb-20">
             <div className="md:col-span-1">
               <div className={`text-xl font-bold tracking-tighter mb-6 ${isDark ? "text-zinc-100" : "text-slate-900"}`}>
-                CHRIS DENNISON<span className="text-emerald-500">.</span>
+                CDENN<span className="text-emerald-500">.</span>
               </div>
               <p className={`text-sm ${isDark ? "text-zinc-500" : "text-zinc-500"}`}>
                 Frontend Developer & React Specialist helping businesses build scalable web products.
@@ -766,7 +783,7 @@ export default function Portfolio() {
           </div>
 
           <div className={`border-t pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm ${isDark ? "border-zinc-800 text-zinc-500" : "border-zinc-100 text-zinc-400"}`}>
-            <p>© 2025 Chris Dennison. All rights reserved.</p>
+            <p>© 2025 CDenn. All rights reserved.</p>
             <div className="flex gap-4">
               <a href="#" className="hover:text-emerald-500 transition-colors"><Github size={20} /></a>
               <a href="#" className="hover:text-emerald-500 transition-colors"><Linkedin size={20} /></a>
@@ -776,7 +793,6 @@ export default function Portfolio() {
         </div>
       </footer>
 
-      {/* --- BACK TO TOP BUTTON --- */}
       <AnimatePresence>
         {showBackToTop && (
           <motion.button
