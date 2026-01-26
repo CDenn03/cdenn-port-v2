@@ -1,26 +1,300 @@
 @import "tailwindcss";
+@import "tailwindcss/utilities";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:is(.dark *));
+
+/* Line clamp utilities for text overflow */
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }
 
 @theme inline {
-  --color-background: var(--background);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-neutral: var(--neutral);
+  --font-primary: var(--font-primary), system-ui, sans-serif;
+  --font-secondary: var(--font-secondary), system-ui, sans-serif;
+
+  /* Shadcn/ui variables - keeping for compatibility */
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  /* Your preferred color scheme */
+  --primary: #10b981; /* emerald-500 for portfolio theme */
+  --secondary: #F17A21;
+  --accent: #2E3092;
+  --neutral: #f7d9bc;
+  --success: #10b981;
+  --error: #ef4444;
+
+  /* Light theme variables for shadcn/ui compatibility */
+  --radius: 0.625rem;
+  --background: #fafafa; /* zinc-50 */
+  --foreground: #0f172a; /* slate-900 */
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+  --primary-foreground: #ffffff;
+  --secondary-foreground: #0f172a;
+  --muted: #f4f4f5; /* zinc-100 */
+  --muted-foreground: #71717a; /* zinc-500 */
+  --accent-foreground: #0f172a;
+  --destructive: #dc2626;
+  --border: #e4e4e7; /* zinc-200 */
+  --input: #e4e4e7;
+  --ring: #10b981; /* emerald-500 */
+
+  /* Chart colors for light mode */
+  --chart-1: #10b981;
+  --chart-2: #F17A21;
+  --chart-3: #2E3092;
+  --chart-4: #f7d9bc;
+  --chart-5: #10b981;
+
+  /* Sidebar colors for light mode */
+  --sidebar: #f8fafc;
+  --sidebar-foreground: #1e293b;
+  --sidebar-primary: #10b981;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f1f5f9;
+  --sidebar-accent-foreground: #1e293b;
+  --sidebar-border: #e2e8f0;
+  --sidebar-ring: #10b981;
+}
+
+.dark {
+  /* Your preferred dark mode color scheme */
+  --primary: #10b981; /* emerald-500 consistent across themes */
+  --secondary: #ff914d;
+  --accent: #89cff0;
+  --neutral: #1e1e1e;
+
+  /* Dark theme variables for shadcn/ui compatibility */
+  --background: #09090b; /* zinc-950 */
+  --foreground: #fafafa; /* zinc-50 */
+  --card: #18181b; /* zinc-900 */
+  --card-foreground: #fafafa;
+  --popover: #18181b;
+  --popover-foreground: #fafafa;
+  --primary-foreground: #0a0a0a;
+  --secondary-foreground: #fafafa;
+  --muted: #27272a; /* zinc-800 */
+  --muted-foreground: #a1a1aa; /* zinc-400 */
+  --accent-foreground: #fafafa;
+  --destructive: #ef4444;
+  --border: #3f3f46; /* zinc-700 */
+  --input: #3f3f46;
+  --ring: #10b981; /* emerald-500 */
+
+  /* Chart colors for dark mode */
+  --chart-1: #10b981;
+  --chart-2: #ff914d;
+  --chart-3: #89cff0;
+  --chart-4: #374151;
+  --chart-5: #34d399;
+
+  /* Sidebar colors for dark mode */
+  --sidebar: #18181b;
+  --sidebar-foreground: #fafafa;
+  --sidebar-primary: #10b981;
+  --sidebar-primary-foreground: #0a0a0a;
+  --sidebar-accent: #27272a;
+  --sidebar-accent-foreground: #fafafa;
+  --sidebar-border: #3f3f46;
+  --sidebar-ring: #10b981;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: inherit;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Selection styles */
+  ::selection {
+    background-color: rgb(16 185 129 / 0.3); /* emerald-500/30 */
+    color: inherit;
+  }
+
+  /* Focus styles */
+  :focus-visible {
+    outline: 2px solid rgb(16 185 129); /* emerald-500 */
+    outline-offset: 2px;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom chart enhancements Chris*/
+@layer components {
+  /* Chart hover effects */
+  .recharts-bar-rectangle:hover {
+    filter: brightness(1.1);
+    transition: filter 0.2s ease;
+  }
+
+  /* Pie chart segment hover */
+  .recharts-pie-sector:hover {
+    filter: brightness(1.1);
+    transition: filter 0.2s ease;
+  }
+
+  /* Chart tooltip styling */
+  .recharts-tooltip-wrapper {
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+
+  /* Custom gradient backgrounds for charts using CSS custom properties */
+  .chart-gradient-primary {
+    background: linear-gradient(135deg, var(--primary) 0%, color-mix(in srgb, var(--primary) 80%, transparent) 100%);
+  }
+
+  .chart-gradient-secondary {
+    background: linear-gradient(135deg, var(--secondary) 0%, color-mix(in srgb, var(--secondary) 80%, transparent) 100%);
+  }
+
+  .chart-gradient-accent {
+    background: linear-gradient(135deg, var(--accent) 0%, color-mix(in srgb, var(--accent) 80%, transparent) 100%);
+  }
+
+  /* Skeleton pulse animation with CSS custom properties */
+  .skeleton-primary {
+    background: linear-gradient(90deg, color-mix(in srgb, var(--primary) 10%, transparent) 25%, color-mix(in srgb, var(--primary) 20%, transparent) 50%, color-mix(in srgb, var(--primary) 10%, transparent) 75%);
+    background-size: 200% 100%;
+    animation: skeleton-pulse 2s infinite;
+  }
+
+  /* Chart color utilities using CSS custom properties */
+  .chart-primary {
+    color: var(--primary);
+    fill: var(--primary);
+  }
+
+  .chart-secondary {
+    color: var(--secondary);
+    fill: var(--secondary);
+  }
+
+  .chart-accent {
+    color: var(--accent);
+    fill: var(--accent);
+  }
+
+  @keyframes skeleton-pulse {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+}
+
+/* React PDF Styles */
+.react-pdf__Page {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+}
+
+.react-pdf__Page__canvas {
+  display: block;
+  user-select: none;
+}
+
+.react-pdf__Page__textContent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.2;
+  user-select: text;
+  pointer-events: none;
+}
+
+.react-pdf__Page__annotations {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: auto;
+}
+
+.react-pdf__Document {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
