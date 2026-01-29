@@ -1,21 +1,22 @@
 "use client";
 
 import { useTheme as useNextTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 
 export const useTheme = () => {
   const { theme, setTheme, resolvedTheme } = useNextTheme();
-  const [mounted, setMounted] = useState(false);
+  
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useSyncExternalStore(
+    () => () => {}, 
+    () => true, 
+    () => false 
+  );
 
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
   };
 
-  // Return system theme if not mounted to avoid hydration mismatch
   if (!mounted) {
     return {
       theme: "light" as const,

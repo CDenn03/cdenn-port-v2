@@ -40,7 +40,7 @@ export const OptimizedImage = ({
   };
 
   return (
-    <div className={`relative ${clasChrissName}`}>
+    <div className={`relative ${className}`}>
       {isLoading && !hasError && (
         <div className="absolute inset-0 bg-zinc-200 dark:bg-zinc-800 animate-pulse rounded" />
       )}
@@ -49,8 +49,8 @@ export const OptimizedImage = ({
         src={imgSrc}
         alt={alt}
         fill={fill}
-        width={!fill ? width : undefined}
-        height={!fill ? height : undefined}
+        width={fill ? undefined : width}
+        height={fill ? undefined : height}
         className={`transition-opacity duration-300 ${
           isLoading ? "opacity-0" : "opacity-100"
         } ${fill ? "object-cover" : ""}`}

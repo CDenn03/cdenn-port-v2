@@ -7,8 +7,8 @@ import { ThemeToggle } from "@/app/components/ui/ThemeToggle";
 
 const navLinks = [
   { href: "#about", label: "About" },
-  { href: "#solutions", label: "Solutions" },
   { href: "#experience", label: "Experience" },
+  { href: "#solutions", label: "Solutions" },
   { href: "#writing", label: "Writing" },
   { href: "#contact", label: "Contact" }
 ];
@@ -16,7 +16,6 @@ const navLinks = [
 export const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Close mobile menu on resize
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) setMobileMenuOpen(false);
@@ -25,7 +24,6 @@ export const Navbar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Prevent body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = mobileMenuOpen ? "hidden" : "auto";
     document.documentElement.style.overflow = mobileMenuOpen ? "hidden" : "auto";
@@ -62,7 +60,6 @@ export const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile Menu Button */}
         <div className="flex md:hidden items-center gap-3">
           <ThemeToggle />
           <button
@@ -75,7 +72,6 @@ export const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div

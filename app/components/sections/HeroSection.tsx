@@ -9,7 +9,7 @@ export const HeroSection = () => {
   return (
     <section className="min-h-screen flex items-center px-6 pt-24 pb-12">
       <div className="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-16 items-center">
-        {/* Left: Text */}
+
         <div>
           <Reveal>
             <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 border rounded-full text-xs font-semibold tracking-wide uppercase border-emerald-500/30 bg-emerald-50 text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-400">
