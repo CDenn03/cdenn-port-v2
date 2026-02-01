@@ -38,7 +38,7 @@ export const ContactSection = () => {
               </a>
             </div>
 
-            <div className="mt-12 p-6 rounded-xl bg-emerald-50 border border-emerald-100 dark:bg-emerald-950/50 dark:border-emerald-900/50">
+            <div className="mt-8 py-4 px-2">
               <p className="text-sm flex items-center gap-2 text-emerald-800 dark:text-emerald-400">
                 <Clock size={16} className="text-emerald-500" />
                 I typically respond within 24 hours.
@@ -109,7 +109,7 @@ export const ContactSection = () => {
               ></textarea>
             </div>
 
-            <button type="submit" className="w-full bg-emerald-600 text-white text-base font-bold py-4 rounded-xl hover:bg-emerald-500 transition-colors shadow-lg shadow-emerald-600/20">
+            <button type="submit" className="w-full bg-emerald-600 text-white text-base font-bold py-4 rounded-xl hover:bg-emerald-500 transition-colors shadow-lg shadow-emerald-600/20 cursor-pointer">
               Send Message
             </button>
           </form>

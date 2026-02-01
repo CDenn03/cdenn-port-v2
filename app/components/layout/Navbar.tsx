@@ -37,11 +37,10 @@ export const Navbar = () => {
   return (
     <nav className="fixed top-0 w-full z-50 border-b transition-colors duration-300 border-zinc-200 bg-zinc-50/80 dark:border-zinc-800 dark:bg-zinc-950/80 backdrop-blur-md">
       <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-        <div className="text-xl font-bold tracking-tighter text-slate-900 dark:text-zinc-100">
+        <div className="text-3xl font-bold tracking-tighter text-slate-900 dark:text-zinc-100">
           CDENN<span className="text-emerald-500">.</span>
         </div>
 
-        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a

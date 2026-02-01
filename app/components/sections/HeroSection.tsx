@@ -12,7 +12,7 @@ export const HeroSection = () => {
 
         <div>
           <Reveal>
-            <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 border rounded-full text-xs font-semibold tracking-wide uppercase border-emerald-500/30 bg-emerald-50 text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-400">
+            <div className="inline-flex items-center gap-2 px-2 py-2 mb-4  text-xs font-semibold tracking-wide uppercase text-emerald-700  dark:text-emerald-400">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
@@ -30,7 +30,7 @@ export const HeroSection = () => {
 
           <Reveal delay={0.2}>
             <p className="text-lg md:text-xl max-w-xl leading-relaxed mb-10 text-zinc-600 dark:text-zinc-400">
-              I specialize in building robust, scalable frontend solutions using Next.js. I help teams and businesses deliver exceptional user experiences with clean, maintainable architecture.
+              I specialize in building robust, scalable Web solutions. I help teams and businesses deliver exceptional user experiences with clean, maintainable architecture.
             </p>
           </Reveal>
 
@@ -59,7 +59,7 @@ export const HeroSection = () => {
             <div className="relative rounded-2xl overflow-hidden aspect-4/5 md:aspect-3/4 shadow-2xl bg-white border border-zinc-200 dark:bg-zinc-900 dark:border-zinc-800">
               <Image
                 src="/assets/images/port-photo-4.png"
-                alt="CDenn Dennison - Frontend Developer"
+                alt="CDenn - Software Engineer"
                 fill
                 className="object-cover hover:scale-105 transition-transform duration-700 ease-out"
                 priority

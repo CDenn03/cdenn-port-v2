@@ -3,7 +3,7 @@ import { Experience, Solution, Testimonial, Writing } from "@/app/types";
 export const experiences: Experience[] = [
   {
     company: "E&M Technologies",
-    role: "Frontend Developer",
+    role: "Software Engineer",
     period: "Mar 2025 - Present",
     desc: [
       "Led frontend development for core product, improving load time by 40%",

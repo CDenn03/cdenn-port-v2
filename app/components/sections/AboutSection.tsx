@@ -4,8 +4,8 @@ import { MapPin, Clock, Terminal } from "lucide-react";
 import { Reveal } from "../ui/Reveal";
 
 const techStack = {
-  frontend: ["React.js", "Next.js", "TypeScript", "TailwindCSS", "Redux"],
-  backend: ["Node.js", "REST APIs", "PostgreSQL", "Supabase"],
+  frontend: ["Next.js", "TypeScript", "TailwindCSS", "Flutter", "Redux"],
+  backend: ["Rust", "Node.js", "PostgreSQL", "Supabase"],
   tools: ["Git", "Figma", "Vite", "Docker", "Jest"]
 };
 
@@ -20,7 +20,7 @@ export const AboutSection = () => {
 
           <Reveal>
             <p className="text-lg leading-relaxed mb-6 text-zinc-600 dark:text-zinc-400">
-              I&apos;m a Frontend Developer with 5+ years of experience helping startups and businesses build web applications that perform. I specialize in React and Next.js, with a focus on clean architecture and exceptional user experience.
+              I&apos;m a Software Engineer with 5+ years of experience helping startups and businesses build web applications that perform. I specialize in React and Next.js, with a focus on clean architecture and exceptional user experience.
             </p>
           </Reveal>
 

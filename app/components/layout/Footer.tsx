@@ -1,6 +1,6 @@
 "use client";
 
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { SocialIcon } from "react-social-icons";
 
 export const Footer = () => {
   return (
@@ -8,11 +8,11 @@ export const Footer = () => {
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-4 gap-12 mb-20">
           <div className="md:col-span-1">
-            <div className="text-xl font-bold tracking-tighter mb-6 text-slate-900 dark:text-zinc-100">
+            <div className="text-2xl font-bold tracking-tighter mb-6 text-slate-900 dark:text-zinc-100">
               CDENN<span className="text-emerald-500">.</span>
             </div>
             <p className="text-sm text-zinc-500">
-              Frontend Developer & React Specialist helping businesses build scalable web products.
+              Software Engineer helping businesses build scalable web products.
             </p>
           </div>
 
@@ -47,9 +47,11 @@ export const Footer = () => {
         <div className="border-t pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm border-zinc-100 text-zinc-400 dark:border-zinc-800 dark:text-zinc-500">
           <p>© 2025 CDenn. All rights reserved.</p>
           <div className="flex gap-4">
-            <a href="#" className="hover:text-emerald-500 transition-colors"><Github size={20} /></a>
-            <a href="#" className="hover:text-emerald-500 transition-colors"><Linkedin size={20} /></a>
-            <a href="#" className="hover:text-emerald-500 transition-colors"><Twitter size={20} /></a>
+            {/* <a href="#" className="hover:text-emerald-500 transition-colors"><Github size={20} /></a> */}
+            <SocialIcon network="github" />
+            <SocialIcon url="https://linkedin.com/in/couetilc" />
+            <SocialIcon network="X" />
+            {/* <a href="#" className="hover:text-emerald-500 transition-colors"><Twitter size={20} /></a> */}
           </div>
         </div>
       </div>
