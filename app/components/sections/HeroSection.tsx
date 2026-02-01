@@ -54,8 +54,6 @@ export const HeroSection = () => {
 
         <Reveal delay={0.4}>
           <div className="relative group">
-            <div className="absolute -inset-4 rounded-2xl blur-xl transition duration-500 bg-gradient-to-tr from-emerald-100 to-white opacity-50 group-hover:opacity-75 dark:from-emerald-900/30 dark:to-zinc-900"></div>
-
             <div className="relative rounded-2xl overflow-hidden aspect-4/5 md:aspect-3/4 shadow-2xl bg-white border border-zinc-200 dark:bg-zinc-900 dark:border-zinc-800">
               <Image
                 src="/assets/images/port-photo-4.png"

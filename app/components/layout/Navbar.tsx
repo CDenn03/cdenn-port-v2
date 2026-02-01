@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Download, Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/app/components/ui/ThemeToggle";
+import Link from "next/link";
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -12,6 +13,8 @@ const navLinks = [
   { href: "#writing", label: "Writing" },
   { href: "#contact", label: "Contact" }
 ];
+
+const MotionLink = motion(Link);
 
 export const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -82,7 +85,7 @@ export const Navbar = () => {
           >
             <div className="px-6 py-6 space-y-1">
               {navLinks.map((link, i) => (
-                <motion.a
+                <MotionLink
                   key={link.href}
                   href={link.href}
                   initial={{ opacity: 0, x: -20 }}
@@ -92,7 +95,7 @@ export const Navbar = () => {
                   className="block py-3 text-lg font-medium hover:text-emerald-500 transition-colors text-zinc-700 dark:text-zinc-300"
                 >
                   {link.label}
-                </motion.a>
+                </MotionLink>
               ))}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
