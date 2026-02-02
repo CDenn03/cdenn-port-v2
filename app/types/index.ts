@@ -45,3 +45,15 @@ export interface ThemeContextType {
   toggleTheme: () => void;
   mounted: boolean;
 }
+export interface RevisionResult {
+  success: boolean;
+  type: 'extension' | 'general' | 'cover';
+  revisionId?: string;
+  message?: string;
+}
+
+export interface RevisionFormData {
+  coverType: string;
+  description: string;
+  attachments: File[];
+}

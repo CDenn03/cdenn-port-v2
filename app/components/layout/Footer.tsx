@@ -105,7 +105,7 @@ export const Footer = () => {
             />
             <SocialIcon
               network="behance"
-              url="https://behance.net"
+              url="https://www.behance.net/dennisndungu8"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -120,7 +120,7 @@ export const Footer = () => {
             />
             <SocialIcon
               network="dribbble"
-              url="https://dribbble.com"
+              url="https://dribbble.com/CDenn"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -135,7 +135,7 @@ export const Footer = () => {
             />
             <SocialIcon
               network="medium"
-              url="https://medium.com"
+              url="https://medium.com/@nd.dennis03"
               target="_blank"
               rel="noopener noreferrer"
               style={{
