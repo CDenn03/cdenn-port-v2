@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { useScrollProgress } from "@/app/hooks/useScrollProgress";
+import { useScrollProgress } from "@/src/app/hooks/useScrollProgress";
 
 export const ScrollProgress = () => {
   const scrollProgress = useScrollProgress();

@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react";
 import { Reveal } from "../ui/Reveal";
-import { writings } from "@/app/data/portfolio";
+import { writings } from "@/src/app/data/portfolio";
 
 export const WritingSection = () => {
   return (

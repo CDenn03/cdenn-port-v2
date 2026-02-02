@@ -1,7 +1,7 @@
 "use client";
 
 import { Reveal } from "../ui/Reveal";
-import { testimonials } from "@/app/data/portfolio";
+import { testimonials } from "@/src/app/data/portfolio";
 
 export const TestimonialsSection = () => {
   return (

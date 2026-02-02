@@ -18,7 +18,6 @@ import { BackToTop } from "./components/ui/BackToTop";
 export default function Portfolio() {
   const { mounted } = useTheme();
   
-  // Show loading state until mounted to prevent hydration mismatch
   if (!mounted) {
     return null;
   }

@@ -1,4 +1,4 @@
-import { Experience, Solution, Testimonial, Writing } from "@/app/types";
+import { Experience, Solution, Testimonial, Writing } from "@/src/app/types";
 
 export const experiences: Experience[] = [
   {

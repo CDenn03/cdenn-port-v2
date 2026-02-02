@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Download, Menu, X } from "lucide-react";
-import { ThemeToggle } from "@/app/components/ui/ThemeToggle";
+import { ThemeToggle } from "@/src/app/components/ui/ThemeToggle";
 import Link from "next/link";
 
 const navLinks = [

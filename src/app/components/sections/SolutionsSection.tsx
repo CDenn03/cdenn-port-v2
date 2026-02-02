@@ -3,7 +3,7 @@
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import { Reveal } from "../ui/Reveal";
-import { solutions } from "@/app/data/portfolio";
+import { solutions } from "@/src/app/data/portfolio";
 
 export const SolutionsSection = () => {
   return (

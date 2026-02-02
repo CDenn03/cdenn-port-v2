@@ -1,7 +1,7 @@
 "use client";
 
 import { Reveal } from "../ui/Reveal";
-import { experiences } from "@/app/data/portfolio";
+import { experiences } from "@/src/app/data/portfolio";
 
 export const ExperienceSection = () => {
   return (
