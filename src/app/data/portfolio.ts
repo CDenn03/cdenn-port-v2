@@ -7,9 +7,9 @@ export const experiences: Experience[] = [
     period: "Mar 2025 - Present",
     desc: [
       "Led frontend development for core product, improving load time by 40%",
-      "Implemented design system used across 3 product teams"
+      "Implemented design system used across 3 product teams",
     ],
-    tech: "React, Next.js, TailwindCSS"
+    tech: "React, Next.js, TailwindCSS, Rest APIs"
   },
   {
     company: "Self-Employed",
@@ -19,8 +19,18 @@ export const experiences: Experience[] = [
       "Delivered 10+ custom web solutions for international clients",
       "Managed full project lifecycle from concept to deployment"
     ],
-    tech: "React, Node.js, AWS"
-  }
+    tech: "React, Node.js, React Native"
+  },
+  {
+    company: "Artsam Technologies",
+    role: "Software Developer",
+    period: "Jan 2022 - April 2022",
+    desc: [
+      "Contributed to the development of 2 ERP solutions",
+      "Managed full project lifecycle from concept to deployment"
+    ],
+    tech: "FastAPI, Rust, React"
+  },
 ];
 
 export const solutions: Solution[] = [

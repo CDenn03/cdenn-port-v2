@@ -4,9 +4,9 @@ import { MapPin, Clock, Terminal } from "lucide-react";
 import { Reveal } from "../ui/Reveal";
 
 const techStack = {
-  frontend: ["Next.js", "TypeScript", "TailwindCSS", "Flutter", "Redux"],
-  backend: ["Rust", "Node.js", "PostgreSQL", "Supabase"],
-  tools: ["Git", "Figma", "Vite", "Docker", "Jest"]
+  frontend: [ "JavaScript","TypeScript", "Next.js", "TailwindCSS", "Flutter"],
+  backend: ["Rust", "Node.js", "FastAPI", "PostgreSQL", "Supabase","Firebase"],
+  tools: ["Git", "Figma", "Docker", "GitHub workflows", "SanityCMS"]
 };
 
 export const AboutSection = () => {
@@ -20,7 +20,7 @@ export const AboutSection = () => {
 
           <Reveal>
             <p className="text-lg leading-relaxed mb-6 text-zinc-600 dark:text-zinc-400">
-              I&apos;m a Software Engineer with 5+ years of experience helping startups and businesses build web applications that perform. I specialize in React and Next.js, with a focus on clean architecture and exceptional user experience.
+              I&apos;m a Software Engineer with 5+ years of experience building web solutions for financial institutions and businesses. I specialize in JavaScript and TypeScript, with React and Next.js on the frontend - focused on clean architecture and exceptional user experiences.
             </p>
           </Reveal>
 
@@ -32,7 +32,7 @@ export const AboutSection = () => {
 
           <Reveal>
             <blockquote className="border-l-4 border-emerald-500 pl-6 py-3 my-8 rounded-r-xl bg-emerald-50/50 dark:bg-emerald-950/30">
-              <p className="text-xl italic text-slate-800 dark:text-zinc-200">&quot;Great interfaces are invisible—users just accomplish their goals.&quot;</p>
+              <p className="text-xl italic text-slate-800 dark:text-zinc-200">Build it right, make it fast, and ensure it lasts.</p>
             </blockquote>
           </Reveal>
 

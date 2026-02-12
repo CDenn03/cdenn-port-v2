@@ -135,7 +135,7 @@ export const Footer = () => {
             />
             <SocialIcon
               network="medium"
-              url="https://medium.com/@nd.dennis03"
+              url="https://medium.com/@cdenn"
               target="_blank"
               rel="noopener noreferrer"
               style={{

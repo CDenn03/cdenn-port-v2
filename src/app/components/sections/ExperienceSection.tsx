@@ -30,7 +30,7 @@ export const ExperienceSection = () => {
                     <li key={`${job.company}-desc-${idx}`} className="flex gap-2">• {item}</li>
                   ))}
                 </ul>
-                <div className="text-xs font-mono text-zinc-400 dark:text-zinc-600">{job.tech}</div>
+                <div className="text-xs font-mono text-zinc-400 dark:text-zinc-400">{job.tech}</div>
               </div>
             </Reveal>
           ))}

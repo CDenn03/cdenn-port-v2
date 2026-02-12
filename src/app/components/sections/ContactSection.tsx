@@ -23,7 +23,7 @@ export const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-widest text-zinc-500">Email</p>
-                  <p className="font-mono text-base text-slate-900 dark:text-zinc-100">hello@chrisdennison.dev</p>
+                  <p className="font-mono text-base text-slate-900 dark:text-zinc-100">nd.dennis03@gmail.com</p>
                 </div>
               </a>
 

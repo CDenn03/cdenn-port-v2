@@ -14,7 +14,7 @@ const navLinks = [
   { href: "#contact", label: "Contact" }
 ];
 
-const MotionLink = motion(Link);
+const MotionLink = motion.create(Link);
 
 export const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
