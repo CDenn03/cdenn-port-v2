@@ -4,7 +4,7 @@ export const experiences: Experience[] = [
   {
     company: "E&M Technologies",
     role: "Software Engineer",
-    period: "Mar 2025 - Present",
+    period: "Jan 2025 - Present",
     desc: [
       "Led frontend development for core product, improving load time by 40%",
       "Implemented design system used across 3 product teams",
@@ -14,7 +14,7 @@ export const experiences: Experience[] = [
   {
     company: "Self-Employed",
     role: "Freelance Developer",
-    period: "Aug 2022 - Feb 2025",
+    period: "Aug 2022 - Dec 2024",
     desc: [
       "Delivered 10+ custom web solutions for international clients",
       "Managed full project lifecycle from concept to deployment"
@@ -34,6 +34,19 @@ export const experiences: Experience[] = [
 ];
 
 export const solutions: Solution[] = [
+  {
+    title: "Bancassurance System",
+    description: "Scalable online storefront with real-time inventory and secure checkout.",
+    challenge: "Client needed to handle 10k concurrent users during flash sales without crashing.",
+    results: [
+      { label: "Uptime", value: "99.9%" },
+      { label: "Load Time", value: "2.5s" },
+      { label: "SKUs", value: "150+" }
+    ],
+    tags: ["Next.js", "Stripe", "Supabase"],
+    image: "https://picsum.photos/seed/ecommerce/800/600",
+    layout: "right"
+  },
   {
     title: "E-Commerce Platform",
     description: "Scalable online storefront with real-time inventory and secure checkout.",
