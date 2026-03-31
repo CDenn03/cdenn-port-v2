@@ -4,9 +4,18 @@ import { MapPin, Clock, Terminal } from "lucide-react";
 import { Reveal } from "../ui/Reveal";
 
 const techStack = {
-  frontend: [ "JavaScript","TypeScript", "Next.js", "TailwindCSS", "Flutter"],
-  backend: ["Rust", "Node.js", "FastAPI", "PostgreSQL", "Supabase","Firebase"],
-  tools: ["Git", "Figma", "Docker", "GitHub workflows", "SanityCMS"]
+  frontend: [
+    "React",
+    "Next.js",
+    "TypeScript",
+    "JavaScript",
+    "HTML",
+    "CSS",
+    "TailwindCSS",
+    "TanStack Query"
+  ],
+  backend: ["Node.js", "Deno", "Rust", "Axum"],
+  tools: ["Git", "GitHub", "Figma", "Adobe Tools"]
 };
 
 export const AboutSection = () => {
@@ -15,24 +24,42 @@ export const AboutSection = () => {
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16">
         <div>
           <Reveal>
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-slate-900 dark:text-zinc-100">About Me</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-slate-900 dark:text-zinc-100">
+              About Me
+            </h2>
           </Reveal>
 
           <Reveal>
             <p className="text-lg leading-relaxed mb-6 text-zinc-600 dark:text-zinc-400">
-              I&apos;m a Software Engineer with 5+ years of experience building web solutions for financial institutions and businesses. I specialize in JavaScript and TypeScript, with React and Next.js on the frontend - focused on clean architecture and exceptional user experiences.
+              I&apos;m a Frontend Engineer with 3+ years of experience building scalable,
+              high-performance web applications using React and the modern TypeScript ecosystem.
+              I focus on creating fast, intuitive user experiences while maintaining clean and
+              robust codebases.
+            </p>
+          </Reveal>
+
+          <Reveal>
+            <p className="text-lg leading-relaxed mb-6 text-zinc-600 dark:text-zinc-400">
+              I&apos;ve worked on SaaS platforms, improved legacy systems, and collaborated with
+              cross-functional teams to deliver production-ready products. I enjoy translating
+              complex business requirements into simple, maintainable frontend solutions.
             </p>
           </Reveal>
 
           <Reveal>
             <p className="text-lg leading-relaxed mb-8 text-zinc-600 dark:text-zinc-400">
-              <strong className="text-slate-900 dark:text-zinc-100">My Approach:</strong> I believe in close collaboration, transparent communication, and shipping fast without sacrificing quality. Every project starts with understanding your business goals—not just your feature list.
+              <strong className="text-slate-900 dark:text-zinc-100">My Approach:</strong>{" "}
+              Build scalable systems, ship fast, and never compromise on code quality or user
+              experience. I prioritize clarity, performance, and long-term maintainability in
+              every project.
             </p>
           </Reveal>
 
           <Reveal>
             <blockquote className="border-l-4 border-emerald-500 pl-6 py-3 my-8 rounded-r-xl bg-emerald-50/50 dark:bg-emerald-950/30">
-              <p className="text-xl italic text-slate-800 dark:text-zinc-200">Build it right, make it fast, and ensure it lasts.</p>
+              <p className="text-xl italic text-slate-800 dark:text-zinc-200">
+                Build scalable interfaces. Keep it clean. Ship with confidence.
+              </p>
             </blockquote>
           </Reveal>
 
@@ -41,15 +68,19 @@ export const AboutSection = () => {
               <div className="flex items-start gap-3">
                 <MapPin className="text-emerald-500 mt-1 shrink-0" size={20} />
                 <div>
-                  <h4 className="font-bold text-base text-slate-900 dark:text-zinc-100">Location</h4>
+                  <h4 className="font-bold text-base text-slate-900 dark:text-zinc-100">
+                    Location
+                  </h4>
                   <p className="text-sm text-zinc-500">Remote / Worldwide</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <Clock className="text-emerald-500 mt-1 shrink-0" size={20} />
                 <div>
-                  <h4 className="font-bold text-base text-slate-900 dark:text-zinc-100">Availability</h4>
-                  <p className="text-sm text-zinc-500">Open to Projects</p>
+                  <h4 className="font-bold text-base text-slate-900 dark:text-zinc-100">
+                    Availability
+                  </h4>
+                  <p className="text-sm text-zinc-500">Open to Opportunities</p>
                 </div>
               </div>
             </div>
@@ -65,14 +96,22 @@ export const AboutSection = () => {
 
           <div className="space-y-8">
             {Object.entries(techStack).map(([category, technologies]) => (
-              <Reveal key={category} delay={0.1 * (Object.keys(techStack).indexOf(category) + 1)}>
+              <Reveal
+                key={category}
+                delay={0.1 * (Object.keys(techStack).indexOf(category) + 1)}
+              >
                 <div>
                   <h4 className="text-xs font-bold uppercase tracking-widest mb-4 text-zinc-500">
                     {category.charAt(0).toUpperCase() + category.slice(1)}
                   </h4>
                   <div className="flex flex-wrap gap-2">
-                    {technologies.map(tech => (
-                      <span key={tech} className="px-3 py-1.5 rounded text-sm font-medium bg-zinc-100 text-slate-700 border border-zinc-200 dark:bg-zinc-800 dark:text-zinc-300 dark:border-zinc-700">{tech}</span>
+                    {technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-3 py-1.5 rounded text-sm font-medium bg-zinc-100 text-slate-700 border border-zinc-200 dark:bg-zinc-800 dark:text-zinc-300 dark:border-zinc-700"
+                      >
+                        {tech}
+                      </span>
                     ))}
                   </div>
                 </div>

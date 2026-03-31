@@ -3,77 +3,55 @@ import { Experience, Solution, Testimonial, Writing } from "@/src/app/types";
 export const experiences: Experience[] = [
   {
     company: "E&M Technologies",
-    role: "Software Engineer",
+    role: "Frontend Engineer",
     period: "Jan 2025 - Present",
     desc: [
-      "Led frontend development for core product, improving load time by 40%",
-      "Implemented design system used across 3 product teams",
+      "Led frontend architecture and development of the core product using React and Next.js, improving page load performance by 40%",
+      "Designed and implemented a scalable design system adopted across 3+ product teams, ensuring UI consistency and faster feature delivery",
+      "Collaborated with backend and product teams to translate business requirements into performant, user-centric interfaces",
+      "Improved maintainability of legacy code by introducing TypeScript patterns and reusable component structures",
     ],
-    tech: "React, Next.js, TailwindCSS, Rest APIs"
-  },
-  {
-    company: "Self-Employed",
-    role: "Freelance Developer",
-    period: "Aug 2022 - Dec 2024",
-    desc: [
-      "Delivered 10+ custom web solutions for international clients",
-      "Managed full project lifecycle from concept to deployment"
-    ],
-    tech: "React, Node.js, React Native"
-  },
-  {
-    company: "Artsam Technologies",
-    role: "Software Developer",
-    period: "Jan 2022 - April 2022",
-    desc: [
-      "Contributed to the development of 2 ERP solutions",
-      "Managed full project lifecycle from concept to deployment"
-    ],
-    tech: "FastAPI, Rust, React"
+    tech: "React, Next.js, TypeScript, TailwindCSS, REST APIs",
   },
 ];
 
 export const solutions: Solution[] = [
   {
-    title: "Bancassurance System",
-    description: "Scalable online storefront with real-time inventory and secure checkout.",
-    challenge: "Client needed to handle 10k concurrent users during flash sales without crashing.",
+    title: "InsureMaster - Bancassurance Platform",
+    description:
+      "A multi-tenant SaaS platform for managing insurance policy lifecycles, from onboarding to claims and reporting.",
+    challenge:
+      "Built to support multi-tenant architecture with secure role-based access and high-performance financial workflows at scale.",
     results: [
+      { label: "LCP", value: "2.1s" },
+      { label: "Concurrent Users", value: "10k+" },
       { label: "Uptime", value: "99.9%" },
-      { label: "Load Time", value: "2.5s" },
-      { label: "SKUs", value: "150+" }
     ],
-    tags: ["Next.js", "Stripe", "Supabase"],
-    image: "https://picsum.photos/seed/ecommerce/800/600",
-    layout: "right"
+    tags: ["Next.js", "TypeScript", "TailwindCSS", "Radix UI", "JWT"],
+    image: "https://picsum.photos/seed/fintech/800/600",
+    layout: "right",
   },
   {
-    title: "E-Commerce Platform",
-    description: "Scalable online storefront with real-time inventory and secure checkout.",
-    challenge: "Client needed to handle 10k concurrent users during flash sales without crashing.",
+    title: "Email Refiner",
+    description:
+      "AI-powered Chrome extension that enhances email writing in Gmail and Zimbra with real-time tone transformation and preview.",
+    challenge:
+      "Integrating seamlessly into third-party email clients while maintaining performance, security, and a smooth user experience within dynamic DOM environments.",
     results: [
-      { label: "Uptime", value: "99.9%" },
-      { label: "Load Time", value: "2.5s" },
-      { label: "SKUs", value: "150+" }
+      { label: "Editing Time", value: "-40%" },
+      { label: "Supported Clients", value: "2 (Gmail, Zimbra)" },
+      { label: "Response Time", value: "<1s" },
     ],
-    tags: ["Next.js", "Stripe", "Supabase"],
-    image: "https://picsum.photos/seed/ecommerce/800/600",
-    layout: "left"
+    tags: [
+      "React",
+      "TypeScript",
+      "Chrome Extensions",
+      "OpenAI API",
+      "MutationObserver",
+    ],
+    image: "https://picsum.photos/seed/email-ai/800/600",
+    layout: "left",
   },
-  {
-    title: "AI Analytics Dashboard",
-    description: "Real-time data visualization platform with ML-powered insights for enterprise teams.",
-    challenge: "Manual reporting was taking 20+ hours per week for data analysts.",
-    solution: "Integrated OpenAI API to summarize complex datasets into actionable insights.",
-    results: [
-      { label: "Faster Decisions", value: "60%" },
-      { label: "Data Points", value: "10k+" },
-      { label: "Manual Work", value: "-45%" }
-    ],
-    tags: ["React", "Python", "FastAPI"],
-    image: "https://picsum.photos/seed/analytics/800/600",
-    layout: "right"
-  }
 ];
 
 export const testimonials: Testimonial[] = [
@@ -81,18 +59,33 @@ export const testimonials: Testimonial[] = [
     text: "CDenn delivered our MVP in half the expected time. His communication was excellent throughout, and the code quality was top-notch.",
     author: "John Smith",
     role: "CEO at StartupX",
-    initials: "JS"
+    initials: "JS",
   },
   {
     text: "Working with CDenn transformed our user experience. Bounce rate dropped 35% after the redesign. Highly recommend him for any frontend project.",
     author: "Jane Doe",
     role: "Product Manager at CompanyY",
-    initials: "JD"
-  }
+    initials: "JD",
+  },
 ];
 
 export const writings: Writing[] = [
-  { title: "5 React Performance Patterns I Use in Every Project", date: "Jan 2025", tag: "React", readTime: "5 min" },
-  { title: "When to Use SSR vs SSG in Next.js", date: "Feb 2025", tag: "Next.js", readTime: "4 min" },
-  { title: "My Code Review Checklist for React Components", date: "Mar 2025", tag: "Workflow", readTime: "6 min" }
+  {
+    title: "5 React Performance Patterns I Use in Every Project",
+    date: "Jan 2025",
+    tag: "React",
+    readTime: "5 min",
+  },
+  {
+    title: "When to Use SSR vs SSG in Next.js",
+    date: "Feb 2025",
+    tag: "Next.js",
+    readTime: "4 min",
+  },
+  {
+    title: "My Code Review Checklist for React Components",
+    date: "Mar 2025",
+    tag: "Workflow",
+    readTime: "6 min",
+  },
 ];

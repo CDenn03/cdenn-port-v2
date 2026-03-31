@@ -5,7 +5,6 @@ import { ScrollProgress } from "./components/ui/ScrollProgress";
 import { BackgroundAmbience } from "./components/ui/BackgroundAmbience";
 import { Navbar } from "./components/layout/Navbar";
 import { HeroSection } from "./components/sections/HeroSection";
-import { StatsSection } from "./components/sections/StatsSection";
 import { AboutSection } from "./components/sections/AboutSection";
 import { ExperienceSection } from "./components/sections/ExperienceSection";
 import { SolutionsSection } from "./components/sections/SolutionsSection";
@@ -28,7 +27,6 @@ export default function Portfolio() {
       <BackgroundAmbience />
       <Navbar />
       <HeroSection />
-      <StatsSection />
       <AboutSection />
       <ExperienceSection />
       <SolutionsSection />

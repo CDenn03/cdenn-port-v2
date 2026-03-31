@@ -11,7 +11,7 @@ export const HeroSection = () => {
       <div className="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-16 items-center">
 
         <div>
-          <Reveal>
+          {/* <Reveal>
             <div className="inline-flex items-center gap-2 px-2 py-2 mb-4  text-xs font-semibold tracking-wide uppercase text-emerald-700  dark:text-emerald-400">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -19,7 +19,7 @@ export const HeroSection = () => {
               </span>
               <span>Open to Opportunities</span>
             </div>
-          </Reveal>
+          </Reveal> */}
 
           <Reveal delay={0.1}>
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.1] mb-8 text-slate-900 dark:text-zinc-100">

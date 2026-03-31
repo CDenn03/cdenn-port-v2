@@ -11,7 +11,8 @@ export const ContactSection = () => {
           <Reveal>
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-slate-900 dark:text-zinc-100">Let&apos;s Build Something Great.</h2>
             <p className="text-lg md:text-xl mb-10 text-zinc-600 dark:text-zinc-400">
-              Have a project in mind? I&apos;d love to hear about it. Fill out form or book a call directly.
+              Have something you&apos;re building or improving? I&apos;d love to hear about it.
+              Let&apos;s talk through your ideas and see how we can bring them to life.
             </p>
           </Reveal>
 
@@ -40,7 +41,7 @@ export const ContactSection = () => {
 
             <div className="mt-8 py-4 px-2">
               <p className="text-sm flex items-center gap-2 text-emerald-800 dark:text-emerald-400">
-                <Clock size={16} className="text-emerald-500" />
+                <Clock size={16} className="text-emerald-800 dark:text-emerald-400" />
                 I typically respond within 24 hours.
               </p>
             </div>
@@ -51,29 +52,29 @@ export const ContactSection = () => {
           <form className="rounded-3xl p-8 space-y-6 shadow-sm bg-zinc-50 border border-zinc-200 dark:bg-zinc-800 dark:border-zinc-700" onSubmit={(e) => e.preventDefault()}>
             <div>
               <label htmlFor="name" className="block text-sm font-bold mb-2 text-zinc-700 dark:text-zinc-300">Name</label>
-              <input 
-                type="text" 
+              <input
+                type="text"
                 id="name"
                 name="name"
-                className="w-full border rounded-xl px-4 py-3 text-base focus:outline-none focus:border-emerald-500 transition-colors bg-white border-zinc-300 text-slate-900 dark:bg-zinc-900 dark:border-zinc-700 dark:text-zinc-100 dark:placeholder-zinc-600" 
-                placeholder="John Doe" 
+                className="w-full border rounded-xl px-4 py-3 text-base focus:outline-none focus:border-emerald-500 transition-colors bg-white border-zinc-300 text-slate-900 dark:bg-zinc-900 dark:border-zinc-700 dark:text-zinc-100 dark:placeholder-zinc-600"
+                placeholder="John Doe"
               />
             </div>
             <div>
               <label htmlFor="email" className="block text-sm font-bold mb-2 text-zinc-700 dark:text-zinc-300">Email</label>
-              <input 
-                type="email" 
+              <input
+                type="email"
                 id="email"
                 name="email"
-                className="w-full border rounded-xl px-4 py-3 text-base focus:outline-none focus:border-emerald-500 transition-colors bg-white border-zinc-300 text-slate-900 dark:bg-zinc-900 dark:border-zinc-700 dark:text-zinc-100 dark:placeholder-zinc-600" 
-                placeholder="john@company.com" 
+                className="w-full border rounded-xl px-4 py-3 text-base focus:outline-none focus:border-emerald-500 transition-colors bg-white border-zinc-300 text-slate-900 dark:bg-zinc-900 dark:border-zinc-700 dark:text-zinc-100 dark:placeholder-zinc-600"
+                placeholder="john@company.com"
               />
             </div>
 
             <div className="grid grid-cols-2 gap-6">
               <div>
                 <label htmlFor="project-type" className="block text-sm font-bold mb-2 text-zinc-700 dark:text-zinc-300">Project Type</label>
-                <select 
+                <select
                   id="project-type"
                   name="projectType"
                   className="w-full border rounded-xl px-4 py-3 text-base focus:outline-none focus:border-emerald-500 transition-colors appearance-none bg-white border-zinc-300 text-slate-900 dark:bg-zinc-900 dark:border-zinc-700 dark:text-zinc-100"
@@ -85,7 +86,7 @@ export const ContactSection = () => {
               </div>
               <div>
                 <label htmlFor="budget-range" className="block text-sm font-bold mb-2 text-zinc-700 dark:text-zinc-300">Budget Range</label>
-                <select 
+                <select
                   id="budget-range"
                   name="budgetRange"
                   className="w-full border rounded-xl px-4 py-3 text-base focus:outline-none focus:border-emerald-500 transition-colors appearance-none bg-white border-zinc-300 text-slate-900 dark:bg-zinc-900 dark:border-zinc-700 dark:text-zinc-100"
@@ -100,11 +101,11 @@ export const ContactSection = () => {
 
             <div>
               <label htmlFor="project-description" className="block text-sm font-bold mb-2 text-zinc-700 dark:text-zinc-300">Project Description</label>
-              <textarea 
-                rows={4} 
+              <textarea
+                rows={4}
                 id="project-description"
                 name="projectDescription"
-                className="w-full border rounded-xl px-4 py-3 text-base focus:outline-none focus:border-emerald-500 transition-colors bg-white border-zinc-300 text-slate-900 dark:bg-zinc-900 dark:border-zinc-700 dark:text-zinc-100 dark:placeholder-zinc-600" 
+                className="w-full border rounded-xl px-4 py-3 text-base focus:outline-none focus:border-emerald-500 transition-colors bg-white border-zinc-300 text-slate-900 dark:bg-zinc-900 dark:border-zinc-700 dark:text-zinc-100 dark:placeholder-zinc-600"
                 placeholder="Tell me about your project..."
               ></textarea>
             </div>
