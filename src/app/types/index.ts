@@ -18,6 +18,8 @@ export interface Solution {
   tags: string[];
   image: string;
   layout: "left" | "right";
+  websiteUrl?: string;
+  codeUrl?: string;
 }
 
 export interface Testimonial {

@@ -30,6 +30,8 @@ export const solutions: Solution[] = [
     tags: ["Next.js", "TypeScript", "TailwindCSS", "Radix UI", "JWT"],
     image: "https://picsum.photos/seed/fintech/800/600",
     layout: "right",
+    websiteUrl: "https://insuremaster.example.com",
+    codeUrl: "https://github.com/example/insuremaster",
   },
   {
     title: "Email Refiner",
@@ -49,8 +51,10 @@ export const solutions: Solution[] = [
       "OpenAI API",
       "MutationObserver",
     ],
-    image: "https://picsum.photos/seed/email-ai/800/600",
+    image: "/assets/project-shots/Email.png",
     layout: "left",
+    websiteUrl: "https://refine-mail-web.vercel.app/",
+    codeUrl: "https://github.com/CDenn03/RefineMailWeb",
   },
 ];
 

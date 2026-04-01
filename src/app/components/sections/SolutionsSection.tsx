@@ -72,12 +72,18 @@ export const SolutionsSection = () => {
                     ))}
                   </div>
 
-                  <div className="flex gap-4">
-                    <a href="#" className="text-sm font-bold hover:text-emerald-500 underline decoration-emerald-500/30 underline-offset-4 text-slate-900 dark:text-zinc-100">View Case Study</a>
-                    <a href="#" className="text-sm font-bold flex items-center gap-1 hover:text-emerald-500 text-zinc-500">
-                      <ExternalLink size={14} /> Code
-                    </a>
-                  </div>
+                  {(project.websiteUrl || project.codeUrl) && (
+                    <div className="flex gap-4">
+                      {project.websiteUrl && (
+                        <a href={project.websiteUrl} target="_blank" rel="noopener noreferrer" className="text-sm font-bold hover:text-emerald-500 underline decoration-emerald-500/30 underline-offset-4 text-slate-900 dark:text-zinc-100">Visit website</a>
+                      )}
+                      {project.codeUrl && (
+                        <a href={project.codeUrl} target="_blank" rel="noopener noreferrer" className="text-sm font-bold flex items-center gap-1 hover:text-emerald-500 text-zinc-500">
+                          <ExternalLink size={14} /> Code
+                        </a>
+                      )}
+                    </div>
+                  )}
                 </div>
               </div>
             </Reveal>
