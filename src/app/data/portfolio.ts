@@ -28,7 +28,7 @@ export const solutions: Solution[] = [
       { label: "Uptime", value: "99.9%" },
     ],
     tags: ["Next.js", "TypeScript", "TailwindCSS", "Radix UI", "JWT"],
-    image: "https://picsum.photos/seed/fintech/800/600",
+    image: "/assets/project-shots/InsureMaster.png",
     layout: "right",
     websiteUrl: "https://insuremaster.example.com",
     codeUrl: "https://github.com/example/insuremaster",
@@ -57,6 +57,7 @@ export const solutions: Solution[] = [
     codeUrl: "https://github.com/CDenn03/RefineMailWeb",
   },
 ];
+
 
 export const testimonials: Testimonial[] = [
   {

@@ -11,7 +11,7 @@ export const SolutionsSection = () => {
       <div className="max-w-6xl mx-auto">
         <Reveal>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900 dark:text-zinc-100">Featured Solutions</h2>
-          <div className="w-20 h-1 bg-[#124170] dark:bg-blue-400 mb-16 rounded-full" />
+          <div className="w-20 h-1 bg-emerald-500 mb-16 rounded-full" />
         </Reveal>
 
         <div className="space-y-24">
@@ -39,7 +39,7 @@ export const SolutionsSection = () => {
                 <div className={`md:col-span-5 ${
                   project.layout === 'right' ? 'md:order-first' : ''
                 }`}>
-                  <h3 className="text-2xl md:text-3xl font-bold mb-4 group-hover:text-[#124170] dark:group-hover:text-blue-400 transition-colors text-slate-900 dark:text-zinc-100">{project.title}</h3>
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4 group-hover:text-emerald-500 transition-colors text-slate-900 dark:text-zinc-100">{project.title}</h3>
                   <p className="text-base mb-6 text-zinc-600 dark:text-zinc-400">{project.description}</p>
 
                   <div className="space-y-4 mb-8">
@@ -58,7 +58,7 @@ export const SolutionsSection = () => {
                       <div className="flex flex-wrap gap-3">
                         {project.results.map((res) => (
                           <div key={`${res.label}-${res.value}`} className="px-3 py-2 rounded shadow-sm min-w-20 bg-white border border-zinc-200 dark:bg-zinc-800 dark:border-zinc-700">
-                            <span className="text-[#124170] dark:text-blue-400 font-bold text-lg block">{res.value}</span>
+                            <span className="text-emerald-500 font-bold text-lg block">{res.value}</span>
                             <span className="text-xs text-zinc-600 dark:text-zinc-400">{res.label}</span>
                           </div>
                         ))}
@@ -75,10 +75,10 @@ export const SolutionsSection = () => {
                   {(project.websiteUrl || project.codeUrl) && (
                     <div className="flex gap-4">
                       {project.websiteUrl && (
-                        <a href={project.websiteUrl} target="_blank" rel="noopener noreferrer" className="text-sm font-bold hover:text-[#124170] dark:hover:text-blue-400 underline decoration-[#124170]/30 dark:decoration-blue-400/30 underline-offset-4 text-slate-900 dark:text-zinc-100">Visit website</a>
+                        <a href={project.websiteUrl} target="_blank" rel="noopener noreferrer" className="text-sm font-bold hover:text-emerald-500 underline decoration-emerald-500/30 underline-offset-4 text-slate-900 dark:text-zinc-100">Visit website</a>
                       )}
                       {project.codeUrl && (
-                        <a href={project.codeUrl} target="_blank" rel="noopener noreferrer" className="text-sm font-bold flex items-center gap-1 hover:text-[#124170] dark:hover:text-blue-400 text-zinc-500">
+                        <a href={project.codeUrl} target="_blank" rel="noopener noreferrer" className="text-sm font-bold flex items-center gap-1 hover:text-emerald-500 text-zinc-500">
                           <ExternalLink size={14} /> Code
                         </a>
                       )}

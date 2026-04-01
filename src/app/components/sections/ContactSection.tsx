@@ -18,8 +18,8 @@ export const ContactSection = () => {
 
           <Reveal>
             <div className="space-y-6">
-              <a href="mailto:hello@chrisdennison.dev" className="flex items-center gap-4 transition-colors group text-zinc-700 hover:text-[#124170] dark:text-zinc-300 dark:hover:text-blue-400">
-                <div className="w-12 h-12 rounded-full flex items-center justify-center transition-colors bg-zinc-50 border border-zinc-200 group-hover:border-[#124170]/30 dark:bg-zinc-800 dark:border-zinc-700 dark:group-hover:border-blue-400/30">
+              <a href="mailto:hello@chrisdennison.dev" className="flex items-center gap-4 transition-colors group text-zinc-700 hover:text-emerald-600 dark:text-zinc-300 dark:hover:text-emerald-400">
+                <div className="w-12 h-12 rounded-full flex items-center justify-center transition-colors bg-zinc-50 border border-zinc-200 group-hover:border-emerald-500/30 dark:bg-zinc-800 dark:border-zinc-700 dark:group-hover:border-emerald-500/30">
                   <Mail size={20} />
                 </div>
                 <div>
@@ -28,8 +28,8 @@ export const ContactSection = () => {
                 </div>
               </a>
 
-              <a href="#" className="flex items-center gap-4 transition-colors group text-zinc-700 hover:text-[#124170] dark:text-zinc-300 dark:hover:text-blue-400">
-                <div className="w-12 h-12 rounded-full flex items-center justify-center transition-colors bg-zinc-50 border border-zinc-200 group-hover:border-[#124170]/30 dark:bg-zinc-800 dark:border-zinc-700 dark:group-hover:border-blue-400/30">
+              <a href="#" className="flex items-center gap-4 transition-colors group text-zinc-700 hover:text-emerald-600 dark:text-zinc-300 dark:hover:text-emerald-400">
+                <div className="w-12 h-12 rounded-full flex items-center justify-center transition-colors bg-zinc-50 border border-zinc-200 group-hover:border-emerald-500/30 dark:bg-zinc-800 dark:border-zinc-700 dark:group-hover:border-emerald-500/30">
                   <Calendar size={20} />
                 </div>
                 <div>
@@ -40,8 +40,8 @@ export const ContactSection = () => {
             </div>
 
             <div className="mt-8 py-4 px-2">
-              <p className="text-sm flex items-center gap-2 text-[#124170] dark:text-blue-400">
-                <Clock size={16} className="text-[#124170] dark:text-blue-400" />
+              <p className="text-sm flex items-center gap-2 text-emerald-800 dark:text-emerald-400">
+                <Clock size={16} className="text-emerald-800 dark:text-emerald-400" />
                 I typically respond within 24 hours.
               </p>
             </div>
@@ -56,7 +56,7 @@ export const ContactSection = () => {
                 type="text"
                 id="name"
                 name="name"
-                className="w-full border rounded-xl px-4 py-3 text-base focus:outline-none focus:border-[#124170] transition-colors bg-white border-zinc-300 text-slate-900 dark:bg-zinc-900 dark:border-zinc-700 dark:text-zinc-100 dark:placeholder-zinc-600"
+                className="w-full border rounded-xl px-4 py-3 text-base focus:outline-none focus:border-emerald-500 transition-colors bg-white border-zinc-300 text-slate-900 dark:bg-zinc-900 dark:border-zinc-700 dark:text-zinc-100 dark:placeholder-zinc-600"
                 placeholder="John Doe"
               />
             </div>
@@ -66,7 +66,7 @@ export const ContactSection = () => {
                 type="email"
                 id="email"
                 name="email"
-                className="w-full border rounded-xl px-4 py-3 text-base focus:outline-none focus:border-[#124170] transition-colors bg-white border-zinc-300 text-slate-900 dark:bg-zinc-900 dark:border-zinc-700 dark:text-zinc-100 dark:placeholder-zinc-600"
+                className="w-full border rounded-xl px-4 py-3 text-base focus:outline-none focus:border-emerald-500 transition-colors bg-white border-zinc-300 text-slate-900 dark:bg-zinc-900 dark:border-zinc-700 dark:text-zinc-100 dark:placeholder-zinc-600"
                 placeholder="john@company.com"
               />
             </div>
@@ -77,7 +77,7 @@ export const ContactSection = () => {
                 <select
                   id="project-type"
                   name="projectType"
-                  className="w-full border rounded-xl px-4 py-3 text-base focus:outline-none focus:border-[#124170] transition-colors appearance-none bg-white border-zinc-300 text-slate-900 dark:bg-zinc-900 dark:border-zinc-700 dark:text-zinc-100"
+                  className="w-full border rounded-xl px-4 py-3 text-base focus:outline-none focus:border-emerald-500 transition-colors appearance-none bg-white border-zinc-300 text-slate-900 dark:bg-zinc-900 dark:border-zinc-700 dark:text-zinc-100"
                 >
                   <option>Freelance / Contract</option>
                   <option>Full-time Opportunity</option>
@@ -89,7 +89,7 @@ export const ContactSection = () => {
                 <select
                   id="budget-range"
                   name="budgetRange"
-                  className="w-full border rounded-xl px-4 py-3 text-base focus:outline-none focus:border-[#124170] transition-colors appearance-none bg-white border-zinc-300 text-slate-900 dark:bg-zinc-900 dark:border-zinc-700 dark:text-zinc-100"
+                  className="w-full border rounded-xl px-4 py-3 text-base focus:outline-none focus:border-emerald-500 transition-colors appearance-none bg-white border-zinc-300 text-slate-900 dark:bg-zinc-900 dark:border-zinc-700 dark:text-zinc-100"
                 >
                   <option>&lt; $5k</option>
                   <option>$5k - $10k</option>
@@ -105,12 +105,12 @@ export const ContactSection = () => {
                 rows={4}
                 id="project-description"
                 name="projectDescription"
-                className="w-full border rounded-xl px-4 py-3 text-base focus:outline-none focus:border-[#124170] transition-colors bg-white border-zinc-300 text-slate-900 dark:bg-zinc-900 dark:border-zinc-700 dark:text-zinc-100 dark:placeholder-zinc-600"
+                className="w-full border rounded-xl px-4 py-3 text-base focus:outline-none focus:border-emerald-500 transition-colors bg-white border-zinc-300 text-slate-900 dark:bg-zinc-900 dark:border-zinc-700 dark:text-zinc-100 dark:placeholder-zinc-600"
                 placeholder="Tell me about your project..."
               ></textarea>
             </div>
 
-            <button type="submit" className="w-full bg-[#124170] text-white text-base font-bold py-4 rounded-xl hover:bg-[#1a5a8a] transition-colors shadow-lg shadow-[#124170]/20 cursor-pointer">
+            <button type="submit" className="w-full bg-emerald-600 text-white text-base font-bold py-4 rounded-xl hover:bg-emerald-500 transition-colors shadow-lg shadow-emerald-600/20 cursor-pointer">
               Send Message
             </button>
           </form>

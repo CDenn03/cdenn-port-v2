@@ -56,7 +56,7 @@ export const AboutSection = () => {
           </Reveal>
 
           <Reveal>
-            <blockquote className="border-l-4 border-[#124170] dark:border-blue-400 pl-6 py-3 my-8 rounded-r-xl bg-[#eef3f8]/50 dark:bg-blue-400/10">
+            <blockquote className="border-l-4 border-emerald-500 pl-6 py-3 my-8 rounded-r-xl bg-emerald-50/50 dark:bg-emerald-950/30">
               <p className="text-xl italic text-slate-800 dark:text-zinc-200">
                 Build scalable interfaces. Keep it clean. Ship with confidence.
               </p>
@@ -66,7 +66,7 @@ export const AboutSection = () => {
           <Reveal>
             <div className="grid grid-cols-2 gap-6 mt-8">
               <div className="flex items-start gap-3">
-                <MapPin className="text-[#124170] dark:text-blue-400 mt-1 shrink-0" size={20} />
+                <MapPin className="text-emerald-500 mt-1 shrink-0" size={20} />
                 <div>
                   <h4 className="font-bold text-base text-slate-900 dark:text-zinc-100">
                     Location
@@ -75,7 +75,7 @@ export const AboutSection = () => {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Clock className="text-[#124170] dark:text-blue-400 mt-1 shrink-0" size={20} />
+                <Clock className="text-emerald-500 mt-1 shrink-0" size={20} />
                 <div>
                   <h4 className="font-bold text-base text-slate-900 dark:text-zinc-100">
                     Availability
@@ -90,7 +90,7 @@ export const AboutSection = () => {
         <div className="rounded-3xl p-8 h-fit transition-colors duration-300 bg-white border border-zinc-200 shadow-sm dark:bg-zinc-900 dark:border-zinc-800">
           <Reveal>
             <h3 className="text-xl font-bold mb-6 flex items-center gap-2 text-slate-900 dark:text-zinc-100">
-              <Terminal className="text-[#124170] dark:text-blue-400" size={20} /> Tech Stack
+              <Terminal className="text-emerald-500" size={20} /> Tech Stack
             </h3>
           </Reveal>
 

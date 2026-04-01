@@ -10,7 +10,7 @@ export const Footer = () => {
   const iconStyle = (network: string) => ({
     height: 36,
     width: 36,
-    border: hoveredIcon === network ? "2px solid #124170" : "1px solid transparent",
+    border: hoveredIcon === network ? "2px solid #10b981" : "1px solid transparent",
     borderRadius: "50%",
     transition: "border 0.2s ease",
   });
@@ -21,7 +21,7 @@ export const Footer = () => {
         <div className="grid md:grid-cols-4 gap-12 mb-20">
           <div className="md:col-span-1">
             <div className="text-2xl font-bold tracking-tighter mb-6 text-slate-900 dark:text-zinc-100">
-              CDENN<span className="text-[#124170] dark:text-blue-400">.</span>
+              CDENN<span className="text-emerald-500">.</span>
             </div>
             <p className="text-sm text-zinc-500">
               Software Engineer helping businesses build scalable web products.
@@ -32,16 +32,16 @@ export const Footer = () => {
             <h4 className="font-bold text-base mb-4 text-slate-900 dark:text-zinc-100">Navigation</h4>
             <ul className="space-y-3 text-sm text-zinc-600 dark:text-zinc-400">
               <li>
-                <Link href="/" className="hover:text-[#124170] dark:hover:text-blue-400">Home</Link>
+                <Link href="/" className="hover:text-emerald-500">Home</Link>
               </li>
               <li>
-                <Link href="#about" className="hover:text-[#124170] dark:hover:text-blue-400">About</Link>
+                <Link href="#about" className="hover:text-emerald-500">About</Link>
               </li>
               <li>
-                <Link href="#solutions" className="hover:text-[#124170] dark:hover:text-blue-400">Solutions</Link>
+                <Link href="#solutions" className="hover:text-emerald-500">Solutions</Link>
               </li>
               <li>
-                <Link href="#contact" className="hover:text-[#124170] dark:hover:text-blue-400">Contact</Link>
+                <Link href="#contact" className="hover:text-emerald-500">Contact</Link>
               </li>
             </ul>
           </div>
@@ -49,8 +49,8 @@ export const Footer = () => {
           <div>
             <h4 className="font-bold text-base mb-4 text-slate-900 dark:text-zinc-100">Legal</h4>
             <ul className="space-y-3 text-sm text-zinc-600 dark:text-zinc-400">
-              <li><a href="/privacy" className="hover:text-[#124170] dark:hover:text-blue-400">Privacy Policy</a></li>
-              <li><a href="/terms" className="hover:text-[#124170] dark:hover:text-blue-400">Terms of Use</a></li>
+              <li><a href="/privacy" className="hover:text-emerald-500">Privacy Policy</a></li>
+              <li><a href="/terms" className="hover:text-emerald-500">Terms of Use</a></li>
             </ul>
           </div>
         </div>
