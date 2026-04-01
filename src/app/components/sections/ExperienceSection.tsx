@@ -16,12 +16,12 @@ export const ExperienceSection = () => {
             <Reveal key={`${job.company}-${job.role}-${job.period}`} delay={i * 0.2}>
               <div className="relative pl-8">
                 <div className={`absolute -left-1.25 top-2 w-2.5 h-2.5 rounded-full ring-4 ${
-                  i === 0 ? "bg-emerald-500" : "bg-zinc-400 dark:bg-zinc-600"
+                  i === 0 ? "bg-[#124170] dark:bg-blue-400" : "bg-zinc-400 dark:bg-zinc-600"
                 } ring-zinc-50 dark:ring-zinc-950`} />
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-2">
                   <h3 className="text-xl font-bold text-slate-900 dark:text-zinc-100">{job.role}</h3>
                   <span className={`text-sm font-mono font-bold ${
-                    i === 0 ? "text-emerald-500" : "text-zinc-500"
+                    i === 0 ? "text-[#124170] dark:text-blue-400" : "text-zinc-500"
                   }`}>{job.period}</span>
                 </div>
                 <h4 className="text-base mb-4 font-medium text-zinc-600 dark:text-zinc-400">{job.company}</h4>

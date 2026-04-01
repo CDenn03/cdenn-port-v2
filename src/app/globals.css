@@ -70,11 +70,11 @@
 
 :root {
   /* Your preferred color scheme */
-  --primary: #10b981; 
+  --primary: #124170; 
   --secondary: #F17A21;
-  --accent: #2E3092;
-  --neutral: #f7d9bc;
-  --success: #10b981;
+  --accent: #1a5a8a;
+  --neutral: #eef3f8;
+  --success: #124170;
   --error: #ef4444;
 
   /* Light theme variables for shadcn/ui compatibility */
@@ -93,32 +93,32 @@
   --destructive: #dc2626;
   --border: #e4e4e7; /* zinc-200 */
   --input: #e4e4e7;
-  --ring: #10b981; /* emerald-500 */
+  --ring: #124170; /* navy */
 
   /* Chart colors for light mode */
-  --chart-1: #10b981;
+  --chart-1: #124170;
   --chart-2: #F17A21;
-  --chart-3: #2E3092;
-  --chart-4: #f7d9bc;
-  --chart-5: #10b981;
+  --chart-3: #1a5a8a;
+  --chart-4: #d6e4f0;
+  --chart-5: #124170;
 
   /* Sidebar colors for light mode */
   --sidebar: #f8fafc;
   --sidebar-foreground: #1e293b;
-  --sidebar-primary: #10b981;
+  --sidebar-primary: #124170;
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #f1f5f9;
   --sidebar-accent-foreground: #1e293b;
   --sidebar-border: #e2e8f0;
-  --sidebar-ring: #10b981;
+  --sidebar-ring: #124170;
 }
 
 .dark {
   /* Your preferred dark mode color scheme */
-  --primary: #10b981; /* emerald-500 consistent across themes */
+  --primary: #60a5fa; /* blue-400 — readable on dark */
   --secondary: #ff914d;
-  --accent: #89cff0;
-  --neutral: #1e1e1e;
+  --accent: #93c5fd;
+  --neutral: #0a1e30;
 
   /* Dark theme variables for shadcn/ui compatibility */
   --background: #09090b; /* zinc-950 */
@@ -135,24 +135,24 @@
   --destructive: #ef4444;
   --border: #3f3f46; /* zinc-700 */
   --input: #3f3f46;
-  --ring: #10b981; /* emerald-500 */
+  --ring: #60a5fa; /* blue-400 */
 
   /* Chart colors for dark mode */
-  --chart-1: #10b981;
+  --chart-1: #60a5fa;
   --chart-2: #ff914d;
-  --chart-3: #89cff0;
+  --chart-3: #93c5fd;
   --chart-4: #374151;
-  --chart-5: #34d399;
+  --chart-5: #93c5fd;
 
   /* Sidebar colors for dark mode */
   --sidebar: #18181b;
   --sidebar-foreground: #fafafa;
-  --sidebar-primary: #10b981;
+  --sidebar-primary: #60a5fa;
   --sidebar-primary-foreground: #0a0a0a;
   --sidebar-accent: #27272a;
   --sidebar-accent-foreground: #fafafa;
   --sidebar-border: #3f3f46;
-  --sidebar-ring: #10b981;
+  --sidebar-ring: #60a5fa;
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -177,13 +177,13 @@
 
   /* Selection styles */
   ::selection {
-    background-color: rgb(16 185 129 / 0.3); /* emerald-500/30 */
+    background-color: rgb(18 65 112 / 0.2); /* navy/30 */
     color: inherit;
   }
 
   /* Focus styles */
   :focus-visible {
-    outline: 2px solid rgb(16 185 129); /* emerald-500 */
+    outline: 2px solid rgb(18 65 112); /* navy */
     outline-offset: 2px;
   }
 

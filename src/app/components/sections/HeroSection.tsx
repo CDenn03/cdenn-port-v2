@@ -40,7 +40,7 @@ export const HeroSection = () => {
                 href="#contact"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="px-8 py-4 bg-emerald-600 text-white rounded-full text-lg font-bold hover:bg-emerald-500 transition-all flex items-center gap-2 shadow-lg shadow-emerald-600/20"
+                className="px-8 py-4 bg-[#124170] text-white rounded-full text-lg font-bold hover:bg-[#1a5a8a] transition-all flex items-center gap-2 shadow-lg shadow-[#124170]/20"
               >
                 Start a Project <ArrowRight size={20} />
               </motion.a>

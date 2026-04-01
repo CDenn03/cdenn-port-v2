@@ -41,7 +41,7 @@ export const Navbar = () => {
     <nav className="fixed top-0 w-full z-50 border-b transition-colors duration-300 border-zinc-200 bg-zinc-50/80 dark:border-zinc-800 dark:bg-zinc-950/80 backdrop-blur-md">
       <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
         <div className="text-3xl font-bold tracking-tighter text-slate-900 dark:text-zinc-100">
-          CDENN<span className="text-emerald-500">.</span>
+          CDENN<span className="text-[#124170] dark:text-blue-400">.</span>
         </div>
 
         <div className="hidden md:flex items-center gap-8">
@@ -49,7 +49,7 @@ export const Navbar = () => {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium hover:text-emerald-500 transition-colors text-zinc-600 dark:text-zinc-400"
+              className="text-sm font-medium hover:text-[#124170] dark:hover:text-blue-400 transition-colors text-zinc-600 dark:text-zinc-400"
             >
               {link.label}
             </a>
@@ -92,7 +92,7 @@ export const Navbar = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block py-3 text-lg font-medium hover:text-emerald-500 transition-colors text-zinc-700 dark:text-zinc-300"
+                  className="block py-3 text-lg font-medium hover:text-[#124170] dark:hover:text-blue-400 transition-colors text-zinc-700 dark:text-zinc-300"
                 >
                   {link.label}
                 </MotionLink>
