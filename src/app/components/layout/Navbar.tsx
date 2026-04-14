@@ -10,7 +10,7 @@ const navLinks = [
   { href: "#about", label: "About" },
   { href: "#experience", label: "Experience" },
   { href: "#solutions", label: "Solutions" },
-  { href: "#writing", label: "Writing" },
+  // { href: "#writing", label: "Writing" },
   { href: "#contact", label: "Contact" }
 ];
 
@@ -57,9 +57,9 @@ export const Navbar = () => {
 
           <ThemeToggle />
 
-          <button className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold transition-colors bg-slate-900 text-white hover:bg-slate-800 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-white">
+          {/* <button className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold transition-colors bg-slate-900 text-white hover:bg-slate-800 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-white">
             <Download size={14} /> Resume
-          </button>
+          </button> */}
         </div>
 
         <div className="flex md:hidden items-center gap-3">
@@ -103,9 +103,9 @@ export const Navbar = () => {
                 transition={{ delay: navLinks.length * 0.05 }}
                 className="mt-4"
               >
-                <button className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-base font-bold transition-colors bg-slate-900 text-white dark:bg-zinc-100 dark:text-zinc-900">
+                {/* <button className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-base font-bold transition-colors bg-slate-900 text-white dark:bg-zinc-100 dark:text-zinc-900">
                   <Download size={16} /> Download Resume
-                </button>
+                </button> */}
               </motion.div>
             </div>
           </motion.div>
