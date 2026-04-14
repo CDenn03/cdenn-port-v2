@@ -18,6 +18,7 @@ const techStack = {
   tools: ["Git", "GitHub", "Figma", "Adobe Tools"]
 };
 
+
 export const AboutSection = () => {
   return (
     <section id="about" className="py-32 px-6">
