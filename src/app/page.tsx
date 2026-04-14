@@ -30,8 +30,8 @@ export default function Portfolio() {
       <AboutSection />
       <ExperienceSection />
       <SolutionsSection />
-      <TestimonialsSection />
-      <WritingSection />
+      {/* <TestimonialsSection /> */}
+      {/* <WritingSection /> */}
       <ContactSection />
       <Footer />
       <BackToTop />

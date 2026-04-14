@@ -39,8 +39,18 @@ export const SolutionsSection = () => {
                 <div className={`md:col-span-5 ${
                   project.layout === 'right' ? 'md:order-first' : ''
                 }`}>
-                  <h3 className="text-2xl md:text-3xl font-bold mb-4 group-hover:text-emerald-500 transition-colors text-slate-900 dark:text-zinc-100">{project.title}</h3>
-                  <p className="text-base mb-6 text-zinc-600 dark:text-zinc-400">{project.description}</p>
+                  <div className="flex items-center gap-3 mb-4">
+                    <h3 className="text-2xl md:text-3xl font-bold group-hover:text-emerald-500 transition-colors text-slate-900 dark:text-zinc-100">{project.title}</h3>
+                    {project.ongoing && (
+                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-400 shrink-0">
+                        <span className="relative flex h-1.5 w-1.5">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
+                        </span>
+                        Ongoing
+                      </span>
+                    )}
+                  </div>                  <p className="text-base mb-6 text-zinc-600 dark:text-zinc-400">{project.description}</p>
 
                   <div className="space-y-4 mb-8">
                     <div>
