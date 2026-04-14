@@ -20,6 +20,7 @@ export interface Solution {
   layout: "left" | "right";
   websiteUrl?: string;
   codeUrl?: string;
+  ongoing?: boolean;
 }
 
 export interface Testimonial {

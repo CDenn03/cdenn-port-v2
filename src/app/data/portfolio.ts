@@ -56,7 +56,36 @@ export const solutions: Solution[] = [
     websiteUrl: "https://refine-mail-web.vercel.app/",
     codeUrl: "https://github.com/CDenn03/RefineMailWeb",
   },
+  {
+    title: "Ndoa Plan",
+    description:
+      "Offline-first wedding coordination platform built for Kenyan weddings, with M-Pesa payment reconciliation, multi-event planning, budget tracking, and real-time day-of execution tools.",
+    challenge:
+      "Building a reliable planning tool for low-connectivity environments while keeping financial data consistent across offline-first sync, M-Pesa callbacks, and a multi-user role system.",
+    results: [
+      { label: "Wedding Events Supported", value: "10+" },
+      { label: "Budget Accuracy", value: "Real-time" },
+      { label: "Offline Support", value: "Full CRUD" },
+    ],
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Prisma",
+      "PostgreSQL",
+      "Dexie (IndexedDB)",
+      "M-Pesa Daraja API",
+      "Supabase Storage",
+      "TanStack Query",
+      "Tailwind CSS",
+    ],
+    image: "/assets/project-shots/NdoaPlan.png",
+    layout: "right",
+    websiteUrl: "",
+    codeUrl: "https://github.com/CDenn03/ndoa_plan",
+    ongoing: true,
+  },
 ];
+
 
 export const testimonials: Testimonial[] = [
   {

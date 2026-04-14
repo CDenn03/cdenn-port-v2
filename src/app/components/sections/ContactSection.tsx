@@ -1,9 +1,51 @@
 "use client";
 
-import { Mail, Calendar, Clock } from "lucide-react";
+import { useState } from "react";
+import { Mail, Calendar, Clock, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 import { Reveal } from "../ui/Reveal";
 
+type Status = "idle" | "loading" | "success" | "error";
+
 export const ContactSection = () => {
+  const [status, setStatus] = useState<Status>("idle");
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus("loading");
+    setErrorMsg("");
+
+    const form = e.currentTarget;
+    const data = {
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      projectType: (form.elements.namedItem("projectType") as HTMLSelectElement).value,
+      budgetRange: (form.elements.namedItem("budgetRange") as HTMLSelectElement).value,
+      projectDescription: (form.elements.namedItem("projectDescription") as HTMLTextAreaElement).value,
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) {
+        const json = await res.json();
+        throw new Error(json.error || "Something went wrong.");
+      }
+
+      setStatus("success");
+      form.reset();
+    } catch (err) {
+      setErrorMsg(err instanceof Error ? err.message : "Something went wrong.");
+      setStatus("error");
+    }
+  };
+
+  const inputClass = "w-full border rounded-xl px-4 py-3 text-base focus:outline-none focus:border-emerald-500 transition-colors bg-white border-zinc-300 text-slate-900 dark:bg-zinc-900 dark:border-zinc-700 dark:text-zinc-100 dark:placeholder-zinc-600";
+
   return (
     <section id="contact" className="py-32 px-6 transition-colors duration-300 bg-white dark:bg-zinc-900">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16">
@@ -18,7 +60,7 @@ export const ContactSection = () => {
 
           <Reveal>
             <div className="space-y-6">
-              <a href="mailto:hello@chrisdennison.dev" className="flex items-center gap-4 transition-colors group text-zinc-700 hover:text-emerald-600 dark:text-zinc-300 dark:hover:text-emerald-400">
+              <a href="mailto:nd.dennis03@gmail.com" className="flex items-center gap-4 transition-colors group text-zinc-700 hover:text-emerald-600 dark:text-zinc-300 dark:hover:text-emerald-400">
                 <div className="w-12 h-12 rounded-full flex items-center justify-center transition-colors bg-zinc-50 border border-zinc-200 group-hover:border-emerald-500/30 dark:bg-zinc-800 dark:border-zinc-700 dark:group-hover:border-emerald-500/30">
                   <Mail size={20} />
                 </div>
@@ -49,36 +91,24 @@ export const ContactSection = () => {
         </div>
 
         <Reveal>
-          <form className="rounded-3xl p-8 space-y-6 shadow-sm bg-zinc-50 border border-zinc-200 dark:bg-zinc-800 dark:border-zinc-700" onSubmit={(e) => e.preventDefault()}>
+          <form
+            className="rounded-3xl p-8 space-y-6 shadow-sm bg-zinc-50 border border-zinc-200 dark:bg-zinc-800 dark:border-zinc-700"
+            onSubmit={handleSubmit}
+          >
             <div>
               <label htmlFor="name" className="block text-sm font-bold mb-2 text-zinc-700 dark:text-zinc-300">Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                className="w-full border rounded-xl px-4 py-3 text-base focus:outline-none focus:border-emerald-500 transition-colors bg-white border-zinc-300 text-slate-900 dark:bg-zinc-900 dark:border-zinc-700 dark:text-zinc-100 dark:placeholder-zinc-600"
-                placeholder="John Doe"
-              />
+              <input type="text" id="name" name="name" required className={inputClass} placeholder="John Doe" />
             </div>
+
             <div>
               <label htmlFor="email" className="block text-sm font-bold mb-2 text-zinc-700 dark:text-zinc-300">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                className="w-full border rounded-xl px-4 py-3 text-base focus:outline-none focus:border-emerald-500 transition-colors bg-white border-zinc-300 text-slate-900 dark:bg-zinc-900 dark:border-zinc-700 dark:text-zinc-100 dark:placeholder-zinc-600"
-                placeholder="john@company.com"
-              />
+              <input type="email" id="email" name="email" required className={inputClass} placeholder="john@company.com" />
             </div>
 
             <div className="grid grid-cols-2 gap-6">
               <div>
                 <label htmlFor="project-type" className="block text-sm font-bold mb-2 text-zinc-700 dark:text-zinc-300">Project Type</label>
-                <select
-                  id="project-type"
-                  name="projectType"
-                  className="w-full border rounded-xl px-4 py-3 text-base focus:outline-none focus:border-emerald-500 transition-colors appearance-none bg-white border-zinc-300 text-slate-900 dark:bg-zinc-900 dark:border-zinc-700 dark:text-zinc-100"
-                >
+                <select id="project-type" name="projectType" className={`${inputClass} appearance-none`}>
                   <option>Freelance / Contract</option>
                   <option>Full-time Opportunity</option>
                   <option>Consultation</option>
@@ -86,11 +116,7 @@ export const ContactSection = () => {
               </div>
               <div>
                 <label htmlFor="budget-range" className="block text-sm font-bold mb-2 text-zinc-700 dark:text-zinc-300">Budget Range</label>
-                <select
-                  id="budget-range"
-                  name="budgetRange"
-                  className="w-full border rounded-xl px-4 py-3 text-base focus:outline-none focus:border-emerald-500 transition-colors appearance-none bg-white border-zinc-300 text-slate-900 dark:bg-zinc-900 dark:border-zinc-700 dark:text-zinc-100"
-                >
+                <select id="budget-range" name="budgetRange" className={`${inputClass} appearance-none`}>
                   <option>&lt; $5k</option>
                   <option>$5k - $10k</option>
                   <option>$10k - $25k</option>
@@ -105,13 +131,30 @@ export const ContactSection = () => {
                 rows={4}
                 id="project-description"
                 name="projectDescription"
-                className="w-full border rounded-xl px-4 py-3 text-base focus:outline-none focus:border-emerald-500 transition-colors bg-white border-zinc-300 text-slate-900 dark:bg-zinc-900 dark:border-zinc-700 dark:text-zinc-100 dark:placeholder-zinc-600"
+                required
+                className={inputClass}
                 placeholder="Tell me about your project..."
-              ></textarea>
+              />
             </div>
 
-            <button type="submit" className="w-full bg-emerald-600 text-white text-base font-bold py-4 rounded-xl hover:bg-emerald-500 transition-colors shadow-lg shadow-emerald-600/20 cursor-pointer">
-              Send Message
+            {status === "success" && (
+              <div className="flex items-center gap-2 text-sm text-emerald-600 dark:text-emerald-400">
+                <CheckCircle size={16} /> Message sent! I&apos;ll get back to you soon.
+              </div>
+            )}
+
+            {status === "error" && (
+              <div className="flex items-center gap-2 text-sm text-red-500">
+                <AlertCircle size={16} /> {errorMsg}
+              </div>
+            )}
+
+            <button
+              type="submit"
+              disabled={status === "loading"}
+              className="w-full bg-emerald-600 text-white text-base font-bold py-4 rounded-xl hover:bg-emerald-500 transition-colors shadow-lg shadow-emerald-600/20 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            >
+              {status === "loading" ? <><Loader2 size={18} className="animate-spin" /> Sending...</> : "Send Message"}
             </button>
           </form>
         </Reveal>
