@@ -60,3 +60,4 @@ export const fallbackBudgetOptions = [
   { value: "$10,000 - $25,000", label: "$10,000 - $25,000" },
   { value: "$25,000+", label: "$25,000+" },
 ];
+
