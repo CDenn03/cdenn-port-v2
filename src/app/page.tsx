@@ -22,7 +22,7 @@ export default function Portfolio() {
   }
 
   return (
-    <main className="min-h-screen overflow-x-hidden relative transition-colors duration-300 bg-zinc-50 text-slate-900 dark:bg-zinc-950 dark:text-zinc-100">
+    <main className="min-h-screen overflow-x-hidden relative transition-colors duration-300 bg-[#FCF7F2] text-slate-900 dark:bg-[#0a0a0a] dark:text-[#FCF7F2]">
       <ScrollProgress />
       <BackgroundAmbience />
       <Navbar />

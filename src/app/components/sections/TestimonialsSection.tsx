@@ -8,7 +8,7 @@ export const TestimonialsSection = () => {
     <section className="py-32 px-6 transition-colors duration-300 bg-white/60 dark:bg-zinc-900/60">
       <div className="max-w-6xl mx-auto">
         <Reveal>
-          <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center text-slate-900 dark:text-zinc-100">What Clients Say</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center text-slate-900 dark:text-white">What Clients Say</h2>
         </Reveal>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -23,7 +23,7 @@ export const TestimonialsSection = () => {
                     {item.initials}
                   </div>
                   <div>
-                    <h4 className="text-base font-bold text-slate-900 dark:text-zinc-100">{item.author}</h4>
+                    <h4 className="text-base font-bold text-slate-900 dark:text-white">{item.author}</h4>
                     <p className="text-sm text-zinc-500">{item.role}</p>
                   </div>
                 </div>

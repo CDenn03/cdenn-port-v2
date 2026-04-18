@@ -16,7 +16,7 @@ export const StatsSection = () => {
         {stats.map((stat) => (
           <Reveal key={`${stat.label}-${stat.value}`} delay={stats.indexOf(stat) * 0.1}>
             <div className="flex flex-col">
-              <span className="text-3xl font-bold mb-2 text-slate-900 dark:text-zinc-100">{stat.value}</span>
+              <span className="text-3xl font-bold mb-2 text-slate-900 dark:text-white">{stat.value}</span>
               <span className="text-xs font-semibold uppercase tracking-widest text-zinc-500">{stat.label}</span>
             </div>
           </Reveal>

@@ -69,90 +69,86 @@
 }
 
 :root {
-  /* Your preferred color scheme */
-  --primary: #10b981; 
-  --secondary: #F17A21;
-  --accent: #2E3092;
-  --neutral: #f7d9bc;
+  /* Brand Color System */
+  --primary: #253c38; /* Emerald - Logo, primary UI, headings */
+  --secondary: #FCF7F2; /* Off-White - Backgrounds, negative space */
+  --accent: #C2A46D; /* Muted Gold - Minimal highlights (≤5%) */
+  --neutral: #FCF7F2;
   --success: #10b981;
   --error: #ef4444;
 
   /* Light theme variables for shadcn/ui compatibility */
   --radius: 0.625rem;
-  --background: #fafafa; 
-  --foreground: #0f172a; 
+  --background: #FCF7F2; /* Off-White background */
+  --foreground: #0f172a; /* Slate-900 for body text (better contrast) */
   --card: #ffffff;
   --card-foreground: #0f172a;
   --popover: #ffffff;
   --popover-foreground: #0f172a;
-  --primary-foreground: #ffffff;
-  --secondary-foreground: #0f172a;
+  --primary-foreground: #FCF7F2; /* Off-White on Emerald */
+  --secondary-foreground: #0f172a; /* Dark text on light backgrounds */
   --muted: #f4f4f5; 
-  --muted-foreground: #71717a; 
+  --muted-foreground: #52525b; /* zinc-600 for better readability */
   --accent-foreground: #0f172a;
   --destructive: #dc2626;
-  --border: #e4e4e7; /* zinc-200 */
+  --border: #e4e4e7;
   --input: #e4e4e7;
-  --ring: #10b981; /* emerald-500 */
+  --ring: #253C38; /* Emerald focus ring */
 
   /* Chart colors for light mode */
-  --chart-1: #10b981;
-  --chart-2: #F17A21;
-  --chart-3: #2E3092;
-  --chart-4: #f7d9bc;
-  --chart-5: #10b981;
+  --chart-1: #253C38;
+  --chart-2: #C2A46D;
+  --chart-3: #FCF7F2;
+  --chart-4: #71717a;
+  --chart-5: #253C38;
 
   /* Sidebar colors for light mode */
-  --sidebar: #f8fafc;
-  --sidebar-foreground: #1e293b;
-  --sidebar-primary: #10b981;
-  --sidebar-primary-foreground: #ffffff;
+  --sidebar: #FCF7F2;
+  --sidebar-foreground: #0f172a;
+  --sidebar-primary: #253C38;
+  --sidebar-primary-foreground: #FCF7F2;
   --sidebar-accent: #f1f5f9;
-  --sidebar-accent-foreground: #1e293b;
-  --sidebar-border: #e2e8f0;
-  --sidebar-ring: #10b981;
+  --sidebar-accent-foreground: #0f172a;
+  --sidebar-border: #e4e4e7;
+  --sidebar-ring: #253C38;
 }
 
 .dark {
-  /* Your preferred dark mode color scheme */
-  --primary: #10b981; /* emerald-500 consistent across themes */
-  --secondary: #ff914d;
-  --accent: #89cff0;
-  --neutral: #1e1e1e;
+  --primary: #253C38;
+  --secondary: #FCF7F2;
+  --accent: #C2A46D;
+  --neutral: #0a0a0a;
 
-  /* Dark theme variables for shadcn/ui compatibility */
-  --background: #09090b; /* zinc-950 */
-  --foreground: #fafafa; /* zinc-50 */
-  --card: #18181b; /* zinc-900 */
-  --card-foreground: #fafafa;
-  --popover: #18181b;
-  --popover-foreground: #fafafa;
-  --primary-foreground: #0a0a0a;
-  --secondary-foreground: #fafafa;
-  --muted: #27272a; /* zinc-800 */
-  --muted-foreground: #a1a1aa; /* zinc-400 */
-  --accent-foreground: #fafafa;
+  --background: #0a0a0a;
+  --foreground: #FCF7F2;
+  --card: #111111;
+  --card-foreground: #FCF7F2;
+  --popover: #111111;
+  --popover-foreground: #FCF7F2;
+  --primary-foreground: #FCF7F2;
+  --secondary-foreground: #0a0a0a;
+  --muted: #1a1a1a;
+  --muted-foreground: #a0a0a0;
+  --accent-foreground: #FCF7F2;
   --destructive: #ef4444;
-  --border: #3f3f46; /* zinc-700 */
-  --input: #3f3f46;
-  --ring: #10b981; /* emerald-500 */
+  --border: #222222;
+  --input: #1a1a1a;
+  --ring: #FCF7F2;
 
-  /* Chart colors for dark mode */
-  --chart-1: #10b981;
-  --chart-2: #ff914d;
-  --chart-3: #89cff0;
-  --chart-4: #374151;
-  --chart-5: #34d399;
+  --chart-1: #FCF7F2;
+  --chart-2: #C2A46D;
+  --chart-3: #253C38;
+  --chart-4: #555555;
+  --chart-5: #FCF7F2;
 
-  /* Sidebar colors for dark mode */
-  --sidebar: #18181b;
-  --sidebar-foreground: #fafafa;
-  --sidebar-primary: #10b981;
-  --sidebar-primary-foreground: #0a0a0a;
-  --sidebar-accent: #27272a;
-  --sidebar-accent-foreground: #fafafa;
-  --sidebar-border: #3f3f46;
-  --sidebar-ring: #10b981;
+  --sidebar: #111111;
+  --sidebar-foreground: #FCF7F2;
+  --sidebar-primary: #253C38;
+  --sidebar-primary-foreground: #FCF7F2;
+  --sidebar-accent: #1a1a1a;
+  --sidebar-accent-foreground: #FCF7F2;
+  --sidebar-border: #222222;
+  --sidebar-ring: #FCF7F2;
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -172,18 +168,71 @@
   body {
     @apply bg-background text-foreground;
     font-family: inherit;
+    font-weight: 400; /* Regular for body text */
+    line-height: 1.6; /* 1.5-1.7 range for readability */
     transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Typography System */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600; /* Medium-Bold range (500-700) */
+    letter-spacing: -0.015em; /* -1.5% tracking for headlines */
+    line-height: 1.2;
+  }
+
+  h1 {
+    font-weight: 700; /* Bold for main headlines */
+    letter-spacing: -0.02em; /* -2% tracking */
+  }
+
+  h2 {
+    font-weight: 600;
+    letter-spacing: -0.015em;
+  }
+
+  h3, h4 {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  p {
+    max-width: 70ch; /* 65-75 character limit for readability */
+    line-height: 1.6;
+  }
+
+  /* UI Labels */
+  label, button, .ui-label {
+    font-weight: 500; /* Medium for UI elements */
+    letter-spacing: 0.01em; /* +1% for clarity */
+  }
+
+  /* ALL CAPS labels */
+  .label-caps {
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    font-size: 0.875rem;
   }
 
   /* Selection styles */
   ::selection {
-    background-color: rgb(16 185 129 / 0.3); /* emerald-500/30 */
+    background-color: rgb(37 60 56 / 0.3); /* Emerald/30 */
+    color: inherit;
+  }
+
+  .dark ::selection {
+    background-color: rgb(252 247 242 / 0.3); /* Off-White/30 */
     color: inherit;
   }
 
   /* Focus styles */
   :focus-visible {
-    outline: 2px solid rgb(16 185 129); /* emerald-500 */
+    outline: 2px solid rgb(37 60 56); /* Emerald */
+    outline-offset: 2px;
+  }
+
+  .dark :focus-visible {
+    outline: 2px solid rgb(252 247 242); /* Off-White */
     outline-offset: 2px;
   }
 
@@ -196,6 +245,80 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* 8px Grid System Spacing */
+  .space-1 { margin: 0.5rem; } /* 8px */
+  .space-2 { margin: 1rem; } /* 16px */
+  .space-3 { margin: 1.5rem; } /* 24px */
+  .space-4 { margin: 2rem; } /* 32px */
+  .space-5 { margin: 2.5rem; } /* 40px */
+  .space-6 { margin: 3rem; } /* 48px */
+  .space-8 { margin: 4rem; } /* 64px */
+  .space-10 { margin: 5rem; } /* 80px */
+  .space-12 { margin: 6rem; } /* 96px */
+
+  /* Accent color utility (use sparingly ≤5%) */
+  .accent-gold {
+    color: #C2A46D;
+  }
+
+  .bg-accent-gold {
+    background-color: #C2A46D;
+  }
+
+  .border-accent-gold {
+    border-color: #C2A46D;
+  }
+
+  /* Brand color utilities */
+  .text-brand-emerald {
+    color: #253C38;
+  }
+
+  .dark .text-brand-emerald {
+    color: #fafafa; /* Light text in dark mode */
+  }
+
+  .bg-brand-emerald {
+    background-color: #253C38;
+  }
+
+  .dark .bg-brand-emerald {
+    background-color: #18181b; /* Dark background in dark mode */
+  }
+
+  .text-brand-off-white {
+    color: #FCF7F2;
+  }
+
+  .dark .text-brand-off-white {
+    color: #fafafa;
+  }
+
+  .bg-brand-off-white {
+    background-color: #FCF7F2;
+  }
+
+  .dark .bg-brand-off-white {
+    background-color: #18181b;
+  }
+
+  /* Semantic text colors for better contrast */
+  .text-body {
+    color: #52525b; /* zinc-600 in light mode */
+  }
+
+  .dark .text-body {
+    color: #d4d4d8; /* zinc-300 in dark mode */
+  }
+
+  .text-heading {
+    color: #253C38; /* Emerald in light mode */
+  }
+
+  .dark .text-heading {
+    color: #FCF7F2; /* Off-White in dark mode */
   }
 }
 
