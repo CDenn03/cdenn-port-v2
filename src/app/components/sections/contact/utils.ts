@@ -47,8 +47,8 @@ export function buildBudgetOptions(currency: string) {
   return [
     { value: "prefer-not", label: "Prefer not to say" },
     { value: `< ${formatBudget(5000, currency)}`, label: `< ${formatBudget(5000, currency)}` },
-    { value: `${formatBudget(5000, currency)} – ${formatBudget(10000, currency)}`, label: `${formatBudget(5000, currency)} – ${formatBudget(10000, currency)}` },
-    { value: `${formatBudget(10000, currency)} – ${formatBudget(25000, currency)}`, label: `${formatBudget(10000, currency)} – ${formatBudget(25000, currency)}` },
+    { value: `${formatBudget(5000, currency)} - ${formatBudget(10000, currency)}`, label: `${formatBudget(5000, currency)} - ${formatBudget(10000, currency)}` },
+    { value: `${formatBudget(10000, currency)} - ${formatBudget(25000, currency)}`, label: `${formatBudget(10000, currency)} - ${formatBudget(25000, currency)}` },
     { value: `${formatBudget(25000, currency)}+`, label: `${formatBudget(25000, currency)}+` },
   ];
 }
@@ -56,7 +56,7 @@ export function buildBudgetOptions(currency: string) {
 export const fallbackBudgetOptions = [
   { value: "prefer-not", label: "Prefer not to say" },
   { value: "< $5,000", label: "< $5,000" },
-  { value: "$5,000 – $10,000", label: "$5,000 – $10,000" },
-  { value: "$10,000 – $25,000", label: "$10,000 – $25,000" },
+  { value: "$5,000 - $10,000", label: "$5,000 - $10,000" },
+  { value: "$10,000 - $25,000", label: "$10,000 - $25,000" },
   { value: "$25,000+", label: "$25,000+" },
 ];
