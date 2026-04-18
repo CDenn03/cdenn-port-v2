@@ -84,7 +84,6 @@ export default function PrivacyPage() {
         </div>
       </div>
 
-      {/* Content */}
       <div className="max-w-3xl mx-auto px-6 py-16 md:py-24">
         <div className="mb-12">
           <p className="text-xs font-bold uppercase tracking-widest text-primary dark:text-[#888888] mb-4">
@@ -131,7 +130,7 @@ export default function PrivacyPage() {
         </div>
 
         <div className="mt-16 pt-8 border-t border-zinc-200 dark:border-[#1a1a1a]">
-          {/* Privacy Request Form */}
+
           <div className="mb-16">
             <h2 className="text-2xl font-bold mb-2 text-slate-900 dark:text-[#FCF7F2]">
               Submit a Privacy Request

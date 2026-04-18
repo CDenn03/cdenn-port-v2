@@ -54,7 +54,7 @@ export const HeroSection = () => {
 
         <Reveal delay={0.4}>
           <div className="relative group order-1 md:order-2">
-            <div className="relative rounded-2xl overflow-hidden aspect-[3/4] md:aspect-3/4 shadow-2xl bg-white border border-zinc-200 dark:bg-zinc-900 dark:border-zinc-800">
+            <div className="relative rounded-2xl overflow-hidden aspect-3/4 md:aspect-3/4 shadow-2xl bg-white border border-zinc-200 dark:bg-zinc-900 dark:border-zinc-800">
               <Image
                 src="/assets/images/port-photo-4.png"
                 alt="CDenn - Software Engineer"

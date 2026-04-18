@@ -32,6 +32,7 @@ export default function Portfolio() {
       <SolutionsSection />
       {/* <TestimonialsSection /> */}
       {/* <WritingSection /> */}
+      <div className="w-4/5 h-px bg-zinc-200 dark:bg-[#1a1a1a]" />
       <ContactSection />
       <Footer />
       <BackToTop />
