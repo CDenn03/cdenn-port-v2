@@ -30,8 +30,6 @@ export const solutions: Solution[] = [
     tags: ["Next.js", "TypeScript", "TailwindCSS", "Radix UI", "JWT"],
     image: "/assets/project-shots/InsureMaster.png",
     layout: "right",
-    websiteUrl: "https://insuremaster.example.com",
-    codeUrl: "https://github.com/example/insuremaster",
   },
   {
     title: "Email Refiner",
