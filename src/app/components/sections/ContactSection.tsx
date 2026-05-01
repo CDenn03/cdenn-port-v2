@@ -76,7 +76,7 @@ export const ContactSection = () => {
             </h2>
             <p className="text-lg mb-10 text-zinc-600 dark:text-[#b0b0b0] leading-relaxed">
               Whether you have a project in mind, want to explore a collaboration, or just want
-              to talk tech — I&apos;m open to it. Fill in the form and I&apos;ll get back to you.
+              to talk tech - I&apos;m open to it. Fill in the form and I&apos;ll get back to you.
             </p>
           </Reveal>
 
@@ -99,7 +99,7 @@ export const ContactSection = () => {
           </Reveal>
         </div>
 
-        {/* Right — form */}
+        {/* Right - form */}
         <Reveal>
           {status === "success" ? (
             <div className="rounded-3xl p-10 flex flex-col items-center justify-center text-center gap-4 bg-white border border-zinc-200 dark:bg-[#1a1a1a] dark:border-[#2a2a2a] min-h-[400px]">

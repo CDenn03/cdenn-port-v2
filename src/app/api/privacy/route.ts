@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
     from: "Privacy Request <onboarding@resend.dev>",
     to: contactEmail,
     replyTo: email,
-    subject: `Privacy Request: ${requestType} — from ${name}`,
+    subject: `Privacy Request: ${requestType} - from ${name}`,
     html: `
       <h2>Privacy Data Request</h2>
       <p><strong>Name:</strong> ${name}</p>

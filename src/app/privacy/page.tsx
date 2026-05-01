@@ -54,7 +54,7 @@ const sections = [
   },
   {
     title: "7. Data Security",
-    content: `I take reasonable precautions to protect your information. All data is transmitted over HTTPS. I do not store form submissions in any database — messages are forwarded directly to my email and are subject to my email provider's security practices.`,
+    content: `I take reasonable precautions to protect your information. All data is transmitted over HTTPS. I do not store form submissions in any database - messages are forwarded directly to my email and are subject to my email provider's security practices.`,
   },
   {
     title: "8. Children's Privacy",
@@ -93,7 +93,7 @@ export default function PrivacyPage() {
             Privacy Policy
           </h1>
           <p className="text-lg text-zinc-600 dark:text-[#b0b0b0] leading-relaxed">
-            This site is a personal portfolio. I keep things simple — I only collect what you
+            This site is a personal portfolio. I keep things simple - I only collect what you
             choose to share, and I use it only to respond to you.
           </p>
         </div>
@@ -114,7 +114,7 @@ export default function PrivacyPage() {
                       key={item}
                       className="text-zinc-600 dark:text-[#b0b0b0] flex gap-2 items-start"
                     >
-                      <span className="text-primary dark:text-[#888888] mt-0.5 shrink-0">—</span>
+                      <span className="text-primary dark:text-[#888888] mt-0.5 shrink-0">-</span>
                       {item}
                     </li>
                   ))}
