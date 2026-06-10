@@ -69,7 +69,7 @@ const sections = [
 export default function PrivacyPage() {
   return (
     <main className="min-h-screen bg-[#FCF7F2] dark:bg-[#0a0a0a] text-slate-900 dark:text-[#FCF7F2]">
-      <SubpageNav backHref="/" backLabel="Back to Home" />
+      <SubpageNav backHref="/" backLabel="Back" />
 
       <div className="max-w-3xl mx-auto px-6 py-16 md:py-24">
         <div className="mb-12">

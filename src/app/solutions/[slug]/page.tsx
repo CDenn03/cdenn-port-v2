@@ -50,7 +50,7 @@ export default async function SolutionDetailPage({
 
   return (
     <main className="min-h-screen transition-colors duration-300 bg-[#FCF7F2] text-slate-900 dark:bg-[#0a0a0a] dark:text-[#FCF7F2]">
-      <SubpageNav backHref="/solutions" backLabel="Back to Solutions" />
+      <SubpageNav backHref="/solutions" backLabel="Back" />
 
       <div className="max-w-6xl mx-auto px-6 py-16">
         {/* ── Title zone ── */}

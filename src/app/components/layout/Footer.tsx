@@ -60,7 +60,7 @@ export const Footer = () => {
         </div>
 
         <div className="border-t pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm border-zinc-200 text-zinc-400 dark:border-[#1a1a1a] dark:text-[#555555]">
-          <p>© 2025 CDenn. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} CDenn. All rights reserved.</p>
           <div className="flex gap-3 items-center pr-20 md:pr-0">
             <SocialIcon
               network="github"
