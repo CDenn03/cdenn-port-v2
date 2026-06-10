@@ -1,9 +1,12 @@
 "use client";
 
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, GitBranch } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { Reveal } from "../ui/Reveal";
 import { solutions } from "@/src/app/data/portfolio";
+
+const featured = solutions.filter((s) => s.featured);
 
 export const SolutionsSection = () => {
   return (
@@ -15,7 +18,7 @@ export const SolutionsSection = () => {
         </Reveal>
 
         <div className="space-y-24">
-          {solutions.map((project) => (
+          {featured.map((project) => (
             <Reveal key={`${project.title}-${project.layout}`}>
               <div className={`grid md:grid-cols-12 gap-12 items-center ${
                 project.layout === 'right' ? 'md:flex-row-reverse' : ''
@@ -39,7 +42,7 @@ export const SolutionsSection = () => {
                 <div className={`md:col-span-5 ${
                   project.layout === 'right' ? 'md:order-first' : ''
                 }`}>
-                  <div className="flex items-center gap-3 mb-4">
+                  <div className="flex items-center gap-3 mb-4 flex-wrap">
                     <h3 className="text-2xl md:text-3xl font-bold transition-colors text-slate-900 dark:text-[#FCF7F2]">{project.title}</h3>
                     {project.ongoing && (
                       <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary dark:bg-[#FCF7F2]/10 dark:text-[#FCF7F2] shrink-0">
@@ -48,6 +51,12 @@ export const SolutionsSection = () => {
                           <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-primary dark:bg-[#FCF7F2]"></span>
                         </span>
                         <span>Ongoing</span>
+                      </span>
+                    )}
+                    {project.openSource && (
+                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400 shrink-0">
+                        <GitBranch size={11} />
+                        Open Source
                       </span>
                     )}
                   </div>
@@ -100,6 +109,18 @@ export const SolutionsSection = () => {
             </Reveal>
           ))}
         </div>
+
+        <Reveal>
+          <div className="mt-16 flex justify-center">
+            <Link
+              href="/solutions"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border font-semibold text-sm transition-colors border-zinc-300 text-slate-800 hover:bg-slate-900 hover:text-white hover:border-slate-900 dark:border-[#2a2a2a] dark:text-[#FCF7F2] dark:hover:bg-[#FCF7F2] dark:hover:text-[#0a0a0a]"
+            >
+              View all solutions
+              <ExternalLink size={14} />
+            </Link>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

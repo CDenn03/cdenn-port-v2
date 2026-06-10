@@ -8,12 +8,15 @@ export interface Experience {
 
 export interface Solution {
   title: string;
+  slug: string;
   description: string;
+  story: string;
   challenge: string;
   solution?: string;
   results: Array<{
     label: string;
     value: string;
+    trend?: string;
   }>;
   tags: string[];
   image: string;
@@ -21,6 +24,18 @@ export interface Solution {
   websiteUrl?: string;
   codeUrl?: string;
   ongoing?: boolean;
+  openSource?: boolean;
+  featured?: boolean;
+  // profile fields
+  year: string;
+  role: string;
+  duration: string;
+  category: string;
+  // detail page fields
+  summary?: string;
+  heroPosition?: string;
+  process?: Array<{ step: string; detail: string }>;
+  screenshots?: Array<{ src: string; caption: string }>;
 }
 
 export interface Testimonial {

@@ -1,6 +1,6 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 import { PrivacyRequestForm } from "./PrivacyRequestForm";
+import { SubpageNav } from "@/src/app/components/layout/SubpageNav";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | CDenn",
@@ -69,20 +69,7 @@ const sections = [
 export default function PrivacyPage() {
   return (
     <main className="min-h-screen bg-[#FCF7F2] dark:bg-[#0a0a0a] text-slate-900 dark:text-[#FCF7F2]">
-      {/* Header */}
-      <div className="border-b border-zinc-200 dark:border-[#1a1a1a]">
-        <div className="max-w-3xl mx-auto px-6 py-6 flex items-center justify-between">
-          <Link
-            href="/"
-            className="text-sm font-medium text-zinc-500 dark:text-[#888888] hover:text-primary dark:hover:text-[#FCF7F2] transition-colors"
-          >
-            ← Back to site
-          </Link>
-          <span className="text-xs text-zinc-400 dark:text-[#555555]">
-            Effective: April 18, 2026
-          </span>
-        </div>
-      </div>
+      <SubpageNav backHref="/" backLabel="Back to Home" />
 
       <div className="max-w-3xl mx-auto px-6 py-16 md:py-24">
         <div className="mb-12">
