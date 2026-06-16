@@ -19,7 +19,8 @@ export const solutions: Solution[] = [
   {
     slug: "insuremaster",
     title: "InsureMaster - Bancassurance Platform",
-    summary: "Multi-tenant bancassurance SaaS for Kenyan banks — managing policies, claims, and compliance reporting in one place.",
+    summary:
+      "Multi-tenant bancassurance SaaS for Kenyan banks — managing policies, claims, and compliance reporting in one place.",
     description:
       "A multi-tenant SaaS platform for managing insurance policy lifecycles, from onboarding to claims and reporting.",
     story:
@@ -37,7 +38,7 @@ export const solutions: Solution[] = [
     image: "/assets/project-shots/InsureMaster.png",
     layout: "right",
     featured: true,
-    year: "2024",
+    year: "2025",
     role: "Frontend Lead",
     duration: "8 months",
     category: "SaaS / Fintech",
@@ -45,7 +46,8 @@ export const solutions: Solution[] = [
   {
     slug: "email-refiner",
     title: "Email Refiner",
-    summary: "Chrome extension that rewrites email tone inside Gmail and Zimbra — no copy-paste, no context switching.",
+    summary:
+      "Chrome extension that rewrites email tone inside Gmail and Zimbra — no copy-paste, no context switching.",
     description:
       "AI-powered Chrome extension that enhances email writing in Gmail and Zimbra with real-time tone transformation and preview.",
     story:
@@ -59,14 +61,20 @@ export const solutions: Solution[] = [
       { label: "Supported Clients", value: "2" },
       { label: "Response Time", value: "<1s" },
     ],
-    tags: ["React", "TypeScript", "Chrome Extensions", "OpenAI API", "MutationObserver"],
+    tags: [
+      "React",
+      "TypeScript",
+      "Chrome Extensions",
+      "OpenAI API",
+      "MutationObserver",
+    ],
     image: "/assets/project-shots/Email.png",
     layout: "left",
     featured: true,
     websiteUrl: "https://refine-mail-web.vercel.app/",
     codeUrl: "https://github.com/CDenn03/RefineMailWeb",
     openSource: true,
-    year: "2024",
+    year: "2026",
     role: "Solo Developer",
     duration: "3 months",
     category: "Browser Extension / AI",
@@ -74,7 +82,8 @@ export const solutions: Solution[] = [
   {
     slug: "ndoa-plan",
     title: "Ndoa Plan",
-    summary: "Offline-first wedding coordination platform for Kenyan events — M-Pesa reconciliation, budget tracking, and day-of execution tools.",
+    summary:
+      "Offline-first wedding coordination platform for Kenyan events — M-Pesa reconciliation, budget tracking, and day-of execution tools.",
     description:
       "Offline-first wedding coordination platform built for Kenyan weddings, with M-Pesa payment reconciliation, multi-event planning, budget tracking, and real-time day-of execution tools.",
     story:
@@ -102,17 +111,57 @@ export const solutions: Solution[] = [
     image: "/assets/project-shots/NdoaPlan.png",
     layout: "right",
     featured: true,
-    websiteUrl: "",
-    codeUrl: "https://github.com/CDenn03/ndoa_plan",
+    websiteUrl: "https://ndoa-plan.vercel.app",
+    codeUrl: "",
     ongoing: true,
-    openSource: true,
-    year: "2025",
+    year: "2026",
     role: "Full-Stack Developer",
     duration: "Ongoing",
     category: "Event Tech / Fintech",
   },
+  {
+    slug: "sefer",
+    title: "Sefer",
+    summary:
+      "Offline-first PDF reader for Android — library management, persistent annotations, and an immersive reading experience.",
+    description:
+      "A clean, feature-rich PDF reader built with Flutter for Android. Manage a local library of documents, organise files into collections, annotate with highlights and freehand drawing, and resume reading exactly where you left off — all without a network connection.",
+    story:
+      "Most Android PDF readers are either too bloated or too bare. Sefer was built to hit the sweet spot — fast, offline-first, and genuinely useful. The annotation system was the hardest part: accurately mapping touch coordinates to PDF page space across different zoom levels and reading modes required a custom coordinate mapper layered on top of pdfrx's render pipeline. Persisting those annotations reliably in SQLite, then replaying them as overlays on re-open, took careful separation between the render layer and the data layer.",
+    challenge:
+      "Building a pixel-accurate annotation overlay that survives zoom, page changes, and reading mode switches, while keeping the SQLite persistence and Riverpod state in sync without leaking render details into business logic.",
+    solution:
+      "Implemented a custom CoordinateMapper that converts between screen and normalised PDF-space coordinates, backed by dedicated SQLite DAOs for annotations and notes. Riverpod providers isolate reader state from annotation state, and a debounced persistence service batches rapid library mutations into single writes.",
+    results: [
+      { label: "Reading Modes", value: "3" },
+      { label: "Annotation Types", value: "Highlight, Draw, Note" },
+      { label: "Offline Support", value: "Full CRUD" },
+    ],
+    tags: [
+      "Flutter",
+      "Dart",
+      "Riverpod",
+      "sqflite",
+      "pdfrx",
+      "Syncfusion PDF",
+      "GoRouter",
+      "Freezed",
+      "SharedPreferences",
+      "Google Fonts",
+    ],
+    image: "/assets/project-shots/sefer.jpeg",
+    layout: "right",
+    featured: false,
+    websiteUrl: "",
+    codeUrl: "https://github.com/CDenn03/pdf_app",
+    ongoing: true,
+    openSource: true,
+    year: "2026",
+    role: "Mobile Developer",
+    duration: "Ongoing",
+    category: "Productivity / Mobile",
+  },
 ];
-
 
 export const testimonials: Testimonial[] = [
   {
