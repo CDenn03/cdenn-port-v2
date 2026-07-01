@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         // Nothing to disallow right now — no auth-only or draft routes.
       },
     ],
-    sitemap: "https://cdenn.dev/sitemap.xml",
+    sitemap: "https://www.cdenn.dev/sitemap.xml",
   };
 }

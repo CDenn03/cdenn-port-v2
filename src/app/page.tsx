@@ -16,7 +16,7 @@ const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "CDenn",
-  url: "https://cdenn.dev",
+  url: "https://www.cdenn.dev",
   jobTitle: "Full-Stack Software Developer",
   description:
     "Full-stack software developer based in Nairobi, Kenya. Specialising in Next.js, TypeScript, and AI-integrated web applications.",
@@ -32,7 +32,7 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "CDenn",
-  url: "https://cdenn.dev",
+  url: "https://www.cdenn.dev",
 };
 
 export default function HomePage() {

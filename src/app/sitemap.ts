@@ -13,7 +13,10 @@ import { solutions } from "@/src/app/data/portfolio";
  * so the sitemap always stays in sync without manual updates.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://cdenn.dev";
+  // Must match the canonical domain Vercel serves — www.cdenn.dev (naked redirects there).
+  // If we list the naked domain here, every sitemap entry would be a redirect URL,
+  // wasting crawl budget and triggering Semrush's "sitemap contains redirecting URLs" error.
+  const base = "https://www.cdenn.dev";
 
   // Static routes
   const staticRoutes: MetadataRoute.Sitemap = [

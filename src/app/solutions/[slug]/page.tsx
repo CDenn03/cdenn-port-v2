@@ -32,7 +32,7 @@ export async function generateMetadata({
 
     openGraph: {
       type: "article",
-      url: `https://cdenn.dev/solutions/${project.slug}`,
+      url: `https://www.cdenn.dev/solutions/${project.slug}`,
       title: project.title,
       description,
       images: [
@@ -70,13 +70,13 @@ export default async function SolutionDetailPage({
     "@type": "CreativeWork",
     name: project.title,
     description: project.summary ?? project.description,
-    url: `https://cdenn.dev/solutions/${project.slug}`,
-    image: `https://cdenn.dev${project.image}`,
+    url: `https://www.cdenn.dev/solutions/${project.slug}`,
+    image: `https://www.cdenn.dev${project.image}`,
     dateCreated: project.year,
     author: {
       "@type": "Person",
       name: "CDenn",
-      url: "https://cdenn.dev",
+      url: "https://www.cdenn.dev",
     },
     ...(project.websiteUrl && { sameAs: project.websiteUrl }),
     ...(project.codeUrl && { codeRepository: project.codeUrl }),

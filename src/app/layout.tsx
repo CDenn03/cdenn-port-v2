@@ -12,7 +12,11 @@ const inter = Inter({
 
 export const metadata: Metadata = {
 
-  metadataBase: new URL("https://cdenn.dev"),
+  // metadataBase must match the canonical domain (www.cdenn.dev).
+  // All relative canonical/OG paths are prefixed with this value — if it
+  // points to the naked domain every resolved URL is a redirect, which
+  // triggers Semrush's "sitemap contains redirecting URLs" error and wastes crawl budget.
+  metadataBase: new URL("https://www.cdenn.dev"),
 
   title: {
     default: "CDenn | Full-Stack Software Developer",
@@ -27,14 +31,14 @@ export const metadata: Metadata = {
 
   openGraph: {
     type: "website",
-    url: "https://cdenn.dev",
+    url: "https://www.cdenn.dev",
     siteName: "CDenn",
     title: "CDenn | Full-Stack Software Developer",
     description:
       "Full-stack software developer based in Nairobi, Kenya. Specialising in Next.js, TypeScript, and AI-integrated web applications.",
     images: [
       {
-        url: "/opengraph-image", 
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
         alt: "CDenn — Full-Stack Software Developer",
