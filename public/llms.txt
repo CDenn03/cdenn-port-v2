@@ -18,6 +18,8 @@ Available for remote roles and freelance/contract projects worldwide.
 - https://www.cdenn.dev/solutions/email-refiner - Email Refiner: AI-powered Chrome extension for Gmail and Zimbra (React, OpenAI API, MutationObserver)
 - https://www.cdenn.dev/solutions/ndoa-plan - Ndoa Plan: offline-first wedding coordination platform with M-Pesa integration (Next.js, Prisma, PostgreSQL, Dexie)
 - https://www.cdenn.dev/solutions/sefer - Sefer: offline-first Android PDF reader with annotations (Flutter, Riverpod, sqflite)
+- https://www.cdenn.dev/services/fintech-automation - Service: M-Pesa Daraja API integration, STK push callback reconciliation, multi-tenant payment systems, and fintech automation for East African businesses
+- https://www.cdenn.dev/services/mvp-development - Service: full-stack MVP development in Next.js, TypeScript, and React — scoping, architecture, implementation, and deployment
 
 ## Profiles
 

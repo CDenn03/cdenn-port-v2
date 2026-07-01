@@ -2,10 +2,34 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ExternalLink, Github, Calendar, User, Clock } from "lucide-react";
+import { ExternalLink, Github, Calendar, User, Clock, ArrowRight } from "lucide-react";
 import { solutions, getAdjacentProjects } from "@/src/app/data/portfolio";
 import { SubpageNav } from "@/src/app/components/layout/SubpageNav";
 import { SolutionDetailClient } from "./SolutionDetailClient";
+
+const serviceCallout: Record<
+  string,
+  { label: string; body: string; href: string; linkText: string }
+> = {
+  "ndoa-plan": {
+    label: "Related Service",
+    body: "Payment edge-cases in high-volume events can drain startup capital fast. The M-Pesa reconciliation system built for Ndoa Plan is the same pattern I apply across fintech projects.",
+    href: "/services/fintech-automation",
+    linkText: "See Fintech Automation & M-Pesa Integration →",
+  },
+  insuremaster: {
+    label: "Related Service",
+    body: "InsureMaster was scoped, architected, and shipped as a production MVP within a fixed timeline. That end-to-end delivery process — from data model to deployment — is exactly what I offer for new products.",
+    href: "/services/mvp-development",
+    linkText: "See MVP Development & Full-Stack Engineering →",
+  },
+  "email-refiner": {
+    label: "Related Service",
+    body: "Email Refiner went from idea to a live Chrome extension in a single contract cycle. If you have a product that needs scoping, architecting, and shipping fast — that's the engagement model I work in.",
+    href: "/services/mvp-development",
+    linkText: "See MVP Development & Full-Stack Engineering →",
+  },
+};
 
 export async function generateStaticParams() {
   return solutions.map((s) => ({ slug: s.slug }));
@@ -208,6 +232,26 @@ export default async function SolutionDetailPage({
                 ))}
               </div>
             </div>
+
+            {serviceCallout[project.slug] && (() => {
+              const callout = serviceCallout[project.slug];
+              return (
+                <div className="rounded-2xl border border-zinc-200 dark:border-[#1e1e1e] bg-white dark:bg-[#111] p-5">
+                  <p className="text-xs font-bold uppercase tracking-widest mb-3 text-zinc-400 dark:text-[#555]">
+                    {callout.label}
+                  </p>
+                  <p className="text-sm leading-relaxed text-zinc-700 dark:text-[#b0b0b0] mb-4">
+                    {callout.body}
+                  </p>
+                  <Link
+                    href={callout.href}
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-900 dark:text-[#FCF7F2] hover:opacity-70 transition-opacity"
+                  >
+                    {callout.linkText} <ArrowRight size={13} />
+                  </Link>
+                </div>
+              );
+            })()}
 
             {project.screenshots && project.screenshots.length > 0 && (
               <div>
