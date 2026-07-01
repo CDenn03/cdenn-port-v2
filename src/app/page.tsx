@@ -1,6 +1,7 @@
 
 import type { Metadata } from "next";
 import PortfolioClient from "./PortfolioClient";
+import { sameAsUrls } from "@/src/app/data/social";
 
 export const metadata: Metadata = {
   title: "CDenn | Full-Stack Software Developer",
@@ -24,12 +25,7 @@ const personSchema = {
     addressLocality: "Nairobi",
     addressCountry: "KE",
   },
-  sameAs: [
-    "https://github.com/CDenn03",
-    "https://www.linkedin.com/in/cdenn03",
-    "https://x.com/C_MDennis",
-    "https://medium.com/@cdenn",
-  ],
+  sameAs: sameAsUrls,
 };
 
 const websiteSchema = {
