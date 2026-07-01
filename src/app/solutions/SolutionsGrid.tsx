@@ -145,7 +145,7 @@ export default function SolutionsGrid() {
   if (solutions.length === 0) {
     return (
       <p className="text-sm text-zinc-400 dark:text-[#555]">
-        No projects yet — check back soon.
+        No projects yet - check back soon.
       </p>
     );
   }

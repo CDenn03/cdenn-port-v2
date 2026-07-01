@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { solutions } from "@/src/app/data/portfolio";
 
 /**
- * sitemap.ts — served at /sitemap.xml by Next.js
+ * sitemap.ts - served at /sitemap.xml by Next.js
  *
  * Lists every URL on cdenn.dev with priority and change frequency hints.
  * Google doesn't treat these values as strict rules, but they signal
@@ -13,7 +13,7 @@ import { solutions } from "@/src/app/data/portfolio";
  * so the sitemap always stays in sync without manual updates.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
-  // Must match the canonical domain Vercel serves — www.cdenn.dev (naked redirects there).
+  // Must match the canonical domain Vercel serves - www.cdenn.dev (naked redirects there).
   // If we list the naked domain here, every sitemap entry would be a redirect URL,
   // wasting crawl budget and triggering Semrush's "sitemap contains redirecting URLs" error.
   const base = "https://www.cdenn.dev";

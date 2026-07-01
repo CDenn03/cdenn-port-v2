@@ -43,7 +43,7 @@ export const AboutSection = () => {
               I&apos;m a full-stack software developer based in Nairobi, Kenya, with 3+ years
               building production-grade web applications and fintech systems. My work spans
               Next.js application architecture, M-Pesa payment integrations, AI-powered tooling,
-              and offline-first mobile apps — across SaaS platforms, browser extensions, and
+              and offline-first mobile apps - across SaaS platforms, browser extensions, and
               event-tech products.
             </p>
           </Reveal>
@@ -53,7 +53,7 @@ export const AboutSection = () => {
               I&apos;ve led frontend architecture on multi-tenant bancassurance platforms, built
               Chrome extensions that inject into live Gmail DOM, and engineered offline-first
               systems that reconcile M-Pesa STK callbacks in real time. I work across the full
-              stack — from database schema and API design to component systems and deployment.
+              stack - from database schema and API design to component systems and deployment.
             </p>
           </Reveal>
 

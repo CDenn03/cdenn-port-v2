@@ -23,7 +23,7 @@ export async function generateMetadata({
   const description = project.summary ?? project.description;
 
   return {
-    title: `${project.title} — Solutions`,
+    title: `${project.title} - Solutions`,
     description,
 
     alternates: {
@@ -40,7 +40,7 @@ export async function generateMetadata({
           url: project.image,
           width: 1200,
           height: 630,
-          alt: `${project.title} — project screenshot`,
+          alt: `${project.title} - project screenshot`,
         },
       ],
     },
