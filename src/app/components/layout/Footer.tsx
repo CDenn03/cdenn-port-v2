@@ -38,7 +38,7 @@ export const Footer = () => {
               />
             </Link>
             <p className="text-sm text-zinc-500 dark:text-[#888888]">
-              Software Engineer helping businesses build scalable web products.
+              Full-stack software developer based in Nairobi, Kenya. Specializing in Next.js, fintech automation, and AI-integrated web applications.
             </p>
           </div>
 

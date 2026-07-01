@@ -17,14 +17,26 @@ const personSchema = {
   "@type": "Person",
   name: "CDenn",
   url: "https://www.cdenn.dev",
-  jobTitle: "Full-Stack Software Developer",
+  jobTitle: "Full-Stack Software Developer — Next.js, Fintech Systems & AI Integrations",
   description:
-    "Full-stack software developer based in Nairobi, Kenya. Specialising in Next.js, TypeScript, and AI-integrated web applications.",
+    "Full-stack software developer based in Nairobi, Kenya. Specializing in Next.js App Router architecture, M-Pesa Daraja API integrations, and AI-integrated web applications. Available for full-time roles, contracts, and consulting engagements globally.",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Nairobi",
     addressCountry: "KE",
   },
+  knowsAbout: [
+    "Next.js",
+    "TypeScript",
+    "React",
+    "M-Pesa Daraja API",
+    "Fintech Systems",
+    "AI-integrated web applications",
+    "PostgreSQL",
+    "Prisma ORM",
+    "Flutter",
+    "Chrome Extensions",
+  ],
   sameAs: sameAsUrls,
 };
 
