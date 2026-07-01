@@ -20,18 +20,35 @@ export async function generateMetadata({
   const project = solutions.find((s) => s.slug === slug);
   if (!project) return {};
 
+  const description = project.summary ?? project.description;
+
   return {
     title: `${project.title} — Solutions`,
-    description: project.summary ?? project.description,
-    openGraph: {
-      title: project.title,
-      description: project.summary ?? project.description,
-      images: [{ url: project.image, width: 1200, height: 630 }],
+    description,
+
+    alternates: {
+      canonical: `/solutions/${project.slug}`,
     },
+
+    openGraph: {
+      type: "article",
+      url: `https://cdenn.dev/solutions/${project.slug}`,
+      title: project.title,
+      description,
+      images: [
+        {
+          url: project.image,
+          width: 1200,
+          height: 630,
+          alt: `${project.title} — project screenshot`,
+        },
+      ],
+    },
+
     twitter: {
       card: "summary_large_image",
       title: project.title,
-      description: project.summary ?? project.description,
+      description,
       images: [project.image],
     },
   };
@@ -48,12 +65,36 @@ export default async function SolutionDetailPage({
 
   const { prev, next } = getAdjacentProjects(slug);
 
+  const projectSchema = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: project.title,
+    description: project.summary ?? project.description,
+    url: `https://cdenn.dev/solutions/${project.slug}`,
+    image: `https://cdenn.dev${project.image}`,
+    dateCreated: project.year,
+    author: {
+      "@type": "Person",
+      name: "CDenn",
+      url: "https://cdenn.dev",
+    },
+    ...(project.websiteUrl && { sameAs: project.websiteUrl }),
+    ...(project.codeUrl && { codeRepository: project.codeUrl }),
+    keywords: project.tags.join(", "),
+  };
+
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(projectSchema).replace(/</g, "\\u003c"),
+        }}
+      />
     <main className="min-h-screen transition-colors duration-300 bg-[#FCF7F2] text-slate-900 dark:bg-[#0a0a0a] dark:text-[#FCF7F2]">
       <SubpageNav backHref="/solutions" backLabel="Back" />
 
       <div className="max-w-6xl mx-auto px-6 py-16">
-        {/* ── Title zone ── */}
         <div className="mb-6">
           <h1 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-[#FCF7F2] mb-2">
             {project.title}
@@ -82,21 +123,16 @@ export default async function SolutionDetailPage({
           )}
         </div>
 
-        {/* ── Hero image ── */}
         <SolutionDetailClient project={project} />
 
-        {/* ── Two-column grid ── */}
         <div className="grid md:grid-cols-[1fr_280px] gap-8 mt-12">
-          {/* ── Main content ── */}
           <div className="space-y-10">
-            {/* Pull-quote description */}
             <p className="text-xl md:text-2xl font-medium leading-snug
               text-slate-800 dark:text-[#FCF7F2]
               border-l-4 border-amber-400 pl-5">
               {project.description}
             </p>
 
-            {/* Background / Story */}
             <div id="background">
               <h2 className="text-xs font-bold uppercase tracking-widest mb-4 text-zinc-400 dark:text-[#555]">
                 Background
@@ -110,7 +146,6 @@ export default async function SolutionDetailPage({
               </div>
             </div>
 
-            {/* Challenge */}
             <div id="challenge">
               <h2 className="text-xs font-bold uppercase tracking-widest mb-3 text-zinc-400 dark:text-[#555]">
                 Challenge
@@ -122,7 +157,6 @@ export default async function SolutionDetailPage({
               </div>
             </div>
 
-            {/* Solution */}
             {project.solution && (
               <div id="solution">
                 <h2 className="text-xs font-bold uppercase tracking-widest mb-3 text-zinc-400 dark:text-[#555]">
@@ -136,7 +170,6 @@ export default async function SolutionDetailPage({
               </div>
             )}
 
-            {/* Process */}
             {project.process && project.process.length > 0 && (
               <div id="process">
                 <h2 className="text-xs font-bold uppercase tracking-widest mb-4 text-zinc-400 dark:text-[#555]">
@@ -160,7 +193,6 @@ export default async function SolutionDetailPage({
               </div>
             )}
 
-            {/* Tech stack */}
             <div id="stack">
               <h2 className="text-xs font-bold uppercase tracking-widest mb-3 text-zinc-400 dark:text-[#555]">
                 Tech Stack
@@ -177,7 +209,6 @@ export default async function SolutionDetailPage({
               </div>
             </div>
 
-            {/* Screenshots */}
             {project.screenshots && project.screenshots.length > 0 && (
               <div>
                 <h2 className="text-xs font-bold uppercase tracking-widest mb-3 text-zinc-400 dark:text-[#555]">
@@ -197,9 +228,7 @@ export default async function SolutionDetailPage({
             )}
           </div>
 
-          {/* ── Sidebar ── */}
           <div className="space-y-6 order-first md:order-last md:sticky md:top-24 md:self-start">
-            {/* Project Profile */}
             <div className="rounded-2xl border border-zinc-200 dark:border-[#1e1e1e] bg-white dark:bg-[#111] p-5">
               <h3 className="text-xs font-bold uppercase tracking-widest mb-4 text-zinc-400 dark:text-[#555]">
                 Project Profile
@@ -220,7 +249,6 @@ export default async function SolutionDetailPage({
               </dl>
             </div>
 
-            {/* Impact (Results) */}
             <div id="impact" className="rounded-2xl border border-zinc-200 dark:border-[#1e1e1e] bg-white dark:bg-[#111] p-5">
               <h3 className="text-xs font-bold uppercase tracking-widest mb-4 text-zinc-400 dark:text-[#555]">
                 Impact
@@ -240,7 +268,6 @@ export default async function SolutionDetailPage({
               </div>
             </div>
 
-            {/* Links */}
             {(project.websiteUrl || project.codeUrl) && (
               <div className="rounded-2xl border border-zinc-200 dark:border-[#1e1e1e] bg-white dark:bg-[#111] p-5">
                 <h3 className="text-xs font-bold uppercase tracking-widest mb-4 text-zinc-400 dark:text-[#555]">
@@ -273,7 +300,6 @@ export default async function SolutionDetailPage({
           </div>
         </div>
 
-        {/* ── Contact CTA ── */}
         <div className="mt-16 pt-10 border-t border-zinc-200 dark:border-[#1e1e1e] text-center">
           <p className="text-sm text-zinc-400 dark:text-[#555] mb-3">
             Interested in building something similar?
@@ -288,7 +314,6 @@ export default async function SolutionDetailPage({
           </Link>
         </div>
 
-        {/* ── Prev / Next navigation ── */}
         {(prev || next) && (
           <div className="mt-8 flex items-center justify-between text-sm">
             {prev ? (
@@ -313,5 +338,6 @@ export default async function SolutionDetailPage({
         )}
       </div>
     </main>
+    </>
   );
 }
