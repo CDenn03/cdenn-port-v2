@@ -7,7 +7,13 @@ export const metadata: Metadata = {
   title: "Solutions",
   description:
     "Products and systems built by CDenn — the problem behind each one, how it was approached, and what came out the other side.",
+  // Canonical prevents this page appearing as a duplicate or redirect URL in audits.
+  alternates: {
+    canonical: "/solutions",
+  },
   openGraph: {
+    type: "website",
+    url: "https://www.cdenn.dev/solutions",
     title: "Solutions",
     description:
       "Products and systems built by CDenn — the problem behind each one, how it was approached, and what came out the other side.",

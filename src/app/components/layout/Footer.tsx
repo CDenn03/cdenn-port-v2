@@ -5,6 +5,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "@/src/app/hooks/useTheme";
+import { socialLinks } from "@/src/app/data/social";
 
 export const Footer = () => {
   const [hoveredIcon, setHoveredIcon] = useState<string | null>(null);
@@ -37,7 +38,7 @@ export const Footer = () => {
               />
             </Link>
             <p className="text-sm text-zinc-500 dark:text-[#888888]">
-              Software Engineer helping businesses build scalable web products.
+              Full-stack software developer based in Nairobi, Kenya. Specializing in Next.js, fintech automation, and AI-integrated web applications.
             </p>
           </div>
 
@@ -61,97 +62,26 @@ export const Footer = () => {
 
         <div className="border-t pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm border-zinc-200 text-zinc-400 dark:border-[#1a1a1a] dark:text-[#555555]">
           <p>© {new Date().getFullYear()} CDenn. All rights reserved.</p>
+          
           <div className="flex gap-3 items-center pr-20 md:pr-0">
-            <SocialIcon
-              network="github"
-              url="https://github.com/CDenn03"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                ...iconStyle("github"),
-                transition: "transform 0.2s ease, border 0.2s ease",
-                transform: hoveredIcon === "github" ? "scale(1.1)" : "scale(1)",
-              }}
-              bgColor="#0f172b"
-              className="dark:bg-[#f4f4f5]! cursor-pointer rounded-full"
-              onMouseEnter={() => setHoveredIcon("github")}
-              onMouseLeave={() => setHoveredIcon(null)}
-            />
-            <SocialIcon
-              network="linkedin"
-              url="https://www.linkedin.com/in/cdenn03"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                ...iconStyle("linkedin"),
-                transition: "transform 0.2s ease, border 0.2s ease",
-                transform: hoveredIcon === "linkedin" ? "scale(1.1)" : "scale(1)",
-              }}
-              bgColor="#0f172b"
-              className="dark:bg-[#f4f4f5]! cursor-pointer rounded-full"
-              onMouseEnter={() => setHoveredIcon("linkedin")}
-              onMouseLeave={() => setHoveredIcon(null)}
-            />
-            <SocialIcon
-              network="x"
-              url="https://x.com/C_MDennis"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                ...iconStyle("x"),
-                transition: "transform 0.2s ease, border 0.2s ease",
-                transform: hoveredIcon === "x" ? "scale(1.1)" : "scale(1)",
-              }}
-              bgColor="#0f172b"
-              className="dark:bg-[#f4f4f5]! cursor-pointer rounded-full"
-              onMouseEnter={() => setHoveredIcon("x")}
-              onMouseLeave={() => setHoveredIcon(null)}
-            />
-            <SocialIcon
-              network="behance"
-              url="https://www.behance.net/dennisndungu8"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                ...iconStyle("behance"),
-                transition: "transform 0.2s ease, border 0.2s ease",
-                transform: hoveredIcon === "behance" ? "scale(1.1)" : "scale(1)",
-              }}
-              bgColor="#0f172b"
-              className="dark:bg-[#f4f4f5]! cursor-pointer rounded-full"
-              onMouseEnter={() => setHoveredIcon("behance")}
-              onMouseLeave={() => setHoveredIcon(null)}
-            />
-            <SocialIcon
-              network="dribbble"
-              url="https://dribbble.com/CDenn"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                ...iconStyle("dribbble"),
-                transition: "transform 0.2s ease, border 0.2s ease",
-                transform: hoveredIcon === "dribbble" ? "scale(1.1)" : "scale(1)",
-              }}
-              bgColor="#0f172b"
-              className="dark:bg-[#f4f4f5]! cursor-pointer rounded-full"
-              onMouseEnter={() => setHoveredIcon("dribbble")}
-              onMouseLeave={() => setHoveredIcon(null)}
-            />
-            <SocialIcon
-              network="medium"
-              url="https://medium.com/@cdenn"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                ...iconStyle("medium"),
-                transition: "transform 0.2s ease, border 0.2s ease",
-                transform: hoveredIcon === "medium" ? "scale(1.1)" : "scale(1)",
-              }}
-              bgColor="#0f172b"
-              className="dark:bg-[#f4f4f5]! cursor-pointer rounded-full"
-              onMouseEnter={() => setHoveredIcon("medium")}
-              onMouseLeave={() => setHoveredIcon(null)}
-            />
+            {socialLinks.map((link) => (
+              <SocialIcon
+                key={link.network}
+                network={link.network}
+                url={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  ...iconStyle(link.network),
+                  transition: "transform 0.2s ease, border 0.2s ease",
+                  transform: hoveredIcon === link.network ? "scale(1.1)" : "scale(1)",
+                }}
+                bgColor="#0f172b"
+                className="dark:bg-[#f4f4f5]! cursor-pointer rounded-full"
+                onMouseEnter={() => setHoveredIcon(link.network)}
+                onMouseLeave={() => setHoveredIcon(null)}
+              />
+            ))}
           </div>
         </div>
       </div>

@@ -23,14 +23,15 @@ export const HeroSection = () => {
 
           <Reveal delay={0.1}>
             <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-6 md:mb-8 text-slate-900 dark:text-white">
-              Engineering high-performance <br className="hidden sm:block" />
-              web applications at scale.
+              Full-stack engineer. <br className="hidden sm:block" />
+              Fintech systems. <br className="hidden sm:block" />
+              AI-integrated products.
             </h1>
           </Reveal>
 
           <Reveal delay={0.2}>
             <p className="text-base md:text-lg lg:text-xl max-w-xl leading-relaxed mb-8 md:mb-10 text-zinc-700 dark:text-zinc-200">
-              I specialize in building robust, scalable Web solutions. I help teams and businesses deliver exceptional user experiences with clean, maintainable architecture.
+              I build production-grade web applications and fintech systems for teams and businesses across East Africa and globally. Based in Nairobi — available for full-time roles, contracts, and consulting engagements.
             </p>
           </Reveal>
 
@@ -66,7 +67,7 @@ export const HeroSection = () => {
 
               <div className="absolute bottom-4 md:bottom-6 left-4 md:left-6 right-4 md:right-6 backdrop-blur-md p-3 md:p-4 rounded-xl bg-white/95 border border-zinc-100 dark:bg-zinc-900/90 dark:border-zinc-800">
                 <p className="text-xs font-mono mb-1 text-zinc-500 dark:text-zinc-400">Current Focus</p>
-                <p className="text-sm md:text-base font-semibold text-slate-900 dark:text-white">React Server Components & Performance</p>
+                <p className="text-sm md:text-base font-semibold text-slate-900 dark:text-white">Next.js App Router · M-Pesa integrations · AI tooling</p>
               </div>
             </div>
           </div>
