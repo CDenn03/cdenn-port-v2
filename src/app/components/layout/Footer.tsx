@@ -53,6 +53,14 @@ export const Footer = () => {
           </div>
 
           <div>
+            <h4 className="font-bold text-base mb-4 text-slate-900 dark:text-[#FCF7F2]">Services</h4>
+            <ul className="space-y-3 text-sm text-zinc-600 dark:text-[#888888]">
+              <li><Link href="/services/fintech-automation" className="hover:text-primary dark:hover:text-[#FCF7F2]">Fintech Automation</Link></li>
+              <li><Link href="/services/mvp-development" className="hover:text-primary dark:hover:text-[#FCF7F2]">MVP Development</Link></li>
+            </ul>
+          </div>
+
+          <div>
             <h4 className="font-bold text-base mb-4 text-slate-900 dark:text-[#FCF7F2]">Legal</h4>
             <ul className="space-y-3 text-sm text-zinc-600 dark:text-[#888888]">
               <li><a href="/privacy" className="hover:text-primary dark:hover:text-[#FCF7F2] transition-colors">Privacy Policy</a></li>
