@@ -6,7 +6,7 @@
 
 ## About
 
-Clinton Dennis (CDenn) is a full-stack software developer based in Nairobi, Kenya.
+CDenn is a full-stack software developer based in Nairobi, Kenya.
 Specialising in Next.js, TypeScript, React, and AI-integrated web applications.
 Available for remote roles and freelance/contract projects worldwide.
 
