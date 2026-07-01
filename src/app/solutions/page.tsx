@@ -6,11 +6,11 @@ import SolutionsGrid from "./SolutionsGrid";
 export const metadata: Metadata = {
   title: "Solutions",
   description:
-    "Products and systems built by Clinton Dennis — the problem behind each one, how it was approached, and what came out the other side.",
+    "Products and systems built by CDenn — the problem behind each one, how it was approached, and what came out the other side.",
   openGraph: {
     title: "Solutions",
     description:
-      "Products and systems built by Clinton Dennis — the problem behind each one, how it was approached, and what came out the other side.",
+      "Products and systems built by CDenn — the problem behind each one, how it was approached, and what came out the other side.",
   },
 };
 

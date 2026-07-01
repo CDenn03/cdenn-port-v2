@@ -3,8 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./providers/ThemeProvider";
 
-// Typography: Inter as fallback for Satoshi
-// Weights: 400 (Regular), 500 (Medium), 600 (Semi-Bold), 700 (Bold)
 const inter = Inter({ 
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -13,8 +11,55 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "CDenn | Software Engineer | Frontend Developer",
-  description: "I craft high-performance Web Solutions that convert visitors into customers.",
+
+  metadataBase: new URL("https://cdenn.dev"),
+
+  title: {
+    default: "CDenn | Full-Stack Software Developer",
+    template: "%s | CDenn",
+  },
+  description:
+    "Full-stack software developer based in Nairobi, Kenya. Specialising in Next.js, TypeScript, and AI-integrated web applications. Open to remote roles and freelance projects.",
+
+  alternates: {
+    canonical: "/",
+  },
+
+  openGraph: {
+    type: "website",
+    url: "https://cdenn.dev",
+    siteName: "CDenn",
+    title: "CDenn | Full-Stack Software Developer",
+    description:
+      "Full-stack software developer based in Nairobi, Kenya. Specialising in Next.js, TypeScript, and AI-integrated web applications.",
+    images: [
+      {
+        url: "/opengraph-image", 
+        width: 1200,
+        height: 630,
+        alt: "CDenn — Full-Stack Software Developer",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "CDenn | Full-Stack Software Developer",
+    description:
+      "Full-stack software developer based in Nairobi, Kenya. Specialising in Next.js, TypeScript, and AI-integrated web applications.",
+    images: ["/opengraph-image"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
