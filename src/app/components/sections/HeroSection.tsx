@@ -31,7 +31,7 @@ export const HeroSection = () => {
 
           <Reveal delay={0.2}>
             <p className="text-base md:text-lg lg:text-xl max-w-xl leading-relaxed mb-8 md:mb-10 text-zinc-700 dark:text-zinc-200">
-              I build production-grade web applications and fintech systems for teams and businesses across East Africa and globally. Based in Nairobi — available for full-time roles, contracts, and consulting engagements.
+              I build production-grade web applications and fintech systems for teams and businesses across East Africa and globally. Based in Nairobi - available for full-time roles, contracts, and consulting engagements.
             </p>
           </Reveal>
 

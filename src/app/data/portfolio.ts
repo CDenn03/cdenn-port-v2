@@ -20,11 +20,11 @@ export const solutions: Solution[] = [
     slug: "insuremaster",
     title: "InsureMaster - Bancassurance Platform",
     summary:
-      "Multi-tenant bancassurance SaaS for Kenyan banks — managing policies, claims, and compliance reporting in one place.",
+      "Multi-tenant bancassurance SaaS for Kenyan banks - managing policies, claims, and compliance reporting in one place.",
     description:
       "A multi-tenant SaaS platform for managing insurance policy lifecycles, from onboarding to claims and reporting.",
     story:
-      "Insurance distribution in emerging markets is plagued by paper-heavy processes, slow policy issuance, and disconnected systems between banks and insurers. InsureMaster was built to bridge that gap — a single platform that lets bancassurance teams onboard customers, issue policies, process claims, and generate compliance reports, all without leaving their workflow. I led the frontend architecture from the ground up, designing a component system that could serve multiple tenants with different branding while sharing a unified codebase.",
+      "Insurance distribution in emerging markets is plagued by paper-heavy processes, slow policy issuance, and disconnected systems between banks and insurers. InsureMaster was built to bridge that gap - a single platform that lets bancassurance teams onboard customers, issue policies, process claims, and generate compliance reports, all without leaving their workflow. I led the frontend architecture from the ground up, designing a component system that could serve multiple tenants with different branding while sharing a unified codebase.",
     challenge:
       "Built to support multi-tenant architecture with secure role-based access and high-performance financial workflows at scale.",
     solution:
@@ -47,11 +47,11 @@ export const solutions: Solution[] = [
     slug: "email-refiner",
     title: "Email Refiner",
     summary:
-      "Chrome extension that rewrites email tone inside Gmail and Zimbra — no copy-paste, no context switching.",
+      "Chrome extension that rewrites email tone inside Gmail and Zimbra - no copy-paste, no context switching.",
     description:
       "AI-powered Chrome extension that enhances email writing in Gmail and Zimbra with real-time tone transformation and preview.",
     story:
-      "Most AI writing tools live outside the browser — users copy their draft, visit a tool, paste, rewrite, and copy back. That friction kills adoption. Email Refiner injected itself directly into Gmail and Zimbra's compose windows, adding a floating toolbar that rewrote tone (formal, friendly, concise) in under a second without leaving the editor. I built the injection layer with MutationObserver to handle Gmail's dynamic DOM, and the extension's content script communicated with a background worker to keep API calls off the main thread.",
+      "Most AI writing tools live outside the browser - users copy their draft, visit a tool, paste, rewrite, and copy back. That friction kills adoption. Email Refiner injected itself directly into Gmail and Zimbra's compose windows, adding a floating toolbar that rewrote tone (formal, friendly, concise) in under a second without leaving the editor. I built the injection layer with MutationObserver to handle Gmail's dynamic DOM, and the extension's content script communicated with a background worker to keep API calls off the main thread.",
     challenge:
       "Integrating seamlessly into third-party email clients while maintaining performance, security, and a smooth user experience within dynamic DOM environments.",
     solution:
@@ -83,11 +83,11 @@ export const solutions: Solution[] = [
     slug: "ndoa-plan",
     title: "Ndoa Plan",
     summary:
-      "Offline-first wedding coordination platform for Kenyan events — M-Pesa reconciliation, budget tracking, and day-of execution tools.",
+      "Offline-first wedding coordination platform for Kenyan events - M-Pesa reconciliation, budget tracking, and day-of execution tools.",
     description:
       "Offline-first wedding coordination platform built for Kenyan weddings, with M-Pesa payment reconciliation, multi-event planning, budget tracking, and real-time day-of execution tools.",
     story:
-      "Kenyan weddings are complex, multi-day events involving dozens of vendors, hundreds of guests, and financial contributions collected through M-Pesa. Spreadsheets and WhatsApp groups collapse under that weight. Ndoa Plan was designed for event coordinators who need reliability — the app works fully offline, syncing data when connectivity returns, and reconciles M-Pesa STK push callbacks to track who paid what. Building offline-first with Dexie (IndexedDB) as the primary store while keeping a Postgres backend in sync was the most technically demanding part of the project.",
+      "Kenyan weddings are complex, multi-day events involving dozens of vendors, hundreds of guests, and financial contributions collected through M-Pesa. Spreadsheets and WhatsApp groups collapse under that weight. Ndoa Plan was designed for event coordinators who need reliability - the app works fully offline, syncing data when connectivity returns, and reconciles M-Pesa STK push callbacks to track who paid what. Building offline-first with Dexie (IndexedDB) as the primary store while keeping a Postgres backend in sync was the most technically demanding part of the project.",
     challenge:
       "Building a reliable planning tool for low-connectivity environments while keeping financial data consistent across offline-first sync, M-Pesa callbacks, and a multi-user role system.",
     solution:
@@ -123,11 +123,11 @@ export const solutions: Solution[] = [
     slug: "sefer",
     title: "Sefer",
     summary:
-      "Offline-first PDF reader for Android — library management, persistent annotations, and an immersive reading experience.",
+      "Offline-first PDF reader for Android - library management, persistent annotations, and an immersive reading experience.",
     description:
-      "A clean, feature-rich PDF reader built with Flutter for Android. Manage a local library of documents, organise files into collections, annotate with highlights and freehand drawing, and resume reading exactly where you left off — all without a network connection.",
+      "A clean, feature-rich PDF reader built with Flutter for Android. Manage a local library of documents, organise files into collections, annotate with highlights and freehand drawing, and resume reading exactly where you left off - all without a network connection.",
     story:
-      "Most Android PDF readers are either too bloated or too bare. Sefer was built to hit the sweet spot — fast, offline-first, and genuinely useful. The annotation system was the hardest part: accurately mapping touch coordinates to PDF page space across different zoom levels and reading modes required a custom coordinate mapper layered on top of pdfrx's render pipeline. Persisting those annotations reliably in SQLite, then replaying them as overlays on re-open, took careful separation between the render layer and the data layer.",
+      "Most Android PDF readers are either too bloated or too bare. Sefer was built to hit the sweet spot - fast, offline-first, and genuinely useful. The annotation system was the hardest part: accurately mapping touch coordinates to PDF page space across different zoom levels and reading modes required a custom coordinate mapper layered on top of pdfrx's render pipeline. Persisting those annotations reliably in SQLite, then replaying them as overlays on re-open, took careful separation between the render layer and the data layer.",
     challenge:
       "Building a pixel-accurate annotation overlay that survives zoom, page changes, and reading mode switches, while keeping the SQLite persistence and Riverpod state in sync without leaking render details into business logic.",
     solution:

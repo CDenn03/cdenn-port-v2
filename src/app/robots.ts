@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        // Nothing to disallow right now — no auth-only or draft routes.
+        // Nothing to disallow right now - no auth-only or draft routes.
       },
     ],
     sitemap: "https://www.cdenn.dev/sitemap.xml",

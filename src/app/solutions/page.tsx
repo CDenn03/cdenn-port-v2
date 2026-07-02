@@ -6,7 +6,7 @@ import SolutionsGrid from "./SolutionsGrid";
 export const metadata: Metadata = {
   title: "Solutions",
   description:
-    "Products and systems built by CDenn — the problem behind each one, how it was approached, and what came out the other side.",
+    "Products and systems built by CDenn - the problem behind each one, how it was approached, and what came out the other side.",
   // Canonical prevents this page appearing as a duplicate or redirect URL in audits.
   alternates: {
     canonical: "/solutions",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     url: "https://www.cdenn.dev/solutions",
     title: "Solutions",
     description:
-      "Products and systems built by CDenn — the problem behind each one, how it was approached, and what came out the other side.",
+      "Products and systems built by CDenn - the problem behind each one, how it was approached, and what came out the other side.",
   },
 };
 
@@ -34,7 +34,7 @@ export default function SolutionsPage() {
               </span>
             </div>
             <p className="text-lg text-zinc-500 dark:text-[#888] max-w-2xl">
-              A look at the products and systems I&#39;ve built — the problem behind each one,
+              A look at the products and systems I&#39;ve built - the problem behind each one,
               how I approached it, and what came out the other side.
             </p>
           </div>
