@@ -19,13 +19,13 @@ const serviceCallout: Record<
   },
   insuremaster: {
     label: "Related Service",
-    body: "InsureMaster was scoped, architected, and shipped as a production MVP within a fixed timeline. That end-to-end delivery process — from data model to deployment — is exactly what I offer for new products.",
+    body: "InsureMaster was scoped, architected, and shipped as a production MVP within a fixed timeline. That end-to-end delivery process - from data model to deployment - is exactly what I offer for new products.",
     href: "/services/mvp-development",
     linkText: "See MVP Development & Full-Stack Engineering →",
   },
   "email-refiner": {
     label: "Related Service",
-    body: "Email Refiner went from idea to a live Chrome extension in a single contract cycle. If you have a product that needs scoping, architecting, and shipping fast — that's the engagement model I work in.",
+    body: "Email Refiner went from idea to a live Chrome extension in a single contract cycle. If you have a product that needs scoping, architecting, and shipping fast - that's the engagement model I work in.",
     href: "/services/mvp-development",
     linkText: "See MVP Development & Full-Stack Engineering →",
   },

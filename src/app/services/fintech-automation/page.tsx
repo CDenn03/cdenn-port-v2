@@ -44,7 +44,7 @@ const serviceSchema = {
 const capabilities = [
   {
     title: "M-Pesa STK Push & Callback Handling",
-    body: "End-to-end implementation of the Daraja STK Push flow — from initiating payment requests on behalf of customers to receiving, validating, and persisting M-Pesa callback payloads in real time. Every edge case covered: duplicate callbacks, timeout retries, and failed transaction recovery.",
+    body: "End-to-end implementation of the Daraja STK Push flow - from initiating payment requests on behalf of customers to receiving, validating, and persisting M-Pesa callback payloads in real time. Every edge case covered: duplicate callbacks, timeout retries, and failed transaction recovery.",
   },
   {
     title: "Automated Ledger Reconciliation",
@@ -52,22 +52,22 @@ const capabilities = [
   },
   {
     title: "Multi-Tenant Payment Architecture",
-    body: "Payment systems that serve multiple clients or tenants from a single codebase — with strict data isolation, per-tenant M-Pesa shortcode configuration, and role-based access to financial records. Designed for SaaS platforms, bancassurance systems, and aggregator models.",
+    body: "Payment systems that serve multiple clients or tenants from a single codebase - with strict data isolation, per-tenant M-Pesa shortcode configuration, and role-based access to financial records. Designed for SaaS platforms, bancassurance systems, and aggregator models.",
   },
   {
     title: "Offline-First Payment Sync",
-    body: "Applications that queue transactions locally when connectivity is unreliable and reconcile with the backend once online — critical for field agents, rural event coordinators, and any workflow where network dropouts are common.",
+    body: "Applications that queue transactions locally when connectivity is unreliable and reconcile with the backend once online - critical for field agents, rural event coordinators, and any workflow where network dropouts are common.",
   },
   {
     title: "Webhook Infrastructure & Security",
-    body: "Hardened webhook endpoints that validate Safaricom-signed payloads, handle idempotency correctly, and integrate with queue systems to process callbacks asynchronously — preventing data loss under high transaction volumes.",
+    body: "Hardened webhook endpoints that validate Safaricom-signed payloads, handle idempotency correctly, and integrate with queue systems to process callbacks asynchronously - preventing data loss under high transaction volumes.",
   },
 ];
 
 const whyItems = [
-  "M-Pesa is used by 90%+ of Kenya's adult population — not integrating it correctly costs real money",
+  "M-Pesa is used by 90%+ of Kenya's adult population - not integrating it correctly costs real money",
   "Daraja API has quirks (callback timing, result code edge cases) that only surface in production",
-  "Most generic developers treat it as a simple HTTP call — it requires domain-specific handling",
+  "Most generic developers treat it as a simple HTTP call - it requires domain-specific handling",
   "I've built reconciliation systems that handle live events with hundreds of simultaneous payments",
 ];
 
@@ -96,7 +96,7 @@ export default function FintechAutomationPage() {
 
             <p className="text-xl text-zinc-600 dark:text-[#b0b0b0] leading-relaxed max-w-2xl">
               I build bulletproof M-Pesa payment pipelines with real-time callback reconciliation,
-              automated ledger tracking, and multi-tenant payment architectures — for businesses
+              automated ledger tracking, and multi-tenant payment architectures - for businesses
               in Kenya and across East Africa that cannot afford missing transactions.
             </p>
           </div>
@@ -136,7 +136,7 @@ export default function FintechAutomationPage() {
             <p className="text-zinc-600 dark:text-[#b0b0b0] leading-relaxed mb-6">
               Integrating M-Pesa correctly is not the same as calling a REST API and calling it
               done. The Daraja API has real-world complexity that only surfaces under production
-              load — callback race conditions, result codes that require domain knowledge to
+              load - callback race conditions, result codes that require domain knowledge to
               interpret, and reconciliation logic that must handle delayed or duplicate payloads
               without double-counting or data loss.
             </p>
@@ -198,7 +198,7 @@ export default function FintechAutomationPage() {
               Ndoa Plan is an offline-first wedding coordination platform I built for Kenyan
               event coordinators. It reconciles M-Pesa STK push callbacks against guest
               contribution records in real time, operates fully offline during events, and syncs
-              when connectivity returns — with a conflict-resolution strategy that ensures no
+              when connectivity returns - with a conflict-resolution strategy that ensures no
               payment is lost or double-counted.
             </p>
             <Link
@@ -248,14 +248,14 @@ export default function FintechAutomationPage() {
 
           <div className="border-t border-zinc-200 dark:border-[#1a1a1a] pt-12 text-center">
             <p className="text-zinc-500 dark:text-[#888] mb-2 text-sm">
-              Based in Nairobi, Kenya — available for remote and on-site engagements across East Africa and globally.
+              Based in Nairobi, Kenya - available for remote and on-site engagements across East Africa and globally.
             </p>
             <h2 className="text-2xl font-bold mb-4 text-slate-900 dark:text-[#FCF7F2]">
               Have a fintech project in mind?
             </h2>
             <p className="text-zinc-600 dark:text-[#b0b0b0] mb-8 max-w-lg mx-auto">
               Whether you need a payment integration from scratch, a reconciliation system
-              for an existing platform, or a technical review of your current Daraja setup —
+              for an existing platform, or a technical review of your current Daraja setup -
               let&apos;s talk through it.
             </p>
             <Link

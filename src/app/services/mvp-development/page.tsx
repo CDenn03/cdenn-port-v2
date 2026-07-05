@@ -4,25 +4,25 @@ import { SubpageNav } from "@/src/app/components/layout/SubpageNav";
 import { ArrowRight, CheckCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "MVP Development — Full-Stack Next.js Engineer for Hire",
+  title: "MVP Development - Full-Stack Next.js Engineer for Hire",
   description:
-    "I scope, architect, and ship production-ready MVPs in Next.js, TypeScript, and React — for startups and businesses that need to move fast without technical debt. Based in Nairobi, available globally for contracts and consulting.",
+    "I scope, architect, and ship production-ready MVPs in Next.js, TypeScript, and React - for startups and businesses that need to move fast without technical debt. Based in Nairobi, available globally for contracts and consulting.",
   alternates: {
     canonical: "/services/mvp-development",
   },
   openGraph: {
     type: "website",
     url: "https://www.cdenn.dev/services/mvp-development",
-    title: "MVP Development — Full-Stack Next.js Engineer for Hire",
+    title: "MVP Development - Full-Stack Next.js Engineer for Hire",
     description:
-      "I scope, architect, and ship production-ready MVPs in Next.js, TypeScript, and React — for startups and businesses that need to move fast without technical debt.",
+      "I scope, architect, and ship production-ready MVPs in Next.js, TypeScript, and React - for startups and businesses that need to move fast without technical debt.",
   },
 };
 
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "MVP Development — Full-Stack Next.js Engineering",
+  name: "MVP Development - Full-Stack Next.js Engineering",
   description:
     "Scoping, architecting, and shipping production-ready Minimum Viable Products using Next.js, TypeScript, and React. Available for contracts, freelance, and full-time engagements.",
   url: "https://www.cdenn.dev/services/mvp-development",
@@ -44,19 +44,19 @@ const serviceSchema = {
 const phases = [
   {
     title: "Scoping & Architecture",
-    body: "Before writing a line of code, we define exactly what the MVP needs to do — and what it doesn't. I map the data model, API surface, and component architecture upfront so the first sprint is never wasted building in the wrong direction. This phase typically takes one week and produces a technical spec you own.",
+    body: "Before writing a line of code, we define exactly what the MVP needs to do - and what it doesn't. I map the data model, API surface, and component architecture upfront so the first sprint is never wasted building in the wrong direction. This phase typically takes one week and produces a technical spec you own.",
   },
   {
     title: "Full-Stack Implementation",
-    body: "Next.js App Router for the frontend and server-side rendering. Prisma + PostgreSQL for the data layer with type-safe queries. Authentication via NextAuth.js or Clerk. API routes or server actions for form handling and mutations. The stack is chosen for speed-to-ship and long-term maintainability — not trend-chasing.",
+    body: "Next.js App Router for the frontend and server-side rendering. Prisma + PostgreSQL for the data layer with type-safe queries. Authentication via NextAuth.js or Clerk. API routes or server actions for form handling and mutations. The stack is chosen for speed-to-ship and long-term maintainability - not trend-chasing.",
   },
   {
     title: "Third-Party Integrations",
-    body: "Most MVPs need at least one external integration — payment processors, email providers, storage, or AI APIs. I've built integrations with M-Pesa Daraja, OpenAI, Resend, Supabase Storage, and various REST APIs. Integrations are handled with proper error handling and retry logic from day one.",
+    body: "Most MVPs need at least one external integration - payment processors, email providers, storage, or AI APIs. I've built integrations with M-Pesa Daraja, OpenAI, Resend, Supabase Storage, and various REST APIs. Integrations are handled with proper error handling and retry logic from day one.",
   },
   {
     title: "Deployment & Handoff",
-    body: "Deployed to Vercel with environment variables configured, preview deployments enabled, and a production-ready CI setup. I document the architecture, environment setup, and any non-obvious implementation decisions so the next developer — or you — can pick it up without a handover call.",
+    body: "Deployed to Vercel with environment variables configured, preview deployments enabled, and a production-ready CI setup. I document the architecture, environment setup, and any non-obvious implementation decisions so the next developer - or you - can pick it up without a handover call.",
   },
 ];
 
@@ -70,9 +70,9 @@ const whatIMVP = [
 ];
 
 const notRightFor = [
-  "Projects with no defined problem — I need to understand what you're solving and for whom",
-  "Pure design work — I work from Figma files or an agreed design direction, not blank canvases",
-  "Blockchain or Web3 — outside my current stack",
+  "Projects with no defined problem - I need to understand what you're solving and for whom",
+  "Pure design work - I work from Figma files or an agreed design direction, not blank canvases",
+  "Blockchain or Web3 - outside my current stack",
 ];
 
 export default function MvpDevelopmentPage() {
@@ -97,16 +97,16 @@ export default function MvpDevelopmentPage() {
               Services
             </p>
 
-            {/* H1 — one per page, contains primary keyword */}
+            {/* H1 - one per page, contains primary keyword */}
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-[1.1] mb-6 text-slate-900 dark:text-[#FCF7F2]">
               MVP Development &amp; Full-Stack Engineering
             </h1>
 
-            {/* AI-extractable lead — key claim in the first visible sentence */}
+            {/* AI-extractable lead - key claim in the first visible sentence */}
             <p className="text-xl text-zinc-600 dark:text-[#b0b0b0] leading-relaxed max-w-2xl">
-              I scope, architect, and ship production-ready MVPs — built in Next.js, TypeScript,
-              and React with a real backend — so you can validate your product with real users
-              without inheriting a codebase you'll need to rewrite six months later.
+              I scope, architect, and ship production-ready MVPs - built in Next.js, TypeScript,
+              and React with a real backend - so you can validate your product with real users
+              without inheriting a codebase you&apos;ll need to rewrite six months later.
             </p>
           </div>
 
@@ -212,14 +212,14 @@ export default function MvpDevelopmentPage() {
                   key={item}
                   className="flex items-start gap-3 text-zinc-600 dark:text-[#b0b0b0] pl-1"
                 >
-                  <span className="text-zinc-300 dark:text-[#444] shrink-0 mt-0.5">—</span>
+                  <span className="text-zinc-300 dark:text-[#444] shrink-0 mt-0.5">-</span>
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
           </section>
 
-          {/* ── Proof — links to relevant case studies ── */}
+          {/* ── Proof - links to relevant case studies ── */}
           <section aria-labelledby="proof-heading" className="mb-16">
             <h2
               id="proof-heading"
@@ -231,12 +231,12 @@ export default function MvpDevelopmentPage() {
               {[
                 {
                   title: "InsureMaster",
-                  desc: "Multi-tenant bancassurance SaaS platform — policy lifecycle management, role-based access, and 50k+ record data grids.",
+                  desc: "Multi-tenant bancassurance SaaS platform - policy lifecycle management, role-based access, and 50k+ record data grids.",
                   href: "/solutions/insuremaster",
                 },
                 {
                   title: "Email Refiner",
-                  desc: "Chrome extension using OpenAI API and Shadow DOM injection — scoped, shipped, and live within a 3-month contract cycle.",
+                  desc: "Chrome extension using OpenAI API and Shadow DOM injection - scoped, shipped, and live within a 3-month contract cycle.",
                   href: "/solutions/email-refiner",
                 },
               ].map((proj) => (
@@ -301,7 +301,7 @@ export default function MvpDevelopmentPage() {
           {/* ── CTA ── */}
           <div className="border-t border-zinc-200 dark:border-[#1a1a1a] pt-12 text-center">
             <p className="text-zinc-500 dark:text-[#888] mb-2 text-sm">
-              Based in Nairobi, Kenya — available for remote engagements worldwide.
+              Based in Nairobi, Kenya - available for remote engagements worldwide.
             </p>
             <h2 className="text-2xl font-bold mb-4 text-slate-900 dark:text-[#FCF7F2]">
               Ready to build your MVP?
