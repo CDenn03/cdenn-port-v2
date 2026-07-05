@@ -1,27 +1,34 @@
 "use client";
 
-import { SocialIcon } from "react-social-icons";
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "@/src/app/hooks/useTheme";
 import { socialLinks } from "@/src/app/data/social";
+import { GithubIcon } from "@/src/app/components/icons/GithubIcon";
+import { LinkedInIcon } from "@/src/app/components/icons/LinkedInIcon";
+import { XIcon } from "@/src/app/components/icons/XIcon";
+import { BehanceIcon } from "@/src/app/components/icons/BehanceIcon";
+import { DribbbleIcon } from "@/src/app/components/icons/DribbbleIcon";
+import { MediumIcon } from "@/src/app/components/icons/MediumIcon";
+
+const iconMap: Record<string, React.ReactNode> = {
+  github: <GithubIcon size={18} />,
+  linkedin: <LinkedInIcon size={18} />,
+  x: <XIcon size={18} />,
+  behance: <BehanceIcon size={18} />,
+  dribbble: <DribbbleIcon size={18} />,
+  medium: <MediumIcon size={18} />,
+};
 
 export const Footer = () => {
   const [hoveredIcon, setHoveredIcon] = useState<string | null>(null);
   const { resolvedTheme } = useTheme();
 
-  const logoSrc = resolvedTheme === "dark"
-    ? "/assets/logo/CDenn_white.png"
-    : "/assets/logo/CDenn.png";
-
-  const iconStyle = (network: string) => ({
-    height: 36,
-    width: 36,
-    border: hoveredIcon === network ? "2px solid #253C38" : "1px solid transparent",
-    borderRadius: "50%",
-    transition: "border 0.2s ease",
-  });
+  const logoSrc =
+    resolvedTheme === "dark"
+      ? "/assets/logo/CDenn_white.png"
+      : "/assets/logo/CDenn.png";
 
   return (
     <footer className="border-t pt-20 pb-10 px-6 transition-colors duration-300 border-zinc-200 bg-[#FCF7F2] dark:border-[#1a1a1a] dark:bg-[#0a0a0a]">
@@ -38,57 +45,118 @@ export const Footer = () => {
               />
             </Link>
             <p className="text-sm text-zinc-500 dark:text-[#888888]">
-              Full-stack software developer based in Nairobi, Kenya. Specializing in Next.js, fintech automation, and AI-integrated web applications.
+              Full-stack software developer based in Nairobi, Kenya.
+              Specializing in Next.js, fintech automation, and AI-integrated web
+              applications.
             </p>
           </div>
 
           <div>
-            <h4 className="font-bold text-base mb-4 text-slate-900 dark:text-[#FCF7F2]">Navigation</h4>
+            <h4 className="font-bold text-base mb-4 text-slate-900 dark:text-[#FCF7F2]">
+              Navigation
+            </h4>
             <ul className="space-y-3 text-sm text-zinc-600 dark:text-[#888888]">
-              <li><Link href="/" className="hover:text-primary dark:hover:text-[#FCF7F2]">Home</Link></li>
-              <li><Link href="#about" className="hover:text-primary dark:hover:text-[#FCF7F2]">About</Link></li>
-              <li><Link href="#solutions" className="hover:text-primary dark:hover:text-[#FCF7F2]">Solutions</Link></li>
-              <li><Link href="#contact" className="hover:text-primary dark:hover:text-[#FCF7F2]">Contact</Link></li>
+              <li>
+                <Link
+                  href="/"
+                  className="hover:text-primary dark:hover:text-[#FCF7F2]"
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#about"
+                  className="hover:text-primary dark:hover:text-[#FCF7F2]"
+                >
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#solutions"
+                  className="hover:text-primary dark:hover:text-[#FCF7F2]"
+                >
+                  Solutions
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#contact"
+                  className="hover:text-primary dark:hover:text-[#FCF7F2]"
+                >
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-bold text-base mb-4 text-slate-900 dark:text-[#FCF7F2]">Services</h4>
+            <h4 className="font-bold text-base mb-4 text-slate-900 dark:text-[#FCF7F2]">
+              Services
+            </h4>
             <ul className="space-y-3 text-sm text-zinc-600 dark:text-[#888888]">
-              <li><Link href="/services/fintech-automation" className="hover:text-primary dark:hover:text-[#FCF7F2]">Fintech Automation</Link></li>
-              <li><Link href="/services/mvp-development" className="hover:text-primary dark:hover:text-[#FCF7F2]">MVP Development</Link></li>
+              <li>
+                <Link
+                  href="/services/fintech-automation"
+                  className="hover:text-primary dark:hover:text-[#FCF7F2]"
+                >
+                  Fintech Automation
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/mvp-development"
+                  className="hover:text-primary dark:hover:text-[#FCF7F2]"
+                >
+                  MVP Development
+                </Link>
+              </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-bold text-base mb-4 text-slate-900 dark:text-[#FCF7F2]">Legal</h4>
+            <h4 className="font-bold text-base mb-4 text-slate-900 dark:text-[#FCF7F2]">
+              Legal
+            </h4>
             <ul className="space-y-3 text-sm text-zinc-600 dark:text-[#888888]">
-              <li><a href="/privacy" className="hover:text-primary dark:hover:text-[#FCF7F2] transition-colors">Privacy Policy</a></li>
+              <li>
+                <a
+                  href="/privacy"
+                  className="hover:text-primary dark:hover:text-[#FCF7F2] transition-colors"
+                >
+                  Privacy Policy
+                </a>
+              </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm border-zinc-200 text-zinc-400 dark:border-[#1a1a1a] dark:text-[#555555]">
           <p>© {new Date().getFullYear()} CDenn. All rights reserved.</p>
-          
+
           <div className="flex gap-3 items-center pr-20 md:pr-0">
             {socialLinks.map((link) => (
-              <SocialIcon
+              <a
                 key={link.network}
-                network={link.network}
-                url={link.url}
+                href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{
-                  ...iconStyle(link.network),
-                  transition: "transform 0.2s ease, border 0.2s ease",
-                  transform: hoveredIcon === link.network ? "scale(1.1)" : "scale(1)",
-                }}
-                bgColor="#0f172b"
-                className="dark:bg-[#f4f4f5]! cursor-pointer rounded-full"
+                aria-label={link.label}
                 onMouseEnter={() => setHoveredIcon(link.network)}
                 onMouseLeave={() => setHoveredIcon(null)}
-              />
+                className="flex items-center justify-center w-9 h-9 rounded-full transition-all duration-200 text-zinc-500 dark:text-[#888888] hover:text-slate-900 dark:hover:text-[#FCF7F2]"
+                style={{
+                  border:
+                    hoveredIcon === link.network
+                      ? "2px solid #253C38"
+                      : "1px solid transparent",
+                  transform:
+                    hoveredIcon === link.network ? "scale(1.1)" : "scale(1)",
+                }}
+              >
+                {iconMap[link.network]}
+              </a>
             ))}
           </div>
         </div>
