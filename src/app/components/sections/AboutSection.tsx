@@ -15,6 +15,7 @@ const techStack = {
   ],
   backend: [
     "Node.js",
+    "Rust",
     "Prisma",
     "PostgreSQL",
     "Supabase",

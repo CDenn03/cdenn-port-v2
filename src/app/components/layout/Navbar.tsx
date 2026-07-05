@@ -12,13 +12,19 @@ const navLinks = [
   { href: "#about", label: "About" },
   { href: "#experience", label: "Experience" },
   { href: "#solutions", label: "Solutions" },
-  { href: "#contact", label: "Contact" }
+  { href: "#contact", label: "Contact" },
+];
+
+const serviceLinks = [
+  { href: "/services/fintech-automation", label: "Fintech Automation" },
+  { href: "/services/mvp-development", label: "MVP Development" },
 ];
 
 const MotionLink = motion.create(Link);
 
 export const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const { resolvedTheme } = useTheme();
 
   useEffect(() => {
@@ -66,6 +72,51 @@ export const Navbar = () => {
               {link.label}
             </a>
           ))}
+
+          {/* Services dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => setServicesOpen(true)}
+            onMouseLeave={() => setServicesOpen(false)}
+          >
+            <button
+              className="text-sm font-medium hover:text-primary dark:hover:text-[#FCF7F2] transition-colors text-zinc-600 dark:text-[#888888] flex items-center gap-1"
+              aria-expanded={servicesOpen}
+              aria-haspopup="true"
+            >
+              Services
+              <motion.span
+                animate={{ rotate: servicesOpen ? 180 : 0 }}
+                transition={{ duration: 0.2 }}
+                className="inline-block"
+              >
+                ▾
+              </motion.span>
+            </button>
+
+            <AnimatePresence>
+              {servicesOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 6 }}
+                  transition={{ duration: 0.15 }}
+                  className="absolute top-full right-0 mt-2 w-52 rounded-xl border shadow-lg overflow-hidden border-zinc-200 bg-[#FCF7F2] dark:border-[#1a1a1a] dark:bg-[#0a0a0a]"
+                >
+                  {serviceLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="block px-4 py-3 text-sm font-medium hover:bg-zinc-100 dark:hover:bg-[#111] transition-colors text-zinc-700 dark:text-[#b0b0b0] hover:text-primary dark:hover:text-[#FCF7F2]"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
           <ThemeToggle />
         </div>
 
@@ -104,6 +155,26 @@ export const Navbar = () => {
                   {link.label}
                 </MotionLink>
               ))}
+
+              {/* Services group in mobile menu */}
+              <div className="pt-2 pb-1">
+                <p className="text-xs font-bold uppercase tracking-widest text-zinc-400 dark:text-[#555] px-0 py-2">
+                  Services
+                </p>
+                {serviceLinks.map((link, i) => (
+                  <MotionLink
+                    key={link.href}
+                    href={link.href}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: (navLinks.length + i) * 0.05 }}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block py-2.5 text-base font-medium hover:text-primary dark:hover:text-[#FCF7F2] transition-colors text-zinc-600 dark:text-[#888888]"
+                  >
+                    {link.label}
+                  </MotionLink>
+                ))}
+              </div>
             </div>
           </motion.div>
         )}
