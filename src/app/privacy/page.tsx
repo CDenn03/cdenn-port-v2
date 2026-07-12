@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const sections = [
   {
     title: "1. Who This Applies To",
-    content: `This Privacy Policy applies to visitors of cdenn.dev (the "Site"), including anyone who submits a message through the contact form. The Site is operated by Dennis Ndungu ("I", "me", or "CDenn").`,
+    content: `This Privacy Policy applies to visitors of cdenn.dev (the "Site"), including anyone who submits a message through the contact form. The Site is operated by CDenn ("I", "me", or "CDenn").`,
   },
   {
     title: "2. What Data I Collect",
@@ -130,7 +130,7 @@ export default function PrivacyPage() {
           </div>
 
           <p className="text-sm text-zinc-400 dark:text-[#555555]">
-            © {new Date().getFullYear()} Dennis Ndungu (CDenn). All rights reserved.
+            © {new Date().getFullYear()} CDenn. All rights reserved.
           </p>
         </div>
       </div>

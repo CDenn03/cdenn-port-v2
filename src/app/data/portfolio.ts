@@ -16,33 +16,33 @@ export const experiences: Experience[] = [
 ];
 
 export const solutions: Solution[] = [
-  {
-    slug: "insuremaster",
-    title: "InsureMaster - Bancassurance Platform",
-    summary:
-      "Multi-tenant bancassurance SaaS for Kenyan banks - managing policies, claims, and compliance reporting in one place.",
-    description:
-      "A multi-tenant SaaS platform for managing insurance policy lifecycles, from onboarding to claims and reporting.",
-    story:
-      "Insurance distribution in emerging markets is plagued by paper-heavy processes, slow policy issuance, and disconnected systems between banks and insurers. InsureMaster was built to bridge that gap - a single platform that lets bancassurance teams onboard customers, issue policies, process claims, and generate compliance reports, all without leaving their workflow. I led the frontend architecture from the ground up, designing a component system that could serve multiple tenants with different branding while sharing a unified codebase.",
-    challenge:
-      "Built to support multi-tenant architecture with secure role-based access and high-performance financial workflows at scale.",
-    solution:
-      "Designed a theme-aware component library with tenant-scoped configs, JWT-based role permissions, and a virtual-scroll data grid that handled 50k+ policy records without UI degradation.",
-    results: [
-      { label: "LCP", value: "2.1s" },
-      { label: "Concurrent Users", value: "10k+" },
-      { label: "Uptime", value: "99.9%" },
-    ],
-    tags: ["Next.js", "TypeScript", "TailwindCSS", "Radix UI", "JWT"],
-    image: "/assets/project-shots/InsureMaster.png",
-    layout: "right",
-    featured: true,
-    year: "2025",
-    role: "Frontend Lead",
-    duration: "8 months",
-    category: "SaaS / Fintech",
-  },
+  // {
+  //   slug: "insuremaster",
+  //   title: "InsureMaster - Bancassurance Platform",
+  //   summary:
+  //     "Multi-tenant bancassurance SaaS for Kenyan banks - managing policies, claims, and compliance reporting in one place.",
+  //   description:
+  //     "A multi-tenant SaaS platform for managing insurance policy lifecycles, from onboarding to claims and reporting.",
+  //   story:
+  //     "Insurance distribution in emerging markets is plagued by paper-heavy processes, slow policy issuance, and disconnected systems between banks and insurers. InsureMaster was built to bridge that gap - a single platform that lets bancassurance teams onboard customers, issue policies, process claims, and generate compliance reports, all without leaving their workflow. I led the frontend architecture from the ground up, designing a component system that could serve multiple tenants with different branding while sharing a unified codebase.",
+  //   challenge:
+  //     "Built to support multi-tenant architecture with secure role-based access and high-performance financial workflows at scale.",
+  //   solution:
+  //     "Designed a theme-aware component library with tenant-scoped configs, JWT-based role permissions, and a virtual-scroll data grid that handled 50k+ policy records without UI degradation.",
+  //   results: [
+  //     { label: "LCP", value: "2.1s" },
+  //     { label: "Concurrent Users", value: "10k+" },
+  //     { label: "Uptime", value: "99.9%" },
+  //   ],
+  //   tags: ["Next.js", "TypeScript", "TailwindCSS", "Radix UI", "JWT"],
+  //   image: "/assets/project-shots/InsureMaster.png",
+  //   layout: "right",
+  //   featured: true,
+  //   year: "2025",
+  //   role: "Frontend Lead",
+  //   duration: "8 months",
+  //   category: "SaaS / Fintech",
+  // },
   {
     slug: "email-refiner",
     title: "Email Refiner",
