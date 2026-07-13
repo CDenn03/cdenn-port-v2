@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./providers/ThemeProvider";
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-inter",
@@ -17,6 +17,10 @@ export const metadata: Metadata = {
   // points to the naked domain every resolved URL is a redirect, which
   // triggers Semrush's "sitemap contains redirecting URLs" error and wastes crawl budget.
   metadataBase: new URL("https://www.cdenn.dev"),
+
+  authors: [{ name: "Dennis Ndung'u", url: "https://www.cdenn.dev" }],
+  creator: "Dennis Ndung'u",
+  publisher: "Dennis Ndung'u",
 
   title: {
     default: "CDenn | Full-Stack Software Developer",
@@ -48,6 +52,8 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
+    site: "@C_MDennis",
+    creator: "@C_MDennis",
     title: "CDenn | Full-Stack Software Developer",
     description:
       "Full-stack software developer based in Nairobi, Kenya. Specialising in Next.js, TypeScript, and AI-integrated web applications.",
@@ -65,6 +71,7 @@ export const metadata: Metadata = {
     },
   },
 };
+
 
 export default function RootLayout({
   children,
