@@ -15,9 +15,9 @@ export const metadata: Metadata = {
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "CDenn",
+  name: "Dennis Ndung'u",
   url: "https://www.cdenn.dev",
-  jobTitle: "Full-Stack Software Developer - Next.js, Fintech Systems & AI Integrations",
+  jobTitle: "Full-Stack Software Developer",
   description:
     "Full-stack software developer based in Nairobi, Kenya. Specializing in Next.js App Router architecture, M-Pesa Daraja API integrations, and AI-integrated web applications. Available for full-time roles, contracts, and consulting engagements globally.",
   address: {

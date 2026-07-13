@@ -14,7 +14,6 @@ Available for remote roles and freelance/contract projects worldwide.
 
 - https://www.cdenn.dev - Portfolio homepage: about, experience, projects, contact
 - https://www.cdenn.dev/solutions - Index of all engineering projects and case studies
-- https://www.cdenn.dev/solutions/insuremaster - InsureMaster: multi-tenant bancassurance SaaS platform (Next.js, TypeScript, Radix UI, JWT)
 - https://www.cdenn.dev/solutions/email-refiner - Email Refiner: AI-powered Chrome extension for Gmail and Zimbra (React, OpenAI API, MutationObserver)
 - https://www.cdenn.dev/solutions/ndoa-plan - Ndoa Plan: offline-first wedding coordination platform with M-Pesa integration (Next.js, Prisma, PostgreSQL, Dexie)
 - https://www.cdenn.dev/solutions/sefer - Sefer: offline-first Android PDF reader with annotations (Flutter, Riverpod, sqflite)

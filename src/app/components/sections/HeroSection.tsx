@@ -67,7 +67,7 @@ export const HeroSection = () => {
 
               <div className="absolute bottom-4 md:bottom-6 left-4 md:left-6 right-4 md:right-6 backdrop-blur-md p-3 md:p-4 rounded-xl bg-white/95 border border-zinc-100 dark:bg-zinc-900/90 dark:border-zinc-800">
                 <p className="text-xs font-mono mb-1 text-zinc-500 dark:text-zinc-400">Current Focus</p>
-                <p className="text-sm md:text-base font-semibold text-slate-900 dark:text-white">Next.js App Router · M-Pesa integrations · AI tooling</p>
+                <p className="text-sm md:text-base font-semibold text-slate-900 dark:text-white">Axum Design Philosophy</p>
               </div>
             </div>
           </div>

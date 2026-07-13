@@ -229,11 +229,11 @@ export default function MvpDevelopmentPage() {
             </h2>
             <div className="grid sm:grid-cols-2 gap-4">
               {[
-                {
-                  title: "InsureMaster",
-                  desc: "Multi-tenant bancassurance SaaS platform - policy lifecycle management, role-based access, and 50k+ record data grids.",
-                  href: "/solutions/insuremaster",
-                },
+                // {
+                //   title: "InsureMaster",
+                //   desc: "Multi-tenant bancassurance SaaS platform - policy lifecycle management, role-based access, and 50k+ record data grids.",
+                //   href: "/solutions/insuremaster",
+                // },
                 {
                   title: "Email Refiner",
                   desc: "Chrome extension using OpenAI API and Shadow DOM injection - scoped, shipped, and live within a 3-month contract cycle.",
