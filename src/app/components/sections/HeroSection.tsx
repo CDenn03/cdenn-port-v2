@@ -6,7 +6,7 @@ import { Reveal } from "../ui/Reveal";
 
 export const HeroSection = () => {
   return (
-    <section className="min-h-screen flex items-center px-6 pt-24 pb-12 md:pt-32">
+    <section className="min-h-screen flex items-center px-4 md:px-6 pt-20 pb-10 md:pt-24">
       <div className="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-12 md:gap-16 items-center">
 
         <div className="order-2 md:order-1">

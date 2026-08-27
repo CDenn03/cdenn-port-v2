@@ -50,7 +50,7 @@ export const Navbar = () => {
 
   return (
     <nav className="fixed top-0 w-full z-50 border-b transition-colors duration-300 border-zinc-200 bg-[#FCF7F2]/90 dark:border-[#1a1a1a] dark:bg-[#0a0a0a]/90 backdrop-blur-md">
-      <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-2 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center">
           <Image
             src={logoSrc}
