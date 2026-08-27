@@ -10,17 +10,17 @@ const featured = solutions.filter((s) => s.featured);
 
 export const SolutionsSection = () => {
   return (
-    <section id="solutions" className="py-20 md:py-32 px-6 transition-colors duration-300 bg-[#F5EFE8] dark:bg-[#111111]">
+    <section id="solutions" className="py-14 md:py-20 px-4 md:px-6 transition-colors duration-300 bg-[#F5EFE8] dark:bg-[#111111]">
       <div className="max-w-6xl mx-auto">
         <Reveal>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900 dark:text-[#FCF7F2]">Featured Solutions</h2>
-          <div className="w-20 h-1 bg-primary dark:bg-[#FCF7F2] mb-12 md:mb-16 rounded-full" />
+          <div className="w-20 h-1 bg-primary dark:bg-[#FCF7F2] mb-8 md:mb-10 rounded-full" />
         </Reveal>
 
-        <div className="space-y-24">
+        <div className="space-y-16">
           {featured.map((project) => (
             <Reveal key={`${project.title}-${project.layout}`}>
-              <div className={`grid md:grid-cols-12 gap-12 items-center ${
+              <div className={`grid md:grid-cols-12 gap-8 items-center ${
                 project.layout === 'right' ? 'md:flex-row-reverse' : ''
               }`}>
 
@@ -131,7 +131,7 @@ export const SolutionsSection = () => {
         </div>
 
         <Reveal>
-          <div className="mt-16 flex justify-center">
+          <div className="mt-10 flex justify-center">
             <Link
               href="/solutions"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full border font-semibold text-sm transition-colors border-zinc-300 text-slate-800 hover:bg-slate-900 hover:text-white hover:border-slate-900 dark:border-[#2a2a2a] dark:text-[#FCF7F2] dark:hover:bg-[#FCF7F2] dark:hover:text-[#0a0a0a]"

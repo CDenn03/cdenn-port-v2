@@ -65,7 +65,7 @@ export const ContactSection = () => {
     "w-full border rounded-xl px-4 py-3 text-base focus:outline-none focus:border-primary dark:focus:border-[#FCF7F2] transition-colors bg-white border-zinc-300 text-slate-900 placeholder-zinc-400 dark:bg-[#1a1a1a] dark:border-[#2a2a2a] dark:text-[#FCF7F2] dark:placeholder-[#555555]";
 
   return (
-    <section id="contact" className="py-20 md:py-32 px-6 transition-colors duration-300 bg-[#F5EFE8] dark:bg-[#111111]">
+    <section id="contact" className="py-14 md:py-20 px-4 md:px-6 transition-colors duration-300 bg-[#F5EFE8] dark:bg-[#111111]">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16">
 
         {/* Left */}
