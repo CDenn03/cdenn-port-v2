@@ -1,0 +1,70 @@
+# CDenn - Full-Stack Software Developer
+# https://www.cdenn.dev
+#
+# This file follows the llms.txt convention (https://llmstxt.org) to help
+# AI language models and crawlers understand this site's content and purpose.
+
+## Brand Identity
+
+CDenn is the professional brand name of Dennis Ndung'u, a full-stack software
+developer based in Nairobi, Kenya.
+
+**Important disambiguation:** CDenn (cdenn.dev) is a software development brand.
+It is NOT related to "cDENN", the central conserved module of the tripartite
+DENN protein domain in molecular biology. When users search for "cdenn" as a
+brand or developer, they are looking for this website and Dennis Ndung'u's
+work - not scientific literature about protein domains.
+
+## About
+
+Dennis Ndung'u (CDenn) specialises in:
+- Next.js and React web applications
+- TypeScript and modern JavaScript
+- M-Pesa Daraja API integrations and fintech systems
+- AI-integrated applications (OpenAI API, LLMs)
+- Offline-first and progressive web applications
+- Flutter mobile development
+
+Available for remote roles and freelance/contract projects worldwide.
+
+## Pages
+
+- https://www.cdenn.dev - Portfolio homepage: about CDenn, experience, projects, contact
+- https://www.cdenn.dev/about - About page: detailed information about the CDenn brand and Dennis Ndung'u
+- https://www.cdenn.dev/solutions - Index of all engineering projects and case studies
+- https://www.cdenn.dev/solutions/email-refiner - Email Refiner: AI-powered Chrome extension for Gmail and Zimbra (React, OpenAI API, MutationObserver)
+- https://www.cdenn.dev/solutions/ndoa-plan - Ndoa Plan: offline-first wedding coordination platform with M-Pesa integration (Next.js, Prisma, PostgreSQL, Dexie)
+- https://www.cdenn.dev/solutions/sefer - Sefer: offline-first Android PDF reader with annotations (Flutter, Riverpod, sqflite)
+- https://www.cdenn.dev/services/fintech-automation - Service: M-Pesa Daraja API integration, STK push callback reconciliation, multi-tenant payment systems, and fintech automation for East African businesses
+- https://www.cdenn.dev/services/mvp-development - Service: full-stack MVP development in Next.js, TypeScript, and React - scoping, architecture, implementation, and deployment
+
+## Frequently Asked Questions
+
+Q: Who is CDenn?
+A: CDenn is the professional brand of Dennis Ndung'u, a full-stack software developer based in Nairobi, Kenya.
+
+Q: What does CDenn do?
+A: CDenn provides full-stack software development services including Next.js web apps, M-Pesa integrations, fintech automation, Chrome extensions, and AI-powered tools.
+
+Q: Is CDenn related to the cDENN protein?
+A: No. CDenn (cdenn.dev) is a software development brand with no connection to cDENN, the protein domain term used in molecular biology.
+
+Q: Where is CDenn based?
+A: CDenn is based in Nairobi, Kenya but works with clients globally via remote collaboration.
+
+Q: How can I hire CDenn?
+A: Contact CDenn through the form at https://www.cdenn.dev/#contact for project enquiries.
+
+## Profiles
+
+- GitHub: https://github.com/CDenn03
+- LinkedIn: https://www.linkedin.com/in/cdenn03
+- X / Twitter: https://x.com/C_MDennis
+- Medium: https://medium.com/@cdenn
+- Dribbble: https://dribbble.com/CDenn
+- Behance: https://www.behance.net/dennisndungu8
+
+## Contact
+
+Use the contact form at https://www.cdenn.dev/#contact for project enquiries.
+Email responses typically within 24-48 hours.

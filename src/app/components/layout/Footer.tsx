@@ -1,26 +1,34 @@
 "use client";
 
-import { SocialIcon } from "react-social-icons";
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "@/src/app/hooks/useTheme";
+import { socialLinks } from "@/src/app/data/social";
+import { GithubIcon } from "@/src/app/components/icons/GithubIcon";
+import { LinkedInIcon } from "@/src/app/components/icons/LinkedInIcon";
+import { XIcon } from "@/src/app/components/icons/XIcon";
+import { BehanceIcon } from "@/src/app/components/icons/BehanceIcon";
+import { DribbbleIcon } from "@/src/app/components/icons/DribbbleIcon";
+import { MediumIcon } from "@/src/app/components/icons/MediumIcon";
+
+const iconMap: Record<string, React.ReactNode> = {
+  github: <GithubIcon size={18} />,
+  linkedin: <LinkedInIcon size={18} />,
+  x: <XIcon size={18} />,
+  behance: <BehanceIcon size={18} />,
+  dribbble: <DribbbleIcon size={18} />,
+  medium: <MediumIcon size={18} />,
+};
 
 export const Footer = () => {
   const [hoveredIcon, setHoveredIcon] = useState<string | null>(null);
   const { resolvedTheme } = useTheme();
 
-  const logoSrc = resolvedTheme === "dark"
-    ? "/assets/logo/CDenn_white.png"
-    : "/assets/logo/CDenn.png";
-
-  const iconStyle = (network: string) => ({
-    height: 36,
-    width: 36,
-    border: hoveredIcon === network ? "2px solid #253C38" : "1px solid transparent",
-    borderRadius: "50%",
-    transition: "border 0.2s ease",
-  });
+  const logoSrc =
+    resolvedTheme === "dark"
+      ? "/assets/logo/CDenn_white.png"
+      : "/assets/logo/CDenn.png";
 
   return (
     <footer className="border-t pt-20 pb-10 px-6 transition-colors duration-300 border-zinc-200 bg-[#FCF7F2] dark:border-[#1a1a1a] dark:bg-[#0a0a0a]">
@@ -37,121 +45,119 @@ export const Footer = () => {
               />
             </Link>
             <p className="text-sm text-zinc-500 dark:text-[#888888]">
-              Software Engineer helping businesses build scalable web products.
+              Full-stack software developer based in Nairobi, Kenya.
+              Specializing in Next.js, fintech automation, and AI-integrated web
+              applications.
             </p>
           </div>
 
           <div>
-            <h4 className="font-bold text-base mb-4 text-slate-900 dark:text-[#FCF7F2]">Navigation</h4>
+            <h4 className="font-bold text-base mb-4 text-slate-900 dark:text-[#FCF7F2]">
+              Navigation
+            </h4>
             <ul className="space-y-3 text-sm text-zinc-600 dark:text-[#888888]">
-              <li><Link href="/" className="hover:text-primary dark:hover:text-[#FCF7F2]">Home</Link></li>
-              <li><Link href="#about" className="hover:text-primary dark:hover:text-[#FCF7F2]">About</Link></li>
-              <li><Link href="#solutions" className="hover:text-primary dark:hover:text-[#FCF7F2]">Solutions</Link></li>
-              <li><Link href="#contact" className="hover:text-primary dark:hover:text-[#FCF7F2]">Contact</Link></li>
+              <li>
+                <Link
+                  href="/"
+                  className="hover:text-primary dark:hover:text-[#FCF7F2]"
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#about"
+                  className="hover:text-primary dark:hover:text-[#FCF7F2]"
+                >
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#solutions"
+                  className="hover:text-primary dark:hover:text-[#FCF7F2]"
+                >
+                  Solutions
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#contact"
+                  className="hover:text-primary dark:hover:text-[#FCF7F2]"
+                >
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-bold text-base mb-4 text-slate-900 dark:text-[#FCF7F2]">Legal</h4>
+            <h4 className="font-bold text-base mb-4 text-slate-900 dark:text-[#FCF7F2]">
+              Services
+            </h4>
             <ul className="space-y-3 text-sm text-zinc-600 dark:text-[#888888]">
-              <li><a href="/privacy" className="hover:text-primary dark:hover:text-[#FCF7F2] transition-colors">Privacy Policy</a></li>
+              <li>
+                <Link
+                  href="/services/fintech-automation"
+                  className="hover:text-primary dark:hover:text-[#FCF7F2]"
+                >
+                  Fintech Automation
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/mvp-development"
+                  className="hover:text-primary dark:hover:text-[#FCF7F2]"
+                >
+                  MVP Development
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-bold text-base mb-4 text-slate-900 dark:text-[#FCF7F2]">
+              Legal
+            </h4>
+            <ul className="space-y-3 text-sm text-zinc-600 dark:text-[#888888]">
+              <li>
+                <a
+                  href="/privacy"
+                  className="hover:text-primary dark:hover:text-[#FCF7F2] transition-colors"
+                >
+                  Privacy Policy
+                </a>
+              </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm border-zinc-200 text-zinc-400 dark:border-[#1a1a1a] dark:text-[#555555]">
           <p>© {new Date().getFullYear()} CDenn. All rights reserved.</p>
+
           <div className="flex gap-3 items-center pr-20 md:pr-0">
-            <SocialIcon
-              network="github"
-              url="https://github.com/CDenn03"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                ...iconStyle("github"),
-                transition: "transform 0.2s ease, border 0.2s ease",
-                transform: hoveredIcon === "github" ? "scale(1.1)" : "scale(1)",
-              }}
-              bgColor="#0f172b"
-              className="dark:bg-[#f4f4f5]! cursor-pointer rounded-full"
-              onMouseEnter={() => setHoveredIcon("github")}
-              onMouseLeave={() => setHoveredIcon(null)}
-            />
-            <SocialIcon
-              network="linkedin"
-              url="https://www.linkedin.com/in/cdenn03"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                ...iconStyle("linkedin"),
-                transition: "transform 0.2s ease, border 0.2s ease",
-                transform: hoveredIcon === "linkedin" ? "scale(1.1)" : "scale(1)",
-              }}
-              bgColor="#0f172b"
-              className="dark:bg-[#f4f4f5]! cursor-pointer rounded-full"
-              onMouseEnter={() => setHoveredIcon("linkedin")}
-              onMouseLeave={() => setHoveredIcon(null)}
-            />
-            <SocialIcon
-              network="x"
-              url="https://x.com/C_MDennis"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                ...iconStyle("x"),
-                transition: "transform 0.2s ease, border 0.2s ease",
-                transform: hoveredIcon === "x" ? "scale(1.1)" : "scale(1)",
-              }}
-              bgColor="#0f172b"
-              className="dark:bg-[#f4f4f5]! cursor-pointer rounded-full"
-              onMouseEnter={() => setHoveredIcon("x")}
-              onMouseLeave={() => setHoveredIcon(null)}
-            />
-            <SocialIcon
-              network="behance"
-              url="https://www.behance.net/dennisndungu8"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                ...iconStyle("behance"),
-                transition: "transform 0.2s ease, border 0.2s ease",
-                transform: hoveredIcon === "behance" ? "scale(1.1)" : "scale(1)",
-              }}
-              bgColor="#0f172b"
-              className="dark:bg-[#f4f4f5]! cursor-pointer rounded-full"
-              onMouseEnter={() => setHoveredIcon("behance")}
-              onMouseLeave={() => setHoveredIcon(null)}
-            />
-            <SocialIcon
-              network="dribbble"
-              url="https://dribbble.com/CDenn"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                ...iconStyle("dribbble"),
-                transition: "transform 0.2s ease, border 0.2s ease",
-                transform: hoveredIcon === "dribbble" ? "scale(1.1)" : "scale(1)",
-              }}
-              bgColor="#0f172b"
-              className="dark:bg-[#f4f4f5]! cursor-pointer rounded-full"
-              onMouseEnter={() => setHoveredIcon("dribbble")}
-              onMouseLeave={() => setHoveredIcon(null)}
-            />
-            <SocialIcon
-              network="medium"
-              url="https://medium.com/@cdenn"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                ...iconStyle("medium"),
-                transition: "transform 0.2s ease, border 0.2s ease",
-                transform: hoveredIcon === "medium" ? "scale(1.1)" : "scale(1)",
-              }}
-              bgColor="#0f172b"
-              className="dark:bg-[#f4f4f5]! cursor-pointer rounded-full"
-              onMouseEnter={() => setHoveredIcon("medium")}
-              onMouseLeave={() => setHoveredIcon(null)}
-            />
+            {socialLinks.map((link) => (
+              <a
+                key={link.network}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={link.label}
+                onMouseEnter={() => setHoveredIcon(link.network)}
+                onMouseLeave={() => setHoveredIcon(null)}
+                className="flex items-center justify-center w-9 h-9 rounded-full transition-all duration-200 text-zinc-500 dark:text-[#888888] hover:text-slate-900 dark:hover:text-[#FCF7F2]"
+                style={{
+                  border:
+                    hoveredIcon === link.network
+                      ? "2px solid #253C38"
+                      : "1px solid transparent",
+                  transform:
+                    hoveredIcon === link.network ? "scale(1.1)" : "scale(1)",
+                }}
+              >
+                {iconMap[link.network]}
+              </a>
+            ))}
           </div>
         </div>
       </div>

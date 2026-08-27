@@ -1,7 +1,8 @@
 "use client";
 
-import { MapPin, Clock, Terminal } from "lucide-react";
+import { MapPin, Clock, Terminal, Briefcase } from "lucide-react";
 import { Reveal } from "../ui/Reveal";
+import { experiences } from "@/src/app/data/portfolio";
 
 const techStack = {
   frontend: [
@@ -9,13 +10,22 @@ const techStack = {
     "Next.js",
     "TypeScript",
     "JavaScript",
-    "HTML",
-    "CSS",
     "TailwindCSS",
-    "TanStack Query"
+    "TanStack Query",
+    "Framer Motion",
   ],
-  backend: ["Node.js", "Deno", "Rust", "Axum"],
-  tools: ["Git", "GitHub", "Figma", "Adobe Tools"]
+  backend: [
+    "Node.js",
+    "Rust",
+    "Prisma",
+    "PostgreSQL",
+    "Supabase",
+    "M-Pesa Daraja API",
+    "REST APIs",
+    "Deno",
+  ],
+  mobile: ["Flutter", "Dart", "Riverpod", "sqflite"],
+  tools: ["Git", "GitHub", "Figma", "Vercel", "Adobe Tools"],
 };
 
 
@@ -32,34 +42,36 @@ export const AboutSection = () => {
 
           <Reveal>
             <p className="text-lg leading-relaxed mb-6 text-zinc-600 dark:text-[#b0b0b0]">
-              I&apos;m a Frontend Engineer with 3+ years of experience building scalable,
-              high-performance web applications using React and the modern TypeScript ecosystem.
-              I focus on creating fast, intuitive user experiences while maintaining clean and
-              robust codebases.
+              I&apos;m a full-stack software developer based in Nairobi, Kenya, with 3+ years
+              building production-grade web applications and fintech systems. My work spans
+              Next.js application architecture, M-Pesa payment integrations, AI-powered tooling,
+              and offline-first mobile apps - across SaaS platforms, browser extensions, and
+              event-tech products.
             </p>
           </Reveal>
 
           <Reveal>
             <p className="text-lg leading-relaxed mb-6 text-zinc-600 dark:text-[#b0b0b0]">
-              I&apos;ve worked on SaaS platforms, improved legacy systems, and collaborated with
-              cross-functional teams to deliver production-ready products. I enjoy translating
-              complex business requirements into simple, maintainable frontend solutions.
+              I&apos;ve led frontend architecture on multi-tenant bancassurance platforms, built
+              Chrome extensions that inject into live Gmail DOM, and engineered offline-first
+              systems that reconcile M-Pesa STK callbacks in real time. I work across the full
+              stack - from database schema and API design to component systems and deployment.
             </p>
           </Reveal>
 
           <Reveal>
             <p className="text-lg leading-relaxed mb-8 text-zinc-600 dark:text-[#b0b0b0]">
               <strong className="text-slate-900 dark:text-[#FCF7F2]">My Approach:</strong>{" "}
-              Build scalable systems, ship fast, and never compromise on code quality or user
-              experience. I prioritize clarity, performance, and long-term maintainability in
-              every project.
+              Understand the problem deeply before writing a line of code. Ship fast without
+              cutting corners on architecture. Keep systems maintainable for the team that
+              inherits them.
             </p>
           </Reveal>
 
           <Reveal>
             <blockquote className="border-l-4 border-primary pl-6 py-3 my-8 rounded-r-xl bg-primary/5 dark:bg-white/5">
               <p className="text-xl italic text-slate-800 dark:text-[#FCF7F2]">
-                Build scalable interfaces. Keep it clean. Ship with confidence.
+                Build systems that last. Ship products that work. Own the outcome.
               </p>
             </blockquote>
           </Reveal>
@@ -72,7 +84,7 @@ export const AboutSection = () => {
                   <h4 className="font-bold text-base text-slate-900 dark:text-[#FCF7F2]">
                     Location
                   </h4>
-                  <p className="text-sm text-zinc-500 dark:text-[#b0b0b0]">Remote / Worldwide</p>
+                  <p className="text-sm text-zinc-500 dark:text-[#b0b0b0]">Nairobi, Kenya · Remote-friendly</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -81,7 +93,7 @@ export const AboutSection = () => {
                   <h4 className="font-bold text-base text-slate-900 dark:text-[#FCF7F2]">
                     Availability
                   </h4>
-                  <p className="text-sm text-zinc-500 dark:text-[#b0b0b0]">Open to Opportunities</p>
+                  <p className="text-sm text-zinc-500 dark:text-[#b0b0b0]">Open to roles, contracts & consulting</p>
                 </div>
               </div>
             </div>
@@ -119,6 +131,46 @@ export const AboutSection = () => {
               </Reveal>
             ))}
           </div>
+        </div>
+      </div>
+
+      {/* Experience — inline timeline */}
+      <div className="max-w-6xl mx-auto mt-16 pt-12 border-t border-zinc-200 dark:border-[#2a2a2a]">
+        <Reveal>
+          <h3 className="text-lg font-bold mb-8 flex items-center gap-2 text-slate-900 dark:text-[#FCF7F2]">
+            <Briefcase size={18} className="text-primary dark:text-[#FCF7F2]" />
+            Experience
+          </h3>
+        </Reveal>
+
+        <div className="relative border-l ml-3 space-y-8 border-zinc-200 dark:border-[#2a2a2a]">
+          {experiences.map((job, i) => (
+            <Reveal key={`${job.company}-${job.role}`} delay={i * 0.1}>
+              <div className="relative pl-8">
+                <div className={`absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full ring-4 ${
+                  i === 0
+                    ? "bg-primary dark:bg-[#FCF7F2]"
+                    : "bg-zinc-300 dark:bg-[#444444]"
+                } ring-[#F5EFE8] dark:ring-[#111111]`} />
+                <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-1">
+                  <h4 className="text-base font-bold text-slate-900 dark:text-[#FCF7F2]">{job.role}</h4>
+                  <span className={`text-xs font-mono ${
+                    i === 0 ? "text-primary dark:text-[#FCF7F2]" : "text-zinc-400 dark:text-[#666]"
+                  }`}>{job.period}</span>
+                </div>
+                <p className="text-sm font-medium mb-3 text-zinc-500 dark:text-[#888888]">{job.company}</p>
+                <ul className="space-y-1.5 mb-3">
+                  {job.desc.map((item, idx) => (
+                    <li key={idx} className="text-sm text-zinc-600 dark:text-[#b0b0b0] flex gap-2">
+                      <span className="text-primary mt-0.5 shrink-0">·</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-xs font-mono text-zinc-400 dark:text-[#555]">{job.tech}</p>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>

@@ -88,7 +88,14 @@ export const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-widest text-zinc-400 dark:text-[#666666]">Prefer a call?</p>
-                  <p className="text-base font-medium text-slate-900 dark:text-[#FCF7F2]">Book a 15-min intro call</p>
+                  <a
+                    href="https://calendly.com/cdenn/15min"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-base font-medium text-primary hover:underline underline-offset-4 transition-colors"
+                  >
+                    Book a 15-min intro call →
+                  </a>
                 </div>
               </div>
               <div className="flex items-center gap-2 text-sm text-zinc-500 dark:text-[#888888] pl-1">
