@@ -5,7 +5,7 @@ import { sameAsUrls } from "@/src/app/data/social";
 export const metadata: Metadata = {
   title: "CDenn | Full-Stack Software Developer",
   description:
-    "CDenn is the professional brand of Dennis Ndung'u, a full-stack software developer based in Nairobi, Kenya. Specialising in Next.js, TypeScript, and AI-integrated web applications. Open to remote roles and freelance projects.",
+    "CDenn is Dennis Ndung'u, a full-stack developer in Nairobi. Next.js, TypeScript, M-Pesa integrations, and AI tools.",
   alternates: {
     canonical: "/",
   },

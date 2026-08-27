@@ -10,8 +10,8 @@ import { useTheme } from "@/src/app/hooks/useTheme";
 
 const navLinks = [
   { href: "#about", label: "About" },
-  { href: "#experience", label: "Experience" },
-  { href: "#solutions", label: "Solutions" },
+  { href: "#solutions", label: "Work" },
+  { href: "/writing", label: "Writing" },
   { href: "#contact", label: "Contact" },
 ];
 

@@ -6,7 +6,7 @@ import { ArrowRight, CheckCircle } from "lucide-react";
 export const metadata: Metadata = {
   title: "M-Pesa Daraja API Integration & Fintech Automation",
   description:
-    "Specialized fintech engineering for East African businesses. Real-time M-Pesa Daraja API integrations, STK push callback reconciliation, multi-tenant payment ledgers, and automated financial workflows built on Next.js and Node.js.",
+    "M-Pesa Daraja API integration, STK push callbacks, and payment automation for East African businesses. Next.js & Node.js.",
   alternates: {
     canonical: "/services/fintech-automation",
   },
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     url: "https://www.cdenn.dev/services/fintech-automation",
     title: "M-Pesa Daraja API Integration & Fintech Automation",
     description:
-      "Specialized fintech engineering for East African businesses. Real-time M-Pesa Daraja API integrations, STK push callback reconciliation, and automated financial workflows.",
+      "M-Pesa Daraja API integration and payment automation for East African businesses. Built with Next.js.",
   },
 };
 

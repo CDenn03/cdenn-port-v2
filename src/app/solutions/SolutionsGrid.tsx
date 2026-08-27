@@ -59,14 +59,25 @@ function ProjectCard({ project, wide = false }: { project: Solution; wide?: bool
         className={`cursor-pointer text-left w-full group rounded-2xl overflow-hidden border transition-colors bg-white border-zinc-200 dark:bg-[#111111] dark:border-[#1e1e1e] hover:border-zinc-300 dark:hover:border-[#2a2a2a] shadow-sm hover:shadow-md ${v.cardLayout}`}
       >
         <div className={`relative overflow-hidden bg-zinc-100 dark:bg-zinc-900 ${v.imageCol}`}>
-          <Image
-            src={project.image}
-            alt={project.title}
-            fill
-            sizes={v.imageSizes}
-            className="object-cover transition-transform duration-700 group-hover:scale-105"
-          />
-          <div className="absolute inset-0 z-0 bg-black/50 transition-opacity duration-500 group-hover:opacity-0" />
+          {project.image ? (
+            <Image
+              src={project.image}
+              alt={project.title}
+              fill
+              sizes={v.imageSizes}
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+          ) : (
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-zinc-50 dark:bg-zinc-900">
+              <div className="w-10 h-10 rounded-full bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center mb-2">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-zinc-400">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+              </div>
+              <p className="text-xs font-mono text-zinc-400 dark:text-zinc-500">Code under NDA</p>
+            </div>
+          )}
+          {project.image && <div className="absolute inset-0 z-0 bg-black/50 transition-opacity duration-500 group-hover:opacity-0" />}
           {project.ongoing && (
             <span className="absolute top-3 left-3 z-10 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-white/90 dark:bg-black/70 text-slate-800 dark:text-[#FCF7F2]">
               <span className="relative flex h-1.5 w-1.5">

@@ -1,7 +1,8 @@
 "use client";
 
-import { MapPin, Clock, Terminal } from "lucide-react";
+import { MapPin, Clock, Terminal, Briefcase } from "lucide-react";
 import { Reveal } from "../ui/Reveal";
+import { experiences } from "@/src/app/data/portfolio";
 
 const techStack = {
   frontend: [
@@ -130,6 +131,46 @@ export const AboutSection = () => {
               </Reveal>
             ))}
           </div>
+        </div>
+      </div>
+
+      {/* Experience — inline timeline */}
+      <div className="max-w-6xl mx-auto mt-16 pt-12 border-t border-zinc-200 dark:border-[#2a2a2a]">
+        <Reveal>
+          <h3 className="text-lg font-bold mb-8 flex items-center gap-2 text-slate-900 dark:text-[#FCF7F2]">
+            <Briefcase size={18} className="text-primary dark:text-[#FCF7F2]" />
+            Experience
+          </h3>
+        </Reveal>
+
+        <div className="relative border-l ml-3 space-y-8 border-zinc-200 dark:border-[#2a2a2a]">
+          {experiences.map((job, i) => (
+            <Reveal key={`${job.company}-${job.role}`} delay={i * 0.1}>
+              <div className="relative pl-8">
+                <div className={`absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full ring-4 ${
+                  i === 0
+                    ? "bg-primary dark:bg-[#FCF7F2]"
+                    : "bg-zinc-300 dark:bg-[#444444]"
+                } ring-[#F5EFE8] dark:ring-[#111111]`} />
+                <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-1">
+                  <h4 className="text-base font-bold text-slate-900 dark:text-[#FCF7F2]">{job.role}</h4>
+                  <span className={`text-xs font-mono ${
+                    i === 0 ? "text-primary dark:text-[#FCF7F2]" : "text-zinc-400 dark:text-[#666]"
+                  }`}>{job.period}</span>
+                </div>
+                <p className="text-sm font-medium mb-3 text-zinc-500 dark:text-[#888888]">{job.company}</p>
+                <ul className="space-y-1.5 mb-3">
+                  {job.desc.map((item, idx) => (
+                    <li key={idx} className="text-sm text-zinc-600 dark:text-[#b0b0b0] flex gap-2">
+                      <span className="text-primary mt-0.5 shrink-0">·</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-xs font-mono text-zinc-400 dark:text-[#555]">{job.tech}</p>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>

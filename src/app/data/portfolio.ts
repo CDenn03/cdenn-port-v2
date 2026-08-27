@@ -44,6 +44,34 @@ export const solutions: Solution[] = [
   //   category: "SaaS / Fintech",
   // },
   {
+    slug: "bancassurance-platform",
+    title: "Bancassurance Platform",
+    summary:
+      "Multi-tenant SaaS for a financial services provider - policy lifecycle management, claims processing, and compliance reporting. Code under NDA.",
+    description:
+      "Multi-tenant SaaS platform for managing insurance policy lifecycles across bancassurance channels. Built for a financial services provider operating across multiple bank partnerships.",
+    story:
+      "Insurance distribution in East Africa relies heavily on bank branches as the primary sales channel. The challenge was building a single platform that could serve multiple bank tenants - each with different branding, products, and compliance requirements - while sharing a unified codebase. I led the frontend architecture, designing a component system with tenant-scoped theming and a virtual-scroll data grid capable of handling 50,000+ policy records without UI degradation. Role-based access controlled what each user tier could see and act on across tenant boundaries.",
+    challenge:
+      "Multi-tenant architecture with secure role-based access, 10k+ concurrent users, and high-performance financial workflows - all while maintaining strict data isolation between tenants.",
+    solution:
+      "Designed a theme-aware component library with tenant-scoped configs, JWT-based role permissions with tenant-boundary enforcement, and a virtual-scroll data grid that handled 50k+ policy records without performance degradation.",
+    results: [
+      { label: "Concurrent Users", value: "10k+" },
+      { label: "Policy Records", value: "50k+" },
+      { label: "Uptime", value: "99.9%" },
+      { label: "Delivery", value: "8 months" },
+    ],
+    tags: ["Next.js", "TypeScript", "TailwindCSS", "JWT", "Multi-tenant", "Fintech"],
+    image: undefined as unknown as string,
+    layout: "right",
+    featured: true,
+    year: "2025",
+    role: "Frontend Lead",
+    duration: "8 months",
+    category: "SaaS / Fintech",
+  },
+  {
     slug: "email-refiner",
     title: "Email Refiner",
     summary:

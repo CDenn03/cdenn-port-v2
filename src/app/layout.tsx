@@ -12,22 +12,25 @@ const inter = Inter({
 
 export const metadata: Metadata = {
 
-  // metadataBase must match the canonical domain (www.cdenn.dev).
-  // All relative canonical/OG paths are prefixed with this value - if it
-  // points to the naked domain every resolved URL is a redirect, which
-  // triggers Semrush's "sitemap contains redirecting URLs" error and wastes crawl budget.
   metadataBase: new URL("https://www.cdenn.dev"),
 
   authors: [{ name: "Dennis Ndung'u", url: "https://www.cdenn.dev" }],
   creator: "Dennis Ndung'u",
   publisher: "Dennis Ndung'u",
 
+  icons: {
+    icon: [
+      { url: "/assets/logo/CDenn_green_icon.png", type: "image/png" },
+    ],
+    apple: "/assets/logo/CDenn_green_icon.png",
+  },
+
   title: {
     default: "CDenn | Full-Stack Software Developer",
     template: "%s | CDenn",
   },
   description:
-    "Full-stack software developer based in Nairobi, Kenya. Specialising in Next.js, TypeScript, and AI-integrated web applications. Open to remote roles and freelance projects.",
+    "Full-stack developer in Nairobi, Kenya. Building Next.js apps, fintech systems, and AI-integrated tools. Available for remote work.",
 
   alternates: {
     canonical: "/",
@@ -39,7 +42,7 @@ export const metadata: Metadata = {
     siteName: "CDenn",
     title: "CDenn | Full-Stack Software Developer",
     description:
-      "Full-stack software developer based in Nairobi, Kenya. Specialising in Next.js, TypeScript, and AI-integrated web applications.",
+      "Full-stack developer in Nairobi, Kenya. Building Next.js apps, fintech systems, and AI tools.",
     images: [
       {
         url: "/opengraph-image",
@@ -56,7 +59,7 @@ export const metadata: Metadata = {
     creator: "@C_MDennis",
     title: "CDenn | Full-Stack Software Developer",
     description:
-      "Full-stack software developer based in Nairobi, Kenya. Specialising in Next.js, TypeScript, and AI-integrated web applications.",
+      "Full-stack developer in Nairobi, Kenya. Building Next.js apps, fintech systems, and AI tools.",
     images: ["/opengraph-image"],
   },
 
@@ -83,8 +86,8 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="light"
+          enableSystem={false}
           disableTransitionOnChange
         >
           {children}

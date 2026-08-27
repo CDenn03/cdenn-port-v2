@@ -5,14 +5,14 @@ import { sameAsUrls } from "@/src/app/data/social";
 export const metadata: Metadata = {
   title: "About CDenn | Full-Stack Software Developer",
   description:
-    "CDenn is the professional brand of Dennis Ndung'u, a full-stack software developer based in Nairobi, Kenya. Learn about the person behind the brand, his expertise, and how to work together.",
+    "CDenn is Dennis Ndung'u, a Nairobi-based developer. Learn about his expertise in Next.js, fintech, and AI.",
   alternates: {
     canonical: "/about",
   },
   openGraph: {
     title: "About CDenn | Full-Stack Software Developer",
     description:
-      "CDenn is the professional brand of Dennis Ndung'u, a full-stack software developer specialising in Next.js, TypeScript, and fintech systems.",
+      "CDenn is Dennis Ndung'u, a Nairobi-based developer specialising in Next.js, fintech, and AI tools.",
     url: "https://www.cdenn.dev/about",
     type: "profile",
   },
@@ -114,27 +114,27 @@ export default function AboutPage() {
               </p>
               <ul>
                 <li>
-                  <strong>Next.js &amp; React Development</strong> — Server-side
+                  <strong>Next.js &amp; React Development</strong> - Server-side
                   rendering, App Router architecture, and optimised frontend
                   performance
                 </li>
                 <li>
-                  <strong>Fintech &amp; Payment Systems</strong> — M-Pesa Daraja
+                  <strong>Fintech &amp; Payment Systems</strong> - M-Pesa Daraja
                   API integrations, STK push implementations, and payment
                   reconciliation systems for East African markets
                 </li>
                 <li>
-                  <strong>AI-Integrated Applications</strong> — Leveraging
+                  <strong>AI-Integrated Applications</strong> - Leveraging
                   OpenAI and other AI APIs to build intelligent features like
                   the Email Refiner Chrome extension
                 </li>
                 <li>
-                  <strong>Offline-First Applications</strong> — Progressive web
+                  <strong>Offline-First Applications</strong> - Progressive web
                   apps and mobile applications designed for low-connectivity
                   environments
                 </li>
                 <li>
-                  <strong>MVP Development</strong> — Helping startups go from
+                  <strong>MVP Development</strong> - Helping startups go from
                   idea to production-ready product quickly and efficiently
                 </li>
               </ul>
@@ -185,17 +185,17 @@ export default function AboutPage() {
               <p>Some notable projects from the CDenn portfolio include:</p>
               <ul>
                 <li>
-                  <strong>Email Refiner</strong> — An AI-powered Chrome
+                  <strong>Email Refiner</strong> - An AI-powered Chrome
                   extension that transforms email tone inside Gmail and Zimbra
                   without leaving the compose window
                 </li>
                 <li>
-                  <strong>Ndoa Plan</strong> — An offline-first wedding
+                  <strong>Ndoa Plan</strong> - An offline-first wedding
                   coordination platform built for Kenyan events, featuring
                   M-Pesa payment reconciliation and real-time collaboration
                 </li>
                 <li>
-                  <strong>Sefer</strong> — A clean, feature-rich PDF reader for
+                  <strong>Sefer</strong> - A clean, feature-rich PDF reader for
                   Android with persistent annotations and library management
                 </li>
               </ul>
@@ -239,7 +239,7 @@ export default function AboutPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    GitHub — @CDenn03
+                    GitHub - @CDenn03
                   </a>
                 </li>
                 <li>
@@ -248,7 +248,7 @@ export default function AboutPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    LinkedIn — cdenn03
+                    LinkedIn - cdenn03
                   </a>
                 </li>
                 <li>
@@ -257,7 +257,7 @@ export default function AboutPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    X (Twitter) — @C_MDennis
+                    X (Twitter) - @C_MDennis
                   </a>
                 </li>
                 <li>
@@ -266,7 +266,7 @@ export default function AboutPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Medium — @cdenn
+                    Medium - @cdenn
                   </a>
                 </li>
               </ul>

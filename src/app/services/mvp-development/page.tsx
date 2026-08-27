@@ -6,7 +6,7 @@ import { ArrowRight, CheckCircle } from "lucide-react";
 export const metadata: Metadata = {
   title: "MVP Development - Full-Stack Next.js Engineer for Hire",
   description:
-    "I scope, architect, and ship production-ready MVPs in Next.js, TypeScript, and React - for startups and businesses that need to move fast without technical debt. Based in Nairobi, available globally for contracts and consulting.",
+    "Production-ready MVPs in Next.js, TypeScript, and React. Fast delivery, no tech debt. Nairobi-based, available globally.",
   alternates: {
     canonical: "/services/mvp-development",
   },
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     url: "https://www.cdenn.dev/services/mvp-development",
     title: "MVP Development - Full-Stack Next.js Engineer for Hire",
     description:
-      "I scope, architect, and ship production-ready MVPs in Next.js, TypeScript, and React - for startups and businesses that need to move fast without technical debt.",
+      "Production-ready MVPs in Next.js, TypeScript, and React. Fast delivery without technical debt.",
   },
 };
 
