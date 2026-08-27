@@ -31,8 +31,8 @@ const techStack = {
 
 export const AboutSection = () => {
   return (
-    <section id="about" className="py-20 md:py-32 px-6 transition-colors duration-300 bg-[#F5EFE8] dark:bg-[#111111]">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16">
+    <section id="about" className="py-14 md:py-20 px-4 md:px-6 transition-colors duration-300 bg-[#F5EFE8] dark:bg-[#111111]">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12">
         <div>
           <Reveal>
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-slate-900 dark:text-[#FCF7F2]">
@@ -135,7 +135,7 @@ export const AboutSection = () => {
       </div>
 
       {/* Experience — inline timeline */}
-      <div className="max-w-6xl mx-auto mt-16 pt-12 border-t border-zinc-200 dark:border-[#2a2a2a]">
+      <div className="max-w-6xl mx-auto mt-10 pt-8 border-t border-zinc-200 dark:border-[#2a2a2a]">
         <Reveal>
           <h3 className="text-lg font-bold mb-8 flex items-center gap-2 text-slate-900 dark:text-[#FCF7F2]">
             <Briefcase size={18} className="text-primary dark:text-[#FCF7F2]" />
