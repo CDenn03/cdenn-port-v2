@@ -68,6 +68,13 @@ export function RequestCV() {
       className="rounded-3xl p-8 space-y-5 bg-white border border-zinc-200 dark:bg-[#1a1a1a] dark:border-[#2a2a2a]"
       onSubmit={handleSubmit}
     >
+      {/* Header inside the card */}
+      <div className="mb-1">
+        <h2 className="text-xl font-bold text-slate-900 dark:text-[#FCF7F2]">Request CV</h2>
+        <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
+          Leave your details and I&apos;ll send my CV within 24 hours.
+        </p>
+      </div>
       <div className="grid sm:grid-cols-2 gap-5">
         <div>
           <label htmlFor="cv-name" className="block text-sm font-medium mb-2 text-zinc-600 dark:text-[#b0b0b0]">
@@ -119,7 +126,7 @@ export function RequestCV() {
             id="cv-company"
             name="company"
             className={inputClass}
-            placeholder="Acme Inc."
+            placeholder="Company Name"
           />
         </div>
       </div>

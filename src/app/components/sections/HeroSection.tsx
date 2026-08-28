@@ -123,14 +123,7 @@ export const HeroSection = () => {
                   <X size={16} className="text-zinc-500" />
                 </button>
 
-                {/* Header above form */}
-                <div className="mb-4 px-1">
-                  <h2 className="text-xl font-bold text-slate-900 dark:text-[#FCF7F2]">Request CV</h2>
-                  <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
-                    Leave your details and I&apos;ll send my CV within 24 hours.
-                  </p>
-                </div>
-
+                {/* Header above form — inside modal, above form card */}
                 <RequestCV />
               </div>
             </motion.div>
