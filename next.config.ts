@@ -30,6 +30,17 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        // The MVP Development service page was folded into the /services hub.
+        // Keep the old URL alive - it is indexed and linked externally.
+        source: "/services/mvp-development",
+        destination: "/services",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

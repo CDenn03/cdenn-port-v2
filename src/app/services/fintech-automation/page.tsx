@@ -68,7 +68,7 @@ const whyItems = [
   "M-Pesa is used by 90%+ of Kenya's adult population - not integrating it correctly costs real money",
   "Daraja API has quirks (callback timing, result code edge cases) that only surface in production",
   "Most generic developers treat it as a simple HTTP call - it requires domain-specific handling",
-  "I've built reconciliation systems that handle live events with hundreds of simultaneous payments",
+  "I've built live reconciliation systems where contributions arrive faster than anyone can track them by hand",
 ];
 
 export default function FintechAutomationPage() {
@@ -82,7 +82,7 @@ export default function FintechAutomationPage() {
       />
 
       <main className="min-h-screen bg-[#FCF7F2] text-slate-900 dark:bg-[#0a0a0a] dark:text-[#FCF7F2]">
-        <SubpageNav backHref="/" backLabel="Back" />
+        <SubpageNav backHref="/services" backLabel="All services" />
 
         <div className="max-w-4xl mx-auto px-6 py-16 md:py-24">
 
@@ -201,12 +201,39 @@ export default function FintechAutomationPage() {
               when connectivity returns - with a conflict-resolution strategy that ensures no
               payment is lost or double-counted.
             </p>
-            <Link
-              href="/solutions/ndoa-plan"
-              className="inline-flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-[#FCF7F2] underline underline-offset-4 hover:opacity-70 transition-opacity"
-            >
-              Read the Ndoa Plan case study <ArrowRight size={14} />
-            </Link>
+            <p className="text-zinc-600 dark:text-[#b0b0b0] leading-relaxed mb-6">
+              The multi-tenant side of this work is proven on a bancassurance platform I led the
+              frontend architecture for - JWT-based tenant isolation, action-level audit logging,
+              and a maker-checker approval workflow across 7 entity types. If the platform layer
+              is your main concern rather than the payment rails, that has its own page:{" "}
+              <Link
+                href="/services/multi-tenant-saas"
+                className="font-bold text-slate-900 dark:text-[#FCF7F2] underline underline-offset-4 hover:opacity-70 transition-opacity"
+              >
+                Multi-Tenant SaaS &amp; Platform Engineering
+              </Link>
+              .
+            </p>
+            <div className="flex flex-wrap gap-x-6 gap-y-3">
+              <Link
+                href="/solutions/ndoa-plan"
+                className="inline-flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-[#FCF7F2] underline underline-offset-4 hover:opacity-70 transition-opacity"
+              >
+                Read the Ndoa Plan case study <ArrowRight size={14} />
+              </Link>
+              <Link
+                href="/solutions/bancassurance-platform"
+                className="inline-flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-[#FCF7F2] underline underline-offset-4 hover:opacity-70 transition-opacity"
+              >
+                Read the Bancassurance case study <ArrowRight size={14} />
+              </Link>
+              <Link
+                href="/solutions/steward"
+                className="inline-flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-[#FCF7F2] underline underline-offset-4 hover:opacity-70 transition-opacity"
+              >
+                Read the Steward case study <ArrowRight size={14} />
+              </Link>
+            </div>
           </section>
 
           <section aria-labelledby="engagement-heading" className="mb-16">

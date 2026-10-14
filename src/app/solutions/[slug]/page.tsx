@@ -11,23 +11,65 @@ const serviceCallout: Record<
   string,
   { label: string; body: string; href: string; linkText: string }
 > = {
+  "bancassurance-platform": {
+    label: "Related Service",
+    body: "Multi-tenant platforms fail quietly - a permission that leaks across a tenant boundary, an approval step that the API does not actually enforce. The tenant isolation, audit logging, and maker-checker workflow built here is the same pattern I apply to every multi-tenant system.",
+    href: "/services/multi-tenant-saas",
+    linkText: "See Multi-Tenant SaaS & Platform Engineering →",
+  },
+  warehouselens: {
+    label: "Related Service",
+    body: "WarehouseLens enforces tenant and warehouse scope everywhere - including inside the copilot, which refuses a question about a warehouse the caller is not assigned to rather than answering it. Designing permissions that hold at every layer is the core of this engagement.",
+    href: "/services/multi-tenant-saas",
+    linkText: "See Multi-Tenant SaaS & Platform Engineering →",
+  },
+  steward: {
+    label: "Related Service",
+    body: "Steward encodes a real financial approval hierarchy - draft, finance review, chair sign-off - with permissions scoped per role and every stage auditable. If you need governance modelled properly rather than bolted on, that is this engagement.",
+    href: "/services/multi-tenant-saas",
+    linkText: "See Multi-Tenant SaaS & Platform Engineering →",
+  },
+  opsis: {
+    label: "Related Service",
+    body: "Opsis went from an empty repo to a self-hosted, single-command deployment - a Next.js BFF, a Rust control core, and a shared auth contract between them. That full end-to-end platform delivery is the engagement model I work in.",
+    href: "/services/multi-tenant-saas",
+    linkText: "See Multi-Tenant SaaS & Platform Engineering →",
+  },
   "ndoa-plan": {
     label: "Related Service",
     body: "Payment edge-cases in high-volume events can drain startup capital fast. The M-Pesa reconciliation system built for Ndoa Plan is the same pattern I apply across fintech projects.",
     href: "/services/fintech-automation",
     linkText: "See Fintech Automation & M-Pesa Integration →",
   },
-  // insuremaster: {
-  //   label: "Related Service",
-  //   body: "InsureMaster was scoped, architected, and shipped as a production MVP within a fixed timeline. That end-to-end delivery process - from data model to deployment - is exactly what I offer for new products.",
-  //   href: "/services/mvp-development",
-  //   linkText: "See MVP Development & Full-Stack Engineering →",
-  // },
   "email-refiner": {
     label: "Related Service",
-    body: "Email Refiner went from idea to a live Chrome extension in a single contract cycle. If you have a product that needs scoping, architecting, and shipping fast - that's the engagement model I work in.",
-    href: "/services/mvp-development",
-    linkText: "See MVP Development & Full-Stack Engineering →",
+    body: "Email Refiner went from idea to a live Chrome extension in a single contract cycle - scoped, architected, and shipped. If you have a product that needs taking from idea to production, start with how I engage.",
+    href: "/services",
+    linkText: "See all services & engagement models →",
+  },
+  sefer: {
+    label: "Related Service",
+    body: "Sefer works entirely without a network - a local SQLite store as the source of truth, debounced writes for rapid mutations, and annotations that survive every zoom and reading-mode change. That local-first discipline is its own specialism.",
+    href: "/services/offline-first-apps",
+    linkText: "See Offline-First & Field Applications →",
+  },
+  "gik-souls-app": {
+    label: "Related Service",
+    body: "Field follow-up happens where connectivity does not. GIK Souls reads local-first from Drift and enqueues mutations for replay when a connection returns, with the business rules kept testable in a framework-free domain layer.",
+    href: "/services/offline-first-apps",
+    linkText: "See Offline-First & Field Applications →",
+  },
+  "near-field": {
+    label: "Related Service",
+    body: "Near Field pushes alarm scheduling, reboot recovery, and the lock-screen flow into native Android behind a typed Pigeon bridge. When a mobile app needs a platform capability the framework will not give you, this is that work.",
+    href: "/services/offline-first-apps",
+    linkText: "See Offline-First & Field Applications →",
+  },
+  mathesis: {
+    label: "Related Service",
+    body: "Mathesis is built on a typed content registry that resolves one source of material into two different views without duplicating it. Getting a data model right before building on it is the first phase of every engagement.",
+    href: "/services",
+    linkText: "See all services & engagement models →",
   },
 };
 
@@ -45,6 +87,7 @@ export async function generateMetadata({
   if (!project) return {};
 
   const description = project.summary ?? project.description;
+  const socialImage = project.image || "/opengraph-image";
 
   return {
     title: `${project.title} - Solutions`,
@@ -61,10 +104,10 @@ export async function generateMetadata({
       description,
       images: [
         {
-          url: project.image,
+          url: socialImage,
           width: 1200,
           height: 630,
-          alt: `${project.title} - project screenshot`,
+          alt: project.image ? `${project.title} - project screenshot` : "CDenn portfolio",
         },
       ],
     },
@@ -73,7 +116,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: project.title,
       description,
-      images: [project.image],
+      images: [socialImage],
     },
   };
 }
@@ -95,7 +138,7 @@ export default async function SolutionDetailPage({
     name: project.title,
     description: project.summary ?? project.description,
     url: `https://www.cdenn.dev/solutions/${project.slug}`,
-    image: `https://www.cdenn.dev${project.image}`,
+    ...(project.image && { image: `https://www.cdenn.dev${project.image}` }),
     dateCreated: project.year,
     author: {
       "@type": "Person",

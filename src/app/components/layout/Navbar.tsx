@@ -16,8 +16,10 @@ const navLinks = [
 ];
 
 const serviceLinks = [
-  { href: "/services/fintech-automation", label: "Fintech Automation" },
-  { href: "/services/mvp-development", label: "MVP Development" },
+  { href: "/services/multi-tenant-saas", label: "Multi-Tenant SaaS" },
+  { href: "/services/fintech-automation", label: "Fintech & Payments" },
+  { href: "/services/offline-first-apps", label: "Offline-First Apps" },
+  { href: "/services", label: "All services" },
 ];
 
 const MotionLink = motion.create(Link);
