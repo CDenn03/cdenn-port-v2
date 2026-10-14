@@ -67,7 +67,7 @@ function ProjectCard({ project, wide = false }: { project: Solution; wide?: bool
               sizes={v.imageSizes}
               className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
-          ) : (
+          ) : project.nda ? (
             <div className="absolute inset-0 flex flex-col items-center justify-center bg-zinc-50 dark:bg-zinc-900">
               <div className="w-10 h-10 rounded-full bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center mb-2">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-zinc-400">
@@ -75,6 +75,15 @@ function ProjectCard({ project, wide = false }: { project: Solution; wide?: bool
                 </svg>
               </div>
               <p className="text-xs font-mono text-zinc-400 dark:text-zinc-500">Code under NDA</p>
+            </div>
+          ) : (
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-1.5 px-4 text-center bg-zinc-50 dark:bg-zinc-900">
+              <span className="text-xl font-bold tracking-tight text-zinc-300 dark:text-zinc-700">
+                {project.title}
+              </span>
+              <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 dark:text-zinc-600">
+                {project.category}
+              </span>
             </div>
           )}
           {project.image && <div className="absolute inset-0 z-0 bg-black/50 transition-opacity duration-500 group-hover:opacity-0" />}

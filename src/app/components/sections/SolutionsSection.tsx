@@ -18,14 +18,18 @@ export const SolutionsSection = () => {
         </Reveal>
 
         <div className="space-y-16">
-          {featured.map((project) => (
-            <Reveal key={`${project.title}-${project.layout}`}>
+          {featured.map((project, i) => {
+            // Alternate sides by position so reordering `solutions` needs no
+            // per-entry layout edits. Index 0 starts on the right.
+            const isRight = i % 2 === 0;
+            return (
+            <Reveal key={project.slug}>
               <div className={`grid md:grid-cols-12 gap-8 items-center ${
-                project.layout === 'right' ? 'md:flex-row-reverse' : ''
+                isRight ? 'md:flex-row-reverse' : ''
               }`}>
 
                 <div className={`md:col-span-7 group relative ${
-                  project.layout === 'right' ? 'md:order-last' : ''
+                  isRight ? 'md:order-last' : ''
                 }`}>
                   <div className="aspect-video rounded-2xl overflow-hidden relative shadow-md bg-white border border-zinc-200 dark:bg-zinc-900 dark:border-zinc-800">
                     {project.image ? (
@@ -36,8 +40,8 @@ export const SolutionsSection = () => {
                         className="object-cover group-hover:scale-105 transition-transform duration-700"
                         sizes="(max-width: 768px) 100vw, 60vw"
                       />
-                    ) : (
-                      /* NDA - no screenshot */
+                    ) : project.nda ? (
+                      /* Genuinely confidential - no screenshot can be shown */
                       <div className="absolute inset-0 flex flex-col items-center justify-center bg-zinc-50 dark:bg-zinc-900">
                         <div className="w-12 h-12 rounded-full bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center mb-3">
                           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-zinc-400">
@@ -46,13 +50,23 @@ export const SolutionsSection = () => {
                         </div>
                         <p className="text-xs font-mono text-zinc-400 dark:text-zinc-500">Code under NDA</p>
                       </div>
+                    ) : (
+                      /* No screenshot yet - neutral placeholder, no NDA claim */
+                      <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-zinc-50 dark:bg-zinc-900">
+                        <span className="text-3xl font-bold tracking-tight text-zinc-300 dark:text-zinc-700">
+                          {project.title}
+                        </span>
+                        <span className="text-xs font-mono uppercase tracking-widest text-zinc-400 dark:text-zinc-600">
+                          {project.category}
+                        </span>
+                      </div>
                     )}
                     <div className="absolute inset-0 bg-[#0f2a44]/5 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   </div>
                 </div>
 
                 <div className={`md:col-span-5 ${
-                  project.layout === 'right' ? 'md:order-first' : ''
+                  isRight ? 'md:order-first' : ''
                 }`}>
                   <div className="flex items-center gap-3 mb-4 flex-wrap">
                     <h3 className="text-2xl md:text-3xl font-bold transition-colors text-slate-900 dark:text-[#FCF7F2]">{project.title}</h3>
@@ -116,7 +130,7 @@ export const SolutionsSection = () => {
                       )}
                     </div>
                   )}
-                  {!project.websiteUrl && !project.codeUrl && !project.image && (
+                  {!project.websiteUrl && !project.codeUrl && project.nda && (
                     <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-zinc-100 dark:bg-zinc-800 w-fit">
                       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-zinc-400">
                         <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
@@ -127,7 +141,8 @@ export const SolutionsSection = () => {
                 </div>
               </div>
             </Reveal>
-          ))}
+            );
+          })}
         </div>
 
         <Reveal>

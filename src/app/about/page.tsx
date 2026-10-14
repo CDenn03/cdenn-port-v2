@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { sameAsUrls } from "@/src/app/data/social";
+import { SubpageNav } from "@/src/app/components/layout/SubpageNav";
 
 export const metadata: Metadata = {
   title: "About CDenn | Full-Stack Software Developer",
@@ -51,36 +52,16 @@ export default function AboutPage() {
           ),
         }}
       />
-      <main className="min-h-screen bg-background text-foreground">
-        <div className="mx-auto max-w-3xl px-6 py-16 sm:py-24">
-          {/* Back link */}
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-12"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="m12 19-7-7 7-7" />
-              <path d="M19 12H5" />
-            </svg>
-            Back to Portfolio
-          </Link>
+      <main className="min-h-screen transition-colors duration-300 bg-[#FCF7F2] text-slate-900 dark:bg-[#0a0a0a] dark:text-[#FCF7F2]">
+        <SubpageNav backHref="/" backLabel="Back" />
 
+        <div className="mx-auto max-w-3xl px-6 py-16 sm:py-24">
           {/* Header */}
           <header className="mb-12">
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
               About <span className="text-primary">CDenn</span>
             </h1>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-lg text-zinc-500 dark:text-[#888] max-w-2xl">
               The person behind the brand
             </p>
           </header>
@@ -185,18 +166,25 @@ export default function AboutPage() {
               <p>Some notable projects from the CDenn portfolio include:</p>
               <ul>
                 <li>
+                  <strong>Bancassurance Platform</strong> - A multi-tenant
+                  insurance SaaS for a financial services provider, with
+                  JWT-based tenant isolation, action-level audit logging, and a
+                  maker-checker approval workflow spanning 7 entity types
+                </li>
+                <li>
+                  <strong>Opsis</strong> - A self-hosted production control
+                  platform for church media teams, splitting a Next.js BFF and
+                  an always-on Rust core that drives OBS over WebSocket
+                </li>
+                <li>
+                  <strong>Steward</strong> - A financial governance platform for
+                  faith-based organizations, modelling a five-stage budget
+                  approval pipeline with role-scoped permissions
+                </li>
+                <li>
                   <strong>Email Refiner</strong> - An AI-powered Chrome
                   extension that transforms email tone inside Gmail and Zimbra
                   without leaving the compose window
-                </li>
-                <li>
-                  <strong>Ndoa Plan</strong> - An offline-first wedding
-                  coordination platform built for Kenyan events, featuring
-                  M-Pesa payment reconciliation and real-time collaboration
-                </li>
-                <li>
-                  <strong>Sefer</strong> - A clean, feature-rich PDF reader for
-                  Android with persistent annotations and library management
                 </li>
               </ul>
               <p>
