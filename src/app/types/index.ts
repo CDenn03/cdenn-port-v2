@@ -19,13 +19,25 @@ export interface Solution {
     trend?: string;
   }>;
   tags: string[];
-  image: string;
-  layout: "left" | "right";
+  image?: string;
+  /**
+   * Legacy hint only. The homepage alternates sides by position
+   * (see SolutionsSection), so reordering projects needs no edits here.
+   */
+  layout?: "left" | "right";
   websiteUrl?: string;
   codeUrl?: string;
   ongoing?: boolean;
   openSource?: boolean;
   featured?: boolean;
+  /**
+   * True only for work whose code genuinely cannot be shared (client/employer
+   * NDA). Drives the lock badge and the "Code under NDA" copy. A project that
+   * merely has no screenshot yet must NOT set this - it gets a neutral
+   * placeholder instead, so the site never claims a confidentiality
+   * restriction that does not exist.
+   */
+  nda?: boolean;
   // profile fields
   year: string;
   role: string;

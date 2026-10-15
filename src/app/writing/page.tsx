@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { SubpageNav } from "@/src/app/components/layout/SubpageNav";
 
 export const metadata: Metadata = {
   title: "Writing | CDenn",
@@ -14,24 +14,21 @@ const plannedArticles = [
 
 export default function WritingPage() {
   return (
-    <main className="min-h-screen bg-[#FCF7F2] dark:bg-[#0a0a0a]">
-      <div className="max-w-2xl mx-auto px-6 pt-20 pb-16">
+    <main className="min-h-screen transition-colors duration-300 bg-[#FCF7F2] text-slate-900 dark:bg-[#0a0a0a] dark:text-[#FCF7F2]">
+      <SubpageNav backHref="/" backLabel="Back" />
 
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 hover:text-primary transition-colors mb-10"
-        >
-          Back to portfolio
-        </Link>
+      <div className="max-w-2xl mx-auto px-6 py-16">
 
         {/* Header */}
-        <h1 className="text-3xl font-bold text-slate-900 dark:text-[#FCF7F2] mb-3">
-          Writing
-        </h1>
-        <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-8 leading-relaxed">
-          Articles on fintech engineering, system design, and building
-          production software for East African markets.
-        </p>
+        <div className="mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            Writing
+          </h1>
+          <p className="text-lg text-zinc-500 dark:text-[#888] max-w-2xl">
+            Articles on fintech engineering, system design, and building
+            production software for East African markets.
+          </p>
+        </div>
 
         {/* Article list — blurred with Coming Soon overlay */}
         <div className="relative">

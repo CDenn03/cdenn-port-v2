@@ -12,14 +12,22 @@ export function SolutionDetailClient({ project }: { project: Solution }) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
     >
-      <Image
-        src={project.image}
-        alt={project.title}
-        fill
-        priority
-        sizes="(max-width: 768px) 100vw, 1200px"
-        className={`object-cover ${project.heroPosition ?? "object-top"}`}
-      />
+      {project.image ? (
+        <Image
+          src={project.image}
+          alt={project.title}
+          fill
+          priority
+          sizes="(max-width: 768px) 100vw, 1200px"
+          className={`object-cover ${project.heroPosition ?? "object-top"}`}
+        />
+      ) : (
+        <div className="flex h-full flex-col justify-end bg-primary p-6 text-primary-foreground sm:p-10">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] opacity-70">{project.category}</p>
+          <h2 className="max-w-2xl text-3xl font-semibold tracking-tight sm:text-5xl">{project.title}</h2>
+          <p className="mt-4 max-w-2xl text-sm opacity-80 sm:text-base">{project.summary ?? project.description}</p>
+        </div>
+      )}
       {project.ongoing && (
         <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-white/90 dark:bg-black/70 text-slate-800 dark:text-[#FCF7F2]">
           <span className="relative flex h-1.5 w-1.5">

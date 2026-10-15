@@ -98,18 +98,34 @@ export const Footer = () => {
             <ul className="space-y-3 text-sm text-zinc-600 dark:text-[#888888]">
               <li>
                 <Link
-                  href="/services/fintech-automation"
+                  href="/services/multi-tenant-saas"
                   className="hover:text-primary dark:hover:text-[#FCF7F2]"
                 >
-                  Fintech Automation
+                  Multi-Tenant SaaS
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/services/mvp-development"
+                  href="/services/fintech-automation"
                   className="hover:text-primary dark:hover:text-[#FCF7F2]"
                 >
-                  MVP Development
+                  Fintech &amp; Payments
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/offline-first-apps"
+                  className="hover:text-primary dark:hover:text-[#FCF7F2]"
+                >
+                  Offline-First Apps
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services"
+                  className="hover:text-primary dark:hover:text-[#FCF7F2]"
+                >
+                  All services
                 </Link>
               </li>
             </ul>

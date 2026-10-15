@@ -100,7 +100,7 @@ export default function NotFound() {
         {/* Easter egg hint */}
         {showHint && !easterUnlocked && (
           <p className="mt-10 text-xs font-mono text-zinc-300 dark:text-zinc-700 animate-pulse select-none">
-            // there&apos;s a secret on this page
+            {"// there's a secret on this page"}
           </p>
         )}
 
@@ -108,7 +108,7 @@ export default function NotFound() {
         {easterUnlocked && (
           <div className="mt-10 p-4 rounded-xl border border-primary/30 bg-primary/5 dark:bg-emerald-900/10">
             <p className="text-xs font-mono text-primary dark:text-emerald-400 mb-2">
-              // unlocked
+              {"// unlocked"}
             </p>
             <p className="text-xs font-mono text-zinc-500 dark:text-zinc-400 leading-relaxed">
               Since you&apos;re curious enough to find this: I&apos;m Dennis Ndung&apos;u. I built this

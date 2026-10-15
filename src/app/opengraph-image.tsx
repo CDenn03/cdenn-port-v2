@@ -50,7 +50,6 @@ export default async function Image() {
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center' }}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={ICON_DATA_URI}
               width={86}

@@ -11,6 +11,13 @@ import {
   fallbackBudgetOptions,
 } from "./contact/utils";
 
+/**
+ * Public booking link (Cal.com, Calendly, etc). Set NEXT_PUBLIC_BOOKING_URL to
+ * enable the "Prefer a call?" CTA. Left unset, the CTA is not rendered at all -
+ * deliberately, so a stale or wrong link can never be shown to a prospect.
+ */
+const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL?.trim() || "";
+
 type Status = "idle" | "loading" | "success" | "error";
 
 export const ContactSection = () => {
@@ -82,22 +89,24 @@ export const ContactSection = () => {
 
           <Reveal>
             <div className="space-y-5">
-              <div className="flex items-center gap-4 text-zinc-700 dark:text-[#b0b0b0]">
-                <div className="w-12 h-12 rounded-full flex items-center justify-center bg-white border border-zinc-200 dark:bg-[#1a1a1a] dark:border-[#2a2a2a]">
-                  <Calendar size={20} />
+              {bookingUrl && (
+                <div className="flex items-center gap-4 text-zinc-700 dark:text-[#b0b0b0]">
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center bg-white border border-zinc-200 dark:bg-[#1a1a1a] dark:border-[#2a2a2a]">
+                    <Calendar size={20} />
+                  </div>
+                  <div>
+                    <p className="text-xs uppercase tracking-widest text-zinc-400 dark:text-[#666666]">Prefer a call?</p>
+                    <a
+                      href={bookingUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-base font-medium text-primary hover:underline underline-offset-4 transition-colors"
+                    >
+                      Book a 15-min intro call →
+                    </a>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-xs uppercase tracking-widest text-zinc-400 dark:text-[#666666]">Prefer a call?</p>
-                  <a
-                    href="https://calendly.com/cdenn/15min"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-base font-medium text-primary hover:underline underline-offset-4 transition-colors"
-                  >
-                    Book a 15-min intro call →
-                  </a>
-                </div>
-              </div>
+              )}
               <div className="flex items-center gap-2 text-sm text-zinc-500 dark:text-[#888888] pl-1">
                 <Clock size={14} className="shrink-0" />
                 Typically responds within 24 hours
