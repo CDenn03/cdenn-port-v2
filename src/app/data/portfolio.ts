@@ -149,7 +149,7 @@ export const solutions: Solution[] = [
       "JWT",
       "Docker",
     ],
-    image: undefined,
+    image: "/assets/project-shots/opsis.png",
     layout: "left",
     featured: true,
     ongoing: true,
