@@ -74,6 +74,14 @@ export const Footer = () => {
               </li>
               <li>
                 <Link
+                  href="/about"
+                  className="hover:text-primary dark:hover:text-[#FCF7F2]"
+                >
+                  About CDenn
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="#solutions"
                   className="hover:text-primary dark:hover:text-[#FCF7F2]"
                 >
