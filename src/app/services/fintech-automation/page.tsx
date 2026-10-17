@@ -4,27 +4,28 @@ import { SubpageNav } from "@/src/app/components/layout/SubpageNav";
 import { ArrowRight, CheckCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "M-Pesa Daraja API Integration & Fintech Automation",
+  title: "Payments API Integrations & Fintech Automation",
   description:
-    "M-Pesa Daraja API integration, STK push callbacks, and payment automation for East African businesses. Next.js & Node.js.",
+    "Payments API integrations, webhook callbacks, and payment automation for East African businesses. Next.js & Node.js.",
   alternates: {
     canonical: "/services/fintech-automation",
   },
   openGraph: {
     type: "website",
     url: "https://www.cdenn.dev/services/fintech-automation",
-    title: "M-Pesa Daraja API Integration & Fintech Automation",
+    title: "Payments API Integrations & Fintech Automation",
     description:
-      "M-Pesa Daraja API integration and payment automation for East African businesses. Built with Next.js.",
+      "Payments API integrations and payment automation for East African businesses. Built with Next.js.",
+    images: ["/opengraph-image"],
   },
 };
 
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "M-Pesa Daraja API Integration & Fintech Automation",
+  name: "Payments API Integrations & Fintech Automation",
   description:
-    "Specialized fintech engineering for East African businesses. Real-time M-Pesa Daraja API integrations, STK push callback reconciliation, multi-tenant payment ledgers, and automated financial workflows.",
+    "Specialized fintech engineering for East African businesses. Real-time payments API integrations, webhook callback reconciliation, multi-tenant payment ledgers, and automated financial workflows.",
   url: "https://www.cdenn.dev/services/fintech-automation",
   provider: {
     "@type": "Person",
@@ -37,22 +38,22 @@ const serviceSchema = {
   offers: {
     "@type": "Offer",
     description:
-      "M-Pesa Daraja API integration, STK push flows, callback reconciliation, multi-tenant payment systems, and fintech automation on a contract or consulting basis.",
+      "Payments API integrations, payment flows, callback reconciliation, multi-tenant payment systems, and fintech automation on a contract or consulting basis.",
   },
 };
 
 const capabilities = [
   {
-    title: "M-Pesa STK Push & Callback Handling",
-    body: "End-to-end implementation of the Daraja STK Push flow - from initiating payment requests on behalf of customers to receiving, validating, and persisting M-Pesa callback payloads in real time. Every edge case covered: duplicate callbacks, timeout retries, and failed transaction recovery.",
+    title: "Payments API Webhooks & Callback Handling",
+    body: "End-to-end payment API implementation - from initiating customer payment requests to receiving, validating, and persisting provider callback payloads in real time. Every edge case covered: duplicate callbacks, timeout retries, and failed transaction recovery.",
   },
   {
     title: "Automated Ledger Reconciliation",
-    body: "Matching M-Pesa transaction records against internal ledger entries automatically, flagging discrepancies, and generating reconciliation reports. Built for businesses that process high volumes of contributions, subscriptions, or event payments where every shilling must be accounted for.",
+    body: "Matching payment-provider transaction records against internal ledger entries automatically, flagging discrepancies, and generating reconciliation reports. Built for businesses that process high volumes of contributions, subscriptions, or event payments where every shilling must be accounted for.",
   },
   {
     title: "Multi-Tenant Payment Architecture",
-    body: "Payment systems that serve multiple clients or tenants from a single codebase - with strict data isolation, per-tenant M-Pesa shortcode configuration, and role-based access to financial records. Designed for SaaS platforms, bancassurance systems, and aggregator models.",
+    body: "Payment systems that serve multiple clients or tenants from a single codebase - with strict data isolation, per-tenant payment-provider configuration, and role-based access to financial records. Designed for SaaS platforms, bancassurance systems, and aggregator models.",
   },
   {
     title: "Offline-First Payment Sync",
@@ -60,13 +61,13 @@ const capabilities = [
   },
   {
     title: "Webhook Infrastructure & Security",
-    body: "Hardened webhook endpoints that validate Safaricom-signed payloads, handle idempotency correctly, and integrate with queue systems to process callbacks asynchronously - preventing data loss under high transaction volumes.",
+    body: "Hardened webhook endpoints that validate provider-signed payloads, handle idempotency correctly, and integrate with queue systems to process callbacks asynchronously - preventing data loss under high transaction volumes.",
   },
 ];
 
 const whyItems = [
-  "M-Pesa is used by 90%+ of Kenya's adult population - not integrating it correctly costs real money",
-  "Daraja API has quirks (callback timing, result code edge cases) that only surface in production",
+  "Payment APIs often power core transactions - integrating them incorrectly costs real money",
+  "Payment providers have callback timing and result-code edge cases that only surface in production",
   "Most generic developers treat it as a simple HTTP call - it requires domain-specific handling",
   "I've built live reconciliation systems where contributions arrive faster than anyone can track them by hand",
 ];
@@ -91,11 +92,11 @@ export default function FintechAutomationPage() {
               Services
             </p>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-[1.1] mb-6 text-slate-900 dark:text-[#FCF7F2]">
-              M-Pesa Daraja API Integration &amp; Fintech Automation
+              Payments API Integrations &amp; Fintech Automation
             </h1>
 
             <p className="text-xl text-zinc-600 dark:text-[#b0b0b0] leading-relaxed max-w-2xl">
-              I build bulletproof M-Pesa payment pipelines with real-time callback reconciliation,
+              I build bulletproof payment API pipelines with real-time callback reconciliation,
               automated ledger tracking, and multi-tenant payment architectures - for businesses
               in Kenya and across East Africa that cannot afford missing transactions.
             </p>
@@ -131,11 +132,11 @@ export default function FintechAutomationPage() {
               id="why-heading"
               className="text-2xl font-bold mb-6 text-slate-900 dark:text-[#FCF7F2]"
             >
-              Why M-Pesa Integration Is Specialized Work
+              Why Payments API Integrations Are Specialized Work
             </h2>
             <p className="text-zinc-600 dark:text-[#b0b0b0] leading-relaxed mb-6">
-              Integrating M-Pesa correctly is not the same as calling a REST API and calling it
-              done. The Daraja API has real-world complexity that only surfaces under production
+              Integrating a payment API correctly is not the same as calling a REST API and calling it
+              done. Payment providers have real-world complexity that only surfaces under production
               load - callback race conditions, result codes that require domain knowledge to
               interpret, and reconciliation logic that must handle delayed or duplicate payloads
               without double-counting or data loss.
@@ -168,7 +169,7 @@ export default function FintechAutomationPage() {
                 "Next.js",
                 "TypeScript",
                 "Node.js",
-                "M-Pesa Daraja API",
+                "Payments APIs",
                 "Prisma ORM",
                 "PostgreSQL",
                 "Supabase",
@@ -196,7 +197,7 @@ export default function FintechAutomationPage() {
             </h2>
             <p className="text-zinc-600 dark:text-[#b0b0b0] leading-relaxed mb-6">
               Ndoa Plan is an offline-first wedding coordination platform I built for Kenyan
-              event coordinators. It reconciles M-Pesa STK push callbacks against guest
+              event coordinators. It reconciles payment-provider callbacks against guest
               contribution records in real time, operates fully offline during events, and syncs
               when connectivity returns - with a conflict-resolution strategy that ensures no
               payment is lost or double-counted.
@@ -251,7 +252,7 @@ export default function FintechAutomationPage() {
                 },
                 {
                   type: "Consulting",
-                  desc: "Architecture review, technical guidance, or team support on M-Pesa integration projects.",
+                  desc: "Architecture review, technical guidance, or team support on payments API integration projects.",
                 },
                 {
                   type: "Full-time",
@@ -282,7 +283,7 @@ export default function FintechAutomationPage() {
             </h2>
             <p className="text-zinc-600 dark:text-[#b0b0b0] mb-8 max-w-lg mx-auto">
               Whether you need a payment integration from scratch, a reconciliation system
-              for an existing platform, or a technical review of your current Daraja setup -
+              for an existing platform, or a technical review of your current payment API setup -
               let&apos;s talk through it.
             </p>
             <Link

@@ -4,18 +4,19 @@ import { SubpageNav } from "@/src/app/components/layout/SubpageNav";
 import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Services - Multi-Tenant SaaS, Fintech & Offline-First Engineering",
+  title: "Software Engineering Services",
   description:
-    "Three focused engineering services: multi-tenant SaaS architecture with RBAC and audit, M-Pesa and payment integration, and offline-first applications for low-connectivity environments.",
+    "Multi-tenant SaaS, fintech automation, and offline-first engineering for teams building reliable production systems across East Africa and globally.",
   alternates: {
     canonical: "/services",
   },
   openGraph: {
     type: "website",
     url: "https://www.cdenn.dev/services",
-    title: "Services - Multi-Tenant SaaS, Fintech & Offline-First Engineering",
+    title: "Software Engineering Services | CDenn",
     description:
-      "Multi-tenant SaaS architecture, payment integration, and offline-first application development.",
+      "Multi-tenant SaaS, fintech automation, and offline-first engineering for reliable production systems.",
+    images: ["/opengraph-image"],
   },
 };
 
@@ -34,9 +35,9 @@ const services = [
   {
     title: "Fintech & Payment Integration",
     href: "/services/fintech-automation",
-    lead: "Payment pipelines that account for every transaction - M-Pesa Daraja integration, callback reconciliation, and ledger systems for businesses that cannot afford a missing or double-counted payment.",
+    lead: "Payment pipelines that account for every transaction - payment API integrations, callback reconciliation, and ledger systems for businesses that cannot afford a missing or double-counted payment.",
     points: [
-      "M-Pesa STK Push and callback handling",
+      "Payment API webhook and callback handling",
       "Automated ledger reconciliation",
       "Idempotent, hardened webhook infrastructure",
       "Multi-tenant payment architecture",
@@ -58,6 +59,28 @@ const services = [
 export default function ServicesIndexPage() {
   return (
     <main className="min-h-screen bg-[#FCF7F2] text-slate-900 dark:bg-[#0a0a0a] dark:text-[#FCF7F2]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            name: "Software Engineering Services",
+            url: "https://www.cdenn.dev/services",
+            description:
+              "Multi-tenant SaaS, fintech automation, and offline-first engineering services from CDenn.",
+            mainEntity: {
+              "@type": "ItemList",
+              itemListElement: services.map((service, position) => ({
+                "@type": "ListItem",
+                position: position + 1,
+                name: service.title,
+                url: `https://www.cdenn.dev${service.href}`,
+              })),
+            },
+          }).replaceAll("<", String.raw`\u003c`),
+        }}
+      />
       <SubpageNav backHref="/" backLabel="Back" />
 
       <div className="max-w-4xl mx-auto px-6 py-16 md:py-24">

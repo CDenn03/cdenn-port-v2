@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 
 const EASTER_EGG_CODE = "cdenn";
-const GLITCH_CHARS = "!<>-_\\/[]{}—=+*^?#@$%";
+const GLITCH_CHARS = "!<>-_\\/[]{}-=+*^?#@$%";
 
 function GlitchText({ text }: { text: string }) {
   const [display, setDisplay] = useState(text);
@@ -113,7 +113,7 @@ export default function NotFound() {
             <p className="text-xs font-mono text-zinc-500 dark:text-zinc-400 leading-relaxed">
               Since you&apos;re curious enough to find this: I&apos;m Dennis Ndung&apos;u. I built this
               portfolio in Next.js 16 with Tailwind v4 and a lot of iteration.
-              If you&apos;re reading the source — hi. Let&apos;s work together.
+              If you&apos;re reading the source - hi. Let&apos;s work together.
             </p>
             <Link
               href="/#contact"

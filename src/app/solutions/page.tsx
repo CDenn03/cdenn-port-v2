@@ -4,9 +4,9 @@ import { SubpageNav } from "@/src/app/components/layout/SubpageNav";
 import SolutionsGrid from "./SolutionsGrid";
 
 export const metadata: Metadata = {
-  title: "Solutions",
+  title: "Software Project Case Studies",
   description:
-    "Products and systems built by CDenn - the problem behind each one, how it was approached, and what came out the other side.",
+    "Explore CDenn case studies: the product problems, architecture decisions, and outcomes behind full-stack, fintech, and offline-first software.",
   // Canonical prevents this page appearing as a duplicate or redirect URL in audits.
   alternates: {
     canonical: "/solutions",
@@ -14,15 +14,39 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://www.cdenn.dev/solutions",
-    title: "Solutions",
+    title: "Software Project Case Studies | CDenn",
     description:
-      "Products and systems built by CDenn - the problem behind each one, how it was approached, and what came out the other side.",
+      "Case studies covering full-stack products, fintech systems, and offline-first software.",
+    images: ["/opengraph-image"],
   },
 };
 
 export default function SolutionsPage() {
   return (
     <main className="min-h-screen transition-colors duration-300 bg-[#FCF7F2] text-slate-900 dark:bg-[#0a0a0a] dark:text-[#FCF7F2]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            name: "Software Project Case Studies",
+            url: "https://www.cdenn.dev/solutions",
+            description:
+              "Case studies covering CDenn's full-stack products, fintech systems, and offline-first software.",
+            mainEntity: {
+              "@type": "ItemList",
+              itemListElement: solutions.map((solution, position) => ({
+                "@type": "ListItem",
+                position: position + 1,
+                name: solution.title,
+                url: `https://www.cdenn.dev/solutions/${solution.slug}`,
+                description: solution.summary ?? solution.description,
+              })),
+            },
+          }).replaceAll("<", String.raw`\u003c`),
+        }}
+      />
       <SubpageNav backHref="/" backLabel="Back" />
 
       <div className="max-w-6xl mx-auto px-6 py-16">

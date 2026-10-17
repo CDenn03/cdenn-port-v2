@@ -4,7 +4,7 @@ import { SubpageNav } from "@/src/app/components/layout/SubpageNav";
 import { ArrowRight, CheckCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Multi-Tenant SaaS Architecture, RBAC & Approval Workflows",
+  title: "Multi-Tenant SaaS Architecture & RBAC",
   description:
     "Multi-tenant SaaS platforms with tenant isolation, role-based access control, audit logging, and enforced approval workflows. Next.js, TypeScript, PostgreSQL.",
   alternates: {
@@ -13,9 +13,10 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://www.cdenn.dev/services/multi-tenant-saas",
-    title: "Multi-Tenant SaaS Architecture, RBAC & Approval Workflows",
+    title: "Multi-Tenant SaaS Architecture & RBAC | CDenn",
     description:
       "Multi-tenant SaaS platforms with tenant isolation, RBAC, audit logging, and enforced approval workflows.",
+    images: ["/opengraph-image"],
   },
 };
 

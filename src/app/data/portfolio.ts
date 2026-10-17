@@ -149,7 +149,7 @@ export const solutions: Solution[] = [
       "JWT",
       "Docker",
     ],
-    image: undefined,
+    image: "/assets/project-shots/opsis.png",
     layout: "left",
     featured: true,
     ongoing: true,
@@ -234,15 +234,15 @@ export const solutions: Solution[] = [
     slug: "ndoa-plan",
     title: "Ndoa Plan",
     summary:
-      "Offline-first wedding coordination platform for Kenyan events - M-Pesa reconciliation, budget tracking, and day-of execution tools.",
+      "Offline-first wedding coordination platform for Kenyan events - payments API reconciliation, budget tracking, and day-of execution tools.",
     description:
-      "Offline-first wedding coordination platform built for Kenyan weddings, with M-Pesa payment reconciliation, multi-event planning, budget tracking, and real-time day-of execution tools.",
+      "Offline-first wedding coordination platform built for Kenyan weddings, with payments API reconciliation, multi-event planning, budget tracking, and real-time day-of execution tools.",
     story:
-      "Kenyan weddings are complex, multi-day events involving dozens of vendors, hundreds of guests, and financial contributions collected through M-Pesa. Spreadsheets and WhatsApp groups collapse under that weight. Ndoa Plan was designed for event coordinators who need reliability - the app works fully offline, syncing data when connectivity returns, and reconciles M-Pesa STK push callbacks to track who paid what. Building offline-first with Dexie (IndexedDB) as the primary store while keeping a Postgres backend in sync was the most technically demanding part of the project.",
+      "Kenyan weddings are complex, multi-day events involving dozens of vendors, hundreds of guests, and financial contributions collected through digital payment channels. Spreadsheets and WhatsApp groups collapse under that weight. Ndoa Plan was designed for event coordinators who need reliability - the app works fully offline, syncing data when connectivity returns, and reconciles payment-provider callbacks to track who paid what. Building offline-first with Dexie (IndexedDB) as the primary store while keeping a Postgres backend in sync was the most technically demanding part of the project.",
     challenge:
-      "Building a reliable planning tool for low-connectivity environments while keeping financial data consistent across offline-first sync, M-Pesa callbacks, and a multi-user role system.",
+      "Building a reliable planning tool for low-connectivity environments while keeping financial data consistent across offline-first sync, payment-provider callbacks, and a multi-user role system.",
     solution:
-      "Implemented a Dexie-based local-first store with a background sync queue, conflict resolution strategy using server timestamps, and a webhook handler for M-Pesa Daraja callbacks that reconciled payments against guest contribution records.",
+      "Implemented a Dexie-based local-first store with a background sync queue, conflict resolution strategy using server timestamps, and a webhook handler for payments API callbacks that reconciled payments against guest contribution records.",
     results: [
       { label: "Wedding Events", value: "10+" },
       { label: "Budget Accuracy", value: "Real-time" },
@@ -254,7 +254,7 @@ export const solutions: Solution[] = [
       "Prisma",
       "PostgreSQL",
       "Dexie (IndexedDB)",
-      "M-Pesa Daraja API",
+      "Payments APIs",
       "Supabase Storage",
       "TanStack Query",
       "Tailwind CSS",

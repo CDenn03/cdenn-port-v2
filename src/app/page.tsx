@@ -5,7 +5,7 @@ import { sameAsUrls } from "@/src/app/data/social";
 export const metadata: Metadata = {
   title: "CDenn | Full-Stack Software Developer",
   description:
-    "CDenn is Dennis Ndung'u, a full-stack developer in Nairobi. Next.js, TypeScript, M-Pesa integrations, and AI tools.",
+    "CDenn is Dennis Ndung'u, a Nairobi-based full-stack developer building reliable Next.js products, payments API integrations, and AI-enabled tools for global teams.",
   alternates: {
     canonical: "/",
   },
@@ -19,7 +19,7 @@ const personSchema = {
   url: "https://www.cdenn.dev",
   jobTitle: "Full-Stack Software Developer",
   description:
-    "CDenn is the professional brand and online identity of Dennis Ndung'u, a full-stack software developer based in Nairobi, Kenya. CDenn specialises in Next.js App Router architecture, M-Pesa Daraja API integrations, and AI-integrated web applications. Available for full-time roles, contracts, and consulting engagements globally.",
+    "CDenn is the professional brand and online identity of Dennis Ndung'u, a full-stack software developer based in Nairobi, Kenya. CDenn specialises in Next.js App Router architecture, payments API integrations, and AI-integrated web applications. Available for full-time roles, contracts, and consulting engagements globally.",
   image: "https://www.cdenn.dev/assets/images/port-photo.png",
   address: {
     "@type": "PostalAddress",
@@ -30,7 +30,7 @@ const personSchema = {
     "Next.js",
     "TypeScript",
     "React",
-    "M-Pesa Daraja API",
+    "Payments APIs",
     "Fintech Systems",
     "AI-integrated web applications",
     "PostgreSQL",
@@ -97,7 +97,7 @@ const faqSchema = {
       name: "What does CDenn do?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "CDenn provides full-stack software development services including Next.js web applications, M-Pesa Daraja API integrations, fintech automation systems, Chrome extension development, and AI-powered tools. CDenn works with startups and businesses globally on MVP development, technical consulting, and custom software solutions.",
+        text: "CDenn provides full-stack software development services including Next.js web applications, payments API integrations, fintech automation systems, Chrome extension development, and AI-powered tools. CDenn works with startups and businesses globally on MVP development, technical consulting, and custom software solutions.",
       },
     },
     {
