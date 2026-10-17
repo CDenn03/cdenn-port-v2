@@ -21,7 +21,7 @@ export const WritingSection = () => {
         {/* Placeholder cards */}
         <div className="grid md:grid-cols-3 gap-6">
           {[
-            { tag: "Fintech", title: "Building reliable M-Pesa integrations at scale" },
+            { tag: "Fintech", title: "Building reliable payments API integrations at scale" },
             { tag: "Engineering", title: "System design for offline-first mobile apps" },
             { tag: "Frontend", title: "Performance patterns in Next.js for low-bandwidth users" },
           ].map((item, i) => (

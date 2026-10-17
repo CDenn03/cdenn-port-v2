@@ -4,7 +4,7 @@ import { SubpageNav } from "@/src/app/components/layout/SubpageNav";
 import { ArrowRight, CheckCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Offline-First App Development for Low-Connectivity Environments",
+  title: "Offline-First App Development",
   description:
     "Offline-first web and mobile apps that keep working without a network and sync cleanly when it returns. Flutter, Drift, Dexie, IndexedDB, conflict resolution.",
   alternates: {
@@ -13,9 +13,10 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://www.cdenn.dev/services/offline-first-apps",
-    title: "Offline-First App Development for Low-Connectivity Environments",
+    title: "Offline-First App Development | CDenn",
     description:
       "Offline-first web and mobile apps that keep working without a network and sync cleanly when it returns.",
+    images: ["/opengraph-image"],
   },
 };
 
@@ -203,7 +204,7 @@ export default function OfflineFirstAppsPage() {
               {[
                 {
                   title: "Ndoa Plan",
-                  desc: "Offline-first event coordination platform with a Dexie local store, a background sync queue, and M-Pesa callback reconciliation against guest contribution records - operating fully offline during live events.",
+                  desc: "Offline-first event coordination platform with a Dexie local store, a background sync queue, and payment-provider callback reconciliation against guest contribution records - operating fully offline during live events.",
                   href: "/solutions/ndoa-plan",
                 },
                 {

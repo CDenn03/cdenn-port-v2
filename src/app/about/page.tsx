@@ -6,16 +6,17 @@ import { SubpageNav } from "@/src/app/components/layout/SubpageNav";
 export const metadata: Metadata = {
   title: "About CDenn | Full-Stack Software Developer",
   description:
-    "CDenn is Dennis Ndung'u, a Nairobi-based developer. Learn about his expertise in Next.js, fintech, and AI.",
+    "Learn how Dennis Ndung'u, a Nairobi-based full-stack developer, builds reliable Next.js products, fintech systems, and AI-integrated tools.",
   alternates: {
     canonical: "/about",
   },
   openGraph: {
     title: "About CDenn | Full-Stack Software Developer",
     description:
-      "CDenn is Dennis Ndung'u, a Nairobi-based developer specialising in Next.js, fintech, and AI tools.",
+      "Dennis Ndung'u is a Nairobi-based developer specialising in Next.js, fintech systems, and AI-enabled products.",
     url: "https://www.cdenn.dev/about",
     type: "profile",
+    images: ["/opengraph-image"],
   },
 };
 
@@ -100,8 +101,8 @@ export default function AboutPage() {
                   performance
                 </li>
                 <li>
-                  <strong>Fintech &amp; Payment Systems</strong> - M-Pesa Daraja
-                  API integrations, STK push implementations, and payment
+                  <strong>Fintech &amp; Payment Systems</strong> - Payments API
+                  integrations, webhook implementations, and payment
                   reconciliation systems for East African markets
                 </li>
                 <li>
@@ -204,7 +205,7 @@ export default function AboutPage() {
               </p>
               <ul>
                 <li>A complete MVP built from scratch</li>
-                <li>M-Pesa integration for your existing platform</li>
+                <li>Payments API integration for your existing platform</li>
                 <li>Frontend architecture consulting</li>
                 <li>AI feature development</li>
               </ul>

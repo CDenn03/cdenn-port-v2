@@ -37,9 +37,9 @@ const serviceCallout: Record<
   },
   "ndoa-plan": {
     label: "Related Service",
-    body: "Payment edge-cases in high-volume events can drain startup capital fast. The M-Pesa reconciliation system built for Ndoa Plan is the same pattern I apply across fintech projects.",
+    body: "Payment edge-cases in high-volume events can drain startup capital fast. The payment reconciliation system built for Ndoa Plan is the same pattern I apply across fintech projects.",
     href: "/services/fintech-automation",
-    linkText: "See Fintech Automation & M-Pesa Integration →",
+    linkText: "See Fintech Automation & Payments API Integrations →",
   },
   "email-refiner": {
     label: "Related Service",

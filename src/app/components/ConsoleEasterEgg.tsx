@@ -19,7 +19,7 @@ export function ConsoleEasterEgg() {
     );
 
     console.log(
-      "%cNext.js · M-Pesa · TypeScript · Node · PostgreSQL",
+      "%cNext.js · Payments APIs · TypeScript · Node · PostgreSQL",
       `color:${gold}; font-size:11px; font-family:monospace;`
     );
 

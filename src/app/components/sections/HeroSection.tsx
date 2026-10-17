@@ -32,7 +32,7 @@ export const HeroSection = () => {
                 I build production-grade fintech infrastructure and AI-integrated
                 products for teams across East Africa and globally.{" "}
                 <span className="font-mono text-sm text-zinc-500 dark:text-zinc-400">
-                  Next.js · M-Pesa · TypeScript · Node · PostgreSQL
+                  Next.js · Payments APIs · TypeScript · Node · PostgreSQL
                 </span>
               </p>
             </Reveal>
@@ -56,7 +56,7 @@ export const HeroSection = () => {
                 </a>
               </div>
 
-              {/* Request CV — opens modal */}
+              {/* Request CV - opens modal */}
               <div className="mt-4 pl-1">
                 <button
                   onClick={() => setCvOpen(true)}
@@ -82,7 +82,7 @@ export const HeroSection = () => {
                 <div className="absolute bottom-4 md:bottom-6 left-4 md:left-6 right-4 md:right-6 backdrop-blur-md p-3 md:p-4 rounded-xl bg-white/95 border border-zinc-100 dark:bg-zinc-900/90 dark:border-zinc-800">
                   <p className="text-xs font-mono mb-1 text-zinc-500 dark:text-zinc-400">Current Focus</p>
                   <p className="text-sm md:text-base font-semibold text-slate-900 dark:text-white">
-                    WarehouseLens — AI-assisted warehouse operations platform
+                    WarehouseLens - AI-assisted warehouse operations platform
                   </p>
                 </div>
               </div>
@@ -123,7 +123,7 @@ export const HeroSection = () => {
                   <X size={16} className="text-zinc-500" />
                 </button>
 
-                {/* Header above form — inside modal, above form card */}
+                {/* Header above form - inside modal, above form card */}
                 <RequestCV />
               </div>
             </motion.div>

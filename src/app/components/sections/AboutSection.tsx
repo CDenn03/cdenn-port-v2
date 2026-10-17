@@ -20,7 +20,7 @@ const techStack = {
     "Prisma",
     "PostgreSQL",
     "Supabase",
-    "M-Pesa Daraja API",
+    "Payments APIs",
     "REST APIs",
     "Deno",
   ],
@@ -44,7 +44,7 @@ export const AboutSection = () => {
             <p className="text-lg leading-relaxed mb-6 text-zinc-600 dark:text-[#b0b0b0]">
               I&apos;m a full-stack software developer based in Nairobi, Kenya, with 3+ years
               building production-grade web applications and fintech systems. My work spans
-              Next.js application architecture, M-Pesa payment integrations, AI-powered tooling,
+              Next.js application architecture, payments API integrations, AI-powered tooling,
               and offline-first mobile apps - across SaaS platforms, browser extensions, and
               event-tech products.
             </p>
@@ -54,7 +54,7 @@ export const AboutSection = () => {
             <p className="text-lg leading-relaxed mb-6 text-zinc-600 dark:text-[#b0b0b0]">
               I&apos;ve led frontend architecture on multi-tenant bancassurance platforms, built
               Chrome extensions that inject into live Gmail DOM, and engineered offline-first
-              systems that reconcile M-Pesa STK callbacks in real time. I work across the full
+              systems that reconcile payment-provider callbacks in real time. I work across the full
               stack - from database schema and API design to component systems and deployment.
             </p>
           </Reveal>
@@ -134,7 +134,7 @@ export const AboutSection = () => {
         </div>
       </div>
 
-      {/* Experience — inline timeline */}
+      {/* Experience - inline timeline */}
       <div className="max-w-6xl mx-auto mt-10 pt-8 border-t border-zinc-200 dark:border-[#2a2a2a]">
         <Reveal>
           <h3 className="text-lg font-bold mb-8 flex items-center gap-2 text-slate-900 dark:text-[#FCF7F2]">

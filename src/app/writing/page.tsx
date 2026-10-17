@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 };
 
 const plannedArticles = [
-  { tag: "Fintech", title: "Building reliable M-Pesa integrations at scale" },
+  { tag: "Fintech", title: "Building reliable payments API integrations at scale" },
   { tag: "Engineering", title: "System design for offline-first mobile apps" },
   { tag: "Frontend", title: "Performance patterns in Next.js for low-bandwidth users" },
 ];
@@ -30,10 +30,10 @@ export default function WritingPage() {
           </p>
         </div>
 
-        {/* Article list — blurred with Coming Soon overlay */}
+        {/* Article list - blurred with Coming Soon overlay */}
         <div className="relative">
 
-          {/* Article rows — behind the overlay */}
+          {/* Article rows - behind the overlay */}
           <div className="divide-y divide-zinc-200 dark:divide-zinc-800 border border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden select-none">
             {plannedArticles.map((item, i) => (
               <div
