@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Kiro project configuration: keep portable settings, ignore transient runtime locks
+.kiro/settings/*.lock
