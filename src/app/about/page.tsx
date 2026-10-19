@@ -58,8 +58,8 @@ export default function AboutPage() {
 
         <div className="mx-auto max-w-3xl px-6 py-16 sm:py-24">
           {/* Header */}
-          <header className="mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+          <header className="border-t-2 border-primary pt-5 mb-12">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-[-0.03em] mb-4">
               About <span className="text-primary">CDenn</span>
             </h1>
             <p className="text-lg text-zinc-500 dark:text-[#888] max-w-2xl">
@@ -129,7 +129,7 @@ export default function AboutPage() {
                 CDenn delivers production-grade code across the full stack:
               </p>
               <div className="grid grid-cols-2 gap-4 not-prose my-6">
-                <div className="bg-muted/50 rounded-lg p-4">
+                <div className="border-t border-zinc-300 pt-4 dark:border-zinc-700">
                   <h3 className="font-semibold text-sm text-muted-foreground mb-2">
                     Frontend
                   </h3>
@@ -137,7 +137,7 @@ export default function AboutPage() {
                     React, Next.js, TypeScript, TailwindCSS, Radix UI
                   </p>
                 </div>
-                <div className="bg-muted/50 rounded-lg p-4">
+                <div className="border-t border-zinc-300 pt-4 dark:border-zinc-700">
                   <h3 className="font-semibold text-sm text-muted-foreground mb-2">
                     Backend
                   </h3>
@@ -145,13 +145,13 @@ export default function AboutPage() {
                     Node.js, Prisma, PostgreSQL, REST APIs, Webhooks
                   </p>
                 </div>
-                <div className="bg-muted/50 rounded-lg p-4">
+                <div className="border-t border-zinc-300 pt-4 dark:border-zinc-700">
                   <h3 className="font-semibold text-sm text-muted-foreground mb-2">
                     Mobile
                   </h3>
                   <p className="text-sm">Flutter, Dart, Riverpod, SQLite</p>
                 </div>
-                <div className="bg-muted/50 rounded-lg p-4">
+                <div className="border-t border-zinc-300 pt-4 dark:border-zinc-700">
                   <h3 className="font-semibold text-sm text-muted-foreground mb-2">
                     Tools
                   </h3>

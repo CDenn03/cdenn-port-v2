@@ -6,7 +6,7 @@ import { CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 type Status = "idle" | "loading" | "success" | "error";
 
 const inputClass =
-  "w-full border rounded-xl px-4 py-3 text-base focus:outline-none focus:border-primary dark:focus:border-[#FCF7F2] transition-colors bg-white border-zinc-300 text-slate-900 placeholder-zinc-400 dark:bg-[#1a1a1a] dark:border-[#2a2a2a] dark:text-[#FCF7F2] dark:placeholder-[#555555]";
+  "w-full border px-4 py-3 text-base focus:outline-none focus:border-primary dark:focus:border-[#FCF7F2] transition-colors bg-white border-zinc-300 text-slate-900 placeholder-zinc-400 dark:bg-[#1a1a1a] dark:border-[#2a2a2a] dark:text-[#FCF7F2] dark:placeholder-[#555555]";
 
 export function RequestCV() {
   const [status, setStatus] = useState<Status>("idle");
@@ -47,7 +47,7 @@ export function RequestCV() {
 
   if (status === "success") {
     return (
-      <div className="rounded-3xl p-10 flex flex-col items-center justify-center text-center gap-4 bg-white border border-zinc-200 dark:bg-[#1a1a1a] dark:border-[#2a2a2a] min-h-[320px]">
+      <div className="p-10 flex flex-col items-center justify-center text-center gap-4 bg-white border border-zinc-200 dark:bg-[#1a1a1a] dark:border-[#2a2a2a] min-h-[320px]">
         <CheckCircle size={40} className="text-primary dark:text-[#FCF7F2]" />
         <h3 className="text-xl font-bold text-slate-900 dark:text-[#FCF7F2]">Request received!</h3>
         <p className="text-zinc-500 dark:text-[#888888]">
@@ -65,7 +65,7 @@ export function RequestCV() {
 
   return (
     <form
-      className="rounded-3xl p-8 space-y-5 bg-white border border-zinc-200 dark:bg-[#1a1a1a] dark:border-[#2a2a2a]"
+      className="p-8 space-y-5 bg-white border border-zinc-200 dark:bg-[#1a1a1a] dark:border-[#2a2a2a]"
       onSubmit={handleSubmit}
     >
       {/* Header inside the card */}
@@ -140,7 +140,7 @@ export function RequestCV() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="w-full bg-primary text-primary-foreground text-base font-bold py-4 rounded-xl hover:opacity-90 transition-all cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+        className="w-full bg-primary text-primary-foreground text-base font-bold py-4 hover:opacity-90 transition-all cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
       >
         {status === "loading"
           ? <><Loader2 size={18} className="animate-spin" /> Sending request...</>

@@ -13,7 +13,7 @@ export const ThemeToggle = ({ className = "", size = 18 }: ThemeToggleProps) => 
   
   // Don't render until mounted to avoid hydration mismatch
   if (!mounted) {
-    return <div className={`p-2 rounded-full ${className}`} style={{ width: size + 16, height: size + 16 }} />;
+    return <div className={`p-2 border border-transparent ${className}`} style={{ width: size + 16, height: size + 16 }} />;
   }
 
   const isDark = resolvedTheme === "dark";
@@ -21,7 +21,7 @@ export const ThemeToggle = ({ className = "", size = 18 }: ThemeToggleProps) => 
   return (
     <button
       onClick={toggleTheme}
-      className={`p-2 rounded-full transition-colors ${
+      className={`p-2 border transition-colors ${
         isDark 
           ? "bg-zinc-800 hover:bg-zinc-700 text-zinc-300" 
           : "bg-zinc-100 hover:bg-zinc-200 text-zinc-600"

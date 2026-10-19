@@ -1,158 +1,85 @@
 "use client";
 
-import { ExternalLink, GitBranch } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "../ui/Reveal";
 import { solutions } from "@/src/app/data/portfolio";
 
-const featured = solutions.filter((s) => s.featured);
+const featured = solutions.filter((solution) => solution.featured).slice(0, 3);
 
 export const SolutionsSection = () => {
   return (
-    <section id="solutions" className="py-14 md:py-20 px-4 md:px-6 transition-colors duration-300 bg-[#F5EFE8] dark:bg-[#111111]">
-      <div className="max-w-6xl mx-auto">
+    <section id="solutions" className="bg-[#F5EFE8] px-4 py-16 transition-colors duration-300 md:px-6 md:py-24 dark:bg-[#111111]">
+      <div className="mx-auto max-w-6xl">
         <Reveal>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900 dark:text-[#FCF7F2]">Featured Solutions</h2>
-          <div className="w-20 h-1 bg-primary dark:bg-[#FCF7F2] mb-8 md:mb-10 rounded-full" />
+          <div className="grid gap-5 border-t-2 border-primary pt-5 md:grid-cols-[minmax(0,1fr)_20rem] md:items-end">
+            <div>
+              <p className="font-mono text-xs uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">Selected work</p>
+              <h2 className="mt-3 text-3xl font-bold tracking-[-0.03em] text-slate-900 md:text-5xl dark:text-[#FCF7F2]">Evidence, not a gallery.</h2>
+            </div>
+            <p className="text-sm leading-6 text-zinc-600 dark:text-zinc-300">A small selection of systems where the constraint shaped the work.</p>
+          </div>
         </Reveal>
 
-        <div className="space-y-16">
-          {featured.map((project, i) => {
-            // Alternate sides by position so reordering `solutions` needs no
-            // per-entry layout edits. Index 0 starts on the right.
-            const isRight = i % 2 === 0;
-            return (
+        <div className="mt-14">
+          {featured.map((project, index) => (
             <Reveal key={project.slug}>
-              <div className={`grid md:grid-cols-12 gap-8 items-center ${
-                isRight ? 'md:flex-row-reverse' : ''
-              }`}>
-
-                <div className={`md:col-span-7 group relative ${
-                  isRight ? 'md:order-last' : ''
-                }`}>
-                  <div className="aspect-video rounded-2xl overflow-hidden relative shadow-md bg-white border border-zinc-200 dark:bg-zinc-900 dark:border-zinc-800">
+              <article className="grid gap-7 border-t border-zinc-300 py-10 md:grid-cols-12 md:gap-10 dark:border-zinc-700">
+                <div className="md:col-span-1">
+                  <p className="font-mono text-sm text-zinc-500 dark:text-zinc-400">0{index + 1}</p>
+                </div>
+                <div className="md:col-span-6">
+                  <div className="relative aspect-video overflow-hidden border border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-900">
                     {project.image ? (
-                      <Image 
-                        src={project.image} 
-                        alt={project.title} 
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-700"
-                        sizes="(max-width: 768px) 100vw, 60vw"
-                      />
-                    ) : project.nda ? (
-                      /* Genuinely confidential - no screenshot can be shown */
-                      <div className="absolute inset-0 flex flex-col items-center justify-center bg-zinc-50 dark:bg-zinc-900">
-                        <div className="w-12 h-12 rounded-full bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center mb-3">
-                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-zinc-400">
-                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-                          </svg>
-                        </div>
-                        <p className="text-xs font-mono text-zinc-400 dark:text-zinc-500">Code under NDA</p>
-                      </div>
+                      <Image src={project.image} alt={project.title} fill className="object-cover" sizes="(max-width: 768px) 100vw, 58vw" />
                     ) : (
-                      /* No screenshot yet - neutral placeholder, no NDA claim */
-                      <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-zinc-50 dark:bg-zinc-900">
-                        <span className="text-3xl font-bold tracking-tight text-zinc-300 dark:text-zinc-700">
-                          {project.title}
-                        </span>
-                        <span className="text-xs font-mono uppercase tracking-widest text-zinc-400 dark:text-zinc-600">
-                          {project.category}
-                        </span>
+                      <div className="flex h-full items-end bg-zinc-100 p-5 dark:bg-zinc-900">
+                        <span className="font-mono text-xs uppercase tracking-[0.14em] text-zinc-500 dark:text-zinc-400">{project.category}</span>
                       </div>
                     )}
-                    <div className="absolute inset-0 bg-[#0f2a44]/5 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   </div>
                 </div>
-
-                <div className={`md:col-span-5 ${
-                  isRight ? 'md:order-first' : ''
-                }`}>
-                  <div className="flex items-center gap-3 mb-4 flex-wrap">
-                    <h3 className="text-2xl md:text-3xl font-bold transition-colors text-slate-900 dark:text-[#FCF7F2]">{project.title}</h3>
-                    {project.ongoing && (
-                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary dark:bg-[#FCF7F2]/10 dark:text-[#FCF7F2] shrink-0">
-                        <span className="relative flex h-1.5 w-1.5">
-                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary dark:bg-[#FCF7F2] opacity-75"></span>
-                          <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-primary dark:bg-[#FCF7F2]"></span>
-                        </span>
-                        <span>Ongoing</span>
-                      </span>
-                    )}
-                    {project.openSource && (
-                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400 shrink-0">
-                        <GitBranch size={11} />
-                        Open Source
-                      </span>
-                    )}
-                  </div>
-                  <p className="text-base mb-6 text-zinc-600 dark:text-[#b0b0b0]">{project.description}</p>
-
-                  <div className="space-y-4 mb-8">
+                <div className="md:col-span-5">
+                  <p className="font-mono text-xs uppercase tracking-[0.14em] text-zinc-500 dark:text-zinc-400">
+                    {project.category}{project.ongoing ? " / In progress" : ""}
+                  </p>
+                  <h3 className="mt-3 text-2xl font-bold tracking-[-0.02em] text-slate-900 md:text-3xl dark:text-[#FCF7F2]">{project.title}</h3>
+                  <p className="mt-4 text-base leading-7 text-zinc-700 dark:text-zinc-300">{project.description}</p>
+                  <dl className="mt-7 space-y-5 border-t border-zinc-300 pt-5 dark:border-zinc-700">
                     <div>
-                      <h5 className="text-xs font-bold uppercase mb-2 text-zinc-500 dark:text-[#888888]">The Challenge</h5>
-                      <p className="text-sm text-zinc-700 dark:text-[#b0b0b0]">{project.challenge}</p>
+                      <dt className="font-mono text-xs uppercase tracking-[0.14em] text-zinc-500 dark:text-zinc-400">Constraint</dt>
+                      <dd className="mt-2 text-sm leading-6 text-zinc-700 dark:text-zinc-300">{project.challenge}</dd>
                     </div>
                     {project.solution && (
                       <div>
-                        <h5 className="text-xs font-bold uppercase mb-2 text-zinc-500 dark:text-[#888888]">The Solution</h5>
-                        <p className="text-sm text-zinc-700 dark:text-[#b0b0b0]">{project.solution}</p>
+                        <dt className="font-mono text-xs uppercase tracking-[0.14em] text-zinc-500 dark:text-zinc-400">Approach</dt>
+                        <dd className="mt-2 text-sm leading-6 text-zinc-700 dark:text-zinc-300">{project.solution}</dd>
                       </div>
                     )}
                     <div>
-                      <h5 className="text-xs font-bold uppercase mb-3 text-zinc-500 dark:text-[#888888]">The Results</h5>
-                      <div className="flex flex-wrap gap-3">
-                        {project.results.map((res) => (
-                          <div key={`${res.label}-${res.value}`} className="px-3 py-2 rounded shadow-sm min-w-20 bg-white border border-zinc-200 dark:bg-[#1a1a1a] dark:border-[#2a2a2a]">
-                            <span className="text-primary dark:text-[#FCF7F2] font-bold text-lg block">{res.value}</span>
-                            <span className="text-xs text-zinc-600 dark:text-[#888888]">{res.label}</span>
-                          </div>
-                        ))}
-                      </div>
+                      <dt className="font-mono text-xs uppercase tracking-[0.14em] text-zinc-500 dark:text-zinc-400">Evidence</dt>
+                      <dd className="mt-2 text-sm leading-6 text-zinc-700 dark:text-zinc-300">
+                        {project.results.map((result) => `${result.value} ${result.label}`).join(" · ")}
+                      </dd>
                     </div>
+                  </dl>
+                  <p className="mt-6 font-mono text-xs leading-6 text-zinc-500 dark:text-zinc-400">{project.tags.join(" / ")}</p>
+                  <div className="mt-7 flex flex-wrap gap-x-5 gap-y-3 text-sm font-bold">
+                    <Link href={`/solutions/${project.slug}`} className="underline decoration-zinc-300 underline-offset-4 transition-colors hover:text-primary dark:decoration-zinc-700">Read case study →</Link>
+                    {project.websiteUrl && <a href={project.websiteUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-zinc-600 underline decoration-zinc-300 underline-offset-4 transition-colors hover:text-primary dark:text-zinc-300 dark:decoration-zinc-700">Live site <ExternalLink size={13} /></a>}
+                    {project.codeUrl && <a href={project.codeUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-zinc-600 underline decoration-zinc-300 underline-offset-4 transition-colors hover:text-primary dark:text-zinc-300 dark:decoration-zinc-700">GitHub <ExternalLink size={13} /></a>}
                   </div>
-
-                  <div className="flex gap-3 text-xs font-medium mb-8 flex-wrap">
-                    {project.tags.map(tag => (
-                      <span key={tag} className="px-3 py-1 rounded-full font-medium bg-zinc-100 text-slate-700 dark:bg-[#222222] dark:text-[#FCF7F2]">{tag}</span>
-                    ))}
-                  </div>
-
-                  {(project.websiteUrl || project.codeUrl) && (
-                    <div className="flex gap-4">
-                      {project.websiteUrl && (
-                        <a href={project.websiteUrl} target="_blank" rel="noopener noreferrer" className="text-sm font-bold hover:text-primary dark:hover:text-[#FCF7F2] underline underline-offset-4 text-slate-900 dark:text-[#FCF7F2]">Visit website</a>
-                      )}
-                      {project.codeUrl && (
-                        <a href={project.codeUrl} target="_blank" rel="noopener noreferrer" className="text-sm font-bold flex items-center gap-1 hover:text-primary dark:hover:text-[#FCF7F2] text-zinc-500 dark:text-[#888888]">
-                          <ExternalLink size={14} /> Code
-                        </a>
-                      )}
-                    </div>
-                  )}
-                  {!project.websiteUrl && !project.codeUrl && project.nda && (
-                    <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-zinc-100 dark:bg-zinc-800 w-fit">
-                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-zinc-400">
-                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-                      </svg>
-                      <span className="text-xs font-mono text-zinc-500 dark:text-zinc-400">Code under NDA - available on request</span>
-                    </div>
-                  )}
                 </div>
-              </div>
+              </article>
             </Reveal>
-            );
-          })}
+          ))}
         </div>
 
         <Reveal>
-          <div className="mt-10 flex justify-center">
-            <Link
-              href="/solutions"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border font-semibold text-sm transition-colors border-zinc-300 text-slate-800 hover:bg-slate-900 hover:text-white hover:border-slate-900 dark:border-[#2a2a2a] dark:text-[#FCF7F2] dark:hover:bg-[#FCF7F2] dark:hover:text-[#0a0a0a]"
-            >
-              View all solutions
-              <ExternalLink size={14} />
+          <div className="border-t border-zinc-300 pt-8 dark:border-zinc-700">
+            <Link href="/solutions" className="inline-flex min-h-11 items-center border border-zinc-300 px-5 text-sm font-bold transition-colors hover:border-slate-900 dark:border-zinc-700 dark:hover:border-white">
+              View all work →
             </Link>
           </div>
         </Reveal>

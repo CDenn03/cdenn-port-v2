@@ -163,7 +163,7 @@ export default async function SolutionDetailPage({
 
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div className="mb-6">
-          <h1 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-[#FCF7F2] mb-2">
+          <h1 className="text-4xl md:text-6xl font-bold tracking-[-0.03em] text-slate-900 dark:text-[#FCF7F2] mb-2">
             {project.title}
           </h1>
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-400 dark:text-[#555]">
@@ -181,9 +181,7 @@ export default async function SolutionDetailPage({
               href={project.websiteUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold
-                bg-slate-900 text-white dark:bg-[#FCF7F2] dark:text-[#0a0a0a]
-                hover:opacity-90 transition-opacity"
+              className="inline-flex min-h-11 items-center gap-2 border border-slate-900 bg-slate-900 px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-transparent hover:text-slate-900 dark:border-[#FCF7F2] dark:bg-[#FCF7F2] dark:text-[#0a0a0a] dark:hover:bg-transparent dark:hover:text-[#FCF7F2]"
             >
               <ExternalLink size={14} /> View Live Site
             </a>
@@ -217,7 +215,7 @@ export default async function SolutionDetailPage({
               <h2 className="text-xs font-bold uppercase tracking-widest mb-3 text-zinc-400 dark:text-[#555]">
                 Challenge
               </h2>
-              <div className="rounded-2xl border border-amber-200 bg-amber-50/50 p-5 dark:border-amber-900/40 dark:bg-amber-950/20">
+              <div className="border-l-2 border-amber-500 pl-5">
                 <p className="text-sm leading-relaxed text-zinc-700 dark:text-[#b0b0b0]">
                   {project.challenge}
                 </p>
@@ -229,7 +227,7 @@ export default async function SolutionDetailPage({
                 <h2 className="text-xs font-bold uppercase tracking-widest mb-3 text-zinc-400 dark:text-[#555]">
                   Solution
                 </h2>
-                <div className="rounded-2xl border border-zinc-200 dark:border-[#1e1e1e] bg-white dark:bg-[#111] p-5">
+                <div className="border-t border-zinc-300 pt-5 dark:border-zinc-700">
                   <p className="text-sm leading-relaxed text-zinc-700 dark:text-[#b0b0b0]">
                     {project.solution}
                   </p>
@@ -268,7 +266,7 @@ export default async function SolutionDetailPage({
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-3 py-1 rounded-full text-xs font-medium bg-zinc-100 text-zinc-700 dark:bg-[#1e1e1e] dark:text-[#b0b0b0]"
+                    className="font-mono text-xs leading-6 text-zinc-600 dark:text-zinc-300"
                   >
                     {tag}
                   </span>
@@ -279,7 +277,7 @@ export default async function SolutionDetailPage({
             {serviceCallout[project.slug] && (() => {
               const callout = serviceCallout[project.slug];
               return (
-                <div className="rounded-2xl border border-zinc-200 dark:border-[#1e1e1e] bg-white dark:bg-[#111] p-5">
+                <div className="border-t border-zinc-300 pt-5 dark:border-zinc-700">
                   <p className="text-xs font-bold uppercase tracking-widest mb-3 text-zinc-400 dark:text-[#555]">
                     {callout.label}
                   </p>
@@ -303,7 +301,7 @@ export default async function SolutionDetailPage({
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {project.screenshots.map((s) => (
-                    <div key={s.src} className="rounded-xl overflow-hidden border border-zinc-200 dark:border-[#1e1e1e]">
+                    <div key={s.src} className="overflow-hidden border border-zinc-200 dark:border-zinc-800">
                       <div className="relative aspect-video">
                         <Image src={s.src} alt={s.caption} fill className="object-cover object-top" />
                       </div>
@@ -316,7 +314,7 @@ export default async function SolutionDetailPage({
           </div>
 
           <div className="space-y-6 order-first md:order-last md:sticky md:top-24 md:self-start">
-            <div className="rounded-2xl border border-zinc-200 dark:border-[#1e1e1e] bg-white dark:bg-[#111] p-5">
+            <div className="border-t border-zinc-300 pt-5 dark:border-zinc-700">
               <h3 className="text-xs font-bold uppercase tracking-widest mb-4 text-zinc-400 dark:text-[#555]">
                 Project Profile
               </h3>
@@ -336,7 +334,7 @@ export default async function SolutionDetailPage({
               </dl>
             </div>
 
-            <div id="impact" className="rounded-2xl border border-zinc-200 dark:border-[#1e1e1e] bg-white dark:bg-[#111] p-5">
+            <div id="impact" className="border-t border-zinc-300 pt-5 dark:border-zinc-700">
               <h3 className="text-xs font-bold uppercase tracking-widest mb-4 text-zinc-400 dark:text-[#555]">
                 Impact
               </h3>
@@ -356,7 +354,7 @@ export default async function SolutionDetailPage({
             </div>
 
             {(project.websiteUrl || project.codeUrl) && (
-              <div className="rounded-2xl border border-zinc-200 dark:border-[#1e1e1e] bg-white dark:bg-[#111] p-5">
+              <div className="border-t border-zinc-300 pt-5 dark:border-zinc-700">
                 <h3 className="text-xs font-bold uppercase tracking-widest mb-4 text-zinc-400 dark:text-[#555]">
                   Links
                 </h3>
@@ -378,7 +376,7 @@ export default async function SolutionDetailPage({
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 text-sm text-zinc-600 dark:text-[#888] hover:text-slate-900 dark:hover:text-[#FCF7F2] transition-colors"
                     >
-                      <Github size={13} /> Source Code
+                      <Github size={13} /> GitHub
                     </a>
                   )}
                 </div>
@@ -393,9 +391,7 @@ export default async function SolutionDetailPage({
           </p>
           <Link
             href="/#contact"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold
-              bg-slate-900 text-white dark:bg-[#FCF7F2] dark:text-[#0a0a0a]
-              hover:opacity-90 transition-opacity"
+            className="inline-flex min-h-11 items-center gap-2 border border-slate-900 bg-slate-900 px-5 py-2 text-sm font-bold text-white transition-colors hover:bg-transparent hover:text-slate-900 dark:border-[#FCF7F2] dark:bg-[#FCF7F2] dark:text-[#0a0a0a] dark:hover:bg-transparent dark:hover:text-[#FCF7F2]"
           >
             Get in touch
           </Link>

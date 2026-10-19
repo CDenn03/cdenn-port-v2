@@ -1,174 +1,105 @@
 "use client";
 
-import { MapPin, Clock, Terminal, Briefcase } from "lucide-react";
+import { MapPin, Clock, Briefcase } from "lucide-react";
 import { Reveal } from "../ui/Reveal";
 import { experiences } from "@/src/app/data/portfolio";
 
-const techStack = {
-  frontend: [
-    "React",
-    "Next.js",
-    "TypeScript",
-    "JavaScript",
-    "TailwindCSS",
-    "TanStack Query",
-    "Framer Motion",
-  ],
-  backend: [
-    "Node.js",
-    "Rust",
-    "Prisma",
-    "PostgreSQL",
-    "Supabase",
-    "Payments APIs",
-    "REST APIs",
-    "Deno",
-  ],
-  mobile: ["Flutter", "Dart", "Riverpod", "sqflite"],
-  tools: ["Git", "GitHub", "Figma", "Vercel", "Adobe Tools"],
-};
-
+const capabilities = [
+  ["Product systems", "Architecture that stays clear as a product grows."],
+  ["Payments and reconciliation", "Reliable provider callbacks, idempotency, and operational visibility."],
+  ["Multi-tenant platforms", "Roles, permissions, workflows, and isolated data boundaries."],
+  ["Offline-first software", "Local data, sync queues, and resilient field workflows."],
+  ["AI-assisted operations", "Useful automation bounded by human review and real permissions."],
+];
 
 export const AboutSection = () => {
   return (
-    <section id="about" className="py-14 md:py-20 px-4 md:px-6 transition-colors duration-300 bg-[#F5EFE8] dark:bg-[#111111]">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12">
+    <section id="about" className="bg-[#F5EFE8] px-4 py-16 transition-colors duration-300 md:px-6 md:py-24 dark:bg-[#111111]">
+      <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-2 md:gap-16">
         <div>
           <Reveal>
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-slate-900 dark:text-[#FCF7F2]">
-              About Me
+            <p className="mb-4 font-mono text-xs uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">About</p>
+            <h2 className="mb-8 text-3xl font-bold tracking-[-0.03em] text-slate-900 md:text-5xl dark:text-[#FCF7F2]">
+              A systems-minded approach to product work.
             </h2>
           </Reveal>
 
           <Reveal>
-            <p className="text-lg leading-relaxed mb-6 text-zinc-600 dark:text-[#b0b0b0]">
-              I&apos;m a full-stack software developer based in Nairobi, Kenya, with 3+ years
-              building production-grade web applications and fintech systems. My work spans
-              Next.js application architecture, payments API integrations, AI-powered tooling,
-              and offline-first mobile apps - across SaaS platforms, browser extensions, and
-              event-tech products.
+            <p className="mb-6 text-lg leading-8 text-zinc-700 dark:text-zinc-300">
+              I&apos;m a full-stack software developer based in Nairobi, Kenya. I work with teams that need the product and the operational details to hold together, from the first user journey through to the systems behind it.
             </p>
           </Reveal>
-
           <Reveal>
-            <p className="text-lg leading-relaxed mb-6 text-zinc-600 dark:text-[#b0b0b0]">
-              I&apos;ve led frontend architecture on multi-tenant bancassurance platforms, built
-              Chrome extensions that inject into live Gmail DOM, and engineered offline-first
-              systems that reconcile payment-provider callbacks in real time. I work across the full
-              stack - from database schema and API design to component systems and deployment.
+            <p className="mb-8 text-lg leading-8 text-zinc-700 dark:text-zinc-300">
+              That has meant leading frontend architecture for multi-tenant bancassurance platforms, building a browser extension inside live Gmail, and engineering offline-first systems that reconcile payment-provider callbacks. I start with the constraint, then make the technical trade-offs visible.
             </p>
           </Reveal>
-
           <Reveal>
-            <p className="text-lg leading-relaxed mb-8 text-zinc-600 dark:text-[#b0b0b0]">
-              <strong className="text-slate-900 dark:text-[#FCF7F2]">My Approach:</strong>{" "}
-              Understand the problem deeply before writing a line of code. Ship fast without
-              cutting corners on architecture. Keep systems maintainable for the team that
-              inherits them.
-            </p>
-          </Reveal>
-
-          <Reveal>
-            <blockquote className="border-l-4 border-primary pl-6 py-3 my-8 rounded-r-xl bg-primary/5 dark:bg-white/5">
-              <p className="text-xl italic text-slate-800 dark:text-[#FCF7F2]">
-                Build systems that last. Ship products that work. Own the outcome.
-              </p>
+            <blockquote className="border-l-2 border-primary pl-5 text-xl leading-8 text-slate-800 dark:text-[#FCF7F2]">
+              Build systems that last. Ship products that work. Own the outcome.
             </blockquote>
           </Reveal>
 
           <Reveal>
-            <div className="grid grid-cols-2 gap-6 mt-8">
-              <div className="flex items-start gap-3">
-                <MapPin className="text-primary dark:text-[#FCF7F2] mt-1 shrink-0" size={20} />
-                <div>
-                  <h4 className="font-bold text-base text-slate-900 dark:text-[#FCF7F2]">
-                    Location
-                  </h4>
-                  <p className="text-sm text-zinc-500 dark:text-[#b0b0b0]">Nairobi, Kenya · Remote-friendly</p>
-                </div>
+            <dl className="mt-10 grid gap-6 border-t border-zinc-300 pt-6 sm:grid-cols-2 dark:border-zinc-700">
+              <div>
+                <dt className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.12em] text-zinc-500 dark:text-zinc-400"><MapPin size={15} /> Location</dt>
+                <dd className="mt-2 text-sm text-zinc-700 dark:text-zinc-300">Nairobi, Kenya · Remote-friendly</dd>
               </div>
-              <div className="flex items-start gap-3">
-                <Clock className="text-primary dark:text-[#FCF7F2] mt-1 shrink-0" size={20} />
-                <div>
-                  <h4 className="font-bold text-base text-slate-900 dark:text-[#FCF7F2]">
-                    Availability
-                  </h4>
-                  <p className="text-sm text-zinc-500 dark:text-[#b0b0b0]">Open to roles, contracts & consulting</p>
-                </div>
+              <div>
+                <dt className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.12em] text-zinc-500 dark:text-zinc-400"><Clock size={15} /> Availability</dt>
+                <dd className="mt-2 text-sm text-zinc-700 dark:text-zinc-300">Open to roles, contracts, and consulting</dd>
               </div>
-            </div>
+            </dl>
           </Reveal>
         </div>
 
-        <div className="rounded-3xl p-6 md:p-8 h-fit transition-colors duration-300 bg-white border border-zinc-200 shadow-sm dark:bg-[#1a1a1a] dark:border-[#2a2a2a]">
+        <aside className="h-fit border-t-2 border-primary pt-5 md:mt-2">
           <Reveal>
-            <h3 className="text-xl font-bold mb-6 flex items-center gap-2 text-slate-900 dark:text-[#FCF7F2]">
-              <Terminal className="text-primary dark:text-[#FCF7F2]" size={20} /> Tech Stack
-            </h3>
+            <h3 className="text-xl font-bold text-slate-900 dark:text-[#FCF7F2]">Capabilities</h3>
+            <p className="mt-2 text-sm leading-6 text-zinc-600 dark:text-zinc-400">The work I am most useful for.</p>
           </Reveal>
-
-          <div className="space-y-8">
-            {Object.entries(techStack).map(([category, technologies]) => (
-              <Reveal
-                key={category}
-                delay={0.1 * (Object.keys(techStack).indexOf(category) + 1)}
-              >
-                <div>
-                  <h4 className="text-xs font-bold uppercase tracking-widest mb-4 text-zinc-500 dark:text-[#888888]">
-                    {category.charAt(0).toUpperCase() + category.slice(1)}
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-3 py-1.5 rounded text-sm font-medium bg-zinc-100 text-slate-700 border border-zinc-200 dark:bg-[#222222] dark:text-[#FCF7F2] dark:border-[#333333]"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+          <ol className="mt-6">
+            {capabilities.map(([title, description], index) => (
+              <Reveal key={title} delay={index * 0.06}>
+                <li className="grid grid-cols-[2rem_1fr] gap-4 border-t border-zinc-300 py-5 last:border-b dark:border-zinc-700">
+                  <span className="pt-0.5 font-mono text-xs text-zinc-500 dark:text-zinc-400">0{index + 1}</span>
+                  <div>
+                    <h4 className="font-bold text-slate-900 dark:text-[#FCF7F2]">{title}</h4>
+                    <p className="mt-1 text-sm leading-6 text-zinc-600 dark:text-zinc-300">{description}</p>
                   </div>
-                </div>
+                </li>
               </Reveal>
             ))}
-          </div>
-        </div>
+          </ol>
+          <p className="mt-6 font-mono text-xs leading-6 text-zinc-500 dark:text-zinc-400">
+            React / Next.js / TypeScript / Node / Rust / PostgreSQL / Flutter
+          </p>
+        </aside>
       </div>
 
-      {/* Experience - inline timeline */}
-      <div className="max-w-6xl mx-auto mt-10 pt-8 border-t border-zinc-200 dark:border-[#2a2a2a]">
+      <div className="mx-auto mt-20 max-w-6xl border-t border-zinc-300 pt-8 dark:border-zinc-700">
         <Reveal>
-          <h3 className="text-lg font-bold mb-8 flex items-center gap-2 text-slate-900 dark:text-[#FCF7F2]">
-            <Briefcase size={18} className="text-primary dark:text-[#FCF7F2]" />
-            Experience
-          </h3>
+          <div className="flex items-center gap-2">
+            <Briefcase size={17} className="text-primary dark:text-[#FCF7F2]" />
+            <h3 className="font-mono text-xs uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">Experience</h3>
+          </div>
         </Reveal>
 
-        <div className="relative border-l ml-3 space-y-8 border-zinc-200 dark:border-[#2a2a2a]">
-          {experiences.map((job, i) => (
-            <Reveal key={`${job.company}-${job.role}`} delay={i * 0.1}>
-              <div className="relative pl-8">
-                <div className={`absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full ring-4 ${
-                  i === 0
-                    ? "bg-primary dark:bg-[#FCF7F2]"
-                    : "bg-zinc-300 dark:bg-[#444444]"
-                } ring-[#F5EFE8] dark:ring-[#111111]`} />
-                <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-1">
-                  <h4 className="text-base font-bold text-slate-900 dark:text-[#FCF7F2]">{job.role}</h4>
-                  <span className={`text-xs font-mono ${
-                    i === 0 ? "text-primary dark:text-[#FCF7F2]" : "text-zinc-400 dark:text-[#666]"
-                  }`}>{job.period}</span>
+        <div className="mt-8 space-y-8">
+          {experiences.map((job, index) => (
+            <Reveal key={`${job.company}-${job.role}`} delay={index * 0.08}>
+              <article className="grid gap-4 border-t border-zinc-300 py-6 md:grid-cols-[minmax(0,1fr)_auto] md:gap-8 dark:border-zinc-700">
+                <div>
+                  <h4 className="text-lg font-bold text-slate-900 dark:text-[#FCF7F2]">{job.role}</h4>
+                  <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-300">{job.company}</p>
+                  <ul className="mt-4 space-y-2">
+                    {job.desc.map((item, itemIndex) => <li key={itemIndex} className="text-sm leading-6 text-zinc-700 dark:text-zinc-300">{item}</li>)}
+                  </ul>
+                  <p className="mt-4 font-mono text-xs leading-5 text-zinc-500 dark:text-zinc-400">{job.tech}</p>
                 </div>
-                <p className="text-sm font-medium mb-3 text-zinc-500 dark:text-[#888888]">{job.company}</p>
-                <ul className="space-y-1.5 mb-3">
-                  {job.desc.map((item, idx) => (
-                    <li key={idx} className="text-sm text-zinc-600 dark:text-[#b0b0b0] flex gap-2">
-                      <span className="text-primary mt-0.5 shrink-0">·</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <p className="text-xs font-mono text-zinc-400 dark:text-[#555]">{job.tech}</p>
-              </div>
+                <p className="font-mono text-xs uppercase tracking-[0.12em] text-zinc-500 dark:text-zinc-400">{job.period}</p>
+              </article>
             </Reveal>
           ))}
         </div>

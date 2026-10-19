@@ -15,7 +15,7 @@ export const ExperienceSection = () => {
           {experiences.map((job, i) => (
             <Reveal key={`${job.company}-${job.role}-${job.period}`} delay={i * 0.2}>
               <div className="relative pl-8">
-                <div className={`absolute -left-1.25 top-2 w-2.5 h-2.5 rounded-full ring-4 ${
+                <div className={`absolute -left-1.25 top-2 w-2.5 h-2.5 ring-4 ${
                   i === 0 ? "bg-primary dark:bg-[#FCF7F2]" : "bg-zinc-400 dark:bg-[#444444]"
                 } ring-[#FCF7F2] dark:ring-[#0a0a0a]`} />
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-2">

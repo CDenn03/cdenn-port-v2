@@ -22,12 +22,12 @@ export function SubpageNav({ backHref = "/", backLabel = "Back" }: SubpageNavPro
       : "/assets/logo/CDenn.png";
 
   return (
-    <nav className="sticky top-0 z-50 border-b transition-colors duration-300 border-zinc-200 bg-[#FCF7F2]/90 dark:border-[#1a1a1a] dark:bg-[#0a0a0a]/90 backdrop-blur-md">
+    <nav className="sticky top-0 z-50 border-b transition-colors duration-300 border-zinc-200 bg-[#FCF7F2] dark:border-[#1a1a1a] dark:bg-[#0a0a0a]">
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* left: back button */}
         <Link
           href={backHref}
-          className="inline-flex items-center gap-2 text-sm font-medium text-zinc-500 dark:text-[#888] hover:text-slate-900 dark:hover:text-[#FCF7F2] transition-colors"
+          className="inline-flex items-center gap-2 text-sm text-zinc-600 dark:text-[#888] hover:text-slate-900 dark:hover:text-[#FCF7F2] transition-colors"
         >
           <ArrowLeft size={16} />
           {backLabel}
