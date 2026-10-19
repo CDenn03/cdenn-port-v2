@@ -49,10 +49,10 @@ export default function SolutionsPage() {
       />
       <SubpageNav backHref="/" backLabel="Back" />
 
-      <div className="max-w-6xl mx-auto px-6 py-16">
+      <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
           <div className="mb-12">
-            <div className="flex items-baseline gap-3 mb-4">
-              <h1 className="text-4xl md:text-5xl font-bold">Solutions</h1>
+            <div className="flex items-baseline gap-3 border-t-2 border-primary pt-5 mb-4">
+              <h1 className="text-4xl md:text-6xl font-bold tracking-[-0.03em]">Solutions</h1>
               <span className="text-sm font-medium text-zinc-400 dark:text-[#555]">
                 {solutions.length} projects
               </span>

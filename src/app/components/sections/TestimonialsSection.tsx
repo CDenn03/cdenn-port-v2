@@ -5,7 +5,7 @@ import { testimonials } from "@/src/app/data/portfolio";
 
 export const TestimonialsSection = () => {
   return (
-    <section className="py-32 px-6 transition-colors duration-300 bg-white/60 dark:bg-zinc-900/60">
+    <section className="py-24 px-6 transition-colors duration-300 bg-[#F5EFE8] dark:bg-[#111111]">
       <div className="max-w-6xl mx-auto">
         <Reveal>
           <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center text-slate-900 dark:text-white">What Clients Say</h2>
@@ -14,12 +14,12 @@ export const TestimonialsSection = () => {
         <div className="grid md:grid-cols-2 gap-8">
           {testimonials.map((item) => (
             <Reveal key={`${item.author}-${item.role}`} delay={testimonials.indexOf(item) * 0.1}>
-              <div className="p-8 rounded-3xl h-full flex flex-col justify-between transition-shadow hover:shadow-lg bg-white border border-zinc-200 shadow-sm dark:bg-zinc-800 dark:border-zinc-700">
+              <div className="border-t border-zinc-300 pt-6 h-full flex flex-col justify-between dark:border-zinc-700">
                 <div>
                   <p className="text-lg mb-6 leading-relaxed text-zinc-700 dark:text-zinc-300">&ldquo;{item.text}&rdquo;</p>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold bg-zinc-100 text-zinc-500 border border-zinc-200 dark:bg-zinc-700 dark:text-zinc-300 dark:border-zinc-600">
+                  <div className="w-12 h-12 flex items-center justify-center text-sm font-bold border border-zinc-300 text-zinc-500 dark:border-zinc-700 dark:text-zinc-300">
                     {item.initials}
                   </div>
                   <div>

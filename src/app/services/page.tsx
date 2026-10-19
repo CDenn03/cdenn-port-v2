@@ -86,10 +86,10 @@ export default function ServicesIndexPage() {
       <div className="max-w-4xl mx-auto px-6 py-16 md:py-24">
 
         <div className="mb-16">
-          <p className="text-xs font-bold uppercase tracking-widest text-primary dark:text-[#888888] mb-4">
+          <p className="font-mono text-xs uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400 mb-4">
             Services
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-[1.1] mb-6 text-slate-900 dark:text-[#FCF7F2]">
+          <h1 className="text-4xl md:text-6xl font-bold tracking-[-0.03em] leading-[1.02] mb-6 text-slate-900 dark:text-[#FCF7F2]">
             What I Build
           </h1>
           <p className="text-xl text-zinc-600 dark:text-[#b0b0b0] leading-relaxed max-w-2xl">
@@ -103,7 +103,7 @@ export default function ServicesIndexPage() {
             <Link
               key={service.href}
               href={service.href}
-              className="group block rounded-2xl border p-6 md:p-8 border-zinc-200 bg-white dark:border-[#1e1e1e] dark:bg-[#111] hover:border-zinc-300 dark:hover:border-[#2a2a2a] transition-colors"
+              className="group block border-t border-zinc-300 py-6 dark:border-zinc-700"
             >
               <h2 className="text-xl md:text-2xl font-bold mb-3 text-slate-900 dark:text-[#FCF7F2] flex items-start gap-2">
                 {service.title}
@@ -119,7 +119,7 @@ export default function ServicesIndexPage() {
                 {service.points.map((point) => (
                   <li
                     key={point}
-                    className="px-3 py-1.5 rounded text-sm font-medium bg-zinc-100 text-slate-700 border border-zinc-200 dark:bg-[#222222] dark:text-[#FCF7F2] dark:border-[#333333]"
+                    className="font-mono text-xs leading-6 text-zinc-600 dark:text-zinc-300"
                   >
                     {point}
                   </li>
@@ -158,7 +158,7 @@ export default function ServicesIndexPage() {
             ].map((eng) => (
               <div
                 key={eng.type}
-                className="rounded-2xl border p-5 border-zinc-200 bg-white dark:border-[#1e1e1e] dark:bg-[#111]"
+                className="border-t border-zinc-300 pt-5 dark:border-zinc-700"
               >
                 <h3 className="font-bold text-base mb-2 text-slate-900 dark:text-[#FCF7F2]">
                   {eng.type}
@@ -224,7 +224,7 @@ export default function ServicesIndexPage() {
           </p>
           <Link
             href="/#contact"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-base bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
+            className="inline-flex min-h-12 items-center gap-2 border border-primary bg-primary px-6 py-3 font-bold text-base text-primary-foreground transition-colors hover:bg-transparent hover:text-primary dark:hover:text-[#FCF7F2]"
           >
             Start the conversation <ArrowRight size={18} />
           </Link>

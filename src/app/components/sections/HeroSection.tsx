@@ -12,118 +12,99 @@ export const HeroSection = () => {
 
   return (
     <>
-      <section className="min-h-screen flex items-center px-4 md:px-6 pt-20 pb-10 md:pt-24">
-        <div className="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-
-          <div className="order-2 md:order-1">
-
+      <section className="flex items-center px-4 pt-24 pb-16 md:min-h-[calc(100svh-4rem)] md:px-6 md:pt-28 md:pb-20">
+        <div className="mx-auto grid w-full max-w-6xl items-center gap-10 md:grid-cols-2 md:gap-12">
+          <div className="order-1 md:order-1">
             <Reveal delay={0.1}>
-              <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-6 md:mb-8 text-slate-900 dark:text-white">
-                Full-stack engineer.{" "}
-                <br className="hidden sm:block" />
-                Fintech systems.{" "}
-                <br className="hidden sm:block" />
-                <span className="text-primary">Built for scale.</span>
+              <p className="mb-5 font-mono text-xs uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">
+                Nairobi, Kenya · Available worldwide
+              </p>
+              <h1 className="mb-7 text-4xl font-bold leading-[0.98] tracking-[-0.04em] text-slate-900 md:text-5xl lg:text-5xl dark:text-white">
+                Reliable systems for operational work.
               </h1>
             </Reveal>
 
             <Reveal delay={0.2}>
-              <p className="text-base md:text-lg lg:text-xl max-w-xl leading-relaxed mb-8 md:mb-10 text-zinc-700 dark:text-zinc-200">
-                I build production-grade fintech infrastructure and AI-integrated
-                products for teams across East Africa and globally.{" "}
-                <span className="font-mono text-sm text-zinc-500 dark:text-zinc-400">
-                  Next.js · Payments APIs · TypeScript · Node · PostgreSQL
-                </span>
+              <p className="mb-4 max-w-xl text-base leading-7 text-zinc-700 md:text-lg md:leading-8 dark:text-zinc-200">
+                Full-stack engineering for fintech, multi-tenant SaaS, offline-first products, and AI-assisted operations.
+              </p>
+              <p className="mb-9 font-mono text-sm leading-6 text-zinc-500 dark:text-zinc-400">
+                Next.js / Payments APIs / TypeScript / Node / PostgreSQL
               </p>
             </Reveal>
 
             <Reveal delay={0.3}>
-              <div className="flex flex-col sm:flex-row flex-wrap gap-4">
-                <motion.a
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <a
                   href="#contact"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="px-6 md:px-8 py-3 md:py-4 bg-primary text-primary-foreground rounded-full text-base md:text-lg font-bold hover:opacity-90 transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/20"
+                  className="inline-flex min-h-12 items-center justify-center border border-primary bg-primary px-6 py-3 text-base font-bold text-primary-foreground transition-colors hover:bg-transparent hover:text-primary dark:hover:text-[#FCF7F2]"
                 >
-                  Start a Project
-                </motion.a>
-
+                  Discuss a project
+                </a>
                 <a
                   href="#solutions"
-                  className="px-6 md:px-8 py-3 md:py-4 border rounded-full text-base md:text-lg font-bold transition-all border-zinc-300 hover:bg-zinc-100 hover:border-zinc-400 text-slate-900 dark:border-zinc-600 dark:hover:bg-zinc-800 dark:hover:border-zinc-500 dark:text-white text-center"
+                  className="inline-flex min-h-12 items-center justify-center border border-zinc-300 px-6 py-3 text-base font-bold text-slate-900 transition-colors hover:border-slate-900 dark:border-zinc-700 dark:text-white dark:hover:border-white"
                 >
-                  See Projects
+                  View selected work →
                 </a>
               </div>
-
-              {/* Request CV - opens modal */}
-              <div className="mt-4 pl-1">
-                <button
-                  onClick={() => setCvOpen(true)}
-                  className="text-sm text-zinc-500 dark:text-zinc-400 hover:text-primary dark:hover:text-primary transition-colors"
-                >
-                  Request CV
-                </button>
-              </div>
+              <button
+                onClick={() => setCvOpen(true)}
+                className="mt-5 text-sm text-zinc-500 underline decoration-zinc-300 underline-offset-4 transition-colors hover:text-primary dark:text-zinc-400 dark:decoration-zinc-700"
+              >
+                Request CV
+              </button>
             </Reveal>
           </div>
 
           <Reveal delay={0.4}>
-            <div className="relative group order-1 md:order-2">
-              <div className="relative rounded-2xl overflow-hidden aspect-3/4 md:aspect-3/4 shadow-2xl bg-white border border-zinc-200 dark:bg-zinc-900 dark:border-zinc-800">
+            <figure className="order-2 opacity-100 md:order-2">
+              <div className="relative aspect-[4/5] overflow-hidden border border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-900">
                 <Image
                   src="/assets/images/port-photo-4.png"
-                  alt="CDenn - Software Engineer"
+                  alt="Dennis Ndung'u, the software engineer behind CDenn"
                   fill
-                  className="object-cover object-top hover:scale-105 transition-transform duration-700 ease-out"
+                  className="object-cover object-top opacity-100"
                   priority
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute bottom-4 md:bottom-6 left-4 md:left-6 right-4 md:right-6 backdrop-blur-md p-3 md:p-4 rounded-xl bg-white/95 border border-zinc-100 dark:bg-zinc-900/90 dark:border-zinc-800">
-                  <p className="text-xs font-mono mb-1 text-zinc-500 dark:text-zinc-400">Current Focus</p>
-                  <p className="text-sm md:text-base font-semibold text-slate-900 dark:text-white">
-                    WarehouseLens - AI-assisted warehouse operations platform
-                  </p>
-                </div>
               </div>
-            </div>
+              <figcaption className="mt-4 border-t border-zinc-200 pt-3 dark:border-zinc-800">
+                <p className="font-mono text-xs uppercase tracking-[0.14em] text-zinc-500 dark:text-zinc-400">Currently building</p>
+                <p className="mt-1 text-sm font-bold text-slate-900 dark:text-white">WarehouseLens</p>
+                <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-300">Permission-aware warehouse operations software.</p>
+              </figcaption>
+            </figure>
           </Reveal>
         </div>
       </section>
 
-      {/* CV Request Modal */}
       <AnimatePresence>
         {cvOpen && (
           <>
-            {/* Scrim */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
               onClick={() => setCvOpen(false)}
-              className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm"
+              className="fixed inset-0 z-50 bg-black/50"
             />
-
-            {/* Panel */}
             <motion.div
-              initial={{ opacity: 0, y: 32, scale: 0.97 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 16, scale: 0.97 }}
-              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-              className="fixed inset-0 z-50 flex items-center justify-center px-4 pointer-events-none"
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 12 }}
+              transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              className="pointer-events-none fixed inset-0 z-50 flex items-center justify-center px-4"
             >
-              <div className="w-full max-w-lg pointer-events-auto relative">
-                {/* Close button */}
+              <div className="pointer-events-auto relative w-full max-w-lg">
                 <button
                   onClick={() => setCvOpen(false)}
-                  className="absolute -top-4 -right-4 w-9 h-9 rounded-full bg-white dark:bg-[#1a1a1a] border border-zinc-200 dark:border-zinc-700 flex items-center justify-center hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors shadow-md z-10"
-                  aria-label="Close"
+                  className="absolute right-0 top-0 z-10 flex h-10 w-10 items-center justify-center border border-zinc-200 bg-white text-zinc-600 transition-colors hover:bg-zinc-100 dark:border-zinc-700 dark:bg-[#1a1a1a] dark:text-zinc-300 dark:hover:bg-zinc-800"
+                  aria-label="Close CV request form"
                 >
-                  <X size={16} className="text-zinc-500" />
+                  <X size={16} />
                 </button>
-
-                {/* Header above form - inside modal, above form card */}
                 <RequestCV />
               </div>
             </motion.div>

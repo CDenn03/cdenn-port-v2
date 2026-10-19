@@ -2,7 +2,6 @@
 
 import { useTheme } from "./hooks/useTheme";
 import { ScrollProgress } from "./components/ui/ScrollProgress";
-import { BackgroundAmbience } from "./components/ui/BackgroundAmbience";
 import { Navbar } from "./components/layout/Navbar";
 import { HeroSection } from "./components/sections/HeroSection";
 import { AboutSection } from "./components/sections/AboutSection";
@@ -21,7 +20,6 @@ export default function PortfolioClient() {
       suppressHydrationWarning
     >
       {mounted && <ScrollProgress />}
-      {mounted && <BackgroundAmbience />}
 
       <Navbar />
       <HeroSection />

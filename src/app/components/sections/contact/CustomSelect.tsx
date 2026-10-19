@@ -44,7 +44,7 @@ export function CustomSelect({
       <button
         type="button"
         onClick={() => setOpen((p) => !p)}
-        className={`w-full flex items-center justify-between px-4 py-3 rounded-xl border text-base transition-colors text-left
+        className={`w-full flex items-center justify-between px-4 py-3 border text-base transition-colors text-left
           bg-white border-zinc-300 text-slate-900
           dark:bg-[#1a1a1a] dark:border-[#2a2a2a] dark:text-[#FCF7F2]
           ${open
@@ -62,7 +62,7 @@ export function CustomSelect({
       </button>
 
       {open && (
-        <ul className="absolute z-50 mt-1 w-full rounded-xl border overflow-hidden shadow-lg bg-white border-zinc-200 dark:bg-[#1a1a1a] dark:border-[#2a2a2a]">
+        <ul className="absolute z-50 mt-1 w-full border overflow-hidden bg-white border-zinc-200 dark:bg-[#1a1a1a] dark:border-[#2a2a2a]">
           {options.map((opt) => (
             <li key={opt.value}>
               <button

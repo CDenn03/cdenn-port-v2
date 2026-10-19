@@ -72,11 +72,11 @@ export default function PrivacyPage() {
       <SubpageNav backHref="/" backLabel="Back" />
 
       <div className="max-w-3xl mx-auto px-6 py-16 md:py-24">
-        <div className="mb-12">
-          <p className="text-xs font-bold uppercase tracking-widest text-primary dark:text-[#888888] mb-4">
+        <div className="border-t-2 border-primary pt-5 mb-12">
+          <p className="font-mono text-xs uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400 mb-4">
             Legal
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+          <h1 className="text-4xl md:text-6xl font-bold tracking-[-0.03em] mb-4">
             Privacy Policy
           </h1>
           <p className="text-lg text-zinc-600 dark:text-[#b0b0b0] leading-relaxed">

@@ -169,15 +169,13 @@ export const Footer = () => {
                 aria-label={link.label}
                 onMouseEnter={() => setHoveredIcon(link.network)}
                 onMouseLeave={() => setHoveredIcon(null)}
-                className="flex items-center justify-center w-9 h-9 rounded-full transition-all duration-200 text-zinc-500 dark:text-[#888888] hover:text-slate-900 dark:hover:text-[#FCF7F2]"
+                className="flex items-center justify-center w-9 h-9 border transition-colors duration-200 text-zinc-500 dark:text-[#888888] hover:text-slate-900 dark:hover:text-[#FCF7F2]"
                 style={{
                   border:
                     hoveredIcon === link.network
-                      ? "2px solid #253C38"
+                      ? "1px solid #253C38"
                       : "1px solid transparent",
-                  transform:
-                    hoveredIcon === link.network ? "scale(1.1)" : "scale(1)",
-                }}
+                                  }}
               >
                 {iconMap[link.network]}
               </a>

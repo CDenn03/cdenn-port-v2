@@ -51,11 +51,11 @@ export function PrivacyRequestForm() {
   };
 
   const inputClass =
-    "w-full border rounded-xl px-4 py-3 text-base focus:outline-none focus:border-primary dark:focus:border-[#FCF7F2] transition-colors bg-white border-zinc-300 text-slate-900 placeholder-zinc-400 dark:bg-[#1a1a1a] dark:border-[#2a2a2a] dark:text-[#FCF7F2] dark:placeholder-[#555555]";
+    "w-full min-h-12 border px-4 py-3 text-base focus:outline-none focus:border-primary dark:focus:border-[#FCF7F2] transition-colors bg-white border-zinc-300 text-slate-900 placeholder-zinc-400 dark:bg-[#1a1a1a] dark:border-[#2a2a2a] dark:text-[#FCF7F2] dark:placeholder-[#555555]";
 
   if (status === "success") {
     return (
-      <div className="rounded-2xl p-8 border border-zinc-200 dark:border-[#2a2a2a] bg-white dark:bg-[#1a1a1a] text-center space-y-3">
+      <div className="p-8 border border-zinc-200 dark:border-[#2a2a2a] bg-white dark:bg-[#1a1a1a] text-center space-y-3">
         <CheckCircle className="mx-auto text-primary dark:text-[#FCF7F2]" size={32} />
         <p className="font-semibold text-slate-900 dark:text-[#FCF7F2]">Request received</p>
         <p className="text-sm text-zinc-500 dark:text-[#888888]">
@@ -131,7 +131,7 @@ export function PrivacyRequestForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="w-full bg-primary text-primary-foreground font-bold py-3 rounded-xl hover:opacity-90 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 cursor-pointer"
+        className="w-full bg-primary text-primary-foreground font-bold min-h-12 py-3 border border-primary hover:bg-transparent hover:text-primary transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 cursor-pointer"
       >
         {status === "loading"
           ? <><Loader2 size={16} className="animate-spin" /> Submitting...</>
