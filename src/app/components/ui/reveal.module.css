@@ -1,0 +1,95 @@
+/* Shared reveal animation classes */
+
+/* Base hidden state - elements start invisible and shifted */
+.revealBase {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Visible state */
+.revealVisible {
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1);
+}
+
+/* Fade up - default */
+.revealFadeUp {
+  composes: revealBase;
+}
+
+/* Fade in - no movement */
+.revealFadeIn {
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.revealFadeIn.revealVisible {
+  opacity: 1;
+}
+
+/* Fade left - slide from right */
+.revealFadeLeft {
+  opacity: 0;
+  transform: translateX(32px);
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.revealFadeLeft.revealVisible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Fade right - slide from left */
+.revealFadeRight {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.revealFadeRight.revealVisible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Scale up - grow from smaller */
+.revealScale {
+  opacity: 0;
+  transform: scale(0.95);
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.revealScale.revealVisible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Stagger delays for child elements */
+.stagger1 { transition-delay: 0ms; }
+.stagger2 { transition-delay: 80ms; }
+.stagger3 { transition-delay: 160ms; }
+.stagger4 { transition-delay: 240ms; }
+.stagger5 { transition-delay: 320ms; }
+.stagger6 { transition-delay: 400ms; }
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .revealBase,
+  .revealFadeUp,
+  .revealFadeIn,
+  .revealFadeLeft,
+  .revealFadeRight,
+  .revealScale {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

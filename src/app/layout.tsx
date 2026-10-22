@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./providers/ThemeProvider";
 import { ConsoleEasterEgg } from "./components/ConsoleEasterEgg";
+import { BackgroundAmbience } from "./components";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -97,6 +98,7 @@ export default function RootLayout({
           defaultTheme="light"
           enableSystem={false}
         >
+          <BackgroundAmbience />
           {children}
         </ThemeProvider>
       </body>
