@@ -165,7 +165,7 @@ export const Footer = () => {
                 key={link.network}
                 href={link.url}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="me noopener noreferrer"
                 aria-label={link.label}
                 onMouseEnter={() => setHoveredIcon(link.network)}
                 onMouseLeave={() => setHoveredIcon(null)}

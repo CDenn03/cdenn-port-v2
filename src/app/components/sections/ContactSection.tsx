@@ -54,8 +54,7 @@ export const ContactSection = () => {
       <div className="mx-auto grid max-w-6xl gap-14 border-t-2 border-primary pt-5 md:grid-cols-2 md:gap-20">
         <div>
           <Reveal>
-            <p className="font-mono text-xs uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">Project brief</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-[-0.03em] text-slate-900 md:text-5xl dark:text-[#FCF7F2]">Start with the constraint.</h2>
+            <h2 className="text-3xl font-bold tracking-[-0.03em] text-slate-900 md:text-5xl dark:text-[#FCF7F2]">Start with the constraint.</h2>
             <p className="mt-6 max-w-lg text-lg leading-8 text-zinc-700 dark:text-zinc-300">Tell me what needs to work reliably, what is getting in the way, and what success looks like. I&apos;ll reply with the clearest next step.</p>
           </Reveal>
           <Reveal>

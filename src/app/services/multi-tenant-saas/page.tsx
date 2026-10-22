@@ -93,9 +93,6 @@ export default function MultiTenantSaasPage() {
         <div className="max-w-4xl mx-auto px-6 py-16 md:py-24">
 
           <div className="mb-16">
-            <p className="font-mono text-xs uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400 mb-4">
-              Services
-            </p>
             <h1 className="text-4xl md:text-6xl font-bold tracking-[-0.03em] leading-[1.02] mb-6 text-slate-900 dark:text-[#FCF7F2]">
               Multi-Tenant SaaS Architecture &amp; Platform Engineering
             </h1>

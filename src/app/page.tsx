@@ -14,9 +14,11 @@ export const metadata: Metadata = {
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": "https://www.cdenn.dev/#person",
   name: "Dennis Ndung'u",
   alternateName: "CDenn",
   url: "https://www.cdenn.dev",
+  mainEntityOfPage: "https://www.cdenn.dev/",
   jobTitle: "Full-Stack Software Developer",
   description:
     "CDenn is the professional brand and online identity of Dennis Ndung'u, a full-stack software developer based in Nairobi, Kenya. CDenn specialises in Next.js App Router architecture, payments API integrations, and AI-integrated web applications. Available for full-time roles, contracts, and consulting engagements globally.",
@@ -53,9 +55,7 @@ const organizationSchema = {
     "CDenn is a software development brand founded by Dennis Ndung'u, offering full-stack web development, fintech automation, and AI integration services. CDenn is not affiliated with the scientific term cDENN (DENN protein domain).",
   foundingDate: "2024",
   founder: {
-    "@type": "Person",
-    name: "Dennis Ndung'u",
-    alternateName: "CDenn",
+    "@id": "https://www.cdenn.dev/#person",
   },
   sameAs: sameAsUrls,
   contactPoint: {
