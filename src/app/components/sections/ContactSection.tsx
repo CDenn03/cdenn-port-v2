@@ -50,7 +50,7 @@ export const ContactSection = () => {
   const inputClass = "w-full min-h-12 border border-border bg-surface px-4 py-3 text-base text-foreground transition-colors placeholder:text-muted-foreground hover:border-muted-foreground/60 focus:border-primary focus:outline-2 focus:outline-primary dark:focus:border-accent dark:focus:outline-accent";
 
   return (
-    <section id="contact" className="bg-surface px-4 py-16 transition-colors duration-300 md:px-6 md:py-24">
+    <section id="contact" className="bg-section-deep px-4 py-16 transition-colors duration-300 md:px-6 md:py-24">
       <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-2 md:gap-20">
         <div>
           <Reveal>
@@ -87,14 +87,14 @@ export const ContactSection = () => {
 
         <Reveal>
           {status === "success" ? (
-            <div className="flex min-h-[380px] flex-col items-start justify-center bg-background p-8">
+            <div className="flex min-h-[380px] flex-col items-start justify-center bg-surface p-8">
               <CheckCircle size={36} className="text-primary dark:text-accent" />
               <h3 className="mt-5 text-2xl font-bold text-foreground">Message sent.</h3>
               <p className="mt-2 text-base text-foreground">I&apos;ll get back to you within 24 hours.</p>
               <button onClick={() => setStatus("idle")} className="mt-6 text-base font-bold underline underline-offset-4 hover:text-primary dark:hover:text-accent">Send another message</button>
             </div>
           ) : (
-            <form className="bg-background p-6 md:p-8" onSubmit={handleSubmit}>
+            <form className="bg-surface p-6 md:p-8" onSubmit={handleSubmit}>
               <div className="grid gap-5 sm:grid-cols-2">
                 <div><label htmlFor="name" className="mb-2 block text-base text-foreground">Name</label><input type="text" id="name" name="name" required className={inputClass} placeholder="Jane Smith" /></div>
                 <div><label htmlFor="email" className="mb-2 block text-base text-foreground">Email</label><input type="email" id="email" name="email" required className={inputClass} placeholder="jane@company.com" /></div>

@@ -13,7 +13,7 @@ const capabilities = [
 
 export const AboutSection = () => {
   return (
-    <section id="about" className="bg-surface px-4 py-20 transition-colors duration-300 md:px-6 md:py-24">
+    <section id="about" className="bg-section-stone px-4 py-20 transition-colors duration-300 md:px-6 md:py-24">
       <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-2 md:gap-16">
         <div>
           <Reveal>
@@ -40,11 +40,11 @@ export const AboutSection = () => {
 
           <Reveal>
             <div className="mt-10 grid gap-6 sm:grid-cols-2">
-              <div className="bg-background p-5">
+              <div className="bg-surface p-5">
                 <p className="text-base font-bold text-foreground">Based in</p>
                 <p className="mt-1 text-base text-foreground">Nairobi, Kenya. Remote-friendly.</p>
               </div>
-              <div className="bg-background p-5">
+              <div className="bg-surface p-5">
                 <p className="text-base font-bold text-foreground">Available for</p>
                 <p className="mt-1 text-base text-foreground">Roles, contracts, and consulting.</p>
               </div>
@@ -82,7 +82,7 @@ export const AboutSection = () => {
         <div className="mt-10 space-y-6">
           {experiences.map((job, index) => (
             <Reveal key={`${job.company}-${job.role}`} delay={index * 0.08}>
-              <article className="grid gap-4 bg-background p-6 md:grid-cols-[minmax(0,1fr)_auto] md:gap-8">
+              <article className="grid gap-4 bg-surface p-6 md:grid-cols-[minmax(0,1fr)_auto] md:gap-8">
                 <div>
                   <h4 className="text-lg font-bold text-foreground">{job.role}</h4>
                   <p className="mt-1 text-base text-muted-foreground">{job.company}</p>

@@ -42,7 +42,7 @@ export const HeroSection = () => {
                 </a>
                 <a
                   href="#solutions"
-                  className="press group/cta inline-flex min-h-12 items-center justify-center gap-1.5 bg-surface px-6 py-3 text-base font-bold text-foreground transition-colors hover:bg-[#ddd9d0] dark:hover:bg-[#1f2522]"
+                  className="press group/cta inline-flex min-h-12 items-center justify-center gap-1.5 border border-border bg-surface px-6 py-3 text-base font-bold text-foreground transition-colors hover:bg-section-stone dark:hover:bg-[#1f2522]"
                 >
                   View selected work
                   <ChevronRight size={18} aria-hidden="true" className="transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-soft)] motion-safe:group-hover/cta:translate-x-0.5" />
@@ -76,7 +76,7 @@ export const HeroSection = () => {
 
           <Reveal delay={0.4} className="order-2 lg:order-1">
             <figure className="opacity-100">
-              <div className="relative aspect-[4/5] overflow-hidden bg-surface">
+              <div className="relative aspect-[4/5] overflow-hidden bg-section-stone">
                 <Image
                   src="/assets/images/port-photo-4.png"
                   alt="Dennis Ndung'u, the software engineer behind CDenn"
@@ -117,7 +117,7 @@ export const HeroSection = () => {
               <div className="pointer-events-auto relative w-full max-w-lg">
                 <button
                   onClick={() => setCvOpen(false)}
-                  className="absolute right-0 top-0 z-10 flex h-10 w-10 items-center justify-center bg-surface text-foreground transition-colors hover:bg-[#ddd9d0] dark:hover:bg-[#1f2522]"
+                  className="absolute right-0 top-0 z-10 flex h-10 w-10 items-center justify-center bg-surface text-foreground transition-colors hover:bg-section-stone dark:hover:bg-[#1f2522]"
                   aria-label="Close CV request form"
                 >
                   <X size={16} />

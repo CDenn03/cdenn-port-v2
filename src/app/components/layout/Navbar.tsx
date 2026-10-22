@@ -86,14 +86,14 @@ const NavDropdown = ({ label, items }: { label: string; items: NavItem[] }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 4 }}
             transition={{ duration: 0.15 }}
-            className="absolute right-0 top-full mt-3 w-60 bg-surface shadow-lg" /* taste-skill-ignore: dropdown menu is a real overlay; shadows allowed on things that float */
+            className="absolute right-0 top-full mt-3 w-60 border border-border bg-background shadow-lg" /* taste-skill-ignore: dropdown menu is a real overlay; shadows allowed on things that float */
           >
             {items.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="block px-4 py-3 text-base text-foreground transition-colors hover:bg-background hover:text-primary dark:hover:text-accent"
+                className="block px-4 py-3 text-base text-foreground transition-colors hover:bg-section-stone hover:text-primary dark:hover:bg-[#1d2220] dark:hover:text-accent"
               >
                 {item.label}
               </Link>
@@ -200,7 +200,7 @@ export const Navbar = () => {
 
         <div className="flex items-center gap-3 md:hidden">
           <ThemeToggle />
-          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="flex h-10 w-10 items-center justify-center bg-background transition-colors hover:bg-[#ddd9d0] dark:hover:bg-[#1f2522]" aria-label="Toggle menu">
+          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="flex h-10 w-10 items-center justify-center bg-surface transition-colors hover:bg-section-stone dark:hover:bg-[#1f2522]" aria-label="Toggle menu">
             {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>

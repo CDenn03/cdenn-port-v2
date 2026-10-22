@@ -1,0 +1,2632 @@
+{
+ "url": "http://localhost:3000",
+ "at": "2026-10-22T20:04:22.302Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 9,
+   "filled": [
+    0.44,
+    0.93,
+    0.91,
+    0.84,
+    0.88,
+    0.91,
+    0.88,
+    0.82,
+    0.48
+   ],
+   "motion": {
+    "elements": 30,
+    "css": 2,
+    "transitions": 26,
+    "scripted": 2,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 7474,
+     "screens": 8.3,
+     "words": 1148,
+     "img": 4,
+     "video": 0,
+     "canvas": 1,
+     "svg": 25,
+     "sections": 4,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 2,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "image?url=%2Fassets%2Fimages%2Fport-photo-4.png&",
+      "image?url=%2Fassets%2Fproject-shots%2Fopsis.png&"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Reliable systems for operational work.",
+     "words": 5,
+     "chars": 38,
+     "lines": 2,
+     "size": 48,
+     "vw": 3.3,
+     "font": "Inter",
+     "weight": 700,
+     "tracking": -0.04,
+     "leading": 0.98,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "right",
+     "widthRatio": 0.38,
+     "top": 294,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Reliable systems for operational work.",
+     "words": 5,
+     "lines": 2,
+     "size": 48,
+     "font": "Inter"
+    },
+    "headings": [
+     {
+      "text": "Reliable systems for operational work.",
+      "words": 5,
+      "chars": 38,
+      "lines": 2,
+      "size": 48,
+      "vw": 3.3,
+      "font": "Inter",
+      "weight": 700,
+      "tracking": -0.04,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.38,
+      "top": 294,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "A systems-minded approach to product work.",
+      "words": 6,
+      "chars": 42,
+      "lines": 3,
+      "size": 48,
+      "vw": 3.3,
+      "font": "Inter",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.38,
+      "top": 1071,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Experience",
+      "words": 1,
+      "chars": 10,
+      "lines": 1,
+      "size": 30,
+      "vw": 2.1,
+      "font": "Inter",
+      "weight": 700,
+      "tracking": -0.02,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.11,
+      "top": 1897,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Evidence, not a gallery.",
+      "words": 4,
+      "chars": 24,
+      "lines": 1,
+      "size": 48,
+      "vw": 3.3,
+      "font": "Inter",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.56,
+      "top": 2452,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Bancassurance Platform",
+      "words": 2,
+      "chars": 22,
+      "lines": 1,
+      "size": 30,
+      "vw": 2.1,
+      "font": "Inter",
+      "weight": 700,
+      "tracking": -0.02,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.32,
+      "top": 2625,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "WarehouseLens",
+      "words": 1,
+      "chars": 13,
+      "lines": 1,
+      "size": 30,
+      "vw": 2.1,
+      "font": "Inter",
+      "weight": 700,
+      "tracking": -0.02,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.32,
+      "top": 3443,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Opsis",
+      "words": 1,
+      "chars": 5,
+      "lines": 1,
+      "size": 30,
+      "vw": 2.1,
+      "font": "Inter",
+      "weight": 700,
+      "tracking": -0.02,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.32,
+      "top": 4441,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Steward",
+      "words": 1,
+      "chars": 7,
+      "lines": 1,
+      "size": 30,
+      "vw": 2.1,
+      "font": "Inter",
+      "weight": 700,
+      "tracking": -0.02,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.32,
+      "top": 5287,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Start with the constraint.",
+      "words": 4,
+      "chars": 26,
+      "lines": 2,
+      "size": 48,
+      "vw": 3.3,
+      "font": "Inter",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.37,
+      "top": 6304,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 9,
+     "maxLines": 3,
+     "over2Lines": 1,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Inter",
+       "share": 0.89,
+       "mono": false
+      },
+      {
+       "family": "ui-monospace",
+       "share": 0.11,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      30,
+      48
+     ],
+     "sizeCount": 8,
+     "notLoaded": [],
+     "body": {
+      "font": "Inter",
+      "size": 14,
+      "leading": 1.71,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 6.8
+     },
+     "measureChars": 65,
+     "max": {
+      "size": 48,
+      "vw": 3.3,
+      "font": "Inter",
+      "text": "Reliable systems for operational work."
+     },
+     "monoShare": 0.11,
+     "monoProseShare": 0.11,
+     "monoFamilies": [
+      "ui-monospace"
+     ],
+     "monoSamples": [
+      "Nairobi, Kenya. Available worldwide.",
+      "Profiles",
+      "Currently building",
+      "Location",
+      "Availability",
+      "01"
+     ],
+     "microLabels": 21,
+     "microLabelShare": 0.034,
+     "microSamples": [
+      "Profiles",
+      "Currently building",
+      "Location",
+      "Availability",
+      "Jan 2025 - Present",
+      "SaaS / Fintech"
+     ],
+     "upperShare": 0.04,
+     "centerShare": 0.01,
+     "smallText": 19
+    },
+    "eyebrows": [
+     {
+      "text": "SaaS / Fintech",
+      "above": "Bancassurance Platform",
+      "upper": true,
+      "tracked": true,
+      "mono": true,
+      "pill": false,
+      "size": 12,
+      "top": 2597
+     },
+     {
+      "text": "SaaS / Logistics / AI / In progress",
+      "above": "WarehouseLens",
+      "upper": true,
+      "tracked": true,
+      "mono": true,
+      "pill": false,
+      "size": 12,
+      "top": 3415
+     },
+     {
+      "text": "Media Tech / Self-Hosted / In progress",
+      "above": "Opsis",
+      "upper": true,
+      "tracked": true,
+      "mono": true,
+      "pill": false,
+      "size": 12,
+      "top": 4413
+     },
+     {
+      "text": "SaaS / Fintech",
+      "above": "Steward",
+      "upper": true,
+      "tracked": true,
+      "mono": true,
+      "pill": false,
+      "size": 12,
+      "top": 5259
+     }
+    ],
+    "numbered": [
+     {
+      "text": "01",
+      "size": 12,
+      "top": 1206
+     },
+     {
+      "text": "02",
+      "size": 12,
+      "top": 1295
+     },
+     {
+      "text": "03",
+      "size": 12,
+      "top": 1384
+     },
+     {
+      "text": "04",
+      "size": 12,
+      "top": 1474
+     },
+     {
+      "text": "05",
+      "size": 12,
+      "top": 1563
+     },
+     {
+      "text": "01",
+      "size": 14,
+      "top": 2597
+     },
+     {
+      "text": "02",
+      "size": 14,
+      "top": 3415
+     },
+     {
+      "text": "03",
+      "size": 14,
+      "top": 4413
+     },
+     {
+      "text": "04",
+      "size": 14,
+      "top": 5259
+     }
+    ],
+    "color": {
+     "bodyBg": "#fcf7f2",
+     "bodyBgHsl": {
+      "h": 30,
+      "s": 0.63,
+      "l": 0.97
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#fcf7f2",
+       "top": 0,
+       "hsl": {
+        "h": 30,
+        "s": 0.63,
+        "l": 0.97
+       }
+      },
+      {
+       "color": "#f5efe8",
+       "top": 975,
+       "hsl": {
+        "h": 32,
+        "s": 0.39,
+        "l": 0.94
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#3f3f46",
+       "share": 0.65
+      },
+      {
+       "color": "#71717b",
+       "share": 0.12
+      },
+      {
+       "color": "#52525c",
+       "share": 0.08
+      },
+      {
+       "color": "#fcf7f2",
+       "share": 0.07
+      },
+      {
+       "color": "#0f172b",
+       "share": 0.06
+      }
+     ],
+     "button": {
+      "bg": "#253c38",
+      "hsl": {
+       "h": 170,
+       "s": 0.24,
+       "l": 0.19
+      },
+      "fg": "#fcf7f2"
+     },
+     "lowContrast": [
+      {
+       "text": "Location",
+       "ratio": 4.2,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#71717b",
+       "bg": "#f5efe8"
+      },
+      {
+       "text": "Availability",
+       "ratio": 4.2,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#71717b",
+       "bg": "#f5efe8"
+      },
+      {
+       "text": "React / Next.js / TypeScript / Node / Ru",
+       "ratio": 4.2,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#71717b",
+       "bg": "#f5efe8"
+      },
+      {
+       "text": "React, Next.js, TypeScript, TailwindCSS,",
+       "ratio": 4.2,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#71717b",
+       "bg": "#f5efe8"
+      },
+      {
+       "text": "Jan 2025 - Present",
+       "ratio": 4.2,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#71717b",
+       "bg": "#f5efe8"
+      },
+      {
+       "text": "SaaS / Fintech",
+       "ratio": 4.2,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#71717b",
+       "bg": "#f5efe8"
+      }
+     ]
+    },
+    "buttons": {
+     "count": 6,
+     "inHero": 2,
+     "radius": 0,
+     "height": 50,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Discuss a project",
+      "View selected work"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 24,
+     "hairlineSamples": [
+      "nav.fixed.top-0 1440px",
+      "p.mt-7.border-t 552px",
+      "figcaption.mt-4.border-t 552px",
+      "dl.mt-10.grid 544px",
+      "li.grid.grid-cols-[2rem_1fr] 544px"
+     ],
+     "outlinedBoxes": 6,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 3,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "canvas",
+      "ratio": 1
+     },
+     {
+      "type": "img",
+      "ratio": 0.29
+     }
+    ],
+    "nav": {
+     "links": 4,
+     "fixed": true,
+     "height": 65,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "inter"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 7474,
+    "margins": {
+     "left": 144,
+     "right": 147
+    },
+    "sections": [
+     {
+      "sel": "section.flex.items-center",
+      "tag": "section",
+      "top": 0,
+      "height": 975,
+      "words": 42,
+      "media": 1,
+      "middle": 49,
+      "heading": {
+       "text": "Reliable systems for operational work.",
+       "size": 48,
+       "tag": "h1"
+      },
+      "left": 144,
+      "right": 147,
+      "textLeft": 144,
+      "textRight": 147,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#about.bg-[#F5EFE8].px-4",
+      "tag": "section",
+      "top": 975,
+      "height": 1359,
+      "words": 285,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "A systems-minded approach to product work.",
+       "size": 48,
+       "tag": "h2"
+      },
+      "left": 144,
+      "right": 144,
+      "textLeft": 144,
+      "textRight": 144,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#solutions.bg-[#F5EFE8].px-4",
+      "tag": "section",
+      "top": 2334,
+      "height": 3851,
+      "words": 838,
+      "media": 1,
+      "middle": 41,
+      "heading": {
+       "text": "Evidence, not a gallery.",
+       "size": 48,
+       "tag": "h2"
+      },
+      "left": 144,
+      "right": 144,
+      "textLeft": 144,
+      "textRight": 144,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#contact.bg-[#F5EFE8].px-4",
+      "tag": "section",
+      "top": 6186,
+      "height": 830,
+      "words": 58,
+      "media": 0,
+      "middle": 145,
+      "heading": {
+       "text": "Start with the constraint.",
+       "size": 48,
+       "tag": "h2"
+      },
+      "left": 144,
+      "right": 177,
+      "textLeft": 144,
+      "textRight": 341,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "footer.border-t.pt-20",
+      "tag": "footer",
+      "top": 7016,
+      "height": 458,
+      "words": 47,
+      "media": 0,
+      "middle": 212,
+      "heading": {
+       "text": "Navigation",
+       "size": 16,
+       "tag": "h4"
+      },
+      "left": 144,
+      "right": 303,
+      "textLeft": 144,
+      "textRight": 303,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Reliable systems for operational work.",
+      "size": 48,
+      "top": 294,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 839,
+      "n": 8
+     },
+     {
+      "x": 144,
+      "n": 6
+     },
+     {
+      "x": 264,
+      "n": 3
+     },
+     {
+      "x": 744,
+      "n": 3
+     },
+     {
+      "x": 166,
+      "n": 2
+     },
+     {
+      "x": 976,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 23,
+    "bodySize": 14,
+    "stage": true,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 9,
+   "filled": [
+    0.44,
+    0.94,
+    0.92,
+    0.93,
+    0.94,
+    0.94,
+    0.9,
+    0.94,
+    0.58
+   ],
+   "motion": {
+    "elements": 30,
+    "css": 2,
+    "transitions": 26,
+    "scripted": 2,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 9170,
+     "screens": 9,
+     "words": 1148,
+     "img": 4,
+     "video": 0,
+     "canvas": 1,
+     "svg": 25,
+     "sections": 4,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 2,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "image?url=%2Fassets%2Fimages%2Fport-photo-4.png&",
+      "image?url=%2Fassets%2Fproject-shots%2Fopsis.png&"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Reliable systems for operational work.",
+     "words": 5,
+     "chars": 38,
+     "lines": 4,
+     "size": 48,
+     "vw": 6.3,
+     "font": "Inter",
+     "weight": 700,
+     "tracking": -0.04,
+     "leading": 0.98,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "right",
+     "widthRatio": 0.44,
+     "top": 199,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Reliable systems for operational work.",
+     "words": 5,
+     "lines": 4,
+     "size": 48,
+     "font": "Inter"
+    },
+    "headings": [
+     {
+      "text": "Reliable systems for operational work.",
+      "words": 5,
+      "chars": 38,
+      "lines": 4,
+      "size": 48,
+      "vw": 6.3,
+      "font": "Inter",
+      "weight": 700,
+      "tracking": -0.04,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.44,
+      "top": 199,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "A systems-minded approach to product work.",
+      "words": 6,
+      "chars": 42,
+      "lines": 4,
+      "size": 48,
+      "vw": 6.3,
+      "font": "Inter",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.43,
+      "top": 1056,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Experience",
+      "words": 1,
+      "chars": 10,
+      "lines": 1,
+      "size": 30,
+      "vw": 3.9,
+      "font": "Inter",
+      "weight": 700,
+      "tracking": -0.02,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.21,
+      "top": 2174,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Evidence, not a gallery.",
+      "words": 4,
+      "chars": 24,
+      "lines": 2,
+      "size": 48,
+      "vw": 6.3,
+      "font": "Inter",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.49,
+      "top": 2825,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Bancassurance Platform",
+      "words": 2,
+      "chars": 22,
+      "lines": 2,
+      "size": 30,
+      "vw": 3.9,
+      "font": "Inter",
+      "weight": 700,
+      "tracking": -0.02,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.36,
+      "top": 3046,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "WarehouseLens",
+      "words": 1,
+      "chars": 13,
+      "lines": 1,
+      "size": 30,
+      "vw": 3.9,
+      "font": "Inter",
+      "weight": 700,
+      "tracking": -0.02,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.36,
+      "top": 4164,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Opsis",
+      "words": 1,
+      "chars": 5,
+      "lines": 1,
+      "size": 30,
+      "vw": 3.9,
+      "font": "Inter",
+      "weight": 700,
+      "tracking": -0.02,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.36,
+      "top": 5578,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Steward",
+      "words": 1,
+      "chars": 7,
+      "lines": 1,
+      "size": 30,
+      "vw": 3.9,
+      "font": "Inter",
+      "weight": 700,
+      "tracking": -0.02,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.36,
+      "top": 6720,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Start with the constraint.",
+      "words": 4,
+      "chars": 26,
+      "lines": 2,
+      "size": 48,
+      "vw": 6.3,
+      "font": "Inter",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.42,
+      "top": 7961,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 9,
+     "maxLines": 4,
+     "over2Lines": 2,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Inter",
+       "share": 0.89,
+       "mono": false
+      },
+      {
+       "family": "ui-monospace",
+       "share": 0.11,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      30,
+      48
+     ],
+     "sizeCount": 8,
+     "notLoaded": [],
+     "body": {
+      "font": "Inter",
+      "size": 14,
+      "leading": 1.71,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 6.8
+     },
+     "measureChars": 40,
+     "max": {
+      "size": 48,
+      "vw": 6.3,
+      "font": "Inter",
+      "text": "Reliable systems for operational work."
+     },
+     "monoShare": 0.11,
+     "monoProseShare": 0.11,
+     "monoFamilies": [
+      "ui-monospace"
+     ],
+     "monoSamples": [
+      "Nairobi, Kenya. Available worldwide.",
+      "Profiles",
+      "Currently building",
+      "Location",
+      "Availability",
+      "01"
+     ],
+     "microLabels": 21,
+     "microLabelShare": 0.034,
+     "microSamples": [
+      "Profiles",
+      "Currently building",
+      "Location",
+      "Availability",
+      "Jan 2025 - Present",
+      "SaaS / Fintech"
+     ],
+     "upperShare": 0.04,
+     "centerShare": 0.01,
+     "smallText": 19
+    },
+    "eyebrows": [
+     {
+      "text": "SaaS / Fintech",
+      "above": "Bancassurance Platform",
+      "upper": true,
+      "tracked": true,
+      "mono": true,
+      "pill": false,
+      "size": 12,
+      "top": 3018
+     },
+     {
+      "text": "SaaS / Logistics / AI / In progress",
+      "above": "WarehouseLens",
+      "upper": true,
+      "tracked": true,
+      "mono": true,
+      "pill": false,
+      "size": 12,
+      "top": 4120
+     },
+     {
+      "text": "Media Tech / Self-Hosted / In progress",
+      "above": "Opsis",
+      "upper": true,
+      "tracked": true,
+      "mono": true,
+      "pill": false,
+      "size": 12,
+      "top": 5534
+     },
+     {
+      "text": "SaaS / Fintech",
+      "above": "Steward",
+      "upper": true,
+      "tracked": true,
+      "mono": true,
+      "pill": false,
+      "size": 12,
+      "top": 6692
+     }
+    ],
+    "numbered": [
+     {
+      "text": "01",
+      "size": 12,
+      "top": 1191
+     },
+     {
+      "text": "02",
+      "size": 12,
+      "top": 1304
+     },
+     {
+      "text": "03",
+      "size": 12,
+      "top": 1417
+     },
+     {
+      "text": "04",
+      "size": 12,
+      "top": 1531
+     },
+     {
+      "text": "05",
+      "size": 12,
+      "top": 1644
+     },
+     {
+      "text": "01",
+      "size": 14,
+      "top": 3018
+     },
+     {
+      "text": "02",
+      "size": 14,
+      "top": 4120
+     },
+     {
+      "text": "03",
+      "size": 14,
+      "top": 5534
+     },
+     {
+      "text": "04",
+      "size": 14,
+      "top": 6692
+     }
+    ],
+    "color": {
+     "bodyBg": "#fcf7f2",
+     "bodyBgHsl": {
+      "h": 30,
+      "s": 0.63,
+      "l": 0.97
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#fcf7f2",
+       "top": 0,
+       "hsl": {
+        "h": 30,
+        "s": 0.63,
+        "l": 0.97
+       }
+      },
+      {
+       "color": "#f5efe8",
+       "top": 960,
+       "hsl": {
+        "h": 32,
+        "s": 0.39,
+        "l": 0.94
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#3f3f46",
+       "share": 0.65
+      },
+      {
+       "color": "#71717b",
+       "share": 0.12
+      },
+      {
+       "color": "#52525c",
+       "share": 0.08
+      },
+      {
+       "color": "#fcf7f2",
+       "share": 0.07
+      },
+      {
+       "color": "#0f172b",
+       "share": 0.06
+      }
+     ],
+     "button": {
+      "bg": "#ffffff",
+      "hsl": {
+       "h": 0,
+       "s": 0,
+       "l": 1
+      },
+      "fg": "#9f9fa9"
+     },
+     "lowContrast": [
+      {
+       "text": "Location",
+       "ratio": 4.2,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#71717b",
+       "bg": "#f5efe8"
+      },
+      {
+       "text": "Availability",
+       "ratio": 4.2,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#71717b",
+       "bg": "#f5efe8"
+      },
+      {
+       "text": "React / Next.js / TypeScript / Node / Ru",
+       "ratio": 4.2,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#71717b",
+       "bg": "#f5efe8"
+      },
+      {
+       "text": "React, Next.js, TypeScript, TailwindCSS,",
+       "ratio": 4.2,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#71717b",
+       "bg": "#f5efe8"
+      },
+      {
+       "text": "Jan 2025 - Present",
+       "ratio": 4.2,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#71717b",
+       "bg": "#f5efe8"
+      },
+      {
+       "text": "SaaS / Fintech",
+       "ratio": 4.2,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#71717b",
+       "bg": "#f5efe8"
+      }
+     ]
+    },
+    "buttons": {
+     "count": 4,
+     "inHero": 0,
+     "radius": 0,
+     "height": 50,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": []
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 24,
+     "hairlineSamples": [
+      "nav.fixed.top-0 768px",
+      "p.mt-7.border-t 336px",
+      "figcaption.mt-4.border-t 336px",
+      "dl.mt-10.grid 328px",
+      "li.grid.grid-cols-[2rem_1fr] 328px"
+     ],
+     "outlinedBoxes": 7,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 3,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "canvas",
+      "ratio": 1
+     },
+     {
+      "type": "img",
+      "ratio": 0.18
+     }
+    ],
+    "nav": {
+     "links": 4,
+     "fixed": true,
+     "height": 65,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "inter"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 9170,
+    "margins": {
+     "left": 24,
+     "right": 24
+    },
+    "sections": [
+     {
+      "sel": "section.flex.items-center",
+      "tag": "section",
+      "top": 0,
+      "height": 960,
+      "words": 42,
+      "media": 1,
+      "middle": 49,
+      "heading": {
+       "text": "Reliable systems for operational work.",
+       "size": 48,
+       "tag": "h1"
+      },
+      "left": 24,
+      "right": 41,
+      "textLeft": 24,
+      "textRight": 41,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "div.mx-auto.grid",
+      "tag": "div",
+      "top": 1056,
+      "height": 1005,
+      "words": 184,
+      "media": 0,
+      "middle": 78,
+      "heading": {
+       "text": "Capabilities",
+       "size": 20,
+       "tag": "h3"
+      },
+      "left": 24,
+      "right": 30,
+      "textLeft": 24,
+      "textRight": 30,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.mx-auto.mt-20",
+      "tag": "div",
+      "top": 2141,
+      "height": 470,
+      "words": 95,
+      "media": 0,
+      "middle": 37,
+      "heading": {
+       "text": "Experience",
+       "size": 30,
+       "tag": "h3"
+      },
+      "left": 24,
+      "right": 24,
+      "textLeft": 24,
+      "textRight": 24,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#solutions.bg-[#F5EFE8].px-4",
+      "tag": "section",
+      "top": 2707,
+      "height": 5135,
+      "words": 838,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Evidence, not a gallery.",
+       "size": 48,
+       "tag": "h2"
+      },
+      "left": 24,
+      "right": 24,
+      "textLeft": 24,
+      "textRight": 24,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#contact.bg-[#F5EFE8].px-4",
+      "tag": "section",
+      "top": 7843,
+      "height": 830,
+      "words": 58,
+      "media": 0,
+      "middle": 129,
+      "heading": {
+       "text": "Start with the constraint.",
+       "size": 48,
+       "tag": "h2"
+      },
+      "left": 24,
+      "right": 57,
+      "textLeft": 24,
+      "textRight": 113,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "footer.border-t.pt-20",
+      "tag": "footer",
+      "top": 8673,
+      "height": 498,
+      "words": 47,
+      "media": 0,
+      "middle": 104,
+      "heading": {
+       "text": "Navigation",
+       "size": 16,
+       "tag": "h4"
+      },
+      "left": 24,
+      "right": 75,
+      "textLeft": 24,
+      "textRight": 75,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Reliable systems for operational work.",
+      "size": 48,
+      "top": 199,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 467,
+      "n": 8
+     },
+     {
+      "x": 24,
+      "n": 6
+     },
+     {
+      "x": 108,
+      "n": 3
+     },
+     {
+      "x": 408,
+      "n": 3
+     },
+     {
+      "x": 46,
+      "n": 2
+     },
+     {
+      "x": 424,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 23,
+    "bodySize": 14,
+    "stage": true,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 12,
+   "filled": [
+    0.67,
+    0.59,
+    0.86,
+    0.78,
+    0.88,
+    0.73,
+    0.86,
+    0.84,
+    0.78,
+    0.82,
+    0.72,
+    0.98
+   ],
+   "motion": {
+    "elements": 30,
+    "css": 2,
+    "transitions": 26,
+    "scripted": 2,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 11388,
+     "screens": 13.5,
+     "words": 1143,
+     "img": 4,
+     "video": 0,
+     "canvas": 1,
+     "svg": 25,
+     "sections": 4,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 2,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "image?url=%2Fassets%2Fimages%2Fport-photo-4.png&",
+      "image?url=%2Fassets%2Fproject-shots%2Fopsis.png&"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Reliable systems for operational work.",
+     "words": 5,
+     "chars": 38,
+     "lines": 2,
+     "size": 36,
+     "vw": 9.2,
+     "font": "Inter",
+     "weight": 700,
+     "tracking": -0.04,
+     "leading": 0.98,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.92,
+     "top": 677,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Reliable systems for operational work.",
+     "words": 5,
+     "lines": 2,
+     "size": 36,
+     "font": "Inter"
+    },
+    "headings": [
+     {
+      "text": "Reliable systems for operational work.",
+      "words": 5,
+      "chars": 38,
+      "lines": 2,
+      "size": 36,
+      "vw": 9.2,
+      "font": "Inter",
+      "weight": 700,
+      "tracking": -0.04,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 677,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "A systems-minded approach to product work.",
+      "words": 6,
+      "chars": 42,
+      "lines": 3,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Inter",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 1283,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Experience",
+      "words": 1,
+      "chars": 10,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Inter",
+      "weight": 700,
+      "tracking": -0.02,
+      "leading": 1.33,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.33,
+      "top": 3073,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Evidence, not a gallery.",
+      "words": 4,
+      "chars": 24,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Inter",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 3804,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Bancassurance Platform",
+      "words": 2,
+      "chars": 22,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Inter",
+      "weight": 700,
+      "tracking": -0.02,
+      "leading": 1.33,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 4310,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "WarehouseLens",
+      "words": 1,
+      "chars": 13,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Inter",
+      "weight": 700,
+      "tracking": -0.02,
+      "leading": 1.33,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 5525,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Opsis",
+      "words": 1,
+      "chars": 5,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Inter",
+      "weight": 700,
+      "tracking": -0.02,
+      "leading": 1.33,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 6973,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Steward",
+      "words": 1,
+      "chars": 7,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Inter",
+      "weight": 700,
+      "tracking": -0.02,
+      "leading": 1.33,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 8240,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Start with the constraint.",
+      "words": 4,
+      "chars": 26,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Inter",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 9313,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 9,
+     "maxLines": 3,
+     "over2Lines": 1,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Inter",
+       "share": 0.89,
+       "mono": false
+      },
+      {
+       "family": "ui-monospace",
+       "share": 0.11,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      24,
+      30,
+      36
+     ],
+     "sizeCount": 9,
+     "notLoaded": [],
+     "body": {
+      "font": "Inter",
+      "size": 14,
+      "leading": 1.71,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 6.8
+     },
+     "measureChars": 51,
+     "max": {
+      "size": 36,
+      "vw": 9.2,
+      "font": "Inter",
+      "text": "Reliable systems for operational work."
+     },
+     "monoShare": 0.11,
+     "monoProseShare": 0.11,
+     "monoFamilies": [
+      "ui-monospace"
+     ],
+     "monoSamples": [
+      "Nairobi, Kenya. Available worldwide.",
+      "Profiles",
+      "Currently building",
+      "Location",
+      "Availability",
+      "01"
+     ],
+     "microLabels": 21,
+     "microLabelShare": 0.034,
+     "microSamples": [
+      "Profiles",
+      "Currently building",
+      "Location",
+      "Availability",
+      "Jan 2025 - Present",
+      "SaaS / Fintech"
+     ],
+     "upperShare": 0.04,
+     "centerShare": 0,
+     "smallText": 19
+    },
+    "eyebrows": [
+     {
+      "text": "WarehouseLens",
+      "above": "Reliable systems for operational work.",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 14,
+      "top": 593
+     },
+     {
+      "text": "SaaS / Fintech",
+      "above": "Bancassurance Platform",
+      "upper": true,
+      "tracked": true,
+      "mono": true,
+      "pill": false,
+      "size": 12,
+      "top": 4282
+     },
+     {
+      "text": "SaaS / Logistics / AI / In progress",
+      "above": "WarehouseLens",
+      "upper": true,
+      "tracked": true,
+      "mono": true,
+      "pill": false,
+      "size": 12,
+      "top": 5497
+     },
+     {
+      "text": "Media Tech / Self-Hosted / In progress",
+      "above": "Opsis",
+      "upper": true,
+      "tracked": true,
+      "mono": true,
+      "pill": false,
+      "size": 12,
+      "top": 6945
+     },
+     {
+      "text": "SaaS / Fintech",
+      "above": "Steward",
+      "upper": true,
+      "tracked": true,
+      "mono": true,
+      "pill": false,
+      "size": 12,
+      "top": 8212
+     }
+    ],
+    "numbered": [
+     {
+      "text": "01",
+      "size": 12,
+      "top": 2343
+     },
+     {
+      "text": "02",
+      "size": 12,
+      "top": 2456
+     },
+     {
+      "text": "03",
+      "size": 12,
+      "top": 2569
+     },
+     {
+      "text": "04",
+      "size": 12,
+      "top": 2682
+     },
+     {
+      "text": "05",
+      "size": 12,
+      "top": 2795
+     },
+     {
+      "text": "01",
+      "size": 14,
+      "top": 4005
+     },
+     {
+      "text": "02",
+      "size": 14,
+      "top": 5220
+     },
+     {
+      "text": "03",
+      "size": 14,
+      "top": 6667
+     },
+     {
+      "text": "04",
+      "size": 14,
+      "top": 7935
+     }
+    ],
+    "color": {
+     "bodyBg": "#fcf7f2",
+     "bodyBgHsl": {
+      "h": 30,
+      "s": 0.63,
+      "l": 0.97
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#fcf7f2",
+       "top": 0,
+       "hsl": {
+        "h": 30,
+        "s": 0.63,
+        "l": 0.97
+       }
+      },
+      {
+       "color": "#ffffff",
+       "top": 96,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      },
+      {
+       "color": "#f5efe8",
+       "top": 1219,
+       "hsl": {
+        "h": 32,
+        "s": 0.39,
+        "l": 0.94
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#3f3f46",
+       "share": 0.65
+      },
+      {
+       "color": "#71717b",
+       "share": 0.12
+      },
+      {
+       "color": "#52525c",
+       "share": 0.08
+      },
+      {
+       "color": "#fcf7f2",
+       "share": 0.07
+      },
+      {
+       "color": "#0f172b",
+       "share": 0.06
+      }
+     ],
+     "button": {
+      "bg": "#253c38",
+      "hsl": {
+       "h": 170,
+       "s": 0.24,
+       "l": 0.19
+      },
+      "fg": "#fcf7f2"
+     },
+     "lowContrast": [
+      {
+       "text": "Location",
+       "ratio": 4.2,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#71717b",
+       "bg": "#f5efe8"
+      },
+      {
+       "text": "Availability",
+       "ratio": 4.2,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#71717b",
+       "bg": "#f5efe8"
+      },
+      {
+       "text": "React / Next.js / TypeScript / Node / Ru",
+       "ratio": 4.2,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#71717b",
+       "bg": "#f5efe8"
+      },
+      {
+       "text": "React, Next.js, TypeScript, TailwindCSS,",
+       "ratio": 4.2,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#71717b",
+       "bg": "#f5efe8"
+      },
+      {
+       "text": "Jan 2025 - Present",
+       "ratio": 4.2,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#71717b",
+       "bg": "#f5efe8"
+      },
+      {
+       "text": "SaaS / Fintech",
+       "ratio": 4.2,
+       "need": 4.5,
+       "size": 12,
+       "fg": "#71717b",
+       "bg": "#f5efe8"
+      }
+     ]
+    },
+    "buttons": {
+     "count": 6,
+     "inHero": 0,
+     "radius": 0,
+     "height": 50,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": []
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 24,
+     "hairlineSamples": [
+      "nav.fixed.top-0 390px",
+      "p.mt-7.border-t 358px",
+      "figcaption.mt-4.border-t 358px",
+      "dl.mt-10.grid 358px",
+      "li.grid.grid-cols-[2rem_1fr] 358px"
+     ],
+     "outlinedBoxes": 6,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 3,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "canvas",
+      "ratio": 1
+     },
+     {
+      "type": "img",
+      "ratio": 0.48
+     }
+    ],
+    "nav": {
+     "links": 1,
+     "fixed": true,
+     "height": 65,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "inter"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 11388,
+    "margins": {
+     "left": 16,
+     "right": 16
+    },
+    "sections": [
+     {
+      "sel": "section.flex.items-center",
+      "tag": "section",
+      "top": 0,
+      "height": 1219,
+      "words": 42,
+      "media": 1,
+      "middle": 0,
+      "heading": null,
+      "left": 16,
+      "right": 17,
+      "textLeft": 16,
+      "textRight": 22,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "div",
+      "tag": "div",
+      "top": 1283,
+      "height": 885,
+      "words": 112,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "A systems-minded approach to product work.",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 16,
+      "right": 16,
+      "textLeft": 16,
+      "textRight": 16,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "aside.h-fit.border-t-2",
+      "tag": "aside",
+      "top": 2216,
+      "height": 744,
+      "words": 78,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Capabilities",
+       "size": 20,
+       "tag": "h3"
+      },
+      "left": 16,
+      "right": 23,
+      "textLeft": 16,
+      "textRight": 23,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.mx-auto.mt-20",
+      "tag": "div",
+      "top": 3040,
+      "height": 614,
+      "words": 95,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Experience",
+       "size": 24,
+       "tag": "h3"
+      },
+      "left": 16,
+      "right": 19,
+      "textLeft": 16,
+      "textRight": 19,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#solutions.bg-[#F5EFE8].px-4",
+      "tag": "section",
+      "top": 3718,
+      "height": 5509,
+      "words": 838,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Evidence, not a gallery.",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 16,
+      "right": 16,
+      "textLeft": 16,
+      "textRight": 16,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#contact.bg-[#F5EFE8].px-4",
+      "tag": "section",
+      "top": 9227,
+      "height": 1177,
+      "words": 58,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Start with the constraint.",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 16,
+      "right": 24,
+      "textLeft": 16,
+      "textRight": 24,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "footer.border-t.pt-20",
+      "tag": "footer",
+      "top": 10404,
+      "height": 984,
+      "words": 47,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Navigation",
+       "size": 16,
+       "tag": "h4"
+      },
+      "left": 24,
+      "right": 35,
+      "textLeft": 24,
+      "textRight": 35,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Reliable systems for operational work.",
+      "size": 36,
+      "top": 677,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 16,
+      "n": 18
+     },
+     {
+      "x": 33,
+      "n": 5
+     }
+    ],
+    "leftBlocks": 23,
+    "bodySize": 14,
+    "stage": true,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "FAIL",
+   "id": "headline-lines",
+   "width": 1440,
+   "message": "1 headline(s) wrap past two lines at 1440px: \"A systems-minded approach to product work.\" → 3 lines (6 words, 48px)",
+   "fix": "Cut words first (a headline is a title, not a sentence). Then give it a wider measure. Lower the size only as a last resort and never below the scale you chose. A real statement paragraph belongs in a <p> or <blockquote> at 36px or less."
+  },
+  {
+   "level": "FAIL",
+   "id": "eyebrow",
+   "width": 1440,
+   "message": "4 eyebrow/kicker label(s) above headings: \"SaaS / Fintech\" above \"Bancassurance Platform\"; \"SaaS / Logistics / AI / In progress\" above \"WarehouseLens\"; \"Media Tech / Self-Hosted / In progress\" above \"Opsis\"; \"SaaS / Fintech\" above \"Steward\"",
+   "fix": "Delete them. If the label carried real information, fold it into the headline or the supporting sentence.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "mono",
+   "width": 1440,
+   "message": "Monospace type outside code: ui-monospace — e.g. \"Nairobi, Kenya. Available worldwide.\", \"Profiles\", \"Currently building\", \"Location\"",
+   "fix": "Set it in the text face. Monospace is for literal code inside <pre>/<code> only.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "numbering",
+   "width": 1440,
+   "message": "Decorative index numbers: \"01\", \"02\", \"03\", \"04\", \"05\", \"01\"",
+   "fix": "Remove them. If order truly matters, write it into the words (\"First, …\") or use a real <ol>.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "micro-label",
+   "width": 1440,
+   "message": "21 tiny uppercase letter-spaced labels (e.g. \"Profiles\", \"Currently building\", \"Location\", \"Availability\").",
+   "fix": "Use sentence-case text at a readable size, or delete the label.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "hairline",
+   "width": 1440,
+   "message": "24 thin rule(s)/divider line(s): nav.fixed.top-0 1440px | p.mt-7.border-t 552px | figcaption.mt-4.border-t 552px | dl.mt-10.grid 544px",
+   "fix": "Delete. Separate with space, a tone change, or scale. Lines are only for real tables and form fields.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "outlined-box",
+   "width": 1440,
+   "message": "6 boxes drawn with a 1px outline.",
+   "fix": "Define a surface by its fill (one tone step from the page) or leave the content unboxed.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "palette-cream",
+   "width": 1440,
+   "message": "Yellow-cream background (page background #fcf7f2, section #fcf7f2, section #f5efe8).",
+   "fix": "Use the drawn palette. If you want warmth, take a low-chroma stone or bone, not a yellow cream.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "contrast",
+   "width": 1440,
+   "message": "Low-contrast text: \"Location\" 4.2:1 needs 4.5:1; \"Availability\" 4.2:1 needs 4.5:1; \"React / Next.js / TypeScript / Node / Ru\" 4.2:1 needs 4.5:1; \"React, Next.js, TypeScript, TailwindCSS,\" 4.2:1 needs 4.5:1",
+   "fix": "Darken or lighten the text colour.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "body-size",
+   "width": 1440,
+   "message": "Body text is 14px (the size most of the running text is set in).",
+   "fix": "Body copy 16–20px. Map small sizes from blueprints onto your body step.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "grey-body",
+   "width": 1440,
+   "message": "The running text is a soft grey on its ground (6.8:1).",
+   "fix": "Set body copy in the full ink (7:1 or more). Keep the muted ink for secondary notes; pages read thin and unfinished when everything is grey.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "few-pictures",
+   "width": 1440,
+   "message": "Only 2 picture(s) on the page (2 photographs, footage or raster images, 0 interface fragments). Drawings in SVG do not count.",
+   "fix": "Find real pictures of the subject's world with scripts/assets.mjs (photographs, archival images, maps, engravings, footage), download them to assets/ and give them room: a hero picture, one per section that has a subject, a full-width band. At least four, usually six to twelve."
+  },
+  {
+   "level": "WARN",
+   "id": "no-footage",
+   "width": 1440,
+   "message": "No video anywhere on the page.",
+   "fix": "Look for one honest clip with scripts/assets.mjs --video (the place, the material, the process) and use it as a muted loop with a poster frame. Defend its absence only if no clip fits the subject."
+  },
+  {
+   "level": "FAIL",
+   "id": "small-text",
+   "width": 1440,
+   "message": "19 text blocks under 13px.",
+   "fix": "Nothing meant to be read goes below 13px.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "headline-lines",
+   "width": 768,
+   "message": "2 headline(s) wrap past two lines at 768px: \"Reliable systems for operational work.\" → 4 lines (5 words, 48px); \"A systems-minded approach to product work.\" → 4 lines (6 words, 48px)",
+   "fix": "Cut words first (a headline is a title, not a sentence). Then give it a wider measure. Lower the size only as a last resort and never below the scale you chose. A real statement paragraph belongs in a <p> or <blockquote> at 32px or less."
+  },
+  {
+   "level": "WARN",
+   "id": "first-action",
+   "width": 768,
+   "message": "No visible button in the first screen.",
+   "fix": "Give the one primary action a real button in the first screen (a filled or solid-bordered control, 44px or taller), not only a link in the navigation.",
+   "alsoAt": [
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "headline-lines",
+   "width": 390,
+   "message": "1 headline(s) wrap past two lines at 390px: \"A systems-minded approach to product work.\" → 3 lines (6 words, 30px)",
+   "fix": "Cut words first (a headline is a title, not a sentence). Then give it a wider measure. Lower the size only as a last resort and never below the scale you chose. A real statement paragraph belongs in a <p> or <blockquote> at 24px or less."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "/home/cdenn/personal/cdenn-port-v2/.taste-skill/before/desktop-fold.jpg",
+   "pages": [
+    "/home/cdenn/personal/cdenn-port-v2/.taste-skill/before/desktop-page-01.jpg",
+    "/home/cdenn/personal/cdenn-port-v2/.taste-skill/before/desktop-page-02.jpg",
+    "/home/cdenn/personal/cdenn-port-v2/.taste-skill/before/desktop-page-03.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "/home/cdenn/personal/cdenn-port-v2/.taste-skill/before/tablet-fold.jpg",
+   "pages": [
+    "/home/cdenn/personal/cdenn-port-v2/.taste-skill/before/tablet-page-01.jpg",
+    "/home/cdenn/personal/cdenn-port-v2/.taste-skill/before/tablet-page-02.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "/home/cdenn/personal/cdenn-port-v2/.taste-skill/before/mobile-fold.jpg",
+   "pages": [
+    "/home/cdenn/personal/cdenn-port-v2/.taste-skill/before/mobile-page-01.jpg",
+    "/home/cdenn/personal/cdenn-port-v2/.taste-skill/before/mobile-page-02.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

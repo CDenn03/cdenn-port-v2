@@ -32,7 +32,7 @@ export const SolutionsSection = () => {
                   <Link
                     href={`/solutions/${project.slug}`}
                     aria-label={`Read the ${project.title} case study`}
-                    className="hover-lift relative block aspect-video overflow-hidden bg-surface"
+                    className="hover-lift relative block aspect-video overflow-hidden bg-section-stone"
                   >
                     {project.image ? (
                       <Image src={project.image} alt={`${project.title} interface`} fill className="media-zoom object-cover" sizes="(max-width: 768px) 100vw, 58vw" />
