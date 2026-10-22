@@ -18,7 +18,6 @@ export const AboutSection = () => {
       <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-2 md:gap-16">
         <div>
           <Reveal>
-            <p className="mb-4 font-mono text-xs uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">About</p>
             <h2 className="mb-8 text-3xl font-bold tracking-[-0.03em] text-slate-900 md:text-5xl dark:text-[#FCF7F2]">
               A systems-minded approach to product work.
             </h2>
@@ -82,7 +81,7 @@ export const AboutSection = () => {
         <Reveal>
           <div className="flex items-center gap-2">
             <Briefcase size={17} className="text-primary dark:text-[#FCF7F2]" />
-            <h3 className="font-mono text-xs uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">Experience</h3>
+            <h3 className="text-2xl font-bold tracking-[-0.02em] text-slate-900 md:text-3xl dark:text-[#FCF7F2]">Experience</h3>
           </div>
         </Reveal>
 

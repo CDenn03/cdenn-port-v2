@@ -2,10 +2,15 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { X } from "lucide-react";
+import { ChevronRight, X } from "lucide-react";
 import Image from "next/image";
 import { Reveal } from "../ui/Reveal";
 import { RequestCV } from "./RequestCV";
+import { socialLinks } from "@/src/app/data/social";
+
+const primaryProfiles = socialLinks.filter(({ network }) =>
+  ["github", "linkedin", "x"].includes(network)
+);
 
 export const HeroSection = () => {
   const [cvOpen, setCvOpen] = useState(false);
@@ -16,9 +21,6 @@ export const HeroSection = () => {
         <div className="mx-auto grid w-full max-w-6xl items-center gap-10 md:grid-cols-2 md:gap-12">
           <div className="order-1 md:order-1">
             <Reveal delay={0.1}>
-              <p className="mb-5 font-mono text-xs uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">
-                Nairobi, Kenya · Available worldwide
-              </p>
               <h1 className="mb-7 text-4xl font-bold leading-[0.98] tracking-[-0.04em] text-slate-900 md:text-5xl lg:text-5xl dark:text-white">
                 Reliable systems for operational work.
               </h1>
@@ -29,7 +31,7 @@ export const HeroSection = () => {
                 Full-stack engineering for fintech, multi-tenant SaaS, offline-first products, and AI-assisted operations.
               </p>
               <p className="mb-9 font-mono text-sm leading-6 text-zinc-500 dark:text-zinc-400">
-                Next.js / Payments APIs / TypeScript / Node / PostgreSQL
+                Nairobi, Kenya. Available worldwide.
               </p>
             </Reveal>
 
@@ -37,15 +39,16 @@ export const HeroSection = () => {
               <div className="flex flex-col gap-3 sm:flex-row">
                 <a
                   href="#contact"
-                  className="inline-flex min-h-12 items-center justify-center border border-primary bg-primary px-6 py-3 text-base font-bold text-primary-foreground transition-colors hover:bg-transparent hover:text-primary dark:hover:text-[#FCF7F2]"
+                  className="press inline-flex min-h-12 items-center justify-center border border-primary bg-primary px-6 py-3 text-base font-bold text-primary-foreground transition-colors hover:bg-transparent hover:text-primary dark:hover:text-[#FCF7F2]"
                 >
                   Discuss a project
                 </a>
                 <a
                   href="#solutions"
-                  className="inline-flex min-h-12 items-center justify-center border border-zinc-300 px-6 py-3 text-base font-bold text-slate-900 transition-colors hover:border-slate-900 dark:border-zinc-700 dark:text-white dark:hover:border-white"
+                  className="press group/cta inline-flex min-h-12 items-center justify-center gap-1.5 border border-zinc-300 px-6 py-3 text-base font-bold text-slate-900 transition-colors hover:border-slate-900 hover:bg-zinc-900/[0.03] dark:border-zinc-700 dark:text-white dark:hover:border-white dark:hover:bg-white/5"
                 >
-                  View selected work →
+                  View selected work
+                  <ChevronRight size={18} aria-hidden="true" className="transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-soft)] motion-safe:group-hover/cta:translate-x-0.5" />
                 </a>
               </div>
               <button
@@ -54,6 +57,24 @@ export const HeroSection = () => {
               >
                 Request CV
               </button>
+              <p className="mt-7 border-t border-zinc-200 pt-4 text-sm text-zinc-600 dark:border-zinc-800 dark:text-zinc-300">
+                <span className="mr-3 font-mono text-xs uppercase tracking-[0.12em] text-zinc-500 dark:text-zinc-400">
+                  Profiles
+                </span>
+                {primaryProfiles.map((profile, index) => (
+                  <span key={profile.network}>
+                    {index > 0 && <span aria-hidden="true"> / </span>}
+                    <a
+                      href={profile.url}
+                      target="_blank"
+                      rel="me noopener noreferrer"
+                      className="underline decoration-zinc-300 underline-offset-4 transition-colors hover:text-primary dark:decoration-zinc-700"
+                    >
+                      {profile.label}{profile.network === "github"}
+                    </a>
+                  </span>
+                ))}
+              </p>
             </Reveal>
           </div>
 

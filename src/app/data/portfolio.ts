@@ -97,7 +97,7 @@ export const solutions: Solution[] = [
       { label: "Access Control", value: "6 roles / 21 permissions" },
       { label: "Copilot", value: "Tool-routing, no generated SQL" },
       { label: "Forecasting", value: "Prophet + XGBoost, backtested" },
-      { label: "Test Suite", value: "94 tests + eval harness" },
+      { label: "Test Suite", value: "155 tests + eval harness" },
     ],
     tags: [
       "Next.js",

@@ -14,13 +14,20 @@ export const BackToTop = () => {
 
   if (!showBackToTop) return null;
 
+  const scrollToTop = () => {
+    // Honour the OS setting: a forced smooth scroll of several screens is
+    // exactly the motion `prefers-reduced-motion` exists to suppress.
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+  };
+
   return (
     <button
-      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className="fixed bottom-6 right-6 z-50 flex h-11 w-11 items-center justify-center border border-zinc-300 bg-[#FCF7F2] text-slate-900 transition-colors hover:border-primary dark:border-zinc-700 dark:bg-[#0a0a0a] dark:text-zinc-100"
+      onClick={scrollToTop}
+      className="press group animate-fade-in fixed bottom-6 right-6 z-50 flex h-11 w-11 items-center justify-center border border-zinc-300 bg-[#FCF7F2] text-slate-900 transition-colors hover:border-primary hover:bg-white dark:border-zinc-700 dark:bg-[#0a0a0a] dark:text-zinc-100 dark:hover:border-white dark:hover:bg-[#111]"
       aria-label="Back to top"
     >
-      <ArrowUp size={19} />
+      <ArrowUp size={19} className="icon-shift-up" />
     </button>
   );
 };

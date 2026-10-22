@@ -18,8 +18,7 @@ export default function WritingPage() {
       <SubpageNav backHref="/" backLabel="Back" />
       <div className="mx-auto max-w-3xl px-6 py-16 md:py-24">
         <header className="border-t-2 border-primary pt-5">
-          <p className="font-mono text-xs uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">Writing</p>
-          <h1 className="mt-3 text-4xl font-bold tracking-[-0.03em] md:text-6xl">Notes from the work.</h1>
+          <h1 className="text-4xl font-bold tracking-[-0.03em] md:text-6xl">Notes from the work.</h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-700 dark:text-zinc-300">Technical notes will be published here when there is something useful and specific to share, not as filler for a content calendar.</p>
         </header>
         <section className="mt-16 border-t border-zinc-300 dark:border-zinc-700" aria-label="Topics in progress">

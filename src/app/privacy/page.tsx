@@ -73,9 +73,6 @@ export default function PrivacyPage() {
 
       <div className="max-w-3xl mx-auto px-6 py-16 md:py-24">
         <div className="border-t-2 border-primary pt-5 mb-12">
-          <p className="font-mono text-xs uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400 mb-4">
-            Legal
-          </p>
           <h1 className="text-4xl md:text-6xl font-bold tracking-[-0.03em] mb-4">
             Privacy Policy
           </h1>

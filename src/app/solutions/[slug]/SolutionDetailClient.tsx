@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Solution } from "@/src/app/types";
+import { ProjectCover } from "@/src/app/components/ui/ProjectCover";
 
 export function SolutionDetailClient({ project }: { project: Solution }) {
   return (
@@ -14,11 +15,7 @@ export function SolutionDetailClient({ project }: { project: Solution }) {
           className={`object-cover ${project.heroPosition ?? "object-top"}`}
         />
       ) : (
-        <div className="flex h-full flex-col justify-end bg-primary p-6 text-primary-foreground sm:p-10">
-          <p className="mb-3 font-mono text-xs uppercase tracking-[0.16em] opacity-70">{project.category}</p>
-          <h2 className="max-w-2xl text-3xl font-bold tracking-[-0.03em] sm:text-5xl">{project.title}</h2>
-          <p className="mt-4 max-w-2xl text-sm leading-6 opacity-80 sm:text-base">{project.summary ?? project.description}</p>
-        </div>
+        <ProjectCover project={project} size="hero" />
       )}
       {project.ongoing && <p className="absolute left-4 top-4 border border-white/50 bg-black/70 px-3 py-2 font-mono text-xs uppercase tracking-[0.12em] text-white">In progress</p>}
     </div>

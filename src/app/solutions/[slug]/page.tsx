@@ -15,61 +15,61 @@ const serviceCallout: Record<
     label: "Related Service",
     body: "Multi-tenant platforms fail quietly - a permission that leaks across a tenant boundary, an approval step that the API does not actually enforce. The tenant isolation, audit logging, and maker-checker workflow built here is the same pattern I apply to every multi-tenant system.",
     href: "/services/multi-tenant-saas",
-    linkText: "See Multi-Tenant SaaS & Platform Engineering →",
+    linkText: "See Multi-Tenant SaaS & Platform Engineering",
   },
   warehouselens: {
     label: "Related Service",
     body: "WarehouseLens enforces tenant and warehouse scope everywhere - including inside the copilot, which refuses a question about a warehouse the caller is not assigned to rather than answering it. Designing permissions that hold at every layer is the core of this engagement.",
     href: "/services/multi-tenant-saas",
-    linkText: "See Multi-Tenant SaaS & Platform Engineering →",
+    linkText: "See Multi-Tenant SaaS & Platform Engineering",
   },
   steward: {
     label: "Related Service",
     body: "Steward encodes a real financial approval hierarchy - draft, finance review, chair sign-off - with permissions scoped per role and every stage auditable. If you need governance modelled properly rather than bolted on, that is this engagement.",
     href: "/services/multi-tenant-saas",
-    linkText: "See Multi-Tenant SaaS & Platform Engineering →",
+    linkText: "See Multi-Tenant SaaS & Platform Engineering",
   },
   opsis: {
     label: "Related Service",
     body: "Opsis went from an empty repo to a self-hosted, single-command deployment - a Next.js BFF, a Rust control core, and a shared auth contract between them. That full end-to-end platform delivery is the engagement model I work in.",
     href: "/services/multi-tenant-saas",
-    linkText: "See Multi-Tenant SaaS & Platform Engineering →",
+    linkText: "See Multi-Tenant SaaS & Platform Engineering",
   },
   "ndoa-plan": {
     label: "Related Service",
     body: "Payment edge-cases in high-volume events can drain startup capital fast. The payment reconciliation system built for Ndoa Plan is the same pattern I apply across fintech projects.",
     href: "/services/fintech-automation",
-    linkText: "See Fintech Automation & Payments API Integrations →",
+    linkText: "See Fintech Automation & Payments API Integrations",
   },
   "email-refiner": {
     label: "Related Service",
     body: "Email Refiner went from idea to a live Chrome extension in a single contract cycle - scoped, architected, and shipped. If you have a product that needs taking from idea to production, start with how I engage.",
     href: "/services",
-    linkText: "See all services & engagement models →",
+    linkText: "See all services & engagement models",
   },
   sefer: {
     label: "Related Service",
     body: "Sefer works entirely without a network - a local SQLite store as the source of truth, debounced writes for rapid mutations, and annotations that survive every zoom and reading-mode change. That local-first discipline is its own specialism.",
     href: "/services/offline-first-apps",
-    linkText: "See Offline-First & Field Applications →",
+    linkText: "See Offline-First & Field Applications",
   },
   "gik-souls-app": {
     label: "Related Service",
     body: "Field follow-up happens where connectivity does not. GIK Souls reads local-first from Drift and enqueues mutations for replay when a connection returns, with the business rules kept testable in a framework-free domain layer.",
     href: "/services/offline-first-apps",
-    linkText: "See Offline-First & Field Applications →",
+    linkText: "See Offline-First & Field Applications",
   },
   "near-field": {
     label: "Related Service",
     body: "Near Field pushes alarm scheduling, reboot recovery, and the lock-screen flow into native Android behind a typed Pigeon bridge. When a mobile app needs a platform capability the framework will not give you, this is that work.",
     href: "/services/offline-first-apps",
-    linkText: "See Offline-First & Field Applications →",
+    linkText: "See Offline-First & Field Applications",
   },
   mathesis: {
     label: "Related Service",
     body: "Mathesis is built on a typed content registry that resolves one source of material into two different views without duplicating it. Getting a data model right before building on it is the first phase of every engagement.",
     href: "/services",
-    linkText: "See all services & engagement models →",
+    linkText: "See all services & engagement models",
   },
 };
 
@@ -199,7 +199,7 @@ export default async function SolutionDetailPage({
             </p>
 
             <div id="background">
-              <h2 className="text-xs font-bold uppercase tracking-widest mb-4 text-zinc-400 dark:text-[#555]">
+              <h2 className="text-2xl font-bold tracking-[-0.02em] mb-4 text-slate-900 dark:text-[#FCF7F2]">
                 Background
               </h2>
               <div className="space-y-4">
@@ -212,7 +212,7 @@ export default async function SolutionDetailPage({
             </div>
 
             <div id="challenge">
-              <h2 className="text-xs font-bold uppercase tracking-widest mb-3 text-zinc-400 dark:text-[#555]">
+              <h2 className="text-2xl font-bold tracking-[-0.02em] mb-4 text-slate-900 dark:text-[#FCF7F2]">
                 Challenge
               </h2>
               <div className="border-l-2 border-amber-500 pl-5">
@@ -224,7 +224,7 @@ export default async function SolutionDetailPage({
 
             {project.solution && (
               <div id="solution">
-                <h2 className="text-xs font-bold uppercase tracking-widest mb-3 text-zinc-400 dark:text-[#555]">
+                <h2 className="text-2xl font-bold tracking-[-0.02em] mb-4 text-slate-900 dark:text-[#FCF7F2]">
                   Solution
                 </h2>
                 <div className="border-t border-zinc-300 pt-5 dark:border-zinc-700">
@@ -237,7 +237,7 @@ export default async function SolutionDetailPage({
 
             {project.process && project.process.length > 0 && (
               <div id="process">
-                <h2 className="text-xs font-bold uppercase tracking-widest mb-4 text-zinc-400 dark:text-[#555]">
+                <h2 className="text-2xl font-bold tracking-[-0.02em] mb-4 text-slate-900 dark:text-[#FCF7F2]">
                   Process
                 </h2>
                 <ol className="space-y-4">
@@ -259,7 +259,7 @@ export default async function SolutionDetailPage({
             )}
 
             <div id="stack">
-              <h2 className="text-xs font-bold uppercase tracking-widest mb-3 text-zinc-400 dark:text-[#555]">
+              <h2 className="text-2xl font-bold tracking-[-0.02em] mb-4 text-slate-900 dark:text-[#FCF7F2]">
                 Tech Stack
               </h2>
               <div className="flex flex-wrap gap-2">
@@ -286,9 +286,10 @@ export default async function SolutionDetailPage({
                   </p>
                   <Link
                     href={callout.href}
-                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-900 dark:text-[#FCF7F2] hover:opacity-70 transition-opacity"
+                    className="group/cta inline-flex items-center gap-1.5 text-sm font-semibold text-slate-900 dark:text-[#FCF7F2] hover:opacity-70 transition-opacity"
                   >
-                    {callout.linkText} <ArrowRight size={13} />
+                    {callout.linkText}
+                    <ArrowRight size={13} aria-hidden="true" className="transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-soft)] motion-safe:group-hover/cta:translate-x-0.5" />
                   </Link>
                 </div>
               );
@@ -296,7 +297,7 @@ export default async function SolutionDetailPage({
 
             {project.screenshots && project.screenshots.length > 0 && (
               <div>
-                <h2 className="text-xs font-bold uppercase tracking-widest mb-3 text-zinc-400 dark:text-[#555]">
+                <h2 className="text-2xl font-bold tracking-[-0.02em] mb-4 text-slate-900 dark:text-[#FCF7F2]">
                   Screenshots
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -315,7 +316,7 @@ export default async function SolutionDetailPage({
 
           <div className="space-y-6 order-first md:order-last md:sticky md:top-24 md:self-start">
             <div className="border-t border-zinc-300 pt-5 dark:border-zinc-700">
-              <h3 className="text-xs font-bold uppercase tracking-widest mb-4 text-zinc-400 dark:text-[#555]">
+              <h3 className="text-lg font-bold tracking-[-0.01em] mb-4 text-slate-900 dark:text-[#FCF7F2]">
                 Project Profile
               </h3>
               <dl className="space-y-3 text-sm">
@@ -335,7 +336,7 @@ export default async function SolutionDetailPage({
             </div>
 
             <div id="impact" className="border-t border-zinc-300 pt-5 dark:border-zinc-700">
-              <h3 className="text-xs font-bold uppercase tracking-widest mb-4 text-zinc-400 dark:text-[#555]">
+              <h3 className="text-lg font-bold tracking-[-0.01em] mb-4 text-slate-900 dark:text-[#FCF7F2]">
                 Impact
               </h3>
               <div className="divide-y divide-zinc-100 dark:divide-[#1e1e1e]">
@@ -355,7 +356,7 @@ export default async function SolutionDetailPage({
 
             {(project.websiteUrl || project.codeUrl) && (
               <div className="border-t border-zinc-300 pt-5 dark:border-zinc-700">
-                <h3 className="text-xs font-bold uppercase tracking-widest mb-4 text-zinc-400 dark:text-[#555]">
+                <h3 className="text-lg font-bold tracking-[-0.01em] mb-4 text-slate-900 dark:text-[#FCF7F2]">
                   Links
                 </h3>
                 <div className="space-y-2">
@@ -412,9 +413,10 @@ export default async function SolutionDetailPage({
             {next && (
               <Link
                 href={`/solutions/${next.slug}`}
-                className="flex items-center gap-2 text-zinc-500 dark:text-[#888] hover:text-slate-900 dark:hover:text-[#FCF7F2] transition-colors"
+                className="group/cta flex items-center gap-2 text-zinc-500 dark:text-[#888] hover:text-slate-900 dark:hover:text-[#FCF7F2] transition-colors"
               >
-                {next.title} →
+                {next.title}
+                <ArrowRight size={16} aria-hidden="true" className="shrink-0 transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-soft)] motion-safe:group-hover/cta:translate-x-0.5" />
               </Link>
             )}
           </div>

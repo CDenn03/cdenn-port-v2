@@ -86,11 +86,16 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body className={`${inter.className} antialiased`}>
         <ConsoleEasterEgg />
+        {/* `disableTransitionOnChange` is deliberately NOT set: it injects
+            `*{transition:none !important}` for a frame on every change, which
+            would cancel the theme crossfade. The transition is instead scoped
+            to the toggle itself via the .theme-transition class that
+            useTheme adds for ~340ms, so nothing animates on first paint
+            (next-themes applies the stored theme in a pre-paint script). */}
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
           enableSystem={false}
-          disableTransitionOnChange
         >
           {children}
         </ThemeProvider>

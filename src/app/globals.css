@@ -69,6 +69,15 @@
 }
 
 :root {
+  /* Motion System
+     One easing curve and three durations, so every interaction on the site
+     decelerates identically instead of each component picking its own. */
+  --ease-out-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-in-out-soft: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 140ms;  /* colour / opacity on small controls */
+  --duration-base: 220ms;  /* the default for hover and focus states */
+  --duration-slow: 320ms;  /* layout-affecting moves, theme crossfade */
+
   /* Brand Color System */
   --primary: #253c38; /* Emerald - Logo, primary UI, headings */
   --secondary: #FCF7F2; /* Off-White - Backgrounds, negative space */
@@ -170,7 +179,35 @@
     font-family: inherit;
     font-weight: 400; /* Regular for body text */
     line-height: 1.6; /* 1.5-1.7 range for readability */
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color var(--duration-slow) var(--ease-out-soft),
+                color var(--duration-slow) var(--ease-out-soft);
+  }
+
+  /* Baseline interaction transition.
+     This sits in the `base` layer deliberately: anything that declares a
+     Tailwind `transition-*` utility still overrides it, but every link,
+     button and field that does NOT gets a smooth hover for free. That is
+     most of them -- the footer alone had 22 hover states and 3 transitions. */
+  a,
+  button,
+  summary,
+  label,
+  input,
+  select,
+  textarea,
+  [role="button"],
+  [tabindex]:not([tabindex="-1"]) {
+    transition-property: color, background-color, border-color,
+      text-decoration-color, fill, stroke, opacity, box-shadow, transform,
+      filter;
+    transition-duration: var(--duration-base);
+    transition-timing-function: var(--ease-out-soft);
+  }
+
+  /* Focus rings fade with everything else rather than snapping on. */
+  :focus-visible {
+    transition: outline-color var(--duration-fast) var(--ease-out-soft),
+                outline-offset var(--duration-fast) var(--ease-out-soft);
   }
 
   /* Typography System */
@@ -206,16 +243,37 @@
     letter-spacing: 0.01em; /* +1% for clarity */
   }
 
-  /* Interactive affordances */
+  /* Interactive affordances.
+     Tailwind v4 ships no default pointer cursor, so this is the only thing
+     giving interactive elements one. The original rule covered <button> and
+     [role="button"] only, which left the privacy form's <select>, any
+     <summary>, checkbox/radio labels and ARIA-role widgets with a text
+     caret. Anything genuinely clickable belongs in this list. */
+  a[href],
   button:not(:disabled),
+  select:not(:disabled),
+  summary,
+  label[for],
   [role="button"]:not([aria-disabled="true"]),
+  [role="link"]:not([aria-disabled="true"]),
+  [role="option"]:not([aria-disabled="true"]),
+  [role="menuitem"]:not([aria-disabled="true"]),
+  [role="tab"]:not([aria-disabled="true"]),
+  [role="switch"]:not([aria-disabled="true"]),
+  [role="checkbox"]:not([aria-disabled="true"]),
+  [role="radio"]:not([aria-disabled="true"]),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled),
   input[type="button"]:not(:disabled),
   input[type="submit"]:not(:disabled),
-  input[type="reset"]:not(:disabled) {
+  input[type="reset"]:not(:disabled),
+  input[type="file"]:not(:disabled) {
     cursor: pointer;
   }
 
   button:disabled,
+  select:disabled,
+  [aria-disabled="true"],
   input[type="button"]:disabled,
   input[type="submit"]:disabled,
   input[type="reset"]:disabled {
@@ -259,6 +317,112 @@
 }
 
 @layer utilities {
+  /* ---- Interaction utilities ------------------------------------------
+     Shared so hover feedback is identical across cards, buttons and links
+     instead of being re-invented per component. All of them are disabled
+     by the reduced-motion block at the end of this file. */
+
+  /* Surfaces that lift slightly and gain a shadow on hover. */
+  .hover-lift {
+    transition: transform var(--duration-base) var(--ease-out-soft),
+                border-color var(--duration-base) var(--ease-out-soft),
+                box-shadow var(--duration-base) var(--ease-out-soft);
+    will-change: transform;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px -14px rgb(15 23 42 / 0.28);
+  }
+
+  .dark .hover-lift:hover {
+    box-shadow: 0 10px 24px -14px rgb(0 0 0 / 0.7);
+  }
+
+  /* Tactile press feedback, so a click reads as registered. */
+  .press {
+    transition: transform var(--duration-fast) var(--ease-out-soft);
+  }
+
+  .press:active {
+    transform: translateY(1px) scale(0.985);
+  }
+
+  /* Underline that grows from the left rather than appearing all at once. */
+  .link-underline {
+    position: relative;
+  }
+
+  .link-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 1px;
+    width: 100%;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--duration-base) var(--ease-out-soft);
+  }
+
+  .link-underline:hover::after,
+  .link-underline:focus-visible::after {
+    transform: scaleX(1);
+  }
+
+  /* Trailing icon that slides on hover of its parent `group`. */
+  .icon-shift {
+    transition: transform var(--duration-base) var(--ease-out-soft);
+  }
+
+  .group:hover .icon-shift {
+    transform: translateX(3px);
+  }
+
+  .group:hover .icon-shift-up {
+    transform: translateY(-2px);
+  }
+
+  .group:hover .icon-shift-back {
+    transform: translateX(-3px);
+  }
+
+  /* Imagery that eases in slightly when its card is hovered. */
+  .media-zoom {
+    transition: transform var(--duration-slow) var(--ease-out-soft);
+    will-change: transform;
+  }
+
+  .group:hover .media-zoom {
+    transform: scale(1.03);
+  }
+
+  /* Entrance for elements that mount after load (toasts, back-to-top). */
+  .animate-fade-in {
+    animation: fade-in var(--duration-base) var(--ease-out-soft) both;
+  }
+
+  .animate-fade-up {
+    animation: fade-up var(--duration-slow) var(--ease-out-soft) both;
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  /* Sun/moon swap on the theme toggle. */
+  @keyframes theme-icon-in {
+    from { opacity: 0; transform: rotate(-35deg) scale(0.8); }
+    to   { opacity: 1; transform: none; }
+  }
+
   .text-balance {
     text-wrap: balance;
   }
@@ -436,4 +600,74 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* ---------------------------------------------------------------------------
+   Theme crossfade
+
+   Only `body` transitioned its colours, so every panel painted with a literal
+   value (`bg-[#FCF7F2] dark:bg-[#0a0a0a]`, and there are ~18 of them) snapped
+   instantly while the page behind it faded -- the switch looked broken.
+
+   `useTheme` adds this class to <html> for the length of the toggle and then
+   removes it, so the blanket `*` transition is never live during normal
+   browsing, where it would cost paint work on every hover.
+   --------------------------------------------------------------------------- */
+.theme-transition,
+.theme-transition *,
+.theme-transition *::before,
+.theme-transition *::after {
+  transition-property: background-color, border-color, color, fill, stroke,
+    text-decoration-color, box-shadow !important;
+  transition-duration: var(--duration-slow) !important;
+  transition-timing-function: var(--ease-in-out-soft) !important;
+  transition-delay: 0s !important;
+}
+
+/* ---------------------------------------------------------------------------
+   Reduced motion
+
+   Unlayered and !important so it wins over both Tailwind utilities and the
+   base layer above. The site previously honoured this setting nowhere, while
+   forcing `scroll-behavior: smooth` globally -- a WCAG 2.3.3 problem for
+   users with vestibular sensitivity, not just a preference.
+
+   Colour and opacity changes are left alone: they convey state without
+   movement, and killing them makes hover feel broken rather than calm.
+   --------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-property: color, background-color, border-color, opacity,
+      fill, stroke, text-decoration-color !important;
+    transition-duration: var(--duration-fast) !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Neutralise the transform-based affordances outright. */
+  .hover-lift:hover,
+  .press:active,
+  .group:hover .media-zoom,
+  .group:hover .icon-shift,
+  .group:hover .icon-shift-up,
+  .group:hover .icon-shift-back {
+    transform: none !important;
+  }
+
+  .link-underline::after {
+    transform: scaleX(1) !important;
+    opacity: 0;
+  }
+
+  .link-underline:hover::after,
+  .link-underline:focus-visible::after {
+    opacity: 1;
+  }
 }
