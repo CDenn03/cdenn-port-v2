@@ -47,7 +47,7 @@ export const ContactSection = () => {
     }
   };
 
-  const inputClass = "w-full min-h-12 bg-background px-4 py-3 text-base text-foreground transition-colors placeholder:text-muted-foreground focus:outline-2 focus:outline-primary dark:focus:outline-accent";
+  const inputClass = "w-full min-h-12 border border-border bg-surface px-4 py-3 text-base text-foreground transition-colors placeholder:text-muted-foreground hover:border-muted-foreground/60 focus:border-primary focus:outline-2 focus:outline-primary dark:focus:border-accent dark:focus:outline-accent";
 
   return (
     <section id="contact" className="bg-surface px-4 py-16 transition-colors duration-300 md:px-6 md:py-24">

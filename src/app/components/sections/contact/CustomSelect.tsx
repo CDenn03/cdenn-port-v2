@@ -45,24 +45,23 @@ export function CustomSelect({
         type="button"
         onClick={() => setOpen((p) => !p)}
         className={`w-full flex items-center justify-between px-4 py-3 border text-base transition-colors text-left
-          bg-white border-zinc-300 text-slate-900
-          dark:bg-[#1a1a1a] dark:border-[#2a2a2a] dark:text-[#FCF7F2]
+          bg-surface border-border text-foreground
           ${open
-            ? "border-primary dark:border-[#FCF7F2]"
-            : "hover:border-zinc-400 dark:hover:border-[#444444]"
+            ? "border-primary dark:border-accent"
+            : "hover:border-muted-foreground/60"
           }
-          ${value ? "" : "text-zinc-400 dark:text-[#555555]"}
+          ${value ? "" : "text-muted-foreground"}
         `}
       >
         <span>{selected?.label ?? placeholder}</span>
         <ChevronDown
           size={16}
-          className={`shrink-0 transition-transform text-zinc-400 dark:text-[#555555] ${open ? "rotate-180" : ""}`}
+          className={`shrink-0 transition-transform text-muted-foreground ${open ? "rotate-180" : ""}`}
         />
       </button>
 
       {open && (
-        <ul className="absolute z-50 mt-1 w-full border overflow-hidden bg-white border-zinc-200 dark:bg-[#1a1a1a] dark:border-[#2a2a2a]">
+        <ul className="absolute z-50 mt-1 w-full border border-border overflow-hidden bg-background">
           {options.map((opt) => (
             <li key={opt.value}>
               <button
@@ -70,8 +69,8 @@ export function CustomSelect({
                 onClick={() => { onChange(opt.value); setOpen(false); }}
                 className={`w-full text-left px-4 py-2.5 text-sm transition-colors
                   ${value === opt.value
-                    ? "bg-primary text-primary-foreground dark:bg-[#FCF7F2] dark:text-[#0a0a0a] font-medium"
-                    : "text-slate-700 hover:bg-zinc-50 dark:text-[#b0b0b0] dark:hover:bg-[#222222]"
+                    ? "bg-primary text-primary-foreground dark:bg-accent dark:text-[#0a0a0a] font-medium"
+                    : "text-foreground hover:bg-surface"
                   }
                 `}
               >

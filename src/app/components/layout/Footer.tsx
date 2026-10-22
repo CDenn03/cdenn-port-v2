@@ -29,7 +29,7 @@ export const Footer = () => {
       : "/assets/logo/CDenn.png";
 
   return (
-    <footer className="bg-surface px-6 pt-16 pb-10 transition-colors duration-300">
+    <footer className="bg-background px-6 pt-16 pb-10 transition-colors duration-300">
       <div className="mx-auto max-w-6xl">
         <div className="mb-16 grid items-end gap-10 md:grid-cols-[1.4fr_1fr]">
           <p className="font-bold leading-[1.05] tracking-[-0.03em] text-foreground text-[clamp(2rem,5vw,3.75rem)]">
@@ -111,7 +111,7 @@ export const Footer = () => {
                 target="_blank"
                 rel="me noopener noreferrer"
                 aria-label={link.label}
-                className="flex h-9 w-9 items-center justify-center text-muted-foreground transition-colors hover:bg-background hover:text-foreground"
+                className="flex h-9 w-9 items-center justify-center text-muted-foreground transition-colors hover:bg-surface hover:text-foreground"
               >
                 {iconMap[link.network]}
               </a>

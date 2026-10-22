@@ -92,7 +92,7 @@
   /* Page grounds: one ground, one surface a tone step from it. Sections that
      change field colour reference --surface, never a literal hex. */
   --ground: #efeeeb;   /* the page ground: low-chroma stone (sat ~8%) */
-  --surface: #dcdbd4;  /* a clear step down from the ground: the tonal section break + filled panels */
+  --surface: #cdcabf;  /* a clear step down from the ground: the tonal section break + filled panels */
 
   /* Light theme variables for shadcn/ui compatibility */
   --radius: 0.125rem;
@@ -137,7 +137,7 @@
   --neutral: #0b0d0c;
 
   --ground: #0b0d0c;   /* near-black ground with a slight emerald tint */
-  --surface: #191f1c;  /* a clear step up: the tonal section break + panels and fields on dark */
+  --surface: #232c27;  /* a clear step up: the tonal section break + panels and fields on dark */
 
   --background: #0b0d0c;
   --foreground: #f3f1ec;
