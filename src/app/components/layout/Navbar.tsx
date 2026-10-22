@@ -140,7 +140,15 @@ const MobileLinkGroup = ({
 
 export const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const { resolvedTheme } = useTheme();
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 8);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -163,7 +171,13 @@ export const Navbar = () => {
   const closeMobileMenu = () => setMobileMenuOpen(false);
 
   return (
-    <nav className="fixed top-0 z-50 w-full bg-surface transition-colors duration-300">
+    <nav
+      className={`fixed top-0 z-50 w-full transition-colors duration-300 ${
+        scrolled || mobileMenuOpen
+          ? "bg-surface/95 shadow-[0_1px_0_0_var(--border)] backdrop-blur-sm" /* taste-skill-ignore: scrolled nav is a floating bar; a 1px edge anchors it over content */
+          : "bg-transparent"
+      }`}
+    >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:px-6 lg:px-2">
         <Link href="/" className="flex items-center" aria-label="CDenn home">
           <Image src={logoSrc} alt="CDenn" width={120} height={40} className="h-9 w-auto object-contain" priority />

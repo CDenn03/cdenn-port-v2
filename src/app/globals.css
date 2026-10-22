@@ -91,12 +91,12 @@
 
   /* Page grounds: one ground, one surface a tone step from it. Sections that
      change field colour reference --surface, never a literal hex. */
-  --ground: #ededea;   /* the page ground: low-chroma stone (sat ~8%) */
-  --surface: #e3e2dd;  /* one step down from the ground: filled panels, fields */
+  --ground: #efeeeb;   /* the page ground: low-chroma stone (sat ~8%) */
+  --surface: #dcdbd4;  /* a clear step down from the ground: the tonal section break + filled panels */
 
   /* Light theme variables for shadcn/ui compatibility */
   --radius: 0.125rem;
-  --background: #ededea; /* Stone background */
+  --background: #efeeeb; /* Stone background (matches --ground) */
   --foreground: #16201d; /* Near-black emerald-tinted ink, ~13:1 on ground */
   --card: #ffffff;
   --card-foreground: #16201d;
@@ -104,7 +104,7 @@
   --popover-foreground: #16201d;
   --primary-foreground: #f1f0ec; /* Stone-white on Emerald */
   --secondary-foreground: #16201d; /* Ink on light surfaces */
-  --muted: #e3e2dd;
+  --muted: #dcdbd4;
   --muted-foreground: #474c46; /* ~8:1 on the stone ground: secondary notes */
   --accent-foreground: #16201d;
   --destructive: #c23030;
@@ -137,7 +137,7 @@
   --neutral: #0b0d0c;
 
   --ground: #0b0d0c;   /* near-black ground with a slight emerald tint */
-  --surface: #151917;  /* one step up: panels and fields on dark */
+  --surface: #191f1c;  /* a clear step up: the tonal section break + panels and fields on dark */
 
   --background: #0b0d0c;
   --foreground: #f3f1ec;
