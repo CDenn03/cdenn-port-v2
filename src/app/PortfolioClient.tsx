@@ -16,7 +16,7 @@ export default function PortfolioClient() {
 
   return (
     <main
-      className="min-h-screen overflow-x-hidden relative transition-colors duration-300 bg-[#FCF7F2] text-slate-900 dark:bg-[#0a0a0a] dark:text-[#FCF7F2]"
+      className="relative min-h-dvh overflow-x-hidden bg-background text-foreground transition-colors duration-300"
       suppressHydrationWarning
     >
       {mounted && <ScrollProgress />}
@@ -25,7 +25,6 @@ export default function PortfolioClient() {
       <HeroSection />
       <AboutSection />
       <SolutionsSection />
-      <div className="w-full h-px bg-zinc-200 dark:bg-[#1a1a1a]" />
       <ContactSection />
       <Footer />
 

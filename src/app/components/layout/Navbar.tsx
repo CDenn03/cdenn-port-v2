@@ -68,7 +68,7 @@ const NavDropdown = ({ label, items }: { label: string; items: NavItem[] }) => {
             setOpen(false);
           }
         }}
-        className="link-underline flex items-center gap-1 text-sm text-zinc-600 transition-colors hover:text-primary dark:text-zinc-300 dark:hover:text-[#FCF7F2]"
+        className="link-underline flex items-center gap-1 text-base text-muted-foreground transition-colors hover:text-foreground"
         aria-expanded={open}
         aria-haspopup="true"
       >
@@ -86,14 +86,14 @@ const NavDropdown = ({ label, items }: { label: string; items: NavItem[] }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 4 }}
             transition={{ duration: 0.15 }}
-            className="absolute right-0 top-full mt-3 w-60 border border-zinc-200 bg-[#FCF7F2] dark:border-[#1a1a1a] dark:bg-[#0a0a0a]"
+            className="absolute right-0 top-full mt-3 w-60 bg-surface shadow-lg" /* taste-skill-ignore: dropdown menu is a real overlay; shadows allowed on things that float */
           >
             {items.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="block border-b border-zinc-200 px-4 py-3 text-sm text-zinc-700 transition-colors last:border-b-0 hover:bg-zinc-100 hover:text-primary dark:border-[#1a1a1a] dark:text-zinc-300 dark:hover:bg-[#111] dark:hover:text-[#FCF7F2]"
+                className="block px-4 py-3 text-base text-foreground transition-colors hover:bg-background hover:text-primary dark:hover:text-accent"
               >
                 {item.label}
               </Link>
@@ -117,7 +117,7 @@ const MobileLinkGroup = ({
   onNavigate: () => void;
 }) => (
   <>
-    <p className="pt-6 font-mono text-xs uppercase tracking-[0.14em] text-zinc-500 dark:text-zinc-400">
+    <p className="pt-6 text-base font-bold text-foreground">
       {heading}
     </p>
     <div className="mt-2">
@@ -129,7 +129,7 @@ const MobileLinkGroup = ({
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: (startIndex + index) * 0.04 }}
           onClick={onNavigate}
-          className="block py-2 text-sm text-zinc-600 dark:text-zinc-300"
+          className="block py-2 text-base text-muted-foreground"
         >
           {item.label}
         </MotionLink>
@@ -163,22 +163,22 @@ export const Navbar = () => {
   const closeMobileMenu = () => setMobileMenuOpen(false);
 
   return (
-    <nav className="fixed top-0 z-50 w-full border-b border-zinc-200 bg-[#FCF7F2] transition-colors duration-300 dark:border-[#1a1a1a] dark:bg-[#0a0a0a]">
+    <nav className="fixed top-0 z-50 w-full bg-surface transition-colors duration-300">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:px-6 lg:px-2">
         <Link href="/" className="flex items-center" aria-label="CDenn home">
           <Image src={logoSrc} alt="CDenn" width={120} height={40} className="h-9 w-auto object-contain" priority />
         </Link>
 
         <div className="hidden items-center gap-7 md:flex">
-          <a href="#about" className="link-underline text-sm text-zinc-600 transition-colors hover:text-primary dark:text-zinc-300 dark:hover:text-[#FCF7F2]">
+          <a href="#about" className="link-underline text-base text-muted-foreground transition-colors hover:text-foreground">
             About
           </a>
           <NavDropdown label="Work" items={workLinks} />
           <NavDropdown label="Services" items={serviceLinks} />
-          <Link href="/writing" className="link-underline text-sm text-zinc-600 transition-colors hover:text-primary dark:text-zinc-300 dark:hover:text-[#FCF7F2]">
+          <Link href="/writing" className="link-underline text-base text-muted-foreground transition-colors hover:text-foreground">
             Writing
           </Link>
-          <a href="#contact" className="link-underline text-sm text-zinc-600 transition-colors hover:text-primary dark:text-zinc-300 dark:hover:text-[#FCF7F2]">
+          <a href="#contact" className="link-underline text-base text-muted-foreground transition-colors hover:text-foreground">
             Contact
           </a>
           <ThemeToggle />
@@ -186,7 +186,7 @@ export const Navbar = () => {
 
         <div className="flex items-center gap-3 md:hidden">
           <ThemeToggle />
-          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="flex h-10 w-10 items-center justify-center border border-zinc-200 transition-colors hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800" aria-label="Toggle menu">
+          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="flex h-10 w-10 items-center justify-center bg-background transition-colors hover:bg-[#ddd9d0] dark:hover:bg-[#1f2522]" aria-label="Toggle menu">
             {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
@@ -194,10 +194,10 @@ export const Navbar = () => {
 
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.2 }} className="max-h-[calc(100vh-4rem)] overflow-y-auto border-t border-zinc-200 bg-[#FCF7F2] md:hidden dark:border-[#1a1a1a] dark:bg-[#0a0a0a]">
+          <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.2 }} className="max-h-[calc(100vh-4rem)] overflow-y-auto bg-surface md:hidden">
             <div className="px-6 py-5">
               {navLinks.map((link, index) => (
-                <MotionLink key={link.href} href={link.href} initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: index * 0.04 }} onClick={closeMobileMenu} className="block border-b border-zinc-200 py-3 text-base text-zinc-800 dark:border-zinc-800 dark:text-zinc-200">
+                <MotionLink key={link.href} href={link.href} initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: index * 0.04 }} onClick={closeMobileMenu} className="block py-3 text-lg text-foreground">
                   {link.label}
                 </MotionLink>
               ))}

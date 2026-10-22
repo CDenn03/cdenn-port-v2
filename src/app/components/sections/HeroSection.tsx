@@ -18,20 +18,17 @@ export const HeroSection = () => {
   return (
     <>
       <section className="flex items-center px-4 pt-24 pb-16 md:min-h-[calc(100svh-4rem)] md:px-6 md:pt-28 md:pb-20">
-        <div className="mx-auto grid w-full max-w-6xl items-center gap-10 md:grid-cols-2 md:gap-12">
-          <div className="order-1 md:order-1">
+        <div className="mx-auto grid w-full max-w-6xl items-center gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-14">
+          <div className="order-1 lg:order-2">
             <Reveal delay={0.1}>
-              <h1 className="mb-7 text-4xl font-bold leading-[0.98] tracking-[-0.04em] text-slate-900 md:text-5xl lg:text-5xl dark:text-white">
+              <h1 className="mb-6 max-w-[20ch] font-bold leading-[0.95] tracking-[-0.04em] text-foreground text-[clamp(2.25rem,6vw,4.5rem)]">
                 Reliable systems for operational work.
               </h1>
             </Reveal>
 
             <Reveal delay={0.2}>
-              <p className="mb-4 max-w-xl text-base leading-7 text-zinc-700 md:text-lg md:leading-8 dark:text-zinc-200">
-                Full-stack engineering for fintech, multi-tenant SaaS, offline-first products, and AI-assisted operations.
-              </p>
-              <p className="mb-9 font-mono text-sm leading-6 text-zinc-500 dark:text-zinc-400">
-                Nairobi, Kenya. Available worldwide.
+              <p className="mb-8 max-w-xl text-lg leading-8 text-foreground md:text-xl">
+                Full-stack engineering for fintech, multi-tenant SaaS, offline-first products, and AI-assisted operations. Based in Nairobi, Kenya, working worldwide.
               </p>
             </Reveal>
 
@@ -39,13 +36,13 @@ export const HeroSection = () => {
               <div className="flex flex-col gap-3 sm:flex-row">
                 <a
                   href="#contact"
-                  className="press inline-flex min-h-12 items-center justify-center border border-primary bg-primary px-6 py-3 text-base font-bold text-primary-foreground transition-colors hover:bg-transparent hover:text-primary dark:hover:text-[#FCF7F2]"
+                  className="press inline-flex min-h-12 items-center justify-center bg-primary px-6 py-3 text-base font-bold text-primary-foreground transition-colors hover:bg-[#1b2d2a]"
                 >
                   Discuss a project
                 </a>
                 <a
                   href="#solutions"
-                  className="press group/cta inline-flex min-h-12 items-center justify-center gap-1.5 border border-zinc-300 px-6 py-3 text-base font-bold text-slate-900 transition-colors hover:border-slate-900 hover:bg-zinc-900/[0.03] dark:border-zinc-700 dark:text-white dark:hover:border-white dark:hover:bg-white/5"
+                  className="press group/cta inline-flex min-h-12 items-center justify-center gap-1.5 bg-surface px-6 py-3 text-base font-bold text-foreground transition-colors hover:bg-[#ddd9d0] dark:hover:bg-[#1f2522]"
                 >
                   View selected work
                   <ChevronRight size={18} aria-hidden="true" className="transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-soft)] motion-safe:group-hover/cta:translate-x-0.5" />
@@ -53,34 +50,33 @@ export const HeroSection = () => {
               </div>
               <button
                 onClick={() => setCvOpen(true)}
-                className="mt-5 text-sm text-zinc-500 underline decoration-zinc-300 underline-offset-4 transition-colors hover:text-primary dark:text-zinc-400 dark:decoration-zinc-700"
+                className="mt-5 text-base text-muted-foreground underline underline-offset-4 transition-colors hover:text-foreground"
               >
                 Request CV
               </button>
-              <p className="mt-7 border-t border-zinc-200 pt-4 text-sm text-zinc-600 dark:border-zinc-800 dark:text-zinc-300">
-                <span className="mr-3 font-mono text-xs uppercase tracking-[0.12em] text-zinc-500 dark:text-zinc-400">
-                  Profiles
-                </span>
+              <p className="mt-8 text-base text-foreground">
+                Find the work on{" "}
                 {primaryProfiles.map((profile, index) => (
                   <span key={profile.network}>
-                    {index > 0 && <span aria-hidden="true"> / </span>}
+                    {index > 0 && <span aria-hidden="true">, </span>}
                     <a
                       href={profile.url}
                       target="_blank"
                       rel="me noopener noreferrer"
-                      className="underline decoration-zinc-300 underline-offset-4 transition-colors hover:text-primary dark:decoration-zinc-700"
+                      className="font-bold underline underline-offset-4 transition-colors hover:text-primary dark:hover:text-accent"
                     >
-                      {profile.label}{profile.network === "github"}
+                      {profile.label}
                     </a>
                   </span>
                 ))}
+                .
               </p>
             </Reveal>
           </div>
 
-          <Reveal delay={0.4}>
-            <figure className="order-2 opacity-100 md:order-2">
-              <div className="relative aspect-[4/5] overflow-hidden border border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-900">
+          <Reveal delay={0.4} className="order-2 lg:order-1">
+            <figure className="opacity-100">
+              <div className="relative aspect-[4/5] overflow-hidden bg-surface">
                 <Image
                   src="/assets/images/port-photo-4.png"
                   alt="Dennis Ndung'u, the software engineer behind CDenn"
@@ -90,10 +86,10 @@ export const HeroSection = () => {
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
-              <figcaption className="mt-4 border-t border-zinc-200 pt-3 dark:border-zinc-800">
-                <p className="font-mono text-xs uppercase tracking-[0.14em] text-zinc-500 dark:text-zinc-400">Currently building</p>
-                <p className="mt-1 text-sm font-bold text-slate-900 dark:text-white">WarehouseLens</p>
-                <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-300">Permission-aware warehouse operations software.</p>
+              <figcaption className="mt-4">
+                <p className="text-base text-muted-foreground">Currently building</p>
+                <p className="mt-1 text-lg font-bold text-foreground">WarehouseLens</p>
+                <p className="mt-1 text-base text-foreground">Permission-aware warehouse operations software.</p>
               </figcaption>
             </figure>
           </Reveal>
@@ -121,7 +117,7 @@ export const HeroSection = () => {
               <div className="pointer-events-auto relative w-full max-w-lg">
                 <button
                   onClick={() => setCvOpen(false)}
-                  className="absolute right-0 top-0 z-10 flex h-10 w-10 items-center justify-center border border-zinc-200 bg-white text-zinc-600 transition-colors hover:bg-zinc-100 dark:border-zinc-700 dark:bg-[#1a1a1a] dark:text-zinc-300 dark:hover:bg-zinc-800"
+                  className="absolute right-0 top-0 z-10 flex h-10 w-10 items-center justify-center bg-surface text-foreground transition-colors hover:bg-[#ddd9d0] dark:hover:bg-[#1f2522]"
                   aria-label="Close CV request form"
                 >
                   <X size={16} />

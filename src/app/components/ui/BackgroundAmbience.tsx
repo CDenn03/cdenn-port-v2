@@ -3,8 +3,11 @@
 import { useEffect, useRef } from 'react';
 
 /**
- * Subtle animated background ambience with floating gradient orbs.
- * Adds visual depth without being distracting.
+ * Barely-perceptible background depth, drawn in the brand palette only
+ * (emerald + muted gold). Two large, very low-alpha fields drift slowly so
+ * the page reads as having air behind it rather than being flat -- the motion
+ * is informational-adjacent at most, so it is deliberately near the floor of
+ * perception and is skipped entirely under prefers-reduced-motion.
  */
 export const BackgroundAmbience = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -45,31 +48,26 @@ export const BackgroundAmbience = () => {
     };
 
     const animate = () => {
-      time += 0.002;
+      // Half the previous speed: a full drift cycle now takes minutes, so the
+      // movement is felt rather than watched.
+      time += 0.001;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Soft floating orbs
+      // Brand palette only -- emerald and muted gold
       const orbs = [
         {
-          x: canvas.width * 0.2 + Math.sin(time * 0.5) * 100,
-          y: canvas.height * 0.3 + Math.cos(time * 0.3) * 80,
-          radius: 400,
-          color: 'rgb(59, 130, 246)', // blue
-          alpha: 0.03,
+          x: canvas.width * 0.22 + Math.sin(time * 0.5) * 90,
+          y: canvas.height * 0.28 + Math.cos(time * 0.3) * 70,
+          radius: 450,
+          color: 'rgb(37, 60, 56)', // emerald --primary
+          alpha: 0.12,
         },
         {
-          x: canvas.width * 0.8 + Math.cos(time * 0.4) * 120,
-          y: canvas.height * 0.6 + Math.sin(time * 0.6) * 100,
-          radius: 350,
-          color: 'rgb(147, 51, 234)', // purple
-          alpha: 0.025,
-        },
-        {
-          x: canvas.width * 0.5 + Math.sin(time * 0.3) * 80,
-          y: canvas.height * 0.8 + Math.cos(time * 0.5) * 60,
-          radius: 300,
-          color: 'rgb(34, 197, 94)', // green
-          alpha: 0.02,
+          x: canvas.width * 0.8 + Math.cos(time * 0.4) * 100,
+          y: canvas.height * 0.72 + Math.sin(time * 0.6) * 80,
+          radius: 380,
+          color: 'rgb(194, 164, 109)', // muted gold --accent
+          alpha: 0.08,
         },
       ];
 
@@ -94,7 +92,7 @@ export const BackgroundAmbience = () => {
     <canvas
       ref={canvasRef}
       aria-hidden="true"
-      className="pointer-events-none fixed inset-0 -z-10 opacity-60 dark:opacity-40"
+      className="pointer-events-none fixed inset-0 -z-10 opacity-80 dark:opacity-50"
     />
   );
 };

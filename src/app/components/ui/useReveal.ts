@@ -19,6 +19,15 @@ export function useReveal<T extends HTMLElement = HTMLElement>(
     const element = ref.current;
     if (!element) return;
 
+    // Fail-safe: if the element is already in (or near) the viewport on mount,
+    // reveal immediately. This covers programmatic/fast scrolls where the
+    // IntersectionObserver callback may not fire, so content is never left
+    // hidden — a hard requirement, not just a nicety.
+    const revealNow = () => {
+      setIsVisible(true);
+      if (triggerOnce) observer.unobserve(element);
+    };
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -34,7 +43,17 @@ export function useReveal<T extends HTMLElement = HTMLElement>(
     );
 
     observer.observe(element);
-    return () => observer.disconnect();
+
+    const rect = element.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) revealNow();
+
+    // Last-resort safety: never let an entrance animation strand content.
+    const safety = window.setTimeout(revealNow, 1200);
+
+    return () => {
+      window.clearTimeout(safety);
+      observer.disconnect();
+    };
   }, [threshold, rootMargin, triggerOnce]);
 
   return [ref, isVisible];
