@@ -36,9 +36,6 @@ export const Footer = () => {
             Let&apos;s build something that holds up.
           </p>
           <div className="md:pb-2">
-            <p className="max-w-sm text-lg leading-8 text-foreground">
-              Tell me the constraint and what has to work. I&apos;ll reply with the clearest next step, usually within a day.
-            </p>
             <a
               href="#contact"
               className="press mt-6 inline-flex min-h-12 items-center bg-primary px-6 py-3 text-base font-bold text-primary-foreground transition-colors hover:bg-[#1b2d2a]"

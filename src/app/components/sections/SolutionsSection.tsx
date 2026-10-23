@@ -16,16 +16,14 @@ export const SolutionsSection = () => {
     <section id="solutions" className="bg-background px-4 py-20 transition-colors duration-300 md:px-6 md:py-24">
       <div className="mx-auto max-w-6xl">
         <Reveal>
-          <div className="grid gap-5 md:grid-cols-[minmax(0,1fr)_22rem] md:items-end">
-            <div>
-              <h2 className="text-3xl font-bold tracking-[-0.03em] text-foreground md:text-5xl">Evidence, not a gallery.</h2>
-            </div>
-            <p className="text-lg leading-7 text-foreground">A small selection of systems where the constraint shaped the work.</p>
+          <div>
+            <h2 className="text-3xl font-bold tracking-[-0.03em] text-foreground md:text-5xl">Evidence, not a gallery.</h2>
+            <p className="mt-4 max-w-xl text-lg leading-7 text-muted-foreground">A small selection of systems where the constraint shaped the work.</p>
           </div>
         </Reveal>
 
         <div className="mt-14 space-y-16">
-          {featured.map((project) => (
+          {featured.map((project, index) => (
             <Reveal key={project.slug}>
               <article className="group grid gap-7 md:grid-cols-12 md:gap-10">
                 <div className="md:col-span-6">
@@ -34,6 +32,10 @@ export const SolutionsSection = () => {
                     aria-label={`Read the ${project.title} case study`}
                     className="hover-lift relative block aspect-video overflow-hidden bg-section-stone"
                   >
+                    {/* Project number overlay */}
+                    <span className="absolute left-4 top-4 z-10 flex h-8 w-8 items-center justify-center bg-primary text-sm font-bold text-primary-foreground">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
                     {project.image ? (
                       <Image src={project.image} alt={`${project.title} interface`} fill className="media-zoom object-cover" sizes="(max-width: 768px) 100vw, 58vw" />
                     ) : (

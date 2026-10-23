@@ -87,14 +87,14 @@ export const ContactSection = () => {
 
         <Reveal>
           {status === "success" ? (
-            <div className="flex min-h-[380px] flex-col items-start justify-center bg-surface p-8">
+            <div className="flex min-h-[380px] flex-col items-start justify-center rounded-lg border border-border bg-surface p-8 shadow-sm">
               <CheckCircle size={36} className="text-primary dark:text-accent" />
               <h3 className="mt-5 text-2xl font-bold text-foreground">Message sent.</h3>
               <p className="mt-2 text-base text-foreground">I&apos;ll get back to you within 24 hours.</p>
               <button onClick={() => setStatus("idle")} className="mt-6 text-base font-bold underline underline-offset-4 hover:text-primary dark:hover:text-accent">Send another message</button>
             </div>
           ) : (
-            <form className="bg-surface p-6 md:p-8" onSubmit={handleSubmit}>
+            <form className="rounded-lg border border-border bg-surface p-6 shadow-sm md:p-8" onSubmit={handleSubmit}>
               <div className="grid gap-5 sm:grid-cols-2">
                 <div><label htmlFor="name" className="mb-2 block text-base text-foreground">Name</label><input type="text" id="name" name="name" required className={inputClass} placeholder="Jane Smith" /></div>
                 <div><label htmlFor="email" className="mb-2 block text-base text-foreground">Email</label><input type="email" id="email" name="email" required className={inputClass} placeholder="jane@company.com" /></div>
