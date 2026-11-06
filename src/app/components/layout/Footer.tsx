@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "@/src/app/hooks/useTheme";
@@ -22,7 +21,6 @@ const iconMap: Record<string, React.ReactNode> = {
 };
 
 export const Footer = () => {
-  const [hoveredIcon, setHoveredIcon] = useState<string | null>(null);
   const { resolvedTheme } = useTheme();
 
   const logoSrc =
@@ -31,11 +29,25 @@ export const Footer = () => {
       : "/assets/logo/CDenn.png";
 
   return (
-    <footer className="border-t pt-20 pb-10 px-6 transition-colors duration-300 border-zinc-200 bg-[#FCF7F2] dark:border-[#1a1a1a] dark:bg-[#0a0a0a]">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-4 gap-12 mb-20">
+    <footer className="bg-background px-6 pt-16 pb-10 transition-colors duration-300">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-16 grid items-end gap-10 md:grid-cols-[1.4fr_1fr]">
+          <p className="font-bold leading-[1.05] tracking-[-0.03em] text-foreground text-[clamp(2rem,5vw,3.75rem)]">
+            Let&apos;s build something that holds up.
+          </p>
+          <div className="md:pb-2">
+            <a
+              href="#contact"
+              className="press mt-6 inline-flex min-h-12 items-center bg-primary px-6 py-3 text-base font-bold text-primary-foreground transition-colors hover:bg-[#1b2d2a]"
+            >
+              Start a project
+            </a>
+          </div>
+        </div>
+
+        <div className="mb-16 grid gap-12 md:grid-cols-4">
           <div className="md:col-span-1">
-            <Link href="/" className="inline-block mb-6">
+            <Link href="/" className="mb-6 inline-block">
               <Image
                 src={logoSrc}
                 alt="CDenn Logo"
@@ -44,122 +56,51 @@ export const Footer = () => {
                 className="h-9 w-auto object-contain"
               />
             </Link>
-            <p className="text-sm text-zinc-500 dark:text-[#888888]">
-              Full-stack software developer based in Nairobi, Kenya.
-              Specializing in Next.js, fintech automation, and AI-integrated web
-              applications.
+            <p className="text-base text-foreground">
+              Full-stack software developer in Nairobi, Kenya. Building reliable
+              systems for fintech, multi-tenant SaaS, and offline-first products.
             </p>
           </div>
 
           <div>
-            <h4 className="font-bold text-base mb-4 text-slate-900 dark:text-[#FCF7F2]">
+            <h4 className="mb-4 text-base font-bold text-foreground">
               Navigation
             </h4>
-            <ul className="space-y-3 text-sm text-zinc-600 dark:text-[#888888]">
-              <li>
-                <Link
-                  href="/"
-                  className="hover:text-primary dark:hover:text-[#FCF7F2]"
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#about"
-                  className="hover:text-primary dark:hover:text-[#FCF7F2]"
-                >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/about"
-                  className="hover:text-primary dark:hover:text-[#FCF7F2]"
-                >
-                  About CDenn
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#solutions"
-                  className="hover:text-primary dark:hover:text-[#FCF7F2]"
-                >
-                  Solutions
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#contact"
-                  className="hover:text-primary dark:hover:text-[#FCF7F2]"
-                >
-                  Contact
-                </Link>
-              </li>
+            <ul className="space-y-3 text-base text-muted-foreground">
+              <li><Link href="/" className="hover:text-foreground">Home</Link></li>
+              <li><Link href="#about" className="hover:text-foreground">About</Link></li>
+              <li><Link href="/about" className="hover:text-foreground">About CDenn</Link></li>
+              <li><Link href="#solutions" className="hover:text-foreground">Solutions</Link></li>
+              <li><Link href="#contact" className="hover:text-foreground">Contact</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-bold text-base mb-4 text-slate-900 dark:text-[#FCF7F2]">
+            <h4 className="mb-4 text-base font-bold text-foreground">
               Services
             </h4>
-            <ul className="space-y-3 text-sm text-zinc-600 dark:text-[#888888]">
-              <li>
-                <Link
-                  href="/services/multi-tenant-saas"
-                  className="hover:text-primary dark:hover:text-[#FCF7F2]"
-                >
-                  Multi-Tenant SaaS
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/fintech-automation"
-                  className="hover:text-primary dark:hover:text-[#FCF7F2]"
-                >
-                  Fintech &amp; Payments
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/offline-first-apps"
-                  className="hover:text-primary dark:hover:text-[#FCF7F2]"
-                >
-                  Offline-First Apps
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services"
-                  className="hover:text-primary dark:hover:text-[#FCF7F2]"
-                >
-                  All services
-                </Link>
-              </li>
+            <ul className="space-y-3 text-base text-muted-foreground">
+              <li><Link href="/services/multi-tenant-saas" className="hover:text-foreground">Multi-Tenant SaaS</Link></li>
+              <li><Link href="/services/fintech-automation" className="hover:text-foreground">Fintech &amp; Payments</Link></li>
+              <li><Link href="/services/offline-first-apps" className="hover:text-foreground">Offline-First Apps</Link></li>
+              <li><Link href="/services" className="hover:text-foreground">All services</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-bold text-base mb-4 text-slate-900 dark:text-[#FCF7F2]">
+            <h4 className="mb-4 text-base font-bold text-foreground">
               Legal
             </h4>
-            <ul className="space-y-3 text-sm text-zinc-600 dark:text-[#888888]">
-              <li>
-                <a
-                  href="/privacy"
-                  className="hover:text-primary dark:hover:text-[#FCF7F2] transition-colors"
-                >
-                  Privacy Policy
-                </a>
-              </li>
+            <ul className="space-y-3 text-base text-muted-foreground">
+              <li><a href="/privacy" className="transition-colors hover:text-foreground">Privacy Policy</a></li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm border-zinc-200 text-zinc-400 dark:border-[#1a1a1a] dark:text-[#555555]">
+        <div className="flex flex-col items-center justify-between gap-4 pt-8 text-base text-muted-foreground md:flex-row">
           <p>© {new Date().getFullYear()} CDenn. All rights reserved.</p>
 
-          <div className="flex gap-3 items-center pr-20 md:pr-0">
+          <div className="flex items-center gap-2 pr-20 md:pr-0">
             {socialLinks.map((link) => (
               <a
                 key={link.network}
@@ -167,15 +108,7 @@ export const Footer = () => {
                 target="_blank"
                 rel="me noopener noreferrer"
                 aria-label={link.label}
-                onMouseEnter={() => setHoveredIcon(link.network)}
-                onMouseLeave={() => setHoveredIcon(null)}
-                className="flex items-center justify-center w-9 h-9 border transition-colors duration-200 text-zinc-500 dark:text-[#888888] hover:text-slate-900 dark:hover:text-[#FCF7F2]"
-                style={{
-                  border:
-                    hoveredIcon === link.network
-                      ? "1px solid #253C38"
-                      : "1px solid transparent",
-                                  }}
+                className="flex h-9 w-9 items-center justify-center text-muted-foreground transition-colors hover:bg-surface hover:text-foreground"
               >
                 {iconMap[link.network]}
               </a>

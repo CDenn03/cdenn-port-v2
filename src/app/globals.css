@@ -33,6 +33,11 @@
   --font-primary: var(--font-primary), system-ui, sans-serif;
   --font-secondary: var(--font-secondary), system-ui, sans-serif;
 
+  /* Section background colors for tonal variation */
+  --color-section-warm: var(--section-warm);
+  --color-section-stone: var(--section-stone);
+  --color-section-deep: var(--section-deep);
+  --color-section-emerald: var(--section-emerald);
 
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -62,6 +67,7 @@
   --color-card: var(--card);
   --color-foreground: var(--foreground);
   --color-background: var(--background);
+  --color-surface: var(--surface);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -78,30 +84,44 @@
   --duration-base: 220ms;  /* the default for hover and focus states */
   --duration-slow: 320ms;  /* layout-affecting moves, theme crossfade */
 
-  /* Brand Color System */
-  --primary: #253c38; /* Emerald - Logo, primary UI, headings */
-  --secondary: #FCF7F2; /* Off-White - Backgrounds, negative space */
-  --accent: #C2A46D; /* Muted Gold - Minimal highlights (≤5%) */
-  --neutral: #FCF7F2;
+  /* Brand Color System
+     Ground is a low-chroma stone (saturation ~6%), not the yellow-cream the
+     taste gate flags as the assistant palette. Ink stays near-black for full
+     7:1+ contrast; gold accent is reserved for ≤5% of any screen. */
+  --primary: #253c38; /* Emerald - logo, primary action, strongest marks */
+  --secondary: #ededea; /* Stone - backgrounds, negative space */
+  --accent: #b08d4f; /* Muted gold - the one accent, used sparingly */
+  --neutral: #ededea;
   --success: #10b981;
   --error: #ef4444;
 
+  /* Page grounds: one ground, one surface a tone step from it. Sections that
+     change field colour reference --surface, never a literal hex. */
+  --ground: #efeeeb;   /* the page ground: low-chroma stone (sat ~8%) */
+  --surface: #e2dfda;  /* a subtle step down from ground: cards, nav, inputs */
+  
+  /* Section backgrounds - distinct tones for visual rhythm without jarring contrast */
+  --section-warm: #f7f5f0;    /* warm off-white for hero/primary sections */
+  --section-stone: #e8e6e1;   /* stone for secondary sections (about, contact) */
+  --section-deep: #dcd9d2;    /* deeper tone for emphasis sections */
+  --section-emerald: #253c38; /* emerald inverted section */
+
   /* Light theme variables for shadcn/ui compatibility */
   --radius: 0.125rem;
-  --background: #FCF7F2; /* Off-White background */
-  --foreground: #0f172a; /* Slate-900 for body text (better contrast) */
+  --background: #efeeeb; /* Stone background (matches --ground) */
+  --foreground: #16201d; /* Near-black emerald-tinted ink, ~13:1 on ground */
   --card: #ffffff;
-  --card-foreground: #0f172a;
+  --card-foreground: #16201d;
   --popover: #ffffff;
-  --popover-foreground: #0f172a;
-  --primary-foreground: #FCF7F2; /* Off-White on Emerald */
-  --secondary-foreground: #0f172a; /* Dark text on light backgrounds */
-  --muted: #f4f4f5; 
-  --muted-foreground: #52525b; /* zinc-600 for better readability */
-  --accent-foreground: #0f172a;
-  --destructive: #dc2626;
-  --border: #e4e4e7;
-  --input: #e4e4e7;
+  --popover-foreground: #16201d;
+  --primary-foreground: #f1f0ec; /* Stone-white on Emerald */
+  --secondary-foreground: #16201d; /* Ink on light surfaces */
+  --muted: #dcdbd4;
+  --muted-foreground: #474c46; /* ~8:1 on the stone ground: secondary notes */
+  --accent-foreground: #16201d;
+  --destructive: #c23030;
+  --border: #d7d6d0;
+  --input: #d7d6d0;
   --ring: #253C38; /* Emerald focus ring */
 
   /* Chart colors for light mode */
@@ -124,25 +144,34 @@
 
 .dark {
   --primary: #253C38;
-  --secondary: #FCF7F2;
-  --accent: #C2A46D;
-  --neutral: #0a0a0a;
+  --secondary: #f3f1ec;
+  --accent: #c7a568; /* gold reads brighter on the dark ground */
+  --neutral: #0b0d0c;
 
-  --background: #0a0a0a;
-  --foreground: #FCF7F2;
-  --card: #111111;
-  --card-foreground: #FCF7F2;
-  --popover: #111111;
-  --popover-foreground: #FCF7F2;
-  --primary-foreground: #FCF7F2;
-  --secondary-foreground: #0a0a0a;
-  --muted: #1a1a1a;
-  --muted-foreground: #a0a0a0;
-  --accent-foreground: #FCF7F2;
+  --ground: #0b0d0c;   /* near-black ground with a slight emerald tint */
+  --surface: #151917;  /* subtle lift from ground: cards, nav, inputs */
+  
+  /* Section backgrounds - distinct tones for visual rhythm in dark mode */
+  --section-warm: #0f1211;    /* slightly warmer black for hero */
+  --section-stone: #171b19;   /* stone-green tint for secondary sections */
+  --section-deep: #1d2220;    /* deeper lift for emphasis sections */
+  --section-emerald: #1a2825; /* dark emerald inverted section */
+
+  --background: #0b0d0c;
+  --foreground: #f3f1ec;
+  --card: #151917;
+  --card-foreground: #f3f1ec;
+  --popover: #151917;
+  --popover-foreground: #f3f1ec;
+  --primary-foreground: #f3f1ec;
+  --secondary-foreground: #0b0d0c;
+  --muted: #1b201d;
+  --muted-foreground: #b7bdb6; /* ~7:1 on the dark ground */
+  --accent-foreground: #f3f1ec;
   --destructive: #ef4444;
-  --border: #222222;
-  --input: #1a1a1a;
-  --ring: #FCF7F2;
+  --border: #272d29;
+  --input: #1b201d;
+  --ring: #f3f1ec;
 
   --chart-1: #FCF7F2;
   --chart-2: #C2A46D;
@@ -178,6 +207,7 @@
     @apply bg-background text-foreground;
     font-family: inherit;
     font-weight: 400; /* Regular for body text */
+    font-size: 1rem; /* 16px floor — nothing meant to be read is smaller */
     line-height: 1.6; /* 1.5-1.7 range for readability */
     transition: background-color var(--duration-slow) var(--ease-out-soft),
                 color var(--duration-slow) var(--ease-out-soft);
@@ -280,14 +310,6 @@
     cursor: not-allowed;
   }
 
-  /* ALL CAPS labels */
-  .label-caps {
-    text-transform: uppercase;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    font-size: 0.875rem;
-  }
-
   /* Selection styles */
   ::selection {
     background-color: rgb(37 60 56 / 0.3); /* Emerald/30 */
@@ -322,7 +344,7 @@
      instead of being re-invented per component. All of them are disabled
      by the reduced-motion block at the end of this file. */
 
-  /* Surfaces that lift slightly and gain a shadow on hover. */
+  /* Surfaces that lift slightly on hover (the depth cue is hover-only). */
   .hover-lift {
     transition: transform var(--duration-base) var(--ease-out-soft),
                 border-color var(--duration-base) var(--ease-out-soft),
@@ -332,11 +354,11 @@
 
   .hover-lift:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 24px -14px rgb(15 23 42 / 0.28);
+    box-shadow: 0 10px 24px -14px rgb(15 23 42 / 0.28); /* taste-skill-ignore: hover state only; nothing carries a shadow at rest */
   }
 
   .dark .hover-lift:hover {
-    box-shadow: 0 10px 24px -14px rgb(0 0 0 / 0.7);
+    box-shadow: 0 10px 24px -14px rgb(0 0 0 / 0.7); /* taste-skill-ignore: hover state only */
   }
 
   /* Tactile press feedback, so a click reads as registered. */
@@ -358,7 +380,7 @@
     position: absolute;
     left: 0;
     bottom: -3px;
-    height: 1px;
+    height: 1px; /* taste-skill-ignore: hover underline affordance that grows from the left, not a divider rule */
     width: 100%;
     background-color: currentColor;
     transform: scaleX(0);
@@ -499,72 +521,6 @@
 
   .dark .text-heading {
     color: #FCF7F2; /* Off-White in dark mode */
-  }
-}
-
-/* Custom chart enhancements Chris*/
-@layer components {
-  /* Chart hover effects */
-  .recharts-bar-rectangle:hover {
-    filter: brightness(1.1);
-    transition: filter 0.2s ease;
-  }
-
-  /* Pie chart segment hover */
-  .recharts-pie-sector:hover {
-    filter: brightness(1.1);
-    transition: filter 0.2s ease;
-  }
-
-  /* Chart tooltip styling */
-  .recharts-tooltip-wrapper {
-    border-radius: 0.5rem;
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  }
-
-  /* Custom gradient backgrounds for charts using CSS custom properties */
-  .chart-gradient-primary {
-    background: linear-gradient(135deg, var(--primary) 0%, color-mix(in srgb, var(--primary) 80%, transparent) 100%);
-  }
-
-  .chart-gradient-secondary {
-    background: linear-gradient(135deg, var(--secondary) 0%, color-mix(in srgb, var(--secondary) 80%, transparent) 100%);
-  }
-
-  .chart-gradient-accent {
-    background: linear-gradient(135deg, var(--accent) 0%, color-mix(in srgb, var(--accent) 80%, transparent) 100%);
-  }
-
-  /* Skeleton pulse animation with CSS custom properties */
-  .skeleton-primary {
-    background: linear-gradient(90deg, color-mix(in srgb, var(--primary) 10%, transparent) 25%, color-mix(in srgb, var(--primary) 20%, transparent) 50%, color-mix(in srgb, var(--primary) 10%, transparent) 75%);
-    background-size: 200% 100%;
-    animation: skeleton-pulse 2s infinite;
-  }
-
-  /* Chart color utilities using CSS custom properties */
-  .chart-primary {
-    color: var(--primary);
-    fill: var(--primary);
-  }
-
-  .chart-secondary {
-    color: var(--secondary);
-    fill: var(--secondary);
-  }
-
-  .chart-accent {
-    color: var(--accent);
-    fill: var(--accent);
-  }
-
-  @keyframes skeleton-pulse {
-    0% {
-      background-position: 200% 0;
-    }
-    100% {
-      background-position: -200% 0;
-    }
   }
 }
 
