@@ -17,8 +17,7 @@ export const SolutionsSection = () => {
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <div>
-            <h2 className="text-3xl font-bold tracking-[-0.03em] text-foreground md:text-5xl">Evidence, not a gallery.</h2>
-            <p className="mt-4 max-w-xl text-lg leading-7 text-muted-foreground">A small selection of systems where the constraint shaped the work.</p>
+            <h2 className="text-3xl font-bold tracking-[-0.03em] text-foreground md:text-5xl">Solutions I have built</h2>
           </div>
         </Reveal>
 
@@ -45,7 +44,7 @@ export const SolutionsSection = () => {
                 </div>
                 <div className="md:col-span-6">
                   <p className="text-base text-muted-foreground">
-                    {project.category}{project.ongoing ? " — in progress" : ""}
+                    {project.category}{project.ongoing ? " (in progress)" : ""}
                   </p>
                   <Link href={`/solutions/${project.slug}`} className="mt-2 block">
                     <h3 className="text-2xl font-bold tracking-[-0.02em] text-foreground transition-colors group-hover:text-primary dark:group-hover:text-accent md:text-3xl">{project.title}</h3>
@@ -92,7 +91,7 @@ export const SolutionsSection = () => {
         <Reveal>
           <div className="mt-12 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
             <p className="max-w-xl text-lg leading-8 text-foreground">
-              Five more systems — bancassurance, logistics, financial governance and others — are written up the same way.
+              Five more systems, including bancassurance, logistics and financial governance, are written up the same way.
             </p>
             <Link href="/solutions" className="press group/cta inline-flex min-h-12 shrink-0 items-center gap-1.5 bg-primary px-6 text-base font-bold text-primary-foreground transition-colors hover:bg-[#1b2d2a]">
               View all work
