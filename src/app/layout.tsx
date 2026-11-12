@@ -1,15 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
+import { fontVariables } from "./fonts";
 import { ThemeProvider } from "./providers/ThemeProvider";
 import { ConsoleEasterEgg } from "./components/ConsoleEasterEgg";
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-inter",
-  display: "swap",
-});
+import { SkipLink } from "./components/ui/SkipLink";
 
 export const metadata: Metadata = {
 
@@ -83,8 +77,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
-      <body className={`${inter.className} antialiased`}>
+    <html lang="en" className={`${fontVariables} scroll-smooth`} suppressHydrationWarning>
+      <body className="antialiased">
+        <SkipLink />
         <ConsoleEasterEgg />
         {/* `disableTransitionOnChange` is deliberately NOT set: it injects
             `*{transition:none !important}` for a frame on every change, which

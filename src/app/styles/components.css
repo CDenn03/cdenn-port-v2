@@ -1,0 +1,333 @@
+/* ============================================================
+   Shared component recipes.
+
+   These read tokens only, never literal values, so the palette and
+   scale above are the only place a look is decided. Pages compose
+   layout with Tailwind; they do not restyle these.
+   ============================================================ */
+
+@layer components {
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    min-block-size: var(--target-min);
+    padding-inline: var(--space-5);
+    padding-block: var(--space-2);
+    border: 1px solid transparent;
+    border-radius: var(--radius-control);
+    font-size: var(--text-label);
+    font-weight: var(--text-label--font-weight);
+    line-height: var(--text-label--line-height);
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .btn-primary {
+    background-color: var(--primary);
+    color: var(--on-primary);
+  }
+  .btn-primary:hover {
+    background-color: var(--primary-hover);
+  }
+
+  .btn-secondary {
+    background-color: var(--primary-tint);
+    color: var(--on-primary-tint);
+  }
+  .btn-secondary:hover {
+    background-color: color-mix(in srgb, var(--primary-tint), var(--on-primary-tint) 8%);
+  }
+
+  .btn-outline {
+    border-color: var(--line-strong);
+    color: var(--ink);
+  }
+  .btn-outline:hover {
+    background-color: var(--surface-alt);
+  }
+
+  .btn-ghost {
+    color: var(--ink);
+  }
+  .btn-ghost:hover {
+    background-color: var(--surface-alt);
+  }
+
+  .btn:disabled,
+  .btn[aria-disabled="true"] {
+    background-color: var(--surface-alt);
+    border-color: var(--line);
+    color: var(--ink-subtle);
+  }
+
+  /* ---------- Surfaces ---------- */
+  .card {
+    background-color: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    padding: var(--space-6);
+  }
+
+  /* ---------- Chips ---------- */
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding-inline: var(--space-3);
+    padding-block: var(--space-1);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-chip);
+    background-color: var(--surface-alt);
+    color: var(--ink-muted);
+    font-size: var(--text-caption);
+    font-weight: var(--text-caption--font-weight);
+    letter-spacing: var(--text-caption--letter-spacing);
+    line-height: var(--text-caption--line-height);
+  }
+  .chip-primary {
+    background-color: var(--primary-tint);
+    border-color: transparent;
+    color: var(--on-primary-tint);
+  }
+  .chip-success {
+    background-color: var(--success-tint);
+    border-color: transparent;
+    color: var(--on-success-tint);
+  }
+  .chip-danger {
+    background-color: var(--danger-tint);
+    border-color: transparent;
+    color: var(--on-danger-tint);
+  }
+  /* The one place the accent appears: a small fill carrying dark text. */
+  .chip-accent {
+    background-color: var(--accent);
+    border-color: transparent;
+    color: var(--on-accent);
+  }
+
+  /* ---------- Eyebrow ---------- */
+  .eyebrow {
+    color: var(--ink-muted);
+    font-size: var(--text-caption);
+    font-weight: var(--text-caption--font-weight);
+    letter-spacing: var(--text-caption--letter-spacing);
+    line-height: var(--text-caption--line-height);
+    text-transform: uppercase;
+  }
+
+  /* ---------- Forms ---------- */
+  .field {
+    display: grid;
+    gap: var(--space-2);
+  }
+  .field-label {
+    color: var(--ink);
+    font-size: var(--text-label);
+    font-weight: var(--text-label--font-weight);
+    line-height: var(--text-label--line-height);
+  }
+  .field-hint {
+    color: var(--ink-muted);
+    font-size: var(--text-body-sm);
+    line-height: var(--text-body-sm--line-height);
+  }
+  .field-error {
+    color: var(--danger);
+    font-size: var(--text-body-sm);
+    line-height: var(--text-body-sm--line-height);
+  }
+
+  .input {
+    inline-size: 100%;
+    min-block-size: var(--target-min);
+    padding-inline: var(--space-4);
+    padding-block: var(--space-3);
+    background-color: var(--surface);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-control);
+    color: var(--ink);
+    font-family: var(--font-stack-primary);
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+  }
+  .input::placeholder {
+    color: var(--ink-subtle);
+  }
+  .input:hover {
+    border-color: var(--ink-muted);
+  }
+  .input[aria-invalid="true"] {
+    border-color: var(--danger);
+  }
+
+  /* ---------- Links ---------- */
+  .link {
+    color: var(--link);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.25em;
+  }
+  .link:hover {
+    text-decoration-thickness: 2px;
+  }
+
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: var(--target-min);
+    padding-inline: var(--space-3);
+    border-radius: var(--radius-control);
+    color: var(--ink-muted);
+    font-size: var(--text-body-sm);
+    line-height: var(--text-body-sm--line-height);
+    text-decoration: none;
+  }
+  .nav-link:hover {
+    background-color: var(--surface-alt);
+    color: var(--ink);
+  }
+  .nav-link[aria-current="page"] {
+    box-shadow: inset 0 -2px 0 var(--ink);
+    color: var(--ink);
+  }
+
+  /* ---------- Tables ---------- */
+  .table {
+    inline-size: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-body-sm);
+    line-height: var(--text-body-sm--line-height);
+  }
+  .table caption {
+    padding-block-end: var(--space-3);
+    color: var(--ink-muted);
+    text-align: start;
+  }
+  .table thead th {
+    padding: var(--space-3);
+    border-block-end: 2px solid var(--line-strong);
+    color: var(--ink-muted);
+    font-size: var(--text-caption);
+    font-weight: var(--text-caption--font-weight);
+    letter-spacing: var(--text-caption--letter-spacing);
+    text-align: start;
+    text-transform: uppercase;
+  }
+  .table tbody th,
+  .table td {
+    padding: var(--space-3);
+    border-block-end: 1px solid var(--line);
+    font-weight: 400;
+    text-align: start;
+  }
+  .table .num {
+    font-variant-numeric: tabular-nums;
+    text-align: end;
+  }
+}
+
+/* ============================================================
+   Interaction utilities still used by the pages. Each one is a
+   hover or press affordance, so none of them put a shadow or a
+   rule on anything at rest.
+   ============================================================ */
+@layer utilities {
+  /* An underline that grows from the left rather than appearing whole. */
+  .link-underline {
+    position: relative;
+  }
+  .link-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 1px;
+    width: 100%;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--duration-base) var(--ease-standard);
+  }
+  .link-underline:hover::after,
+  .link-underline:focus-visible::after {
+    transform: scaleX(1);
+  }
+
+  /* Tactile press feedback, so a click reads as registered. */
+  .press {
+    transition: transform var(--duration-fast) var(--ease-standard);
+  }
+  .press:active {
+    transform: translateY(1px) scale(0.985);
+  }
+
+  /* Hover only. Nothing is lifted at rest. */
+  .hover-lift {
+    transition:
+      transform var(--duration-base) var(--ease-standard),
+      box-shadow var(--duration-base) var(--ease-standard);
+  }
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-floating);
+  }
+
+  /* A trailing icon that slides when its parent `group` is hovered. */
+  .icon-shift {
+    transition: transform var(--duration-base) var(--ease-standard);
+  }
+  .group:hover .icon-shift {
+    transform: translateX(3px);
+  }
+  .icon-shift-up {
+    transition: transform var(--duration-base) var(--ease-standard);
+  }
+  .group:hover .icon-shift-up {
+    transform: translateY(-2px);
+  }
+
+  /* Imagery that eases in slightly when its card is hovered. */
+  .media-zoom {
+    transition: transform var(--duration-slow) var(--ease-standard);
+  }
+  .group:hover .media-zoom {
+    transform: scale(1.03);
+  }
+
+  /* Entrance for things that mount after load, such as the
+     back-to-top control. */
+  .animate-fade-in {
+    animation: fade-in var(--duration-base) var(--ease-standard) both;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Scoped to the theme toggle for ~340ms so the crossfade happens
+     without animating anything on first paint. */
+  .theme-transition,
+  .theme-transition * {
+    transition:
+      background-color var(--duration-slow) var(--ease-standard),
+      border-color var(--duration-slow) var(--ease-standard),
+      color var(--duration-slow) var(--ease-standard),
+      fill var(--duration-slow) var(--ease-standard) !important;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .theme-transition,
+    .theme-transition * {
+      transition: none !important;
+    }
+  }
+}

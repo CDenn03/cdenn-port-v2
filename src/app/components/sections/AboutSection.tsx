@@ -1,97 +1,109 @@
-"use client";
-
+import Link from "next/link";
 import { Reveal } from "../ui/Reveal";
 import { experiences } from "@/src/app/data/portfolio";
+import { specialisms } from "@/src/app/data/specialisms";
 
-const capabilities = [
-  ["Product systems", "Architecture that stays clear as a product grows."],
-  ["Payments and reconciliation", "Reliable provider callbacks, idempotency, and operational visibility."],
-  ["Multi-tenant platforms", "Roles, permissions, workflows, and isolated data boundaries."],
-  ["Offline-first software", "Local data, sync queues, and resilient field workflows."],
-  ["AI-assisted operations", "Useful automation bounded by human review and real permissions."],
-];
-
+/**
+ * The "how I work" section.
+ *
+ * The specialism list is read from `data/specialisms.ts` rather than retyped,
+ * so the hero, this section and the services index cannot drift apart. Each
+ * entry names the work that backs it, which is the whole reason the `proof`
+ * field exists.
+ */
 export const AboutSection = () => {
   return (
-    <section id="about" className="bg-section-stone px-4 py-20 transition-colors duration-300 md:px-6 md:py-24">
-      <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-2 md:gap-16">
-        <div>
+    <section id="about" className="bg-surface-alt px-4 py-16 md:px-6 md:py-20">
+      <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-12 lg:gap-14">
+        <div className="lg:col-span-6">
           <Reveal>
-            <h2 className="mb-8 text-3xl font-bold tracking-[-0.03em] text-foreground md:text-5xl">
-              Systems that hold together.
+            <h2 className="text-3xl font-bold tracking-[-0.03em] text-ink md:text-4xl">
+              How I work
             </h2>
           </Reveal>
 
           <Reveal>
-            <p className="mb-6 text-lg leading-8 text-foreground">
-              I&apos;m a full-stack software developer based in Nairobi, Kenya. I work with teams that need the product and the operational details to hold together, from the first user journey through to the systems behind it.
+            <p className="mt-6 text-lg leading-8 text-ink">
+              I start from the constraint, not the stack. Most of the systems I have built were
+              bounded by something awkward and non-negotiable: a tenant boundary that had to hold,
+              a payment callback that could arrive twice, a device that would be offline for a
+              whole working day. I make those trade-offs explicit before writing the code, and
+              visible in the code afterwards.
             </p>
           </Reveal>
           <Reveal>
-            <p className="mb-8 text-lg leading-8 text-foreground">
-              That has meant leading frontend architecture for multi-tenant bancassurance platforms, building a browser extension inside live Gmail, and engineering offline-first systems that reconcile payment-provider callbacks. I start with the constraint, then make the technical trade-offs visible.
+            <p className="mt-5 text-lg leading-8 text-ink">
+              I own the result rather than the ticket. That has meant leading frontend architecture
+              on a multi-tenant bancassurance platform, building a browser extension that lives
+              inside live Gmail, and designing sync layers that reconcile payment records after a
+              day without a network.
             </p>
           </Reveal>
           <Reveal>
-            <blockquote className="border-l-2 border-accent pl-5 text-xl leading-8 text-foreground">
+            <blockquote className="mt-8 border-l-2 border-primary pl-5 font-secondary text-quote text-ink">
               Build systems that last. Ship products that work. Own the outcome.
             </blockquote>
           </Reveal>
-
           <Reveal>
-            <div className="mt-10 grid gap-6 sm:grid-cols-2">
-              <div className="bg-surface p-5">
-                <p className="text-base font-bold text-foreground">Based in</p>
-                <p className="mt-1 text-base text-foreground">Nairobi, Kenya. Remote-friendly.</p>
-              </div>
-              <div className="bg-surface p-5">
-                <p className="text-base font-bold text-foreground">Available for</p>
-                <p className="mt-1 text-base text-foreground">Roles, contracts, and consulting.</p>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-
-        <aside className="h-fit">
-          <Reveal>
-            <h3 className="text-2xl font-bold text-foreground">What I am most useful for</h3>
-          </Reveal>
-          <div className="mt-6 space-y-6">
-            {capabilities.map(([title, description], index) => (
-              <Reveal key={title} delay={index * 0.06}>
-                <div>
-                  <h4 className="text-lg font-bold text-foreground">{title}</h4>
-                  <p className="mt-1 text-base leading-7 text-foreground">{description}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-          <Reveal>
-            <p className="mt-8 text-base leading-7 text-muted-foreground">
+            <p className="mt-8 text-sm leading-6 text-ink-muted">
               Working across React, Next.js, TypeScript, Node, Rust, PostgreSQL and Flutter.
             </p>
           </Reveal>
+        </div>
+
+        <aside className="h-fit lg:col-span-6">
+          <Reveal>
+            <h3 className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-subtle">
+              Where I am most useful
+            </h3>
+          </Reveal>
+          <dl className="mt-4 border-t border-line">
+            {specialisms.map((specialism, index) => (
+              <Reveal key={specialism.title} delay={index * 0.06}>
+                <div className="border-b border-line py-5">
+                  <dt className="text-lg font-bold text-ink">{specialism.title}</dt>
+                  <dd className="mt-1 text-base leading-7 text-ink-muted">{specialism.summary}</dd>
+                  <dd className="mt-2 flex flex-wrap items-baseline gap-x-2 text-sm leading-6">
+                    <span className="text-ink-subtle">Evidenced by</span>
+                    <span className="text-ink">{specialism.proof}</span>
+                    <Link
+                      href={specialism.href}
+                      className="inline-flex min-h-11 items-center text-ink underline decoration-line-strong underline-offset-4 transition-colors hover:text-primary"
+                    >
+                      {specialism.linkText}
+                    </Link>
+                  </dd>
+                </div>
+              </Reveal>
+            ))}
+          </dl>
         </aside>
       </div>
 
-      <div className="mx-auto mt-24 max-w-6xl">
+      <div className="mx-auto mt-16 max-w-6xl">
         <Reveal>
-          <h3 className="text-2xl font-bold tracking-[-0.02em] text-foreground md:text-3xl">Experience</h3>
+          <h3 className="text-2xl font-bold tracking-[-0.02em] text-ink md:text-3xl">Experience</h3>
         </Reveal>
 
-        <div className="mt-10 space-y-6">
+        <div className="mt-8 border-t border-line">
           {experiences.map((job, index) => (
             <Reveal key={`${job.company}-${job.role}`} delay={index * 0.08}>
-              <article className="grid gap-4 bg-surface p-6 md:grid-cols-[minmax(0,1fr)_auto] md:gap-8">
-                <div>
-                  <h4 className="text-lg font-bold text-foreground">{job.role}</h4>
-                  <p className="mt-1 text-base text-muted-foreground">{job.company}</p>
-                  <ul className="mt-4 space-y-2">
-                    {job.desc.map((item, itemIndex) => <li key={itemIndex} className="text-base leading-7 text-foreground">{item}</li>)}
+              <article className="grid gap-3 border-b border-line py-6 md:grid-cols-12 md:gap-8">
+                <p className="text-sm leading-6 text-ink-subtle tabular-nums md:col-span-3">
+                  {job.period}
+                </p>
+                <div className="md:col-span-9">
+                  <h4 className="text-lg font-bold text-ink">{job.role}</h4>
+                  <p className="mt-1 text-base text-ink-muted">{job.company}</p>
+                  <ul className="mt-3 space-y-2">
+                    {job.desc.map((item) => (
+                      <li key={item} className="text-base leading-7 text-ink">
+                        {item}
+                      </li>
+                    ))}
                   </ul>
-                  <p className="mt-4 text-base leading-6 text-muted-foreground">{job.tech}</p>
+                  <p className="mt-3 text-sm leading-6 text-ink-muted">{job.tech}</p>
                 </div>
-                <p className="text-base text-muted-foreground md:text-right">{job.period}</p>
               </article>
             </Reveal>
           ))}

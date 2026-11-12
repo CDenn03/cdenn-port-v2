@@ -4,9 +4,9 @@ import { useEffect } from "react";
 
 export function ConsoleEasterEgg() {
   useEffect(() => {
-    const emerald = "#253c38";
-    const cream = "#FCF7F2";
-    const gold = "#C2A46D";
+    const emerald = "#1E4C41";
+    const cream = "#F0EEE6";
+    const gold = "#F5D23B";
 
     console.log(
       "%c  CDenn  ",
@@ -25,17 +25,17 @@ export function ConsoleEasterEgg() {
 
     console.log(
       "%c─────────────────────────────────────────",
-      `color:#e5e5e5; font-size:10px;`
+      `color:#F0EEE6; font-size:10px;`
     );
 
     console.log(
       "%cHey, curious one. You found the console.",
-      `color:#525252; font-size:12px;`
+      `color:#717B75; font-size:12px;`
     );
 
     console.log(
       "%cIf you're inspecting this, you're probably a developer. Let's talk.",
-      `color:#525252; font-size:12px;`
+      `color:#717B75; font-size:12px;`
     );
 
     console.log(

@@ -8,8 +8,29 @@ import {
   resolveFromEmail,
   singleLine,
 } from "@/src/app/lib/email";
+import {
+  FORM_RATE_LIMIT,
+  isHoneypotFilled,
+  rateLimit,
+  rejectOverLongFields,
+  requireJsonRequest,
+  requireSameOrigin,
+} from "@/src/app/lib/request-guard";
+
+const FIELD_LIMITS = [
+  { key: "name", label: "name", max: MAX_LENGTHS.name },
+  { key: "email", label: "email address", max: MAX_LENGTHS.email },
+  { key: "role", label: "role", max: MAX_LENGTHS.shortField },
+  { key: "company", label: "company", max: MAX_LENGTHS.shortField },
+] as const;
 
 export async function POST(req: NextRequest) {
+  const blocked =
+    requireJsonRequest(req) ??
+    requireSameOrigin(req) ??
+    rateLimit({ req, key: "request-cv", ...FORM_RATE_LIMIT });
+  if (blocked) return blocked;
+
   let payload: unknown;
   try {
     payload = await req.json();
@@ -18,6 +39,11 @@ export async function POST(req: NextRequest) {
   }
 
   const body = (payload ?? {}) as Record<string, unknown>;
+
+  if (isHoneypotFilled(body)) return NextResponse.json({ success: true });
+
+  const overLong = rejectOverLongFields(body, FIELD_LIMITS);
+  if (overLong) return overLong;
 
   const name = asText(body.name, MAX_LENGTHS.name);
   const email = asText(body.email, MAX_LENGTHS.email);
@@ -55,7 +81,10 @@ export async function POST(req: NextRequest) {
 
   if (error) {
     console.error("[request-cv] Resend send failed:", error.message);
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    return NextResponse.json(
+      { error: "We could not send your request. Please try again shortly." },
+      { status: 500 }
+    );
   }
 
   return NextResponse.json({ success: true });

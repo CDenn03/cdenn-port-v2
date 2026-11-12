@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ExternalLink, Github, Calendar, User, Clock, ArrowRight } from "lucide-react";
 import { solutions, getAdjacentProjects } from "@/src/app/data/portfolio";
+import { evidenceBadge, evidenceKey } from "@/src/app/lib/evidence";
 import { SubpageNav } from "@/src/app/components/layout/SubpageNav";
 import { SolutionDetailClient } from "./SolutionDetailClient";
 
@@ -158,20 +159,20 @@ export default async function SolutionDetailPage({
           __html: JSON.stringify(projectSchema).replace(/</g, "\\u003c"),
         }}
       />
-    <main className="min-h-screen transition-colors duration-300 bg-[#FCF7F2] text-slate-900 dark:bg-[#0a0a0a] dark:text-[#FCF7F2]">
+    <main id="main" className="min-h-screen transition-colors duration-300 bg-canvas text-ink">
       <SubpageNav backHref="/solutions" backLabel="Back" />
 
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div className="mb-6">
-          <h1 className="text-4xl md:text-6xl font-bold tracking-[-0.03em] text-slate-900 dark:text-[#FCF7F2] mb-2">
+          <h1 className="text-4xl md:text-6xl font-bold tracking-[-0.03em] text-ink mb-2">
             {project.title}
           </h1>
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-400 dark:text-[#555]">
+          <span className="text-xs font-medium uppercase tracking-widest text-ink-subtle">
             {project.category}
           </span>
 
           {project.summary && (
-            <p className="text-base text-zinc-500 dark:text-[#888] mt-3 mb-4 max-w-2xl">
+            <p className="text-base text-ink-muted mt-3 mb-4 max-w-2xl">
               {project.summary}
             </p>
           )}
@@ -181,7 +182,7 @@ export default async function SolutionDetailPage({
               href={project.websiteUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex min-h-11 items-center gap-2 border border-slate-900 bg-slate-900 px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-transparent hover:text-slate-900 dark:border-[#FCF7F2] dark:bg-[#FCF7F2] dark:text-[#0a0a0a] dark:hover:bg-transparent dark:hover:text-[#FCF7F2]"
+              className="inline-flex min-h-11 items-center gap-2 border border-primary bg-primary px-4 py-2 text-sm font-bold text-on-primary transition-colors hover:bg-transparent hover:text-primary"
             >
               <ExternalLink size={14} /> View Live Site
             </a>
@@ -193,18 +194,18 @@ export default async function SolutionDetailPage({
         <div className="grid md:grid-cols-[1fr_280px] gap-8 mt-12">
           <div className="space-y-10">
             <p className="text-xl md:text-2xl font-medium leading-snug
-              text-slate-800 dark:text-[#FCF7F2]
-              border-l-4 border-amber-400 pl-5">
+              text-ink
+              border-l-4 border-primary pl-5">
               {project.description}
             </p>
 
             <div id="background">
-              <h2 className="text-2xl font-bold tracking-[-0.02em] mb-4 text-slate-900 dark:text-[#FCF7F2]">
+              <h2 className="text-2xl font-bold tracking-[-0.02em] mb-4 text-ink">
                 Background
               </h2>
               <div className="space-y-4">
                 {project.story.split("\n\n").map((para, i) => (
-                  <p key={i} className="text-base leading-relaxed text-zinc-700 dark:text-[#b0b0b0]">
+                  <p key={i} className="text-base leading-relaxed text-ink-muted">
                     {para.trim()}
                   </p>
                 ))}
@@ -212,11 +213,11 @@ export default async function SolutionDetailPage({
             </div>
 
             <div id="challenge">
-              <h2 className="text-2xl font-bold tracking-[-0.02em] mb-4 text-slate-900 dark:text-[#FCF7F2]">
+              <h2 className="text-2xl font-bold tracking-[-0.02em] mb-4 text-ink">
                 Challenge
               </h2>
-              <div className="border-l-2 border-amber-500 pl-5">
-                <p className="text-sm leading-relaxed text-zinc-700 dark:text-[#b0b0b0]">
+              <div className="border-l-2 border-primary pl-5">
+                <p className="text-sm leading-relaxed text-ink-muted">
                   {project.challenge}
                 </p>
               </div>
@@ -224,11 +225,11 @@ export default async function SolutionDetailPage({
 
             {project.solution && (
               <div id="solution">
-                <h2 className="text-2xl font-bold tracking-[-0.02em] mb-4 text-slate-900 dark:text-[#FCF7F2]">
+                <h2 className="text-2xl font-bold tracking-[-0.02em] mb-4 text-ink">
                   Solution
                 </h2>
-                <div className="border-t border-zinc-300 pt-5 dark:border-zinc-700">
-                  <p className="text-sm leading-relaxed text-zinc-700 dark:text-[#b0b0b0]">
+                <div className="border-t border-line pt-5">
+                  <p className="text-sm leading-relaxed text-ink-muted">
                     {project.solution}
                   </p>
                 </div>
@@ -237,20 +238,20 @@ export default async function SolutionDetailPage({
 
             {project.process && project.process.length > 0 && (
               <div id="process">
-                <h2 className="text-2xl font-bold tracking-[-0.02em] mb-4 text-slate-900 dark:text-[#FCF7F2]">
+                <h2 className="text-2xl font-bold tracking-[-0.02em] mb-4 text-ink">
                   Process
                 </h2>
                 <ol className="space-y-4">
                   {project.process.map((step, i) => (
                     <li key={i} className="flex gap-4">
-                      <span className="text-xs font-bold text-zinc-300 dark:text-[#333] mt-1 w-5 shrink-0">
+                      <span className="text-xs font-bold text-ink-subtle mt-1 w-5 shrink-0">
                         {String(i + 1).padStart(2, "0")}
                       </span>
                       <div>
-                        <p className="text-sm font-semibold text-slate-800 dark:text-[#FCF7F2] mb-1">
+                        <p className="text-sm font-semibold text-ink mb-1">
                           {step.step}
                         </p>
-                        <p className="text-sm text-zinc-600 dark:text-[#b0b0b0]">{step.detail}</p>
+                        <p className="text-sm text-ink-muted">{step.detail}</p>
                       </div>
                     </li>
                   ))}
@@ -259,14 +260,14 @@ export default async function SolutionDetailPage({
             )}
 
             <div id="stack">
-              <h2 className="text-2xl font-bold tracking-[-0.02em] mb-4 text-slate-900 dark:text-[#FCF7F2]">
+              <h2 className="text-2xl font-bold tracking-[-0.02em] mb-4 text-ink">
                 Tech Stack
               </h2>
               <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="font-mono text-xs leading-6 text-zinc-600 dark:text-zinc-300"
+                    className="font-mono text-xs leading-6 text-ink-muted"
                   >
                     {tag}
                   </span>
@@ -277,16 +278,16 @@ export default async function SolutionDetailPage({
             {serviceCallout[project.slug] && (() => {
               const callout = serviceCallout[project.slug];
               return (
-                <div className="border-t border-zinc-300 pt-5 dark:border-zinc-700">
-                  <p className="text-xs font-bold uppercase tracking-widest mb-3 text-zinc-400 dark:text-[#555]">
+                <div className="border-t border-line pt-5">
+                  <p className="text-xs font-bold uppercase tracking-widest mb-3 text-ink-subtle">
                     {callout.label}
                   </p>
-                  <p className="text-sm leading-relaxed text-zinc-700 dark:text-[#b0b0b0] mb-4">
+                  <p className="text-sm leading-relaxed text-ink-muted mb-4">
                     {callout.body}
                   </p>
                   <Link
                     href={callout.href}
-                    className="group/cta inline-flex items-center gap-1.5 text-sm font-semibold text-slate-900 dark:text-[#FCF7F2] hover:opacity-70 transition-opacity"
+                    className="group/cta inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-ink underline decoration-line-strong underline-offset-4 transition-colors hover:text-primary"
                   >
                     {callout.linkText}
                     <ArrowRight size={13} aria-hidden="true" className="transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-soft)] motion-safe:group-hover/cta:translate-x-0.5" />
@@ -297,16 +298,16 @@ export default async function SolutionDetailPage({
 
             {project.screenshots && project.screenshots.length > 0 && (
               <div>
-                <h2 className="text-2xl font-bold tracking-[-0.02em] mb-4 text-slate-900 dark:text-[#FCF7F2]">
+                <h2 className="text-2xl font-bold tracking-[-0.02em] mb-4 text-ink">
                   Screenshots
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {project.screenshots.map((s) => (
-                    <div key={s.src} className="overflow-hidden border border-zinc-200 dark:border-zinc-800">
+                    <div key={s.src} className="overflow-hidden border border-line">
                       <div className="relative aspect-video">
                         <Image src={s.src} alt={s.caption} fill className="object-cover object-top" />
                       </div>
-                      <p className="text-xs text-zinc-400 dark:text-[#555] px-3 py-2">{s.caption}</p>
+                      <p className="text-xs text-ink-subtle px-3 py-2">{s.caption}</p>
                     </div>
                   ))}
                 </div>
@@ -315,48 +316,64 @@ export default async function SolutionDetailPage({
           </div>
 
           <div className="space-y-6 order-first md:order-last md:sticky md:top-24 md:self-start">
-            <div className="border-t border-zinc-300 pt-5 dark:border-zinc-700">
-              <h3 className="text-lg font-bold tracking-[-0.01em] mb-4 text-slate-900 dark:text-[#FCF7F2]">
+            <div className="border-t border-line pt-5">
+              <h3 className="text-lg font-bold tracking-[-0.01em] mb-4 text-ink">
                 Project Profile
               </h3>
               <dl className="space-y-3 text-sm">
-                <div className="flex items-center gap-2 text-zinc-600 dark:text-[#888]">
+                <div className="flex items-center gap-2 text-ink-muted">
                   <Calendar size={13} className="shrink-0" />
                   <span>{project.year}</span>
                 </div>
-                <div className="flex items-center gap-2 text-zinc-600 dark:text-[#888]">
+                <div className="flex items-center gap-2 text-ink-muted">
                   <User size={13} className="shrink-0" />
                   <span>{project.role}</span>
                 </div>
-                <div className="flex items-center gap-2 text-zinc-600 dark:text-[#888]">
+                <div className="flex items-center gap-2 text-ink-muted">
                   <Clock size={13} className="shrink-0" />
                   <span>{project.duration}</span>
                 </div>
               </dl>
             </div>
 
-            <div id="impact" className="border-t border-zinc-300 pt-5 dark:border-zinc-700">
-              <h3 className="text-lg font-bold tracking-[-0.01em] mb-4 text-slate-900 dark:text-[#FCF7F2]">
-                Impact
+            <div id="evidence" className="border-t border-line pt-5">
+              <h3 className="text-lg font-bold tracking-[-0.01em] mb-4 text-ink">
+                Evidence
               </h3>
-              <div className="divide-y divide-zinc-100 dark:divide-[#1e1e1e]">
-                {project.results.map((r) => (
-                  <div key={r.label} className="flex items-start justify-between py-2">
-                    <span className="text-sm text-zinc-500 dark:text-[#888]">{r.label}</span>
-                    <div className="text-right">
-                      <span className="text-sm font-bold text-slate-800 dark:text-[#FCF7F2] block">{r.value}</span>
-                      {r.trend && (
-                        <span className="text-xs text-emerald-500 dark:text-emerald-400 font-medium">{r.trend}</span>
-                      )}
+              <dl className="divide-y divide-line">
+                {project.evidence.map((item) => (
+                  <div key={item.label} className="py-3">
+                    <div className="flex items-start justify-between gap-3">
+                      <dt className="text-sm text-ink-muted">{item.label}</dt>
+                      <dd className="text-right">
+                        <span className="block text-sm font-bold text-ink tabular-nums">{item.value}</span>
+                        <span className="mt-0.5 inline-block text-xs uppercase tracking-[0.1em] text-ink-subtle">
+                          {evidenceBadge(item.kind)}
+                        </span>
+                      </dd>
                     </div>
+                    {item.method && (
+                      <p className="mt-1 text-xs leading-5 text-ink-subtle">{item.method}</p>
+                    )}
                   </div>
                 ))}
-              </div>
+              </dl>
+              {/* The key is the point of the whole model: a reader should never
+                  have to guess whether a line is a measurement or an
+                  intention. */}
+              <dl className="mt-4 space-y-2 border-t border-line pt-4">
+                {evidenceKey(project.evidence).map((entry) => (
+                  <div key={entry.badge}>
+                    <dt className="text-xs uppercase tracking-[0.1em] text-ink-subtle">{entry.badge}</dt>
+                    <dd className="text-xs leading-5 text-ink-muted">{entry.note}</dd>
+                  </div>
+                ))}
+              </dl>
             </div>
 
             {(project.websiteUrl || project.codeUrl) && (
-              <div className="border-t border-zinc-300 pt-5 dark:border-zinc-700">
-                <h3 className="text-lg font-bold tracking-[-0.01em] mb-4 text-slate-900 dark:text-[#FCF7F2]">
+              <div className="border-t border-line pt-5">
+                <h3 className="text-lg font-bold tracking-[-0.01em] mb-4 text-ink">
                   Links
                 </h3>
                 <div className="space-y-2">
@@ -365,7 +382,7 @@ export default async function SolutionDetailPage({
                       href={project.websiteUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm text-zinc-600 dark:text-[#888] hover:text-slate-900 dark:hover:text-[#FCF7F2] transition-colors"
+                      className="inline-flex min-h-11 items-center gap-2 text-sm text-ink-muted transition-colors hover:text-ink"
                     >
                       <ExternalLink size={13} /> Live Website
                     </a>
@@ -375,7 +392,7 @@ export default async function SolutionDetailPage({
                       href={project.codeUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm text-zinc-600 dark:text-[#888] hover:text-slate-900 dark:hover:text-[#FCF7F2] transition-colors"
+                      className="inline-flex min-h-11 items-center gap-2 text-sm text-ink-muted transition-colors hover:text-ink"
                     >
                       <Github size={13} /> GitHub
                     </a>
@@ -386,13 +403,13 @@ export default async function SolutionDetailPage({
           </div>
         </div>
 
-        <div className="mt-16 pt-10 border-t border-zinc-200 dark:border-[#1e1e1e] text-center">
-          <p className="text-sm text-zinc-400 dark:text-[#555] mb-3">
+        <div className="mt-16 pt-10 border-t border-line text-center">
+          <p className="text-sm text-ink-subtle mb-3">
             Interested in building something similar?
           </p>
           <Link
             href="/#contact"
-            className="inline-flex min-h-11 items-center gap-2 border border-slate-900 bg-slate-900 px-5 py-2 text-sm font-bold text-white transition-colors hover:bg-transparent hover:text-slate-900 dark:border-[#FCF7F2] dark:bg-[#FCF7F2] dark:text-[#0a0a0a] dark:hover:bg-transparent dark:hover:text-[#FCF7F2]"
+            className="inline-flex min-h-11 items-center gap-2 border border-primary bg-primary px-5 py-2 text-sm font-bold text-on-primary transition-colors hover:bg-transparent hover:text-primary"
           >
             Get in touch
           </Link>
@@ -403,7 +420,7 @@ export default async function SolutionDetailPage({
             {prev ? (
               <Link
                 href={`/solutions/${prev.slug}`}
-                className="flex items-center gap-2 text-zinc-500 dark:text-[#888] hover:text-slate-900 dark:hover:text-[#FCF7F2] transition-colors"
+                className="inline-flex min-h-11 items-center gap-2 text-ink-muted transition-colors hover:text-ink"
               >
                 ← {prev.title}
               </Link>
@@ -413,7 +430,7 @@ export default async function SolutionDetailPage({
             {next && (
               <Link
                 href={`/solutions/${next.slug}`}
-                className="group/cta flex items-center gap-2 text-zinc-500 dark:text-[#888] hover:text-slate-900 dark:hover:text-[#FCF7F2] transition-colors"
+                className="group/cta inline-flex min-h-11 items-center gap-2 text-ink-muted transition-colors hover:text-ink"
               >
                 {next.title}
                 <ArrowRight size={16} aria-hidden="true" className="shrink-0 transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-soft)] motion-safe:group-hover/cta:translate-x-0.5" />

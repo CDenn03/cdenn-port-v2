@@ -35,7 +35,7 @@ const services = [
   {
     title: "Fintech & Payment Integration",
     href: "/services/fintech-automation",
-    lead: "Payment pipelines that account for every transaction - payment API integrations, callback reconciliation, and ledger systems for businesses that cannot afford a missing or double-counted payment.",
+    lead: "Payment pipelines that reconcile instead of assuming - payment API integrations, callback handling, and ledger systems for businesses that cannot afford a missing or double-counted payment.",
     points: [
       "Payment API webhook and callback handling",
       "Automated ledger reconciliation",
@@ -58,7 +58,7 @@ const services = [
 
 export default function ServicesIndexPage() {
   return (
-    <main className="min-h-screen bg-[#FCF7F2] text-slate-900 dark:bg-[#0a0a0a] dark:text-[#FCF7F2]">
+    <main id="main" className="min-h-screen bg-background text-foreground">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -86,10 +86,10 @@ export default function ServicesIndexPage() {
       <div className="max-w-4xl mx-auto px-6 py-16 md:py-24">
 
         <div className="mb-16">
-          <h1 className="text-4xl md:text-6xl font-bold tracking-[-0.03em] leading-[1.02] mb-6 text-slate-900 dark:text-[#FCF7F2]">
+          <h1 className="text-4xl md:text-6xl font-bold tracking-[-0.03em] leading-[1.02] mb-6 text-foreground">
             What I Build
           </h1>
-          <p className="text-xl text-zinc-600 dark:text-[#b0b0b0] leading-relaxed max-w-2xl">
+          <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl">
             Three areas where I have shipped production systems and can show the work. If your
             problem sits across two of them, that is usually a good sign rather than a bad one.
           </p>
@@ -100,23 +100,23 @@ export default function ServicesIndexPage() {
             <Link
               key={service.href}
               href={service.href}
-              className="group block border-t border-zinc-300 py-6 dark:border-zinc-700"
+              className="group block border-t border-border py-6"
             >
-              <h2 className="text-xl md:text-2xl font-bold mb-3 text-slate-900 dark:text-[#FCF7F2] flex items-start gap-2">
+              <h2 className="text-xl md:text-2xl font-bold mb-3 text-foreground flex items-start gap-2">
                 {service.title}
                 <ArrowRight
                   size={18}
-                  className="text-zinc-400 group-hover:translate-x-1 transition-transform shrink-0 mt-1.5"
+                  className="text-ink-subtle group-hover:translate-x-1 transition-transform shrink-0 mt-1.5"
                 />
               </h2>
-              <p className="text-zinc-600 dark:text-[#b0b0b0] leading-relaxed mb-5">
+              <p className="text-muted-foreground leading-relaxed mb-5">
                 {service.lead}
               </p>
               <ul className="flex flex-wrap gap-2">
                 {service.points.map((point) => (
                   <li
                     key={point}
-                    className="font-mono text-xs leading-6 text-zinc-600 dark:text-zinc-300"
+                    className="font-mono text-xs leading-6 text-muted-foreground"
                   >
                     {point}
                   </li>
@@ -129,11 +129,11 @@ export default function ServicesIndexPage() {
         <section aria-labelledby="engagement-heading" className="mb-16">
           <h2
             id="engagement-heading"
-            className="text-2xl font-bold mb-4 text-slate-900 dark:text-[#FCF7F2]"
+            className="text-2xl font-bold mb-4 text-foreground"
           >
             How I Engage
           </h2>
-          <p className="text-zinc-600 dark:text-[#b0b0b0] leading-relaxed mb-6">
+          <p className="text-muted-foreground leading-relaxed mb-6">
             Every service runs on the same three models. New products start with a scoping and
             architecture phase - typically a week - that produces a technical spec you own,
             before any implementation begins.
@@ -155,12 +155,12 @@ export default function ServicesIndexPage() {
             ].map((eng) => (
               <div
                 key={eng.type}
-                className="border-t border-zinc-300 pt-5 dark:border-zinc-700"
+                className="border-t border-border pt-5"
               >
-                <h3 className="font-bold text-base mb-2 text-slate-900 dark:text-[#FCF7F2]">
+                <h3 className="font-bold text-base mb-2 text-foreground">
                   {eng.type}
                 </h3>
-                <p className="text-sm text-zinc-500 dark:text-[#888] leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {eng.desc}
                 </p>
               </div>
@@ -171,11 +171,11 @@ export default function ServicesIndexPage() {
         <section aria-labelledby="how-i-work-heading" className="mb-16">
           <h2
             id="how-i-work-heading"
-            className="text-2xl font-bold mb-4 text-slate-900 dark:text-[#FCF7F2]"
+            className="text-2xl font-bold mb-4 text-foreground"
           >
             How I Work Best
           </h2>
-          <p className="text-zinc-600 dark:text-[#b0b0b0] leading-relaxed mb-6">
+          <p className="text-muted-foreground leading-relaxed mb-6">
             A little context on how I like to start, so we can get to the useful part faster:
           </p>
           <div className="space-y-5">
@@ -195,12 +195,12 @@ export default function ServicesIndexPage() {
             ].map((item) => (
               <div
                 key={item.title}
-                className="border-l-2 border-primary dark:border-[#FCF7F2]/20 pl-6"
+                className="border-l-2 border-primary pl-6"
               >
-                <h3 className="text-base font-bold mb-2 text-slate-900 dark:text-[#FCF7F2]">
+                <h3 className="text-base font-bold mb-2 text-foreground">
                   {item.title}
                 </h3>
-                <p className="text-zinc-600 dark:text-[#b0b0b0] leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed">
                   {item.body}
                 </p>
               </div>
@@ -208,20 +208,20 @@ export default function ServicesIndexPage() {
           </div>
         </section>
 
-        <div className="border-t border-zinc-200 dark:border-[#1a1a1a] pt-12 text-center">
-          <p className="text-zinc-500 dark:text-[#888] mb-2 text-sm">
+        <div className="border-t border-border pt-12 text-center">
+          <p className="text-muted-foreground mb-2 text-sm">
             Based in Nairobi, Kenya - available for remote and on-site engagements across East Africa and globally.
           </p>
-          <h2 className="text-2xl font-bold mb-4 text-slate-900 dark:text-[#FCF7F2]">
+          <h2 className="text-2xl font-bold mb-4 text-foreground">
             Not sure which of these you need?
           </h2>
-          <p className="text-zinc-600 dark:text-[#b0b0b0] mb-8 max-w-lg mx-auto">
+          <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
             Describe the problem rather than the solution. I&apos;ll come back with a clear read
             on scope, approach, and whether I&apos;m the right person for it.
           </p>
           <Link
             href="/#contact"
-            className="inline-flex min-h-12 items-center gap-2 border border-primary bg-primary px-6 py-3 font-bold text-base text-primary-foreground transition-colors hover:bg-transparent hover:text-primary dark:hover:text-[#FCF7F2]"
+            className="inline-flex min-h-12 items-center gap-2 border border-primary bg-primary px-6 py-3 font-bold text-base text-primary-foreground transition-colors hover:bg-transparent hover:text-primary"
           >
             Start the conversation <ArrowRight size={18} />
           </Link>

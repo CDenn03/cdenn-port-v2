@@ -3,8 +3,11 @@ import { PrivacyRequestForm } from "./PrivacyRequestForm";
 import { SubpageNav } from "@/src/app/components/layout/SubpageNav";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | CDenn",
+  title: "Privacy Policy",
   description: "How CDenn handles your personal information.",
+  alternates: {
+    canonical: "/privacy",
+  },
 };
 
 const sections = [
@@ -68,7 +71,7 @@ const sections = [
 
 export default function PrivacyPage() {
   return (
-    <main className="min-h-screen bg-[#FCF7F2] dark:bg-[#0a0a0a] text-slate-900 dark:text-[#FCF7F2]">
+    <main id="main" className="min-h-screen bg-background text-foreground">
       <SubpageNav backHref="/" backLabel="Back" />
 
       <div className="max-w-3xl mx-auto px-6 py-16 md:py-24">
@@ -76,7 +79,7 @@ export default function PrivacyPage() {
           <h1 className="text-4xl md:text-6xl font-bold tracking-[-0.03em] mb-4">
             Privacy Policy
           </h1>
-          <p className="text-lg text-zinc-600 dark:text-[#b0b0b0] leading-relaxed">
+          <p className="text-lg text-muted-foreground leading-relaxed">
             This site is a personal portfolio. I keep things simple - I only collect what you
             choose to share, and I use it only to respond to you.
           </p>
@@ -84,11 +87,11 @@ export default function PrivacyPage() {
 
         <div className="space-y-10">
           {sections.map((section) => (
-            <div key={section.title} className="border-t border-zinc-200 dark:border-[#1a1a1a] pt-8">
-              <h2 className="text-lg font-bold mb-3 text-slate-900 dark:text-[#FCF7F2]">
+            <div key={section.title} className="border-t border-border pt-8">
+              <h2 className="text-lg font-bold mb-3 text-foreground">
                 {section.title}
               </h2>
-              <p className="text-zinc-600 dark:text-[#b0b0b0] leading-relaxed mb-3">
+              <p className="text-muted-foreground leading-relaxed mb-3">
                 {section.content}
               </p>
               {section.list && (
@@ -96,16 +99,16 @@ export default function PrivacyPage() {
                   {section.list.map((item) => (
                     <li
                       key={item}
-                      className="text-zinc-600 dark:text-[#b0b0b0] flex gap-2 items-start"
+                      className="text-muted-foreground flex gap-2 items-start"
                     >
-                      <span className="text-primary dark:text-[#888888] mt-0.5 shrink-0">-</span>
+                      <span className="text-primary mt-0.5 shrink-0">-</span>
                       {item}
                     </li>
                   ))}
                 </ul>
               )}
               {section.after && (
-                <p className="text-zinc-600 dark:text-[#b0b0b0] leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed">
                   {section.after}
                 </p>
               )}
@@ -113,20 +116,20 @@ export default function PrivacyPage() {
           ))}
         </div>
 
-        <div className="mt-16 pt-8 border-t border-zinc-200 dark:border-[#1a1a1a]">
+        <div className="mt-16 pt-8 border-t border-border">
 
           <div className="mb-16">
-            <h2 className="text-2xl font-bold mb-2 text-slate-900 dark:text-[#FCF7F2]">
+            <h2 className="text-2xl font-bold mb-2 text-foreground">
               Submit a Privacy Request
             </h2>
-            <p className="text-zinc-600 dark:text-[#b0b0b0] mb-8">
+            <p className="text-muted-foreground mb-8">
               To exercise any of your rights under this policy, fill out the form below.
               I&apos;ll respond within 30 days.
             </p>
             <PrivacyRequestForm />
           </div>
 
-          <p className="text-sm text-zinc-400 dark:text-[#555555]">
+          <p className="text-sm text-ink-subtle">
             © {new Date().getFullYear()} CDenn. All rights reserved.
           </p>
         </div>

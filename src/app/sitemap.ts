@@ -11,6 +11,11 @@ import { solutions } from "@/src/app/data/portfolio";
  * When you add new routes (blog posts, service pages, etc.), add entries here.
  * The solution detail pages are generated dynamically from the portfolio data
  * so the sitemap always stays in sync without manual updates.
+ *
+ * `lastModified` is deliberately omitted. Stamping `new Date()` at build time
+ * told crawlers that every page changed on every deploy, which is false and
+ * devalues the signal. Set it per route only when a route has a real,
+ * known modification date.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   // Must match the canonical domain Vercel serves - www.cdenn.dev (naked redirects there).
@@ -22,49 +27,46 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: base,
-      lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1.0,
     },
     {
       url: `${base}/about`,
-      lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
       url: `${base}/solutions`,
-      lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${base}/services`,
-      lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
       url: `${base}/services/multi-tenant-saas`,
-      lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${base}/services/fintech-automation`,
-      lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${base}/services/offline-first-apps`,
-      lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
+      url: `${base}/writing`,
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
       url: `${base}/privacy`,
-      lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 0.2,
     },
@@ -72,7 +74,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const solutionRoutes: MetadataRoute.Sitemap = solutions.map((project) => ({
     url: `${base}/solutions/${project.slug}`,
-    lastModified: new Date(),
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));

@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
 export default function SolutionsPage() {
   return (
-    <main className="min-h-screen transition-colors duration-300 bg-[#FCF7F2] text-slate-900 dark:bg-[#0a0a0a] dark:text-[#FCF7F2]">
+    <main id="main" className="min-h-screen bg-canvas text-ink">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -50,16 +50,17 @@ export default function SolutionsPage() {
       <SubpageNav backHref="/" backLabel="Back" />
 
       <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
-          <div className="mb-12">
+          <div className="mb-10">
             <div className="flex items-baseline gap-3 border-t-2 border-primary pt-5 mb-4">
-              <h1 className="text-4xl md:text-6xl font-bold tracking-[-0.03em]">Solutions</h1>
-              <span className="text-sm font-medium text-zinc-400 dark:text-[#555]">
+              <h1 className="text-4xl md:text-6xl font-bold tracking-[-0.03em] text-ink">Solutions</h1>
+              <span className="text-sm font-semibold text-ink-subtle tabular-nums">
                 {solutions.length} projects
               </span>
             </div>
-            <p className="text-lg text-zinc-500 dark:text-[#888] max-w-2xl">
-              A look at the products and systems I&#39;ve built - the problem behind each one,
-              how I approached it, and what came out the other side.
+            <p className="max-w-2xl text-lg leading-8 text-ink-muted">
+              Every system I have built, with the constraint that shaped it. Each claim carries how
+              it is evidenced: built, tested, a design target, a demo deployment, or client work
+              under NDA.
             </p>
           </div>
 

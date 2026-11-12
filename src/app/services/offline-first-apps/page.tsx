@@ -49,7 +49,7 @@ const capabilities = [
   },
   {
     title: "Background Sync Queues",
-    body: "Mutations made offline are queued durably and replayed when connectivity returns, in order, exactly once. The queue survives app restarts and process death, because a field worker closing the app is not a reason to lose a morning's data entry.",
+    body: "Mutations made offline are queued durably and replayed in order when connectivity returns, with idempotency keys so a replay does not apply the same change twice. The queue is persisted rather than held in memory, because a field worker closing the app is not a reason to lose a morning's data entry.",
   },
   {
     title: "Conflict Resolution Strategies",
@@ -87,17 +87,17 @@ export default function OfflineFirstAppsPage() {
         }}
       />
 
-      <main className="min-h-screen bg-[#FCF7F2] text-slate-900 dark:bg-[#0a0a0a] dark:text-[#FCF7F2]">
+      <main id="main" className="min-h-screen bg-background text-foreground">
         <SubpageNav backHref="/services" backLabel="All services" />
 
         <div className="max-w-4xl mx-auto px-6 py-16 md:py-24">
 
           <div className="mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold tracking-[-0.03em] leading-[1.02] mb-6 text-slate-900 dark:text-[#FCF7F2]">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-[-0.03em] leading-[1.02] mb-6 text-foreground">
               Offline-First &amp; Field Application Development
             </h1>
 
-            <p className="text-xl text-zinc-600 dark:text-[#b0b0b0] leading-relaxed max-w-2xl">
+            <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl">
               I build applications that work fully without a network and reconcile cleanly when
               one returns - for field teams, rural operations, and anywhere a dropped connection
               cannot be allowed to cost a day&apos;s work.
@@ -107,7 +107,7 @@ export default function OfflineFirstAppsPage() {
           <section aria-labelledby="capabilities-heading" className="mb-16">
             <h2
               id="capabilities-heading"
-              className="text-2xl font-bold mb-8 text-slate-900 dark:text-[#FCF7F2]"
+              className="text-2xl font-bold mb-8 text-foreground"
             >
               Core Capabilities
             </h2>
@@ -116,12 +116,12 @@ export default function OfflineFirstAppsPage() {
               {capabilities.map((cap, i) => (
                 <div
                   key={cap.title}
-                  className="border-l-2 border-primary dark:border-[#FCF7F2]/20 pl-6"
+                  className="border-l-2 border-primary pl-6"
                 >
-                  <h3 className="text-lg font-bold mb-2 text-slate-900 dark:text-[#FCF7F2]">
+                  <h3 className="text-lg font-bold mb-2 text-foreground">
                     {i + 1}. {cap.title}
                   </h3>
-                  <p className="text-zinc-600 dark:text-[#b0b0b0] leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed">
                     {cap.body}
                   </p>
                 </div>
@@ -132,11 +132,11 @@ export default function OfflineFirstAppsPage() {
           <section aria-labelledby="why-heading" className="mb-16">
             <h2
               id="why-heading"
-              className="text-2xl font-bold mb-6 text-slate-900 dark:text-[#FCF7F2]"
+              className="text-2xl font-bold mb-6 text-foreground"
             >
               Why Offline-First Is Its Own Discipline
             </h2>
-            <p className="text-zinc-600 dark:text-[#b0b0b0] leading-relaxed mb-6">
+            <p className="text-muted-foreground leading-relaxed mb-6">
               Adding a cache to an online app does not make it offline-first. The difference is
               architectural: where the source of truth lives, what happens to a write that cannot
               reach the server, and who decides the outcome when two offline edits disagree.
@@ -145,10 +145,10 @@ export default function OfflineFirstAppsPage() {
             </p>
             <ul className="space-y-3">
               {whyItems.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-zinc-600 dark:text-[#b0b0b0]">
+                <li key={item} className="flex items-start gap-3 text-muted-foreground">
                   <CheckCircle
                     size={18}
-                    className="text-primary dark:text-[#FCF7F2] shrink-0 mt-0.5"
+                    className="text-primary shrink-0 mt-0.5"
                   />
                   <span>{item}</span>
                 </li>
@@ -159,12 +159,12 @@ export default function OfflineFirstAppsPage() {
           <section aria-labelledby="tech-heading" className="mb-16">
             <h2
               id="tech-heading"
-              className="text-2xl font-bold mb-6 text-slate-900 dark:text-[#FCF7F2]"
+              className="text-2xl font-bold mb-6 text-foreground"
             >
               Technologies &amp; Stack
             </h2>
-            <p className="text-zinc-600 dark:text-[#b0b0b0] leading-relaxed mb-6">
-              Production-proven across four offline-first applications I have built and maintain:
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              In use across four offline-first applications I have built and maintain:
             </p>
             <div className="flex flex-wrap gap-2">
               {[
@@ -182,7 +182,7 @@ export default function OfflineFirstAppsPage() {
               ].map((tech) => (
                 <span
                   key={tech}
-                  className="font-mono text-xs leading-6 text-zinc-600 dark:text-zinc-300"
+                  className="font-mono text-xs leading-6 text-muted-foreground"
                 >
                   {tech}
                 </span>
@@ -193,7 +193,7 @@ export default function OfflineFirstAppsPage() {
           <section aria-labelledby="proof-heading" className="mb-16">
             <h2
               id="proof-heading"
-              className="text-2xl font-bold mb-6 text-slate-900 dark:text-[#FCF7F2]"
+              className="text-2xl font-bold mb-6 text-foreground"
             >
               See It In Practice
             </h2>
@@ -223,16 +223,16 @@ export default function OfflineFirstAppsPage() {
                 <Link
                   key={proj.title}
                   href={proj.href}
-                  className="group border-t border-zinc-300 pt-5 dark:border-zinc-700 hover:border-zinc-300 dark:hover:border-[#2a2a2a] transition-colors"
+                  className="group border-t border-border pt-5 transition-colors"
                 >
-                  <h3 className="font-bold text-base mb-2 text-slate-900 dark:text-[#FCF7F2] flex items-center gap-2">
+                  <h3 className="font-bold text-base mb-2 text-foreground flex items-center gap-2">
                     {proj.title}
                     <ArrowRight
                       size={14}
-                      className="text-zinc-400 group-hover:translate-x-1 transition-transform shrink-0"
+                      className="text-ink-subtle group-hover:translate-x-1 transition-transform shrink-0"
                     />
                   </h3>
-                  <p className="text-sm text-zinc-500 dark:text-[#888] leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     {proj.desc}
                   </p>
                 </Link>
@@ -243,7 +243,7 @@ export default function OfflineFirstAppsPage() {
           <section aria-labelledby="engagement-heading" className="mb-16">
             <h2
               id="engagement-heading"
-              className="text-2xl font-bold mb-6 text-slate-900 dark:text-[#FCF7F2]"
+              className="text-2xl font-bold mb-6 text-foreground"
             >
               How We Can Work Together
             </h2>
@@ -264,12 +264,12 @@ export default function OfflineFirstAppsPage() {
               ].map((eng) => (
                 <div
                   key={eng.type}
-                  className="border-t border-zinc-300 pt-5 dark:border-zinc-700"
+                  className="border-t border-border pt-5"
                 >
-                  <h3 className="font-bold text-base mb-2 text-slate-900 dark:text-[#FCF7F2]">
+                  <h3 className="font-bold text-base mb-2 text-foreground">
                     {eng.type}
                   </h3>
-                  <p className="text-sm text-zinc-500 dark:text-[#888] leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     {eng.desc}
                   </p>
                 </div>
@@ -277,21 +277,21 @@ export default function OfflineFirstAppsPage() {
             </div>
           </section>
 
-          <div className="border-t border-zinc-200 dark:border-[#1a1a1a] pt-12 text-center">
-            <p className="text-zinc-500 dark:text-[#888] mb-2 text-sm">
+          <div className="border-t border-border pt-12 text-center">
+            <p className="text-muted-foreground mb-2 text-sm">
               Based in Nairobi, Kenya - available for remote and on-site engagements across East Africa and globally.
             </p>
-            <h2 className="text-2xl font-bold mb-4 text-slate-900 dark:text-[#FCF7F2]">
+            <h2 className="text-2xl font-bold mb-4 text-foreground">
               Does your app need to work where the network does not?
             </h2>
-            <p className="text-zinc-600 dark:text-[#b0b0b0] mb-8 max-w-lg mx-auto">
+            <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
               Tell me where your users are, what they need to do without a connection, and what
               cannot be allowed to go wrong when two of them sync at once. I&apos;ll come back
               with a concrete read on the approach.
             </p>
             <Link
               href="/#contact"
-              className="inline-flex min-h-12 items-center gap-2 border border-primary bg-primary px-6 py-3 font-bold text-base text-primary-foreground transition-colors hover:bg-transparent hover:text-primary dark:hover:text-[#FCF7F2]"
+              className="inline-flex min-h-12 items-center gap-2 border border-primary bg-primary px-6 py-3 font-bold text-base text-primary-foreground transition-colors hover:bg-transparent hover:text-primary"
             >
               Get in touch <ArrowRight size={18} />
             </Link>
