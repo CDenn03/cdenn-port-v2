@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
-export const alt = 'CDenn | Full-Stack Software Developer'
+export const alt = "CDenn | Dennis Ndung'u, Frontend Engineer"
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -80,7 +80,7 @@ export default async function Image() {
               display: 'flex',
             }}
           >
-            Full-stack engineer building fintech &amp; AI-powered products.
+            I build operational systems that keep working.
           </div>
 
           <div
