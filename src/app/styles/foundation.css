@@ -1,0 +1,156 @@
+/* ============================================================
+   Foundation: the rules that hold everywhere. Spacing, the reading
+   baseline, focus, motion and interaction affordances.
+
+   Nothing here is page-specific, and nothing here should be
+   overridden per page.
+   ============================================================ */
+
+@layer base {
+  :root {
+    /* A 4-point spacing scale. Every step is a multiple of 4px and
+       matches Tailwind's own spacing utilities, so `p-4` and
+       var(--space-4) are the same 16px. */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-24: 6rem;
+    --space-32: 8rem;
+
+    /* The minimum size of anything a finger has to hit. */
+    --target-min: 2.75rem;
+  }
+
+  * {
+    border-color: var(--line);
+  }
+
+  body {
+    background-color: var(--canvas);
+    color: var(--ink);
+    font-family: var(--font-stack-primary);
+    font-size: var(--text-body);
+    font-weight: 400;
+    line-height: var(--text-body--line-height);
+    -webkit-font-smoothing: antialiased;
+    text-size-adjust: 100%;
+    transition:
+      background-color var(--duration-slow) var(--ease-standard),
+      color var(--duration-slow) var(--ease-standard);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-stack-primary);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.15;
+    text-wrap: balance;
+  }
+
+  /* Keeps running text inside a comfortable measure of roughly
+     65 to 70 characters without every page having to say so. */
+  p {
+    max-width: 70ch;
+  }
+
+  code,
+  kbd,
+  pre,
+  samp {
+    font-family: var(--font-stack-mono);
+  }
+
+  /* Numbers that sit in a column line up. The primary face supplies
+     tabular figures, so the mono face is not needed for this. */
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Baseline interaction transition. Anything declaring its own
+     `transition-*` utility still wins; everything else gets a
+     smooth hover for free. */
+  a,
+  button,
+  summary,
+  label,
+  input,
+  select,
+  textarea,
+  [role="button"],
+  [tabindex]:not([tabindex="-1"]) {
+    transition-property: color, background-color, border-color,
+      text-decoration-color, fill, stroke, opacity, box-shadow, transform;
+    transition-duration: var(--duration-base);
+    transition-timing-function: var(--ease-standard);
+  }
+
+  /* One focus treatment for the whole site. In light mode this is
+     the emerald primary; in dark mode the tokens swap it to yellow,
+     which is the only place the accent may be a stroke. */
+  :focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background-color: var(--primary-tint);
+    color: var(--on-primary-tint);
+  }
+
+  /* Tailwind v4 ships no default pointer cursor, so this is what
+     gives interactive elements one. Anything genuinely clickable
+     belongs in this list. */
+  a[href],
+  button:not(:disabled),
+  select:not(:disabled),
+  summary,
+  label[for],
+  [role="button"]:not([aria-disabled="true"]),
+  [role="link"]:not([aria-disabled="true"]),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled),
+  input[type="submit"]:not(:disabled),
+  input[type="file"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  select:disabled,
+  [aria-disabled="true"] {
+    cursor: not-allowed;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Reduced motion removes travel and duration but never content.
+     Nothing on the site may depend on an animation to become
+     readable. */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}

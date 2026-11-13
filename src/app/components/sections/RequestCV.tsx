@@ -1,16 +1,22 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { CheckCircle, AlertCircle, Loader2 } from "lucide-react";
+import { HONEYPOT_FIELD } from "@/src/app/data/contact-options";
 
 type Status = "idle" | "loading" | "success" | "error";
 
 const inputClass =
-  "w-full border px-4 py-3 text-base focus:outline-none focus:border-primary dark:focus:border-[#FCF7F2] transition-colors bg-white border-zinc-300 text-slate-900 placeholder-zinc-400 dark:bg-[#1a1a1a] dark:border-[#2a2a2a] dark:text-[#FCF7F2] dark:placeholder-[#555555]";
+  "w-full border px-4 py-3 text-base focus:border-primary transition-colors bg-surface border-line-strong text-ink placeholder:text-ink-subtle";
 
 export function RequestCV() {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const successRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (status === "success") successRef.current?.focus();
+  }, [status]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -23,6 +29,7 @@ export function RequestCV() {
       email: (form.elements.namedItem("email") as HTMLInputElement).value,
       role: (form.elements.namedItem("role") as HTMLInputElement).value,
       company: (form.elements.namedItem("company") as HTMLInputElement).value,
+      [HONEYPOT_FIELD]: (form.elements.namedItem(HONEYPOT_FIELD) as HTMLInputElement).value,
     };
 
     try {
@@ -47,15 +54,19 @@ export function RequestCV() {
 
   if (status === "success") {
     return (
-      <div className="p-10 flex flex-col items-center justify-center text-center gap-4 bg-white border border-zinc-200 dark:bg-[#1a1a1a] dark:border-[#2a2a2a] min-h-[320px]">
-        <CheckCircle size={40} className="text-primary dark:text-[#FCF7F2]" />
-        <h3 className="text-xl font-bold text-slate-900 dark:text-[#FCF7F2]">Request received!</h3>
-        <p className="text-zinc-500 dark:text-[#888888]">
+      <div
+        ref={successRef}
+        tabIndex={-1}
+        className="p-10 flex flex-col items-center justify-center text-center gap-4 bg-surface border border-line min-h-[320px]"
+      >
+        <CheckCircle size={40} aria-hidden="true" className="text-primary" />
+        <h3 className="text-xl font-bold text-ink">Request received!</h3>
+        <p className="text-ink-muted">
           I&apos;ll send my CV to your email within 24 hours.
         </p>
         <button
           onClick={() => setStatus("idle")}
-          className="mt-2 text-sm font-medium text-primary dark:text-[#FCF7F2] hover:underline underline-offset-4"
+          className="mt-2 text-sm font-medium text-primary hover:underline underline-offset-4"
         >
           Submit another request
         </button>
@@ -65,19 +76,19 @@ export function RequestCV() {
 
   return (
     <form
-      className="p-8 space-y-5 bg-white border border-zinc-200 dark:bg-[#1a1a1a] dark:border-[#2a2a2a]"
+      className="p-8 space-y-5 bg-surface border border-line"
       onSubmit={handleSubmit}
     >
       {/* Header inside the card */}
       <div className="mb-1">
-        <h2 className="text-xl font-bold text-slate-900 dark:text-[#FCF7F2]">Request CV</h2>
-        <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
+        <h2 className="text-xl font-bold text-ink">Request CV</h2>
+        <p className="text-sm text-ink-muted mt-1">
           Leave your details and I&apos;ll send my CV within 24 hours.
         </p>
       </div>
       <div className="grid sm:grid-cols-2 gap-5">
         <div>
-          <label htmlFor="cv-name" className="block text-sm font-medium mb-2 text-zinc-600 dark:text-[#b0b0b0]">
+          <label htmlFor="cv-name" className="block text-sm font-medium mb-2 text-ink-muted">
             Name
           </label>
           <input
@@ -90,7 +101,7 @@ export function RequestCV() {
           />
         </div>
         <div>
-          <label htmlFor="cv-email" className="block text-sm font-medium mb-2 text-zinc-600 dark:text-[#b0b0b0]">
+          <label htmlFor="cv-email" className="block text-sm font-medium mb-2 text-ink-muted">
             Email
           </label>
           <input
@@ -106,8 +117,8 @@ export function RequestCV() {
 
       <div className="grid sm:grid-cols-2 gap-5">
         <div>
-          <label htmlFor="cv-role" className="block text-sm font-medium mb-2 text-zinc-600 dark:text-[#b0b0b0]">
-            Role <span className="text-zinc-400 dark:text-[#555555] font-normal">(optional)</span>
+          <label htmlFor="cv-role" className="block text-sm font-medium mb-2 text-ink-muted">
+            Role <span className="text-ink-subtle font-normal">(optional)</span>
           </label>
           <input
             type="text"
@@ -118,8 +129,8 @@ export function RequestCV() {
           />
         </div>
         <div>
-          <label htmlFor="cv-company" className="block text-sm font-medium mb-2 text-zinc-600 dark:text-[#b0b0b0]">
-            Company <span className="text-zinc-400 dark:text-[#555555] font-normal">(optional)</span>
+          <label htmlFor="cv-company" className="block text-sm font-medium mb-2 text-ink-muted">
+            Company <span className="text-ink-subtle font-normal">(optional)</span>
           </label>
           <input
             type="text"
@@ -131,19 +142,27 @@ export function RequestCV() {
         </div>
       </div>
 
+      {/* Hidden from people and assistive technology; a bot that fills it is
+          accepted and discarded server-side. */}
+      <div className="hidden" aria-hidden="true">
+        <label htmlFor="cv-bot-field">Leave this field empty</label>
+        <input type="text" id="cv-bot-field" name={HONEYPOT_FIELD} tabIndex={-1} autoComplete="off" />
+      </div>
+
       {status === "error" && (
-        <div className="flex items-center gap-2 text-sm text-red-500">
-          <AlertCircle size={16} /> {errorMsg}
+        <div role="alert" className="flex items-center gap-2 text-sm text-danger">
+          <AlertCircle size={16} aria-hidden="true" /> {errorMsg}
         </div>
       )}
 
       <button
         type="submit"
         disabled={status === "loading"}
-        className="w-full bg-primary text-primary-foreground text-base font-bold py-4 hover:opacity-90 transition-all cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+        aria-busy={status === "loading"}
+        className="w-full bg-primary text-on-primary text-base font-bold py-4 hover:opacity-90 transition-all cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
       >
         {status === "loading"
-          ? <><Loader2 size={18} className="animate-spin" /> Sending request...</>
+          ? <><Loader2 size={18} aria-hidden="true" className="animate-spin" /> Sending request...</>
           : "Request CV"
         }
       </button>

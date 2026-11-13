@@ -4,7 +4,8 @@ import { sameAsUrls } from "@/src/app/data/social";
 import { SubpageNav } from "@/src/app/components/layout/SubpageNav";
 
 export const metadata: Metadata = {
-  title: "About CDenn | Full-Stack Software Developer",
+  // The root layout template appends " | CDenn", so the brand is omitted here.
+  title: "About Dennis Ndung'u, Full-Stack Software Developer",
   description:
     "Learn how Dennis Ndung'u, a Nairobi-based full-stack developer, builds reliable Next.js products, fintech systems, and AI-integrated tools.",
   alternates: {
@@ -53,7 +54,7 @@ export default function AboutPage() {
           ),
         }}
       />
-      <main className="min-h-screen transition-colors duration-300 bg-[#FCF7F2] text-slate-900 dark:bg-[#0a0a0a] dark:text-[#FCF7F2]">
+      <main id="main" className="min-h-screen transition-colors duration-300 bg-background text-foreground">
         <SubpageNav backHref="/" backLabel="Back" />
 
         <div className="mx-auto max-w-3xl px-6 py-16 sm:py-24">
@@ -62,13 +63,13 @@ export default function AboutPage() {
             <h1 className="text-4xl md:text-6xl font-bold tracking-[-0.03em] mb-4">
               About <span className="text-primary">CDenn</span>
             </h1>
-            <p className="text-lg text-zinc-500 dark:text-[#888] max-w-2xl">
+            <p className="text-lg text-muted-foreground max-w-2xl">
               The person behind the brand
             </p>
           </header>
 
           {/* Content */}
-          <article className="prose prose-neutral dark:prose-invert max-w-none">
+          <article className="max-w-none">
             <section className="mb-12">
               <h2>Who is CDenn?</h2>
               <p>
@@ -106,9 +107,9 @@ export default function AboutPage() {
                   reconciliation systems for East African markets
                 </li>
                 <li>
-                  <strong>AI-Integrated Applications</strong> - Leveraging
-                  OpenAI and other AI APIs to build intelligent features like
-                  the Email Refiner Chrome extension
+                  <strong>AI-Integrated Applications</strong> - Using OpenAI
+                  and other AI APIs to build features like the Email Refiner
+                  Chrome extension
                 </li>
                 <li>
                   <strong>Offline-First Applications</strong> - Progressive web
@@ -117,7 +118,7 @@ export default function AboutPage() {
                 </li>
                 <li>
                   <strong>MVP Development</strong> - Helping startups go from
-                  idea to production-ready product quickly and efficiently
+                  idea to a working, deployed product quickly
                 </li>
               </ul>
             </section>
@@ -126,10 +127,10 @@ export default function AboutPage() {
               <h2>Technical Expertise</h2>
               <p>
                 With a strong foundation in TypeScript and modern JavaScript,
-                CDenn delivers production-grade code across the full stack:
+                CDenn works across the full stack:
               </p>
-              <div className="grid grid-cols-2 gap-4 not-prose my-6">
-                <div className="border-t border-zinc-300 pt-4 dark:border-zinc-700">
+              <div className="grid grid-cols-2 gap-4 my-6">
+                <div className="border-t border-border pt-4">
                   <h3 className="font-semibold text-sm text-muted-foreground mb-2">
                     Frontend
                   </h3>
@@ -137,7 +138,7 @@ export default function AboutPage() {
                     React, Next.js, TypeScript, TailwindCSS, Radix UI
                   </p>
                 </div>
-                <div className="border-t border-zinc-300 pt-4 dark:border-zinc-700">
+                <div className="border-t border-border pt-4">
                   <h3 className="font-semibold text-sm text-muted-foreground mb-2">
                     Backend
                   </h3>
@@ -145,13 +146,13 @@ export default function AboutPage() {
                     Node.js, Prisma, PostgreSQL, REST APIs, Webhooks
                   </p>
                 </div>
-                <div className="border-t border-zinc-300 pt-4 dark:border-zinc-700">
+                <div className="border-t border-border pt-4">
                   <h3 className="font-semibold text-sm text-muted-foreground mb-2">
                     Mobile
                   </h3>
                   <p className="text-sm">Flutter, Dart, Riverpod, SQLite</p>
                 </div>
-                <div className="border-t border-zinc-300 pt-4 dark:border-zinc-700">
+                <div className="border-t border-border pt-4">
                   <h3 className="font-semibold text-sm text-muted-foreground mb-2">
                     Tools
                   </h3>

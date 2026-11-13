@@ -1,53 +1,55 @@
-import { Experience, Solution, Testimonial, Writing } from "@/src/app/types";
+import { Experience, Solution } from "@/src/app/types";
 
 export const experiences: Experience[] = [
   {
     company: "E&M Technologies",
     role: "Frontend Engineer",
-    period: "Jan 2025 - Present",
+    period: "January 2025 - Present",
     desc: [
-      "Led frontend architecture and development of the core product using React and Next.js, improving page load performance by 40%",
-      "Designed and implemented a scalable design system adopted across 3+ product teams, ensuring UI consistency and faster feature delivery",
-      "Collaborated with backend and product teams to translate business requirements into performant, user-centric interfaces",
-      "Improved maintainability of legacy code by introducing TypeScript patterns and reusable component structures",
+      {
+        lead: "Led frontend architecture",
+        rest: "for the core product using React and Next.js, owning architectural decisions and establishing patterns that support consistent product development.",
+      },
+      {
+        lead: "Designed and built a shared design system,",
+        rest: "adopted across five teams approximately one year ago, giving teams a consistent component foundation for new interfaces.",
+      },
+      {
+        lead: "Built a self-service customer portal with chat,",
+        rest: "extending how customers interact with the platform and access support.",
+      },
+      {
+        lead: "Designed an approval model",
+        rest: "supporting maker-checker workflows, edit requests, multi-step approvals and change history, giving complex business decisions a structured and traceable process.",
+      },
+      {
+        lead: "Established Docker deployment foundations",
+        rest: "for a monorepo combining frontend and backend applications that previously relied on JAR and dist deployments. The DevOps team subsequently implemented the deployment pipeline using this foundation.",
+      },
+      {
+        lead: "Drove requirements with backend and product teams,",
+        rest: "translating business rules into interfaces and resolving ambiguity before implementation.",
+      },
+      {
+        lead: "Introduced TypeScript patterns and reusable component structures",
+        rest: "into legacy code, making the codebase easier to understand and safer to extend.",
+      },
+      {
+        lead: "Helped shift frontend decision-making towards a stronger UX focus,",
+        rest: "encouraging implementation choices to account for how people actually use the product.",
+      },
     ],
-    tech: "React, Next.js, TypeScript, TailwindCSS, REST APIs",
+    tech: "React, Next.js, TypeScript, TailwindCSS, REST APIs, Docker",
+    note: "CDenn is my independent engineering practice. I work at E&M Technologies and take commissioned client work under CDenn alongside it.",
   },
 ];
 
 export const solutions: Solution[] = [
-  // {
-  //   slug: "insuremaster",
-  //   title: "InsureMaster - Bancassurance Platform",
-  //   summary:
-  //     "Multi-tenant bancassurance SaaS for Kenyan banks - managing policies, claims, and compliance reporting in one place.",
-  //   description:
-  //     "A multi-tenant SaaS platform for managing insurance policy lifecycles, from onboarding to claims and reporting.",
-  //   story:
-  //     "Insurance distribution in emerging markets is plagued by paper-heavy processes, slow policy issuance, and disconnected systems between banks and insurers. InsureMaster was built to bridge that gap - a single platform that lets bancassurance teams onboard customers, issue policies, process claims, and generate compliance reports, all without leaving their workflow. I led the frontend architecture from the ground up, designing a component system that could serve multiple tenants with different branding while sharing a unified codebase.",
-  //   challenge:
-  //     "Built to support multi-tenant architecture with secure role-based access and high-performance financial workflows at scale.",
-  //   solution:
-  //     "Designed a theme-aware component library with tenant-scoped configs, JWT-based role permissions, and a virtual-scroll data grid that handled 50k+ policy records without UI degradation.",
-  //   results: [
-  //     { label: "LCP", value: "2.1s" },
-  //     { label: "Concurrent Users", value: "10k+" },
-  //     { label: "Uptime", value: "99.9%" },
-  //   ],
-  //   tags: ["Next.js", "TypeScript", "TailwindCSS", "Radix UI", "JWT"],
-  //   image: "/assets/project-shots/InsureMaster.png",
-  //   layout: "right",
-  //   featured: true,
-  //   year: "2025",
-  //   role: "Frontend Lead",
-  //   duration: "8 months",
-  //   category: "SaaS / Fintech",
-  // },
   {
     slug: "bancassurance-platform",
     title: "Bancassurance Platform",
     summary:
-      "Multi-tenant SaaS for a financial services provider - policy lifecycle management, claims processing, and compliance reporting. Code under NDA.",
+      "Multi-tenant SaaS for a financial services provider - policy lifecycle management, claims processing, and compliance reporting.",
     description:
       "Multi-tenant SaaS platform for managing insurance policy lifecycles across bancassurance channels. Built for a financial services provider operating across multiple bank partnerships.",
     story:
@@ -56,11 +58,10 @@ export const solutions: Solution[] = [
       "Multi-tenant architecture with strict data isolation between bank tenants, role-based access that reflects real approval hierarchies, and auditable financial workflows - without forking the codebase per tenant.",
     solution:
       "Designed a theme-aware component library with tenant-scoped configs, JWT-based role permissions enforced at the tenant boundary, action-level audit logging, and a maker-checker approval workflow spanning 7 entity types. Session security included OTP-based 2FA and silent token refresh with cookie rotation.",
-    results: [
-      { label: "Architecture", value: "Multi-tenant RBAC" },
-      { label: "Approval Workflow", value: "Maker-checker, 7 entities" },
-      { label: "Auditability", value: "Action-level logging" },
-      { label: "Delivery", value: "8 months" },
+    evidence: [
+      { label: "Architecture", value: "Multi-tenant RBAC with tenant-scoped JWTs", kind: "confidential" },
+      { label: "Approval workflow", value: "Maker-checker across 7 entity types", kind: "confidential" },
+      { label: "Auditability", value: "Action-level logging", kind: "confidential" },
     ],
     tags: [
       "Next.js",
@@ -71,55 +72,46 @@ export const solutions: Solution[] = [
       "Multi-tenant",
       "Fintech",
     ],
+    /*
+     * Stays undefined unless the client clears something for publication.
+     * The cover states "Interface not shown. Client work under NDA.", which is
+     * a settled answer rather than a promise, so nothing here breaks if an
+     * image never arrives. If a redacted screenshot or an architecture diagram
+     * is ever cleared, set `image` and the cover is replaced automatically.
+     */
     image: undefined,
     layout: "right",
-    featured: false,
+    featured: true,
     nda: true,
     year: "2025",
+    attribution: "E&M Technologies client work",
+    home: {
+      attribution: "SaaS / Fintech · E&M Technologies client work · Under NDA",
+      intro: [
+        "At E&M Technologies, I worked as Frontend Lead on a multi-tenant platform for a financial services provider selling insurance through several bank partnerships.",
+      ],
+      problem: [
+        "The provider was selling through banks that compete with each other. Each one needed its own branding, products and compliance rules, with certainty that its customers would never be visible to a rival.",
+        "The obvious route was a separate copy of the system for each bank. That multiplies the maintenance bill, and the copies eventually drift apart.",
+      ],
+      value: [
+        "One codebase, with partner boundaries enforced in the architecture rather than remembered by whoever writes the next query. That makes onboarding a new bank a configuration exercise instead of a separate release, while keeping the record of decisions available when finance or compliance needs it.",
+      ],
+      built: [
+        ["Multi-tenant RBAC with tenant-scoped JWTs", "A new partner is configured rather than forked"],
+        ["Maker-checker approvals across seven entity types", "Decisions have a defined review process before money or policies move"],
+        ["Action-level audit logging", "Who did what, to which record, can be established without reconstructing events from application logs"],
+      ],
+      proves:
+        "I can translate a complex partner organisation into a permission model, lead frontend architecture around those requirements and build interfaces that reflect how the business actually operates.",
+      note: "Code under NDA; architecture described, not shown.",
+      bridge:
+        "The next big build took the same discipline somewhere very different: enterprise-grade reliability demanded by an organisation with neither an enterprise budget nor an ops team.",
+      proofLine: "Partner isolation, staged approvals, auditable decisions",
+    },
     role: "Frontend Lead",
     duration: "8 months",
     category: "SaaS / Fintech",
-  },
-  {
-    slug: "warehouselens",
-    title: "WarehouseLens",
-    summary:
-      "Production-deployed warehouse operations platform with illustrative data - a natural-language copilot, demand forecasting, and warehouse-scoped RBAC. Built solo.",
-    description:
-      "A production-deployed, multi-tenant warehouse operations platform covering inventory, procurement, and outbound logistics. The current deployment uses illustrative data rather than active customer operations, with a Next.js BFF over a FastAPI backend, a natural-language copilot, Prophet/XGBoost demand forecasting, and warehouse-scoped permissions.",
-    story:
-      "Warehouse teams often need inventory, supplier performance, and outbound status brought into one operational view. WarehouseLens is a production-deployed reference implementation that demonstrates this model with illustrative data, not active customer operations. Its core trust constraint is that the planner never generates SQL: it selects one approved tool, that tool runs a fixed parameterized query, and a second model call turns the structured result into prose. The platform includes a two-level identity model, 6 roles across 21 permissions with warehouse-scope enforcement, and a background worker that keeps aggregation and reservation recompute off the request path.",
-    challenge:
-      "Letting a language model answer operational questions without ever letting it fabricate a figure or read across a tenant or warehouse boundary - while keeping a write-heavy API responsive and demand forecasts honest enough to act on.",
-    solution:
-      "Built a LangGraph plan/execute/synthesize graph where the planner only ever picks a tool, never writes a query, and permission checks run inside the agent so an out-of-scope question is refused rather than answered. Paired it with a Next.js BFF that keeps tokens out of client JS, Keycloak JWTs verified against a cached JWKS endpoint, a Prophet and XGBoost forecasting layer validated by a rolling-fold backtest harness, and a background worker for asynchronous aggregation.",
-    results: [
-      { label: "Access Control", value: "6 roles / 21 permissions" },
-      { label: "Copilot", value: "Tool-routing, no generated SQL" },
-      { label: "Forecasting", value: "Prophet + XGBoost, backtested" },
-      { label: "Test Suite", value: "155 tests + eval harness" },
-    ],
-    tags: [
-      "Next.js",
-      "TypeScript",
-      "FastAPI",
-      "Python",
-      "PostgreSQL",
-      "SQLAlchemy",
-      "Keycloak",
-      "LangGraph",
-      "Prophet",
-      "XGBoost",
-      "Docker",
-    ],
-    image: undefined,
-    websiteUrl: "https://warehouselens.cdenn.dev",
-    featured: false,
-    ongoing: true,
-    year: "2026",
-    role: "Solo Developer",
-    duration: "Ongoing",
-    category: "SaaS / Logistics / AI",
   },
   {
     slug: "opsis",
@@ -129,16 +121,16 @@ export const solutions: Solution[] = [
     description:
       "A self-hosted, single-organization platform that monitors and controls a church's live production stack. A multi-service system splitting a Next.js frontend/BFF, an always-on Rust control core, and live OBS integration over WebSocket.",
     story:
-      "Church media teams run live production stacks with little visibility into what's actually happening and no safe, central way to control it. Opsis was built as a self-hosted platform that gives one organization production-grade visibility and control over that stack. The architecture deliberately splits responsibilities: a Next.js frontend doubles as a BFF and issues auth, while an always-on Rust core handles production control, talks to OBS, and runs a WebSocket hub. A shared JWT contract lets both services verify tokens independently, and the whole stack ships as a Docker Compose deployment that applies migrations and seeds a first operator on start.",
+      "Church media teams run live production stacks with little visibility into what's actually happening and no safe, central way to control it. Opsis was built as a self-hosted platform that gives one organisation real visibility and safe control over that stack. The architecture deliberately splits responsibilities: a Next.js frontend doubles as a BFF and issues auth, while an always-on Rust core handles production control, talks to OBS, and runs a WebSocket hub. A shared JWT contract lets both services verify tokens independently, and the whole stack ships as a Docker Compose deployment that applies migrations and seeds a first operator on start.",
     challenge:
       "Designing a multi-service system where a Rust control core and a Next.js BFF each verify auth independently against a shared JWT contract, hold an always-on connection to OBS, and run as a single-command self-hosted deployment within a tight resource budget.",
     solution:
       "Built a Next.js BFF that issues auth and a Rust core that enforces it independently against a shared JWT verification spec, a WebSocket hub for live OBS control, and a Docker Compose deployment that applies migrations and seeds the first operator on first run - targeting under 200MB RAM and 5% idle CPU for the core.",
-    results: [
-      { label: "Services", value: "Next.js BFF + Rust core" },
-      { label: "Live Control", value: "OBS over WebSocket" },
-      { label: "Core Footprint", value: "<200MB / <5% CPU" },
-      { label: "Deploy", value: "docker compose up" },
+    evidence: [
+      { label: "Services", value: "Next.js BFF and an always-on Rust core", kind: "capability" },
+      { label: "Live control", value: "OBS over WebSocket", kind: "capability" },
+      { label: "Core footprint", value: "Under 200MB RAM and 5% idle CPU", kind: "target" },
+      { label: "Deploy", value: "docker compose up", kind: "capability" },
     ],
     tags: [
       "Next.js",
@@ -156,9 +148,108 @@ export const solutions: Solution[] = [
     featured: true,
     ongoing: true,
     year: "2026",
+    attribution: "Independent CDenn engagement, commissioned by two clients",
+    home: {
+      attribution: "Media Tech / Self-Hosted · Independent CDenn work · Commissioned by two clients · In progress",
+      intro: [
+        "A self-hosted platform that monitors and controls a church's live-production stack. My first full end-to-end system: I owned the authentication contract, both services, the deployment and the hardware it runs on.",
+      ],
+      problem: [
+        "A volunteer team runs a live service every week. When the stream drops mid-service, the remote congregation is simply gone, and nobody in the room can diagnose it while the service is still running.",
+        "Commercial tooling assumes an operations team and a budget these organisations do not have.",
+      ],
+      value: [
+        "Put the production stack behind one screen a volunteer can understand, and make it affordable to run on hardware already in the building.",
+        "The objective is reliable live production without the cost of hiring a dedicated operations team.",
+      ],
+      built: [
+        ["Next.js frontend and BFF over an always-on Rust control core", "Each service verifies authentication independently against a shared contract"],
+        ["Live OBS integration over WebSocket", "Operators can control production rather than just watch it fail"],
+        ["Target: under 200 MB RAM and 5% idle CPU", "Designed to run on hardware the organisation already owns"],
+        ["Docker Compose deployment", "Repeatable deployment and handover without requiring me to be on call"],
+      ],
+      proves:
+        "I can take a system from an authentication contract through two languages, live hardware integration and deployment, while designing around a resource budget defined before implementation.",
+      bridge: "Most recently, I've taken the same approach (find the gap, map the value) into AI-assisted operations.",
+      proofLine: "Rust control core, live OBS control, self-hosted",
+    },
     role: "Full-Stack Developer",
     duration: "Ongoing",
     category: "Media Tech / Self-Hosted",
+  },
+  {
+    slug: "warehouselens",
+    title: "WarehouseLens",
+    summary:
+      "A deployed warehouse operations platform running illustrative data - a natural-language copilot, demand forecasting, and warehouse-scoped RBAC. Built solo.",
+    description:
+      "A deployed, multi-tenant warehouse operations platform covering inventory, procurement, and outbound logistics. The current deployment uses illustrative data rather than active customer operations, with a Next.js BFF over a FastAPI backend, a natural-language copilot, Prophet/XGBoost demand forecasting, and warehouse-scoped permissions.",
+    story:
+      "Warehouse teams often need inventory, supplier performance, and outbound status brought into one operational view. WarehouseLens is a deployed reference implementation that demonstrates this model with illustrative data rather than active customer operations. The rule the whole design rests on is that the planner never generates SQL: it selects one approved tool, that tool runs a fixed parameterized query, and a second model call turns the structured result into prose. The platform includes a two-level identity model, 6 roles across 21 permissions with warehouse-scope enforcement, and a background worker that keeps aggregation and reservation recompute off the request path.",
+    challenge:
+      "Letting a language model answer operational questions without writing its own queries or reading across a tenant or warehouse boundary, while keeping a write-heavy API responsive and the forecasts worth acting on.",
+    solution:
+      "Built a LangGraph plan/execute/synthesize graph where the planner only ever picks a tool, never writes a query, and permission checks run inside the agent so an out-of-scope question is refused rather than answered. Paired it with a Next.js BFF that keeps tokens out of client JS, Keycloak JWTs verified against a cached JWKS endpoint, a Prophet and XGBoost forecasting layer validated by a rolling-fold backtest harness, and a background worker for asynchronous aggregation.",
+    evidence: [
+      { label: "Access control", value: "6 roles, 21 permissions, warehouse-scoped", kind: "capability" },
+      { label: "Copilot", value: "Tool routing; the planner writes no SQL", kind: "capability" },
+      { label: "Forecasting", value: "Prophet and XGBoost, rolling-fold backtest", kind: "capability" },
+      { label: "Test suite", value: "155 tests and an evaluation harness", kind: "test" },
+      { label: "Deployment", value: "Illustrative data, not customer operations", kind: "demo" },
+    ],
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "FastAPI",
+      "Python",
+      "PostgreSQL",
+      "SQLAlchemy",
+      "Keycloak",
+      "LangGraph",
+      "Prophet",
+      "XGBoost",
+      "Docker",
+    ],
+    /*
+     * Pending, not restricted: this one can show everything. Drop a capture of
+     * warehouselens.cdenn.dev into /public/assets/project-shots and set `image`
+     * to its path; the placeholder cover disappears on its own. `screenshots`
+     * below it takes a captioned set for the case-study page.
+     */
+    image: undefined,
+    websiteUrl: "https://warehouselens.cdenn.dev",
+    featured: true,
+    ongoing: true,
+    year: "2026",
+    attribution: "Personal project, illustrative data",
+    home: {
+      attribution: "SaaS / Logistics / AI · Personal project · Deployed with illustrative data",
+      intro: [
+        "The most recent application of the same discipline: a multi-tenant warehouse operations platform covering inventory, procurement and outbound logistics.",
+        "This is a self-initiated product project, deployed and reachable, running illustrative data rather than a customer's live operations.",
+      ],
+      problem: [
+        "A warehouse manager who needs to know which supplier is slipping or what to reorder this week often has to ask an analyst and wait. By the time the report arrives, the decision may already have been made on instinct.",
+        "The tempting fix, letting a language model query the warehouse directly, trades that delay for a worse risk: answers nobody can audit, drawn from data the asker was never cleared to see.",
+      ],
+      value: [
+        "Natural-language answers backed by approved tools rather than model-generated queries, with permissions checked inside the agent. An out-of-scope question is refused rather than answered.",
+        "The goal is to make operational decisions easier to investigate without opening up unrestricted access to warehouse data.",
+      ],
+      built: [
+        ["Natural-language copilot with tool routing; the planner writes no SQL", "Answers trace to approved, parameterised queries"],
+        ["Six roles across 21 warehouse-scoped permissions", "Questions outside someone's remit are refused"],
+        ["Prophet and XGBoost forecasting with rolling-fold backtesting", "Forecasts are evaluated against held-out history before being presented"],
+        ["Next.js BFF over FastAPI with a background aggregation worker", "Tokens stay out of client JavaScript; data processing stays separate from interactive requests"],
+      ],
+      status: "Deployed and reachable, running illustrative data rather than customer operations.",
+      proves:
+        "I can put a language model inside a permission system rather than beside it, and validate a forecast before presenting it as one.",
+      proofLine: "Permission-aware copilot, validated forecasting",
+    },
+    role: "Solo Developer",
+    duration: "Ongoing",
+    category: "SaaS / Logistics / AI",
   },
   {
     slug: "steward",
@@ -173,10 +264,10 @@ export const solutions: Solution[] = [
       "Encoding a real-world financial approval workflow with role-scoped permissions - draft, review, and sign-off stages plus receipt and disbursement tracking - into a maintainable, auditable system.",
     solution:
       "Built a staged approval pipeline (Draft → Submitted → Finance Review → Chair Approval → Approved, with a Needs-Changes return path) on Next.js and Prisma/PostgreSQL, with a fine-grained role-based permission layer, Auth.js authentication, and Cloudflare R2 for receipt uploads.",
-    results: [
-      { label: "Approval Stages", value: "5-stage pipeline" },
-      { label: "Access Control", value: "Role-based permissions" },
-      { label: "Receipts", value: "R2-backed uploads" },
+    evidence: [
+      { label: "Approval pipeline", value: "5 stages with a return path to draft", kind: "capability" },
+      { label: "Access control", value: "Role-scoped permissions", kind: "capability" },
+      { label: "Receipts", value: "Uploads stored in Cloudflare R2", kind: "capability" },
     ],
     tags: [
       "Next.js 16",
@@ -206,13 +297,13 @@ export const solutions: Solution[] = [
     story:
       "Most AI writing tools live outside the browser - users copy their draft, visit a tool, paste, rewrite, and copy back. That friction kills adoption. Email Refiner injected itself directly into Gmail and Zimbra's compose windows, adding a floating toolbar that rewrote tone (formal, friendly, concise) in under a second without leaving the editor. I built the injection layer with MutationObserver to handle Gmail's dynamic DOM, and the extension's content script communicated with a background worker to keep API calls off the main thread.",
     challenge:
-      "Integrating seamlessly into third-party email clients while maintaining performance, security, and a smooth user experience within dynamic DOM environments.",
+      "Integrating into third-party email clients while holding up against a DOM those clients rewrite underneath you, without leaking styles or blocking the compose window.",
     solution:
       "Used MutationObserver to detect compose windows across both clients, isolated the React UI in a shadow DOM to prevent style conflicts, and offloaded OpenAI calls to a background service worker.",
-    results: [
-      { label: "Editing Time", value: "-40%" },
-      { label: "Supported Clients", value: "2" },
-      { label: "Response Time", value: "<1s" },
+    evidence: [
+      { label: "Supported clients", value: "Gmail and Zimbra compose windows", kind: "capability" },
+      { label: "Injection", value: "MutationObserver with a shadow-DOM UI", kind: "capability" },
+      { label: "Tone options", value: "Formal, friendly, concise", kind: "capability" },
     ],
     tags: [
       "React",
@@ -223,7 +314,7 @@ export const solutions: Solution[] = [
     ],
     image: "/assets/project-shots/Email.png",
     layout: "left",
-    featured: true,
+    featured: false,
     websiteUrl: "https://refine-mail-web.vercel.app/",
     codeUrl: "https://github.com/CDenn03/RefineMailWeb",
     openSource: true,
@@ -245,10 +336,10 @@ export const solutions: Solution[] = [
       "Building a reliable planning tool for low-connectivity environments while keeping financial data consistent across offline-first sync, payment-provider callbacks, and a multi-user role system.",
     solution:
       "Implemented a Dexie-based local-first store with a background sync queue, conflict resolution strategy using server timestamps, and a webhook handler for payments API callbacks that reconciled payments against guest contribution records.",
-    results: [
-      { label: "Wedding Events", value: "10+" },
-      { label: "Budget Accuracy", value: "Real-time" },
-      { label: "Offline Support", value: "Full CRUD" },
+    evidence: [
+      { label: "Offline support", value: "Full create, read, update and delete", kind: "capability" },
+      { label: "Reconciliation", value: "Payment callbacks matched to contributions", kind: "capability" },
+      { label: "Local store", value: "Dexie over IndexedDB with a sync queue", kind: "capability" },
     ],
     tags: [
       "Next.js",
@@ -263,7 +354,7 @@ export const solutions: Solution[] = [
     ],
     image: "/assets/project-shots/NdoaPlan.png",
     layout: "right",
-    featured: true,
+    featured: false,
     websiteUrl: "https://ndoa-plan.vercel.app",
     codeUrl: "",
     ongoing: true,
@@ -285,10 +376,10 @@ export const solutions: Solution[] = [
       "Building a pixel-accurate annotation overlay that survives zoom, page changes, and reading mode switches, while keeping the SQLite persistence and Riverpod state in sync without leaking render details into business logic.",
     solution:
       "Implemented a custom CoordinateMapper that converts between screen and normalised PDF-space coordinates, backed by dedicated SQLite DAOs for annotations and notes. Riverpod providers isolate reader state from annotation state, and a debounced persistence service batches rapid library mutations into single writes.",
-    results: [
-      { label: "Reading Modes", value: "3" },
-      { label: "Annotation Types", value: "Highlight, Draw, Note" },
-      { label: "Offline Support", value: "Full CRUD" },
+    evidence: [
+      { label: "Reading modes", value: "3", kind: "capability" },
+      { label: "Annotations", value: "Highlight, freehand draw, note", kind: "capability" },
+      { label: "Offline support", value: "Full create, read, update and delete", kind: "capability" },
     ],
     tags: [
       "Flutter",
@@ -304,7 +395,7 @@ export const solutions: Solution[] = [
     ],
     image: "/assets/project-shots/sefer.jpeg",
     layout: "left",
-    featured: true,
+    featured: false,
     websiteUrl: "",
     codeUrl: "https://github.com/CDenn03/pdf_app",
     ongoing: true,
@@ -327,10 +418,10 @@ export const solutions: Solution[] = [
       "Modelling content so every topic supports both a reference and an interactive learn mode from one source, while keeping search-first navigation fast and the structure easy to extend with new books.",
     solution:
       "Built a typed content registry in TypeScript that resolves books, chapters, and topics to dual views without duplication, a ⌘K command palette for search-first navigation, and localStorage-backed bookmarks and recently-viewed tracking for lightweight progress state.",
-    results: [
-      { label: "Content Modes", value: "Reference + Learn" },
-      { label: "Navigation", value: "⌘K search-first" },
-      { label: "Progress", value: "Bookmarks + history" },
+    evidence: [
+      { label: "Content modes", value: "Reference and learn from one registry", kind: "capability" },
+      { label: "Navigation", value: "Search-first command palette", kind: "capability" },
+      { label: "Progress", value: "Bookmarks and recently viewed", kind: "capability" },
     ],
     tags: [
       "Next.js 16",
@@ -358,13 +449,13 @@ export const solutions: Solution[] = [
     story:
       "The point of an alarm is to get you out of bed - but a swipe-to-dismiss alarm is too easy to beat half-asleep. Near Field forces you to physically walk to a registered NFC tag and tap it to stop the alarm. That requirement pushed the hard parts into native Android: exact scheduling that survives deep sleep and reboot, a full-screen ringing flow over the lock screen, and tag validation. Flutter handles configuration while a typed Pigeon bridge carries the contract between Dart and Kotlin. The app deliberately skips a state-management package - constructor injection and ListenableBuilder are enough for its small state surface.",
     challenge:
-      "Guaranteeing an alarm fires after deep sleep and reboot, appears over the lock screen, and dismisses only on a registered NFC tag - across the Flutter/Android boundary and OEM battery-optimization policies.",
+      "Getting an alarm to fire after deep sleep and reboot, appear over the lock screen, and dismiss only on a registered NFC tag - across the Flutter and Android boundary and OEM battery-optimisation policies.",
     solution:
       "Split the app so Android owns alarm lifecycle, exact scheduling, reboot recovery, and the full-screen ringing flow, while Flutter owns configuration - connected by a typed Pigeon bridge. Tag dismissal validates registered NTAG215 tags and resets progress after snooze.",
-    results: [
-      { label: "Dismissal", value: "NFC tag tap" },
-      { label: "Native Bridge", value: "Pigeon (Dart ↔ Kotlin)" },
-      { label: "Reliability", value: "Survives reboot + deep sleep" },
+    evidence: [
+      { label: "Dismissal", value: "Tap of a registered NTAG215 tag", kind: "capability" },
+      { label: "Native bridge", value: "Pigeon between Dart and Kotlin", kind: "capability" },
+      { label: "Scheduling", value: "Exact alarms re-registered after reboot", kind: "capability" },
     ],
     tags: [
       "Flutter",
@@ -376,7 +467,7 @@ export const solutions: Solution[] = [
     ],
     image: "/assets/project-shots/near-field-showcase.png",
     layout: "left",
-    featured: true,
+    featured: false,
     ongoing: true,
     year: "2026",
     role: "Mobile Developer",
@@ -396,10 +487,10 @@ export const solutions: Solution[] = [
       "Delivering a field-ready app that works fully offline, syncs reliably when connectivity returns, and keeps business rules testable - without leaking framework or network concerns into the domain layer.",
     solution:
       "Implemented a layered clean architecture: pure-Dart domain (Freezed entities, use cases, repository contracts), Riverpod presentation depending only on domain interfaces, and a data layer that reads local-first from Drift and enqueues mutations to a Django backend via Dio with interceptors.",
-    results: [
-      { label: "Offline Support", value: "Full local-first" },
-      { label: "Architecture", value: "Clean / layered" },
-      { label: "Local Store", value: "Drift (SQLite)" },
+    evidence: [
+      { label: "Offline support", value: "Local-first reads with a sync queue", kind: "capability" },
+      { label: "Architecture", value: "Layered, pure-Dart domain", kind: "capability" },
+      { label: "Local store", value: "Drift over SQLite", kind: "capability" },
     ],
     tags: [
       "Flutter",
@@ -418,42 +509,6 @@ export const solutions: Solution[] = [
     role: "Mobile Developer",
     duration: "2 months",
     category: "Mission Tech / Mobile",
-  },
-];
-
-export const testimonials: Testimonial[] = [
-  {
-    text: "CDenn delivered our MVP in half the expected time. His communication was excellent throughout, and the code quality was top-notch.",
-    author: "John Smith",
-    role: "CEO at StartupX",
-    initials: "JS",
-  },
-  {
-    text: "Working with CDenn transformed our user experience. Bounce rate dropped 35% after the redesign. Highly recommend him for any frontend project.",
-    author: "Jane Doe",
-    role: "Product Manager at CompanyY",
-    initials: "JD",
-  },
-];
-
-export const writings: Writing[] = [
-  {
-    title: "5 React Performance Patterns I Use in Every Project",
-    date: "Jan 2025",
-    tag: "React",
-    readTime: "5 min",
-  },
-  {
-    title: "When to Use SSR vs SSG in Next.js",
-    date: "Feb 2025",
-    tag: "Next.js",
-    readTime: "4 min",
-  },
-  {
-    title: "My Code Review Checklist for React Components",
-    date: "Mar 2025",
-    tag: "Workflow",
-    readTime: "6 min",
   },
 ];
 

@@ -1,0 +1,300 @@
+/* ============================================================
+   Design tokens: the single source of truth for colour, type,
+   shape, elevation and motion.
+
+   Light mode leads. Dark mode is specified separately rather than
+   inverted, because the same hue does not read the same on a new
+   ground: primary becomes a lighter mint and the focus ring becomes
+   yellow.
+
+   Every text and boundary pair is verified against WCAG 2.2 AA by
+   `npm run check:contrast`, which the build runs. Change a value here
+   and the gate will tell you if it broke.
+   ============================================================ */
+
+:root {
+  color-scheme: light;
+
+  /* Surfaces */
+  --canvas: #f4f2ec;
+  --surface: #fbfaf6;
+  --surface-alt: #e9e6dd;
+
+  /* Text. ink-subtle is the lightest text permitted anywhere. */
+  --ink: #141e1b;
+  --ink-muted: #3e4a45;
+  --ink-subtle: #55615b;
+
+  /* Lines. `line` separates, `line-strong` bounds a control. */
+  --line: #d9d5c9;
+  --line-strong: #717b75;
+
+  /* Action. One action colour; one primary button per view. */
+  --primary: #1e4c41;
+  --primary-hover: #163a32;
+  --on-primary: #f7f5ee;
+  --primary-tint: #d8e6df;
+  --on-primary-tint: #163a32;
+  --link: #1e4c41;
+  --focus: #1e4c41;
+
+  /* Accent: a FILL ONLY in light mode.
+     Measured at 1.46:1 against the canvas, so it can never be text,
+     a border, an icon stroke, or the focus ring here. It carries
+     on-accent text at 10.44:1. Keep it under ~2% of a screen. */
+  --accent: #f2c600;
+  --on-accent: #141e1b;
+
+  /* Status. Never colour alone; every state also carries a word. */
+  --danger: #a12a18;
+  --danger-tint: #f7ded8;
+  --on-danger-tint: #7a1c0e;
+  --success: #12492a;
+  --success-tint: #d4ebd9;
+  --on-success-tint: #12492a;
+
+  /* Scrim: a badge or label laid over arbitrary imagery, where neither
+     the canvas nor the primary can be relied on. Deliberately the same
+     in both modes, because the photograph underneath does not change
+     with the theme. */
+  --scrim: #0c1311;
+  --on-scrim: #f0eee6;
+
+  /* Project cover: the branded stand-in for a project with no
+     screenshot. It fills a whole 16:9 block, so it needs a ground
+     that can carry that much area. In light mode the deep primary
+     does that well. In dark mode it cannot - the dark-mode primary
+     is a light mint, and a full-width mint panel reads as a broken
+     image rather than a cover - so the dark value is the raised
+     surface instead. Hence a token pair of its own rather than
+     `bg-primary` with a `dark:` override. */
+  --cover: var(--primary);
+  --on-cover: var(--on-primary);
+
+  /* Shape. Every radius is a multiple of 4px. */
+  --radius-control: 0.25rem;
+  --radius-card: 0.5rem;
+  --radius-chip: 0.25rem;
+
+  /* Elevation. Nothing carries a shadow at rest: `raised` is a
+     hairline. `floating` is reserved for things that genuinely
+     float, which is the mobile menu and the CV dialog. */
+  --shadow-raised: 0 1px 0 0 var(--line);
+  --shadow-floating: 0 12px 32px -16px rgb(20 30 27 / 0.28);
+
+  /* Motion. One curve, three durations. */
+  --ease-standard: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --duration-slow: 320ms;
+
+  /* Font stacks. The families come from next/font, which self-hosts
+     them at build time, so the page makes no third-party font
+     request at runtime. */
+  --font-stack-primary: var(--font-mona), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-stack-secondary: var(--font-newsreader), Georgia, "Times New Roman", serif;
+  --font-stack-mono: var(--font-geist-mono), ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+.dark {
+  color-scheme: dark;
+
+  --canvas: #0c1311;
+  --surface: #121c19;
+  --surface-alt: #1a2622;
+
+  --ink: #f0eee6;
+  --ink-muted: #bbc4be;
+  --ink-subtle: #98a49e;
+
+  --line: #253230;
+  --line-strong: #677670;
+
+  --primary: #8fd4b9;
+  --primary-hover: #a8e0c9;
+  --on-primary: #0c1311;
+  --primary-tint: #1c3a31;
+  --on-primary-tint: #bfe8d8;
+  --link: #8fd4b9;
+
+  /* On the dark ground the accent reaches 12.68:1, so here it is
+     allowed to be text and the focus ring. */
+  --accent: #f5d23b;
+  --on-accent: #141e1b;
+  --focus: #f5d23b;
+
+  --danger: #ff8b79;
+  --danger-tint: #3a1a15;
+  --on-danger-tint: #ffc3b9;
+  --success: #a6e5ba;
+  --success-tint: #163a24;
+  --on-success-tint: #a6e5ba;
+
+  /* See the light-mode note: a full-bleed mint panel reads as a
+     broken image, so the dark cover is the raised surface. */
+  --cover: var(--surface-alt);
+  --on-cover: var(--ink);
+
+  --shadow-floating: 0 12px 32px -16px rgb(0 0 0 / 0.7);
+}
+
+/* ------------------------------------------------------------
+   Tailwind registration.
+
+   Colours use `inline` so each utility emits `var(--token)` and
+   therefore follows the light/dark switch above.
+   ------------------------------------------------------------ */
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-surface-alt: var(--surface-alt);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-subtle: var(--ink-subtle);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-on-primary: var(--on-primary);
+  --color-primary-tint: var(--primary-tint);
+  --color-on-primary-tint: var(--on-primary-tint);
+  --color-link: var(--link);
+  --color-focus: var(--focus);
+  --color-accent: var(--accent);
+  --color-on-accent: var(--on-accent);
+  --color-danger: var(--danger);
+  --color-danger-tint: var(--danger-tint);
+  --color-on-danger-tint: var(--on-danger-tint);
+  --color-success: var(--success);
+  --color-success-tint: var(--success-tint);
+  --color-on-success-tint: var(--on-success-tint);
+  --color-scrim: var(--scrim);
+  --color-on-scrim: var(--on-scrim);
+  /* Registered as `cover-fill`, not `cover`: `bg-cover` is already a
+     Tailwind background-size utility, and shadowing it would break
+     any future use of it. */
+  --color-cover-fill: var(--cover);
+  --color-on-cover: var(--on-cover);
+
+  /* Compatibility aliases.
+     The pages still use the previous names; Phase 3 migrates them to
+     the names above and these are deleted then. They are aliases, not
+     separate values, so there is only ever one palette. */
+  --color-background: var(--canvas);
+  --color-foreground: var(--ink);
+  --color-muted-foreground: var(--ink-muted);
+  --color-border: var(--line);
+  --color-input: var(--line-strong);
+  --color-ring: var(--focus);
+  --color-primary-foreground: var(--on-primary);
+  --color-secondary: var(--surface-alt);
+  --color-secondary-foreground: var(--ink);
+  --color-muted: var(--surface-alt);
+  --color-accent-foreground: var(--on-accent);
+  --color-destructive: var(--danger);
+  --color-card: var(--surface);
+  --color-card-foreground: var(--ink);
+  --color-popover: var(--surface);
+  --color-popover-foreground: var(--ink);
+  --color-section-stone: var(--surface-alt);
+  --color-section-deep: var(--surface-alt);
+  --color-section-warm: var(--surface);
+
+  --font-primary: var(--font-stack-primary);
+  --font-secondary: var(--font-stack-secondary);
+  --font-mono: var(--font-stack-mono);
+
+  /* Only 400 and 600 of Mona Sans are loaded. Tailwind's `font-bold` asks for
+     700, which the browser would answer by synthesising a fake bold - heavier,
+     blurrier, and visibly off next to a real 600. Remapping the utility is one
+     line and fixes every existing `font-bold` in the codebase at once. */
+  --font-weight-bold: 600;
+  --font-weight-semibold: 600;
+
+  --radius-control: var(--radius-control);
+  --radius-card: var(--radius-card);
+  --radius-chip: var(--radius-chip);
+
+  --shadow-raised: var(--shadow-raised);
+  --shadow-floating: var(--shadow-floating);
+
+  --ease-standard: var(--ease-standard);
+}
+
+/* ------------------------------------------------------------
+   Type scale. Twelve roles, every line height a multiple of 4px.
+   Declared without `inline` so each utility emits var(--text-*),
+   which lets the small-screen block below override the size.
+   ------------------------------------------------------------ */
+@theme {
+  --text-hero: 3.5rem;
+  --text-hero--line-height: 3.5rem;
+  --text-hero--letter-spacing: -0.02em;
+  --text-hero--font-weight: 600;
+
+  --text-display: 2.75rem;
+  --text-display--line-height: 3rem;
+  --text-display--letter-spacing: -0.02em;
+  --text-display--font-weight: 600;
+
+  --text-headline: 2rem;
+  --text-headline--line-height: 2.25rem;
+  --text-headline--letter-spacing: -0.015em;
+  --text-headline--font-weight: 600;
+
+  --text-title: 1.25rem;
+  --text-title--line-height: 1.75rem;
+  --text-title--letter-spacing: -0.01em;
+  --text-title--font-weight: 600;
+
+  --text-subtitle: 1.125rem;
+  --text-subtitle--line-height: 1.75rem;
+  --text-subtitle--letter-spacing: 0em;
+  --text-subtitle--font-weight: 400;
+
+  --text-quote: 1.25rem;
+  --text-quote--line-height: 2rem;
+  --text-quote--letter-spacing: 0em;
+  --text-quote--font-weight: 400;
+
+  --text-body: 1rem;
+  --text-body--line-height: 1.5rem;
+  --text-body--letter-spacing: 0em;
+  --text-body--font-weight: 400;
+
+  --text-body-sm: 0.875rem;
+  --text-body-sm--line-height: 1.25rem;
+  --text-body-sm--letter-spacing: 0em;
+  --text-body-sm--font-weight: 400;
+
+  --text-label: 0.875rem;
+  --text-label--line-height: 1.25rem;
+  --text-label--letter-spacing: 0em;
+  --text-label--font-weight: 600;
+
+  --text-caption: 0.75rem;
+  --text-caption--line-height: 1rem;
+  --text-caption--letter-spacing: 0.08em;
+  --text-caption--font-weight: 600;
+
+  --text-code: 0.875rem;
+  --text-code--line-height: 1.5rem;
+  --text-code--letter-spacing: 0em;
+  --text-code--font-weight: 400;
+}
+
+/* Small screens: the three display steps come down, and every
+   replacement line height stays on the 4px grid. */
+@media (max-width: 40rem) {
+  :root {
+    --text-hero: 2.25rem;
+    --text-hero--line-height: 2.5rem;
+    --text-display: 1.875rem;
+    --text-display--line-height: 2.25rem;
+    --text-headline: 1.625rem;
+    --text-headline--line-height: 2rem;
+    --text-subtitle: 1.0625rem;
+    --text-quote: 1.125rem;
+    --text-quote--line-height: 1.75rem;
+  }
+}

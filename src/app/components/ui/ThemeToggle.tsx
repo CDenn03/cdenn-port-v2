@@ -10,10 +10,14 @@ interface ThemeToggleProps {
 
 export const ThemeToggle = ({ className = "", size = 18 }: ThemeToggleProps) => {
   const { resolvedTheme, toggleTheme, mounted } = useTheme();
-  
+
+  // A 44px box either way, so the header does not reflow when the real button
+  // replaces the placeholder after hydration.
+  const box = "h-11 w-11";
+
   // Don't render until mounted to avoid hydration mismatch
   if (!mounted) {
-    return <div className={`p-2 border border-transparent ${className}`} style={{ width: size + 16, height: size + 16 }} />;
+    return <div className={`${box} border border-transparent ${className}`} />;
   }
 
   const isDark = resolvedTheme === "dark";
@@ -21,12 +25,8 @@ export const ThemeToggle = ({ className = "", size = 18 }: ThemeToggleProps) => 
   return (
     <button
       onClick={toggleTheme}
-      className={`press group p-2 border ${
-        isDark 
-          ? "bg-zinc-800 hover:bg-zinc-700 text-zinc-300" 
-          : "bg-zinc-100 hover:bg-zinc-200 text-zinc-600"
-      } ${className}`}
-      aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
+      className={`press group ${box} flex items-center justify-center border border-line bg-surface-alt text-ink-muted transition-colors hover:bg-surface hover:text-ink ${className}`}
+      aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
     >
       {/* Keyed so the icon swap replays the rotate-in on every toggle rather
           than cross-dissolving in place. */}

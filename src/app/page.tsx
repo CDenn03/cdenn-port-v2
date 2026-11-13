@@ -1,9 +1,20 @@
 import type { Metadata } from "next";
-import PortfolioClient from "./PortfolioClient";
+import { Navbar } from "./components/layout/Navbar";
+import { Footer } from "./components/layout/Footer";
+import { HeroSection } from "./components/sections/HeroSection";
+import { AtAGlance } from "./components/sections/AtAGlance";
+import { SolutionsSection } from "./components/sections/SolutionsSection";
+import { AboutSection } from "./components/sections/AboutSection";
+import { ContactSection } from "./components/sections/ContactSection";
+import { ScrollProgress } from "./components/ui/ScrollProgress";
+import { BackToTop } from "./components/ui/BackToTop";
 import { sameAsUrls } from "@/src/app/data/social";
 
 export const metadata: Metadata = {
-  title: "CDenn | Full-Stack Software Developer",
+  // No title here: `/` is the root layout's own segment, so the `%s | CDenn`
+  // template does NOT apply to it. The layout's `title.default`
+  // ("CDenn | Full-Stack Software Developer") is what renders, and
+  // re-declaring it here only risks the two drifting apart.
   description:
     "CDenn is Dennis Ndung'u, a Nairobi-based full-stack developer building reliable Next.js products, payments API integrations, and AI-enabled tools for global teams.",
   alternates: {
@@ -154,7 +165,27 @@ export default function HomePage() {
           __html: JSON.stringify(faqSchema).replaceAll("<", String.raw`\u003c`),
         }}
       />
-      <PortfolioClient />
+      {/*
+        Composed here rather than in a "use client" wrapper. The wrapper was
+        only there to read `mounted` from the theme hook, and it pulled the
+        whole page - headline, portrait, every case-study string - into the
+        client bundle. ScrollProgress and BackToTop are the only parts that
+        need the browser, and each already handles its own first paint.
+      */}
+      <main
+        id="main"
+        className="relative min-h-dvh overflow-x-hidden bg-canvas text-ink"
+      >
+        <ScrollProgress />
+        <Navbar />
+        <HeroSection />
+        <AtAGlance />
+        <SolutionsSection />
+        <AboutSection />
+        <ContactSection />
+        <Footer />
+        <BackToTop />
+      </main>
     </>
   );
 }

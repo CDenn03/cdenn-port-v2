@@ -1,134 +1,163 @@
-"use client";
-
-import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
-import { ChevronRight, X } from "lucide-react";
 import Image from "next/image";
-import { Reveal } from "../ui/Reveal";
-import { RequestCV } from "./RequestCV";
-import { socialLinks } from "@/src/app/data/social";
+import Link from "next/link";
+import { ChevronRight } from "lucide-react";
+import { RequestCVButton } from "./RequestCVButton";
+import { profile, identityLine } from "@/src/app/data/profile";
+import { formatStatusDate, isStatusStale, status } from "@/src/app/data/status";
+import { solutions } from "@/src/app/data/portfolio";
+import { specialisms } from "@/src/app/data/specialisms";
+import { evidenceLine } from "@/src/app/lib/evidence";
 
-const primaryProfiles = socialLinks.filter(({ network }) =>
-  ["github", "linkedin", "x"].includes(network)
-);
+/**
+ * The first viewport.
+ *
+ * Deliberately a server component: nothing here needs state except the CV
+ * dialog, which lives in its own island. That keeps the headline and the
+ * portrait - the two things that decide the LCP - out of the client bundle.
+ *
+ * The brief for this screen was "identity, specialisation, current
+ * availability, selected proof and one next action", so each of those appears
+ * exactly once and nothing else is allowed in.
+ *
+ * Every element here is on a tight height budget, because at 390x844 the whole
+ * set - identity, headline, deck, specialisms, availability, actions and the
+ * first proof row - has to clear the fold. That is why the actions sit two
+ * across on small screens and the specialism links sit in two columns.
+ */
+
+const featured = solutions.filter((solution) => solution.featured);
+const stale = isStatusStale();
 
 export const HeroSection = () => {
-  const [cvOpen, setCvOpen] = useState(false);
-
   return (
-    <>
-      <section className="flex items-center px-4 pt-24 pb-16 md:min-h-[calc(100svh-4rem)] md:px-6 md:pt-28 md:pb-20">
-        <div className="mx-auto grid w-full max-w-6xl items-center gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-14">
-          <div className="order-1 lg:order-2">
-            <Reveal delay={0.1}>
-              <h1 className="mb-6 max-w-[20ch] font-bold leading-[0.95] tracking-[-0.04em] text-foreground text-[clamp(2.25rem,6vw,4.5rem)]">
-                Reliable systems for operational work.
-              </h1>
-            </Reveal>
+    <section className="border-b border-line px-4 pt-20 pb-12 md:px-6 md:pt-28 md:pb-16">
+      <div className="mx-auto max-w-6xl">
+        {/* Identity: brand first, then the name, then where the work happens
+            from. The portrait sits in this line rather than in a column of its
+            own, which is what lets the headline start near the top of the
+            screen. */}
+        <div className="flex items-center gap-4">
+          <Image
+            src={profile.portrait.src}
+            alt={profile.portrait.alt}
+            width={72}
+            height={72}
+            priority
+            sizes="72px"
+            className="h-[72px] w-[72px] shrink-0 object-cover object-top"
+          />
+          <p className="text-sm leading-6 text-ink-muted">
+            {identityLine.map((part, index) => (
+              <span key={part}>
+                {index > 0 && <span aria-hidden="true" className="px-1.5 text-ink-subtle">·</span>}
+                <span className={index === 0 ? "font-semibold text-ink" : undefined}>{part}</span>
+              </span>
+            ))}
+          </p>
+        </div>
 
-            <Reveal delay={0.2}>
-              <p className="mb-8 max-w-xl text-lg leading-8 text-foreground md:text-xl">
-                Full-stack engineering for fintech, multi-tenant SaaS, offline-first products, and AI-assisted operations. Based in Nairobi, Kenya, working worldwide.
-              </p>
-            </Reveal>
+        <div className="mt-6 grid gap-6 lg:mt-10 lg:grid-cols-12 lg:gap-12">
+          <div className="lg:col-span-7">
+            <h1 className="max-w-[22ch] text-[clamp(2.125rem,5.5vw,4rem)] font-bold leading-[1.04] tracking-[-0.035em] text-ink">
+              {profile.headline}
+            </h1>
 
-            <Reveal delay={0.3}>
-              <div className="flex flex-col gap-3 sm:flex-row">
-                <a
-                  href="#contact"
-                  className="press inline-flex min-h-12 items-center justify-center bg-primary px-6 py-3 text-base font-bold text-primary-foreground transition-colors hover:bg-[#1b2d2a]"
-                >
-                  Discuss a project
-                </a>
-                <a
-                  href="#solutions"
-                  className="press group/cta inline-flex min-h-12 items-center justify-center gap-1.5 border border-border bg-surface px-6 py-3 text-base font-bold text-foreground transition-colors hover:bg-section-stone dark:hover:bg-[#1f2522]"
-                >
-                  View selected work
-                  <ChevronRight size={18} aria-hidden="true" className="transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-soft)] motion-safe:group-hover/cta:translate-x-0.5" />
-                </a>
-              </div>
-              <button
-                onClick={() => setCvOpen(true)}
-                className="mt-5 text-base text-muted-foreground underline underline-offset-4 transition-colors hover:text-foreground"
+            <p className="mt-4 max-w-xl text-lg leading-8 text-ink-muted">{profile.deck}</p>
+            <p className="mt-3 max-w-xl text-sm leading-6 text-ink-subtle">{profile.stack}</p>
+
+            {/* Specialisation stated as four named areas rather than left
+                implicit in the deck, because this is the one screen a recruiter
+                may read. Two columns on small screens so each link can carry a
+                44px target without the row running to four lines. */}
+            <ul className="mt-4 grid max-w-xl grid-cols-2 gap-x-6">
+              {specialisms.map((specialism) => (
+                <li key={specialism.title}>
+                  <Link
+                    href={specialism.href}
+                    className="inline-flex min-h-11 items-center text-sm leading-5 text-ink-muted underline decoration-line underline-offset-4 transition-colors hover:text-primary"
+                  >
+                    {specialism.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            {/* Availability with its date attached. The date is not a detail:
+                it is what makes the claim checkable rather than decorative. */}
+            <p className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm leading-6">
+              <span className="inline-flex min-h-7 items-center gap-2 bg-primary-tint px-3 font-semibold text-on-primary-tint">
+                <span aria-hidden="true" className="h-2 w-2 shrink-0 bg-accent" />
+                {stale ? "Availability not recently confirmed" : status.headline}
+              </span>
+              <span className="text-ink-subtle">Confirmed {formatStatusDate()}</span>
+            </p>
+            <p className="mt-2 max-w-xl text-sm leading-6 text-ink-muted">{status.detail}</p>
+
+            {/* One primary action per view. "Start a conversation" is the
+                secondary because the owner's stated goal is that work gets
+                looked at first. */}
+            <div className="mt-6 grid grid-cols-2 gap-3 sm:flex sm:flex-row sm:items-center">
+              <Link
+                href="#solutions"
+                className="press group/cta inline-flex min-h-12 items-center justify-center gap-1.5 bg-primary px-4 text-center text-base font-bold text-on-primary transition-colors hover:bg-primary-hover sm:px-6"
               >
-                Request CV
-              </button>
-              <p className="mt-8 text-base text-foreground">
-                Find the work on{" "}
-                {primaryProfiles.map((profile, index) => (
-                  <span key={profile.network}>
-                    {index > 0 && <span aria-hidden="true">, </span>}
-                    <a
-                      href={profile.url}
-                      target="_blank"
-                      rel="me noopener noreferrer"
-                      className="font-bold underline underline-offset-4 transition-colors hover:text-primary dark:hover:text-accent"
-                    >
-                      {profile.label}
-                    </a>
-                  </span>
-                ))}
-                .
-              </p>
-            </Reveal>
+                View selected work
+                <ChevronRight
+                  size={18}
+                  aria-hidden="true"
+                  className="hidden shrink-0 transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-soft)] motion-safe:group-hover/cta:translate-x-0.5 sm:block"
+                />
+              </Link>
+              <Link
+                href="#contact"
+                className="press inline-flex min-h-12 items-center justify-center border border-line-strong px-4 text-center text-base font-bold text-ink transition-colors hover:bg-surface-alt sm:px-6"
+              >
+                Start a conversation
+              </Link>
+              <RequestCVButton className="col-span-2 sm:ml-2" />
+            </div>
           </div>
 
-          <Reveal delay={0.4} className="order-2 lg:order-1">
-            <figure className="opacity-100">
-              <div className="relative aspect-[4/5] overflow-hidden bg-section-stone">
-                <Image
-                  src="/assets/images/port-photo-4.png"
-                  alt="Dennis Ndung'u, the software engineer behind CDenn"
-                  fill
-                  className="object-cover object-top opacity-100"
-                  priority
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
-              <figcaption className="mt-4">
-                <p className="text-base text-muted-foreground">Currently building</p>
-                <p className="mt-1 text-lg font-bold text-foreground">WarehouseLens</p>
-                <p className="mt-1 text-base text-foreground">Permission-aware warehouse operations software.</p>
-              </figcaption>
-            </figure>
-          </Reveal>
-        </div>
-      </section>
-
-      <AnimatePresence>
-        {cvOpen && (
-          <>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              onClick={() => setCvOpen(false)}
-              className="fixed inset-0 z-50 bg-black/50"
-            />
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 12 }}
-              transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="pointer-events-none fixed inset-0 z-50 flex items-center justify-center px-4"
+          {/* Selected proof. Compact on purpose: this is a pointer into the
+              archive, not a summary of it. */}
+          <div className="lg:col-span-5 lg:pt-2">
+            <h2 className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-subtle">
+              Selected proof
+            </h2>
+            <ul className="mt-2 border-t border-line lg:mt-3">
+              {featured.map((project) => (
+                <li key={project.slug} className="border-b border-line">
+                  <Link
+                    href={`/solutions/${project.slug}`}
+                    className="group/row flex min-h-14 flex-col justify-center gap-0.5 py-3"
+                  >
+                    <span className="flex items-baseline justify-between gap-3">
+                      <span className="text-sm font-semibold text-ink transition-colors group-hover/row:text-primary">
+                        {project.title}
+                      </span>
+                      <span className="shrink-0 text-xs text-ink-subtle">{project.category}</span>
+                    </span>
+                    <span className="text-xs leading-5 text-ink-muted tabular-nums">
+                      {project.home?.proofLine ?? evidenceLine(project.evidence[0])}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <Link
+              href="/solutions"
+              className="group/cta mt-2 inline-flex min-h-11 items-center gap-1 text-sm font-semibold text-ink underline decoration-line-strong underline-offset-4 transition-colors hover:text-primary lg:mt-3"
             >
-              <div className="pointer-events-auto relative w-full max-w-lg">
-                <button
-                  onClick={() => setCvOpen(false)}
-                  className="absolute right-0 top-0 z-10 flex h-10 w-10 items-center justify-center bg-surface text-foreground transition-colors hover:bg-section-stone dark:hover:bg-[#1f2522]"
-                  aria-label="Close CV request form"
-                >
-                  <X size={16} />
-                </button>
-                <RequestCV />
-              </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
-    </>
+              All {solutions.length} case studies
+              <ChevronRight
+                size={14}
+                aria-hidden="true"
+                className="transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-soft)] motion-safe:group-hover/cta:translate-x-0.5"
+              />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
-

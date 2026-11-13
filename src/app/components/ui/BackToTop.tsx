@@ -24,7 +24,7 @@ export const BackToTop = () => {
   return (
     <button
       onClick={scrollToTop}
-      className="press group animate-fade-in fixed bottom-6 right-6 z-50 flex h-11 w-11 items-center justify-center border border-zinc-300 bg-[#FCF7F2] text-slate-900 transition-colors hover:border-primary hover:bg-white dark:border-zinc-700 dark:bg-[#0a0a0a] dark:text-zinc-100 dark:hover:border-white dark:hover:bg-[#111]"
+      className="press group animate-fade-in fixed bottom-6 right-6 z-50 flex h-11 w-11 items-center justify-center border border-line-strong bg-surface text-ink transition-colors hover:border-primary hover:bg-surface-alt"
       aria-label="Back to top"
     >
       <ArrowUp size={19} className="icon-shift-up" />

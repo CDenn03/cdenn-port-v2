@@ -9,7 +9,7 @@ export const ScrollProgress = () => {
   return (
     <div className="fixed top-0 left-0 w-full h-px z-100">
       <motion.div
-        className="h-full bg-linear-to-r from-emerald-500 to-emerald-400 origin-left"
+        className="h-full origin-left bg-primary"
         style={{ scaleX: scrollProgress / 100 }}
         initial={{ scaleX: 0 }}
       />

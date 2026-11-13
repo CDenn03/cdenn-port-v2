@@ -4,7 +4,18 @@ import { ProjectCover } from "@/src/app/components/ui/ProjectCover";
 
 export function SolutionDetailClient({ project }: { project: Solution }) {
   return (
-    <div className="relative mb-12 aspect-video overflow-hidden border border-zinc-200 bg-zinc-100 dark:border-zinc-800 dark:bg-zinc-900">
+    <div
+      /*
+       * 16:9 only when there is an image to fill it. The placeholder carries a
+       * single line of text, so at full aspect ratio it was ~700px of empty
+       * grid between the heading and the case study - the reader had to scroll
+       * past a void to reach the writing. A short band states the same thing
+       * and gets out of the way.
+       */
+      className={`relative mb-12 overflow-hidden border border-line bg-surface-alt ${
+        project.image ? "aspect-video" : "h-40 sm:h-48"
+      }`}
+    >
       {project.image ? (
         <Image
           src={project.image}
@@ -17,7 +28,7 @@ export function SolutionDetailClient({ project }: { project: Solution }) {
       ) : (
         <ProjectCover project={project} size="hero" />
       )}
-      {project.ongoing && <p className="absolute left-4 top-4 border border-white/50 bg-black/70 px-3 py-2 font-mono text-xs uppercase tracking-[0.12em] text-white">In progress</p>}
+      {project.ongoing && <p className="absolute left-4 top-4 bg-scrim px-3 py-2 text-xs uppercase tracking-[0.12em] text-on-scrim">In progress</p>}
     </div>
   );
 }
