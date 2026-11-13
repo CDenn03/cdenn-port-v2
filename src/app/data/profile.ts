@@ -15,8 +15,11 @@ export const profile = {
   /** H1. Short, concrete, and a claim that the case studies can carry. */
   headline: "I build operational systems that keep working.",
 
-  /** The deck, verbatim as the owner wrote it. */
-  deck: "Product-minded full-stack engineer building reliable operational systems.",
+  /** The deck. */
+  deck: "I find the gap a business can feel, work out what closing it is worth, and build to that. Multi-tenant platforms, payments and reconciliation, offline-first products, AI-assisted operations.",
+
+  /** Stack line shown under the deck. */
+  stack: "React · Next.js · TypeScript · Node · Rust · PostgreSQL · Flutter · FastAPI",
 
   portrait: {
     src: "/assets/images/port-photo-4.png",

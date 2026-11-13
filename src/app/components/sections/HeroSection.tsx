@@ -63,6 +63,7 @@ export const HeroSection = () => {
             </h1>
 
             <p className="mt-4 max-w-xl text-lg leading-8 text-ink-muted">{profile.deck}</p>
+            <p className="mt-3 max-w-xl text-sm leading-6 text-ink-subtle">{profile.stack}</p>
 
             {/* Specialisation stated as four named areas rather than left
                 implicit in the deck, because this is the one screen a recruiter
@@ -137,7 +138,7 @@ export const HeroSection = () => {
                       <span className="shrink-0 text-xs text-ink-subtle">{project.category}</span>
                     </span>
                     <span className="text-xs leading-5 text-ink-muted tabular-nums">
-                      {evidenceLine(project.evidence[0])}
+                      {project.home?.proofLine ?? evidenceLine(project.evidence[0])}
                     </span>
                   </Link>
                 </li>

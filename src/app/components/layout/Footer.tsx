@@ -51,9 +51,15 @@ export const Footer = () => {
     <footer className="bg-canvas px-4 pt-16 pb-10 md:px-6">
       <div className="mx-auto max-w-6xl">
         <div className="mb-14 grid items-end gap-8 md:grid-cols-[1.4fr_1fr]">
-          <p className="text-[clamp(2rem,5vw,3.75rem)] font-bold leading-[1.05] tracking-[-0.03em] text-ink">
-            Let&apos;s build something that holds up.
-          </p>
+          <div>
+            <p className="text-[clamp(2rem,5vw,3.75rem)] font-bold leading-[1.05] tracking-[-0.03em] text-ink">
+              Let&apos;s build something that pays for itself.
+            </p>
+            <p className="mt-4 max-w-xl text-base leading-7 text-ink-muted">
+              From bank-grade platforms to a church&apos;s live stream, the problem changes; the
+              discipline doesn&apos;t.
+            </p>
+          </div>
           <div className="md:pb-2">
             {/* Secondary, not primary: the one primary action on this page is
                 the contact form's own submit button. */}
@@ -85,8 +91,9 @@ export const Footer = () => {
               />
             </Link>
             <p className="text-base leading-7 text-ink-muted">
-              Full-stack engineering from Nairobi, Kenya. Multi-tenant platforms, payments and
-              reconciliation, offline-first products and AI-assisted operations.
+              CDenn - Engineering from Nairobi, Kenya. Multi-tenant platforms, payments and
+              reconciliation, offline-first products and AI-assisted operations. Open to remote
+              engineering roles and selected client work.
             </p>
           </div>
 

@@ -4,14 +4,43 @@ export const experiences: Experience[] = [
   {
     company: "E&M Technologies",
     role: "Frontend Engineer",
-    period: "Jan 2025 - Present",
+    period: "January 2025 - Present",
     desc: [
-      "Led frontend architecture and development of the core product in React and Next.js",
-      "Designed and built a shared design system adopted by other product teams, for consistent UI and faster feature delivery",
-      "Collaborated with backend and product teams to translate business requirements into performant, user-centric interfaces",
-      "Improved maintainability of legacy code by introducing TypeScript patterns and reusable component structures",
+      {
+        lead: "Led frontend architecture",
+        rest: "for the core product using React and Next.js, owning architectural decisions and establishing patterns that support consistent product development.",
+      },
+      {
+        lead: "Designed and built a shared design system,",
+        rest: "adopted across five teams approximately one year ago, giving teams a consistent component foundation for new interfaces.",
+      },
+      {
+        lead: "Built a self-service customer portal with chat,",
+        rest: "extending how customers interact with the platform and access support.",
+      },
+      {
+        lead: "Designed an approval model",
+        rest: "supporting maker-checker workflows, edit requests, multi-step approvals and change history, giving complex business decisions a structured and traceable process.",
+      },
+      {
+        lead: "Established Docker deployment foundations",
+        rest: "for a monorepo combining frontend and backend applications that previously relied on JAR and dist deployments. The DevOps team subsequently implemented the deployment pipeline using this foundation.",
+      },
+      {
+        lead: "Drove requirements with backend and product teams,",
+        rest: "translating business rules into interfaces and resolving ambiguity before implementation.",
+      },
+      {
+        lead: "Introduced TypeScript patterns and reusable component structures",
+        rest: "into legacy code, making the codebase easier to understand and safer to extend.",
+      },
+      {
+        lead: "Helped shift frontend decision-making towards a stronger UX focus,",
+        rest: "encouraging implementation choices to account for how people actually use the product.",
+      },
     ],
-    tech: "React, Next.js, TypeScript, TailwindCSS, REST APIs",
+    tech: "React, Next.js, TypeScript, TailwindCSS, REST APIs, Docker",
+    note: "CDenn is my independent engineering practice. I work at E&M Technologies and take commissioned client work under CDenn alongside it.",
   },
 ];
 
@@ -55,9 +84,98 @@ export const solutions: Solution[] = [
     featured: true,
     nda: true,
     year: "2025",
+    attribution: "E&M Technologies client work",
+    home: {
+      attribution: "SaaS / Fintech · E&M Technologies client work · Under NDA",
+      intro: [
+        "At E&M Technologies, I worked as Frontend Lead on a multi-tenant platform for a financial services provider selling insurance through several bank partnerships.",
+      ],
+      problem: [
+        "The provider was selling through banks that compete with each other. Each one needed its own branding, products and compliance rules, with certainty that its customers would never be visible to a rival.",
+        "The obvious route was a separate copy of the system for each bank. That multiplies the maintenance bill, and the copies eventually drift apart.",
+      ],
+      value: [
+        "One codebase, with partner boundaries enforced in the architecture rather than remembered by whoever writes the next query. That makes onboarding a new bank a configuration exercise instead of a separate release, while keeping the record of decisions available when finance or compliance needs it.",
+      ],
+      built: [
+        ["Multi-tenant RBAC with tenant-scoped JWTs", "A new partner is configured rather than forked"],
+        ["Maker-checker approvals across seven entity types", "Decisions have a defined review process before money or policies move"],
+        ["Action-level audit logging", "Who did what, to which record, can be established without reconstructing events from application logs"],
+      ],
+      proves:
+        "I can translate a complex partner organisation into a permission model, lead frontend architecture around those requirements and build interfaces that reflect how the business actually operates.",
+      note: "Code under NDA; architecture described, not shown.",
+      bridge:
+        "The next big build took the same discipline somewhere very different: enterprise-grade reliability demanded by an organisation with neither an enterprise budget nor an ops team.",
+      proofLine: "Partner isolation, staged approvals, auditable decisions",
+    },
     role: "Frontend Lead",
     duration: "8 months",
     category: "SaaS / Fintech",
+  },
+  {
+    slug: "opsis",
+    title: "Opsis",
+    summary:
+      "Self-hosted production control platform for church media teams - a Next.js BFF, an always-on Rust core, and live OBS control over WebSocket.",
+    description:
+      "A self-hosted, single-organization platform that monitors and controls a church's live production stack. A multi-service system splitting a Next.js frontend/BFF, an always-on Rust control core, and live OBS integration over WebSocket.",
+    story:
+      "Church media teams run live production stacks with little visibility into what's actually happening and no safe, central way to control it. Opsis was built as a self-hosted platform that gives one organisation real visibility and safe control over that stack. The architecture deliberately splits responsibilities: a Next.js frontend doubles as a BFF and issues auth, while an always-on Rust core handles production control, talks to OBS, and runs a WebSocket hub. A shared JWT contract lets both services verify tokens independently, and the whole stack ships as a Docker Compose deployment that applies migrations and seeds a first operator on start.",
+    challenge:
+      "Designing a multi-service system where a Rust control core and a Next.js BFF each verify auth independently against a shared JWT contract, hold an always-on connection to OBS, and run as a single-command self-hosted deployment within a tight resource budget.",
+    solution:
+      "Built a Next.js BFF that issues auth and a Rust core that enforces it independently against a shared JWT verification spec, a WebSocket hub for live OBS control, and a Docker Compose deployment that applies migrations and seeds the first operator on first run - targeting under 200MB RAM and 5% idle CPU for the core.",
+    evidence: [
+      { label: "Services", value: "Next.js BFF and an always-on Rust core", kind: "capability" },
+      { label: "Live control", value: "OBS over WebSocket", kind: "capability" },
+      { label: "Core footprint", value: "Under 200MB RAM and 5% idle CPU", kind: "target" },
+      { label: "Deploy", value: "docker compose up", kind: "capability" },
+    ],
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Rust",
+      "WebSocket",
+      "OBS",
+      "PostgreSQL",
+      "JWT",
+      "Docker",
+    ],
+    image: "/assets/project-shots/opsis.png",
+    websiteUrl: "https://opsis.cdenn.dev",
+    layout: "left",
+    featured: true,
+    ongoing: true,
+    year: "2026",
+    attribution: "Independent CDenn engagement, commissioned by two clients",
+    home: {
+      attribution: "Media Tech / Self-Hosted · Independent CDenn work · Commissioned by two clients · In progress",
+      intro: [
+        "A self-hosted platform that monitors and controls a church's live-production stack. My first full end-to-end system: I owned the authentication contract, both services, the deployment and the hardware it runs on.",
+      ],
+      problem: [
+        "A volunteer team runs a live service every week. When the stream drops mid-service, the remote congregation is simply gone, and nobody in the room can diagnose it while the service is still running.",
+        "Commercial tooling assumes an operations team and a budget these organisations do not have.",
+      ],
+      value: [
+        "Put the production stack behind one screen a volunteer can understand, and make it affordable to run on hardware already in the building.",
+        "The objective is reliable live production without the cost of hiring a dedicated operations team.",
+      ],
+      built: [
+        ["Next.js frontend and BFF over an always-on Rust control core", "Each service verifies authentication independently against a shared contract"],
+        ["Live OBS integration over WebSocket", "Operators can control production rather than just watch it fail"],
+        ["Target: under 200 MB RAM and 5% idle CPU", "Designed to run on hardware the organisation already owns"],
+        ["Docker Compose deployment", "Repeatable deployment and handover without requiring me to be on call"],
+      ],
+      proves:
+        "I can take a system from an authentication contract through two languages, live hardware integration and deployment, while designing around a resource budget defined before implementation.",
+      bridge: "Most recently, I've taken the same approach (find the gap, map the value) into AI-assisted operations.",
+      proofLine: "Rust control core, live OBS control, self-hosted",
+    },
+    role: "Full-Stack Developer",
+    duration: "Ongoing",
+    category: "Media Tech / Self-Hosted",
   },
   {
     slug: "warehouselens",
@@ -103,48 +221,35 @@ export const solutions: Solution[] = [
     featured: true,
     ongoing: true,
     year: "2026",
+    attribution: "Personal project, illustrative data",
+    home: {
+      attribution: "SaaS / Logistics / AI · Personal project · Deployed with illustrative data",
+      intro: [
+        "The most recent application of the same discipline: a multi-tenant warehouse operations platform covering inventory, procurement and outbound logistics.",
+        "This is a self-initiated product project, deployed and reachable, running illustrative data rather than a customer's live operations.",
+      ],
+      problem: [
+        "A warehouse manager who needs to know which supplier is slipping or what to reorder this week often has to ask an analyst and wait. By the time the report arrives, the decision may already have been made on instinct.",
+        "The tempting fix, letting a language model query the warehouse directly, trades that delay for a worse risk: answers nobody can audit, drawn from data the asker was never cleared to see.",
+      ],
+      value: [
+        "Natural-language answers backed by approved tools rather than model-generated queries, with permissions checked inside the agent. An out-of-scope question is refused rather than answered.",
+        "The goal is to make operational decisions easier to investigate without opening up unrestricted access to warehouse data.",
+      ],
+      built: [
+        ["Natural-language copilot with tool routing; the planner writes no SQL", "Answers trace to approved, parameterised queries"],
+        ["Six roles across 21 warehouse-scoped permissions", "Questions outside someone's remit are refused"],
+        ["Prophet and XGBoost forecasting with rolling-fold backtesting", "Forecasts are evaluated against held-out history before being presented"],
+        ["Next.js BFF over FastAPI with a background aggregation worker", "Tokens stay out of client JavaScript; data processing stays separate from interactive requests"],
+      ],
+      status: "Deployed and reachable, running illustrative data rather than customer operations.",
+      proves:
+        "I can put a language model inside a permission system rather than beside it, and validate a forecast before presenting it as one.",
+      proofLine: "Permission-aware copilot, validated forecasting",
+    },
     role: "Solo Developer",
     duration: "Ongoing",
     category: "SaaS / Logistics / AI",
-  },
-  {
-    slug: "opsis",
-    title: "Opsis",
-    summary:
-      "Self-hosted production control platform for church media teams - a Next.js BFF, an always-on Rust core, and live OBS control over WebSocket.",
-    description:
-      "A self-hosted, single-organization platform that monitors and controls a church's live production stack. A multi-service system splitting a Next.js frontend/BFF, an always-on Rust control core, and live OBS integration over WebSocket.",
-    story:
-      "Church media teams run live production stacks with little visibility into what's actually happening and no safe, central way to control it. Opsis was built as a self-hosted platform that gives one organisation real visibility and safe control over that stack. The architecture deliberately splits responsibilities: a Next.js frontend doubles as a BFF and issues auth, while an always-on Rust core handles production control, talks to OBS, and runs a WebSocket hub. A shared JWT contract lets both services verify tokens independently, and the whole stack ships as a Docker Compose deployment that applies migrations and seeds a first operator on start.",
-    challenge:
-      "Designing a multi-service system where a Rust control core and a Next.js BFF each verify auth independently against a shared JWT contract, hold an always-on connection to OBS, and run as a single-command self-hosted deployment within a tight resource budget.",
-    solution:
-      "Built a Next.js BFF that issues auth and a Rust core that enforces it independently against a shared JWT verification spec, a WebSocket hub for live OBS control, and a Docker Compose deployment that applies migrations and seeds the first operator on first run - targeting under 200MB RAM and 5% idle CPU for the core.",
-    evidence: [
-      { label: "Services", value: "Next.js BFF and an always-on Rust core", kind: "capability" },
-      { label: "Live control", value: "OBS over WebSocket", kind: "capability" },
-      { label: "Core footprint", value: "Under 200MB RAM and 5% idle CPU", kind: "target" },
-      { label: "Deploy", value: "docker compose up", kind: "capability" },
-    ],
-    tags: [
-      "Next.js",
-      "TypeScript",
-      "Rust",
-      "WebSocket",
-      "OBS",
-      "PostgreSQL",
-      "JWT",
-      "Docker",
-    ],
-    image: "/assets/project-shots/opsis.png",
-    websiteUrl: "https://opsis.cdenn.dev",
-    layout: "left",
-    featured: true,
-    ongoing: true,
-    year: "2026",
-    role: "Full-Stack Developer",
-    duration: "Ongoing",
-    category: "Media Tech / Self-Hosted",
   },
   {
     slug: "steward",

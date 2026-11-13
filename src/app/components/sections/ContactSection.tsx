@@ -87,9 +87,15 @@ export const ContactSection = () => {
             <h2 className="text-3xl font-bold tracking-[-0.03em] text-ink md:text-4xl">
               Start a conversation.
             </h2>
-            <p className="mt-5 max-w-lg text-lg leading-8 text-ink-muted">
-              Tell me what you are building, what is getting in the way, and what success looks
-              like. I&apos;ll reply with the clearest next step.
+            <h3 className="mt-6 text-lg font-bold text-ink">Hiring?</h3>
+            <p className="mt-1 max-w-lg text-base leading-7 text-ink-muted">
+              Tell me about the team, the product and the problems you&apos;re working through.
+              I&apos;ll reply with the work closest to what you need and my CV if you&apos;d like it.
+            </p>
+            <h3 className="mt-5 text-lg font-bold text-ink">Need something built?</h3>
+            <p className="mt-1 max-w-lg text-base leading-7 text-ink-muted">
+              Tell me what&apos;s getting in the way. I&apos;ll reply with what I think the actual
+              problem is and how I&apos;d approach it.
             </p>
           </Reveal>
           <Reveal>
@@ -99,11 +105,26 @@ export const ContactSection = () => {
                   Good fits for a first conversation
                 </h3>
                 <ul className="mt-3 space-y-2 text-base leading-7 text-ink">
-                  <li>A payments or reconciliation flow that has to be correct, not just fast.</li>
-                  <li>A multi-tenant platform that needs real roles, permissions and isolation.</li>
-                  <li>An offline-first product that must survive patchy connectivity.</li>
-                  <li>An AI feature that has to stay inside human review and real permissions.</li>
+                  <li>A frontend that needs an owner, not just a ticket-taker.</li>
+                  <li>A payments or reconciliation flow where accuracy matters as much as speed.</li>
+                  <li>A platform serving client organisations that need real roles, permissions and isolation.</li>
+                  <li>A product that must keep working through patchy connectivity.</li>
+                  <li>An AI feature that needs human review, controlled access and traceable answers.</li>
                 </ul>
+              </div>
+              <div>
+                <h3 className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-subtle">
+                  How a client engagement starts
+                </h3>
+                <p className="mt-3 text-base leading-7 text-ink-muted">
+                  We begin with scoped, paid discovery. I work with you to understand the business
+                  problem, explore possible solutions and define the scope before committing to a
+                  full build.
+                </p>
+                <p className="mt-3 text-base leading-7 text-ink-muted">
+                  The outcome is a clearer understanding of the problem, the proposed approach and
+                  the work involved before making a larger commitment.
+                </p>
               </div>
               <div className="space-y-3 border-t border-line pt-5">
                 {bookingUrl && (
@@ -123,9 +144,9 @@ export const ContactSection = () => {
                   </div>
                 )}
                 <p className="flex items-center gap-2 text-base text-ink">
-                  <Clock size={15} aria-hidden="true" /> I usually reply within a working day.
+                  <Clock size={15} aria-hidden="true" /> I usually reply within one working day.
                 </p>
-                <p className="text-sm text-ink-muted">Nairobi, Kenya. Working across time zones.</p>
+                <p className="text-sm text-ink-muted">Nairobi, Kenya - working across time zones.</p>
               </div>
             </div>
           </Reveal>

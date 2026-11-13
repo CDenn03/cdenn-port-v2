@@ -329,6 +329,9 @@ export default async function SolutionDetailPage({
                   <User size={13} className="shrink-0" />
                   <span>{project.role}</span>
                 </div>
+                {project.attribution && (
+                  <p className="pl-[21px] text-ink-subtle">{project.attribution}</p>
+                )}
                 <div className="flex items-center gap-2 text-ink-muted">
                   <Clock size={13} className="shrink-0" />
                   <span>{project.duration}</span>
