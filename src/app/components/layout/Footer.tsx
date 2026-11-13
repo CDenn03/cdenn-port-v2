@@ -92,8 +92,8 @@ export const Footer = () => {
             </Link>
             <p className="text-base leading-7 text-ink-muted">
               CDenn - Engineering from Nairobi, Kenya. Multi-tenant platforms, payments and
-              reconciliation, offline-first products and AI-assisted operations. Open to remote
-              engineering roles and selected client work.
+              reconciliation, offline-first products and AI-assisted operations. Open to remote,
+              hybrid and on-site engineering roles and selected client work.
             </p>
           </div>
 

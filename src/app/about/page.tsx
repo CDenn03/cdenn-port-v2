@@ -5,14 +5,14 @@ import { SubpageNav } from "@/src/app/components/layout/SubpageNav";
 
 export const metadata: Metadata = {
   // The root layout template appends " | CDenn", so the brand is omitted here.
-  title: "About Dennis Ndung'u, Full-Stack Software Developer",
+  title: "About Dennis Ndung'u, Frontend Engineer",
   description:
-    "Learn how Dennis Ndung'u, a Nairobi-based full-stack developer, builds reliable Next.js products, fintech systems, and AI-integrated tools.",
+    "Dennis Ndung'u is a Nairobi-based Frontend Engineer and the engineer behind CDenn, building multi-tenant platforms, payments systems, offline-first products and AI-assisted operations.",
   alternates: {
     canonical: "/about",
   },
   openGraph: {
-    title: "About CDenn | Full-Stack Software Developer",
+    title: "About CDenn | Dennis Ndung'u, Frontend Engineer",
     description:
       "Dennis Ndung'u is a Nairobi-based developer specialising in Next.js, fintech systems, and AI-enabled products.",
     url: "https://www.cdenn.dev/about",
@@ -30,9 +30,9 @@ const aboutPersonSchema = {
     alternateName: "CDenn",
     url: "https://www.cdenn.dev",
     image: "https://www.cdenn.dev/assets/images/port-photo.png",
-    jobTitle: "Full-Stack Software Developer",
+    jobTitle: "Frontend Engineer",
     description:
-      "CDenn is the professional brand and online identity of Dennis Ndung'u, a full-stack software developer based in Nairobi, Kenya.",
+      "CDenn is the independent engineering brand of Dennis Ndung'u, a Frontend Engineer based in Nairobi, Kenya.",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Nairobi",
@@ -201,7 +201,8 @@ export default function AboutPage() {
             <section className="mb-12">
               <h2>Working With CDenn</h2>
               <p>
-                CDenn is available for full-time remote positions, freelance
+                CDenn is available for full-time remote, hybrid and on-site
+                positions, freelance
                 contracts, and consulting engagements. Whether you need:
               </p>
               <ul>

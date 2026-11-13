@@ -21,11 +21,11 @@ export const metadata: Metadata = {
   },
 
   title: {
-    default: "CDenn | Full-Stack Software Developer",
+    default: "CDenn | Dennis Ndung'u, Frontend Engineer",
     template: "%s | CDenn",
   },
   description:
-    "Full-stack developer in Nairobi, Kenya. Building Next.js apps, fintech systems, and AI-integrated tools. Available for remote work.",
+    "Frontend Engineer in Nairobi building operational systems that keep working: multi-tenant platforms, payments and reconciliation, offline-first products and AI-assisted operations. Open to remote, hybrid and on-site roles.",
 
   alternates: {
     canonical: "/",
@@ -35,15 +35,15 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://www.cdenn.dev",
     siteName: "CDenn",
-    title: "CDenn | Full-Stack Software Developer",
+    title: "CDenn | Dennis Ndung'u, Frontend Engineer",
     description:
-      "Full-stack developer in Nairobi, Kenya. Building Next.js apps, fintech systems, and AI tools.",
+      "I build operational systems that keep working. Multi-tenant platforms, payments and reconciliation, offline-first products and AI-assisted operations.",
     images: [
       {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "CDenn - Full-Stack Software Developer",
+        alt: "CDenn - Dennis Ndung'u, Frontend Engineer",
       },
     ],
   },
@@ -52,9 +52,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@C_MDennis",
     creator: "@C_MDennis",
-    title: "CDenn | Full-Stack Software Developer",
+    title: "CDenn | Dennis Ndung'u, Frontend Engineer",
     description:
-      "Full-stack developer in Nairobi, Kenya. Building Next.js apps, fintech systems, and AI tools.",
+      "I build operational systems that keep working. Multi-tenant platforms, payments and reconciliation, offline-first products and AI-assisted operations.",
     images: ["/opengraph-image"],
   },
 

@@ -18,7 +18,7 @@ export interface Status {
 export const status: Status = {
   headline: "Open to work",
   detail:
-    "Open to remote engineering roles and selected consulting engagements. Available across time zones.",
+    "Open to remote, hybrid and on-site engineering roles and selected consulting engagements. Available across time zones.",
   updatedAt: "2026-11-12",
 };
 

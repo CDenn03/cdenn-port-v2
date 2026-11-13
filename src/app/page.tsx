@@ -13,10 +13,10 @@ import { sameAsUrls } from "@/src/app/data/social";
 export const metadata: Metadata = {
   // No title here: `/` is the root layout's own segment, so the `%s | CDenn`
   // template does NOT apply to it. The layout's `title.default`
-  // ("CDenn | Full-Stack Software Developer") is what renders, and
+  // ("CDenn | Dennis Ndung'u, Frontend Engineer") is what renders, and
   // re-declaring it here only risks the two drifting apart.
   description:
-    "CDenn is Dennis Ndung'u, a Nairobi-based full-stack developer building reliable Next.js products, payments API integrations, and AI-enabled tools for global teams.",
+    "CDenn is Dennis Ndung'u, a Frontend Engineer in Nairobi building multi-tenant platforms, payments and reconciliation, offline-first products and AI-assisted operations.",
   alternates: {
     canonical: "/",
   },
@@ -30,9 +30,17 @@ const personSchema = {
   alternateName: "CDenn",
   url: "https://www.cdenn.dev",
   mainEntityOfPage: "https://www.cdenn.dev/",
-  jobTitle: "Full-Stack Software Developer",
+  jobTitle: "Frontend Engineer",
+  brand: { "@id": "https://www.cdenn.dev/#brand" },
+  worksFor: { "@type": "Organization", name: "E&M Technologies" },
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "professional enquiries",
+    url: "https://www.cdenn.dev/#contact",
+    availableLanguage: ["English", "Swahili"],
+  },
   description:
-    "CDenn is the professional brand and online identity of Dennis Ndung'u, a full-stack software developer based in Nairobi, Kenya. CDenn specialises in Next.js App Router architecture, payments API integrations, and AI-integrated web applications. Available for full-time roles, contracts, and consulting engagements globally.",
+    "CDenn is the independent engineering brand of Dennis Ndung'u, a Frontend Engineer based in Nairobi, Kenya. He builds multi-tenant platforms, payments and reconciliation systems, offline-first products and AI-assisted operations, and is open to remote, hybrid and on-site roles and selected consulting engagements.",
   image: "https://www.cdenn.dev/assets/images/port-photo.png",
   address: {
     "@type": "PostalAddress",
@@ -54,27 +62,17 @@ const personSchema = {
   sameAs: sameAsUrls,
 };
 
-const organizationSchema = {
+const brandSchema = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": "https://www.cdenn.dev/#organization",
+  "@type": "Brand",
+  "@id": "https://www.cdenn.dev/#brand",
   name: "CDenn",
   alternateName: ["cdenn", "CDENN", "C-Denn"],
   url: "https://www.cdenn.dev",
   logo: "https://www.cdenn.dev/assets/logo/CDenn.png",
   description:
-    "CDenn is a software development brand founded by Dennis Ndung'u, offering full-stack web development, fintech automation, and AI integration services. CDenn is not affiliated with the scientific term cDENN (DENN protein domain).",
-  foundingDate: "2024",
-  founder: {
-    "@id": "https://www.cdenn.dev/#person",
-  },
+    "CDenn is the independent engineering brand of Dennis Ndung'u, covering multi-tenant platforms, payments and reconciliation, offline-first products and AI-assisted operations. It is a personal brand, not a registered company. CDenn is not affiliated with the scientific term cDENN (DENN protein domain).",
   sameAs: sameAsUrls,
-  contactPoint: {
-    "@type": "ContactPoint",
-    contactType: "customer service",
-    url: "https://www.cdenn.dev/#contact",
-    availableLanguage: ["English", "Swahili"],
-  },
 };
 
 const websiteSchema = {
@@ -85,9 +83,9 @@ const websiteSchema = {
   alternateName: "CDenn Developer Portfolio",
   url: "https://www.cdenn.dev",
   description:
-    "Official website of CDenn, the professional software development brand of Dennis Ndung'u.",
+    "Official website of CDenn, the independent engineering brand of Dennis Ndung'u.",
   publisher: {
-    "@id": "https://www.cdenn.dev/#organization",
+    "@id": "https://www.cdenn.dev/#person",
   },
 };
 
@@ -100,7 +98,7 @@ const faqSchema = {
       name: "Who is CDenn?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "CDenn is the professional brand name of Dennis Ndung'u, a full-stack software developer based in Nairobi, Kenya. CDenn specialises in Next.js, TypeScript, React, and AI-integrated web applications. The brand represents Dennis's freelance and consulting work in web development and fintech automation.",
+        text: "CDenn is the independent engineering brand of Dennis Ndung'u, a Frontend Engineer based in Nairobi, Kenya. It covers multi-tenant platforms, payments and reconciliation, offline-first products and AI-assisted operations, and the commissioned client work Dennis takes alongside his role at E&M Technologies.",
       },
     },
     {
@@ -124,7 +122,7 @@ const faqSchema = {
       name: "Where is CDenn based?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "CDenn is based in Nairobi, Kenya but works with clients globally. Dennis Ndung'u, the developer behind CDenn, is available for remote roles and freelance projects worldwide.",
+        text: "CDenn is based in Nairobi, Kenya but works with clients globally. Dennis Ndung'u, the developer behind CDenn, is available for remote, hybrid and on-site roles and freelance projects worldwide.",
       },
     },
     {
@@ -132,7 +130,7 @@ const faqSchema = {
       name: "How can I hire CDenn?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "You can hire CDenn through the contact form at cdenn.dev. CDenn is available for full-time remote positions, freelance contracts, and consulting engagements in web development, fintech systems, and AI integration.",
+        text: "You can hire CDenn through the contact form at cdenn.dev. CDenn is available for full-time remote, hybrid and on-site positions, freelance contracts, and consulting engagements in web development, fintech systems, and AI integration.",
       },
     },
   ],
@@ -150,7 +148,7 @@ export default function HomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(organizationSchema).replaceAll("<", String.raw`\u003c`),
+          __html: JSON.stringify(brandSchema).replaceAll("<", String.raw`\u003c`),
         }}
       />
       <script
