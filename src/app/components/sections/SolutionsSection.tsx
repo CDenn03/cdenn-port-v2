@@ -12,7 +12,8 @@ import { evidenceBadge } from "@/src/app/lib/evidence";
  * `featured` is the only switch: there is no slice here, so changing the home
  * set is a one-line edit in the data file.
  *
- * Each card carries the constraint and up to three evidence lines, and stops
+ * Each card carries what the system has to get right and up to three evidence
+ * lines, and stops
  * there. The approach, the process and the full evidence table belong to the
  * case study; repeating them here was most of why the old home page ran to
  * 8,104px.
@@ -27,7 +28,8 @@ export const SolutionsSection = () => {
         <div className="flex flex-wrap items-end justify-between gap-4">
           <h2 className="text-3xl font-bold tracking-[-0.03em] text-ink md:text-4xl">Selected work</h2>
           <p className="text-sm leading-6 text-ink-muted">
-            Three systems in depth. Each line below says how it is evidenced.
+            Three systems in depth. Each evidence line is an implementation fact unless it
+            carries a label saying otherwise.
           </p>
         </div>
 
@@ -77,7 +79,7 @@ export const SolutionsSection = () => {
                   <p className="mt-3 max-w-2xl text-base leading-7 text-ink-muted">{project.description}</p>
 
                   <p className="mt-4 max-w-2xl text-sm leading-6 text-ink-muted">
-                    <span className="font-semibold text-ink">The constraint. </span>
+                    <span className="font-semibold text-ink">What it has to get right. </span>
                     {project.challenge}
                   </p>
 
@@ -88,9 +90,11 @@ export const SolutionsSection = () => {
                       <div key={item.label} className="flex flex-wrap items-baseline gap-x-2 gap-y-1 text-sm leading-6">
                         <dt className="text-ink-subtle">{item.label}</dt>
                         <dd className="font-semibold text-ink tabular-nums">{item.value}</dd>
-                        <dd className="text-xs uppercase tracking-[0.1em] text-ink-subtle">
-                          {evidenceBadge(item.kind)}
-                        </dd>
+                        {evidenceBadge(item.kind) && (
+                          <dd className="text-xs uppercase tracking-[0.1em] text-ink-subtle">
+                            {evidenceBadge(item.kind)}
+                          </dd>
+                        )}
                       </div>
                     ))}
                   </dl>

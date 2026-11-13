@@ -212,9 +212,9 @@ export default async function SolutionDetailPage({
               </div>
             </div>
 
-            <div id="challenge">
+            <div id="requirement">
               <h2 className="text-2xl font-bold tracking-[-0.02em] mb-4 text-ink">
-                Challenge
+                What it has to get right
               </h2>
               <div className="border-l-2 border-primary pl-5">
                 <p className="text-sm leading-relaxed text-ink-muted">
@@ -347,9 +347,11 @@ export default async function SolutionDetailPage({
                       <dt className="text-sm text-ink-muted">{item.label}</dt>
                       <dd className="text-right">
                         <span className="block text-sm font-bold text-ink tabular-nums">{item.value}</span>
-                        <span className="mt-0.5 inline-block text-xs uppercase tracking-[0.1em] text-ink-subtle">
-                          {evidenceBadge(item.kind)}
-                        </span>
+                        {evidenceBadge(item.kind) && (
+                          <span className="mt-0.5 inline-block text-xs uppercase tracking-[0.1em] text-ink-subtle">
+                            {evidenceBadge(item.kind)}
+                          </span>
+                        )}
                       </dd>
                     </div>
                     {item.method && (
@@ -363,8 +365,10 @@ export default async function SolutionDetailPage({
                   intention. */}
               <dl className="mt-4 space-y-2 border-t border-line pt-4">
                 {evidenceKey(project.evidence).map((entry) => (
-                  <div key={entry.badge}>
-                    <dt className="text-xs uppercase tracking-[0.1em] text-ink-subtle">{entry.badge}</dt>
+                  <div key={entry.badge ?? "unlabelled"}>
+                    <dt className="text-xs uppercase tracking-[0.1em] text-ink-subtle">
+                      {entry.badge ?? "No label"}
+                    </dt>
                     <dd className="text-xs leading-5 text-ink-muted">{entry.note}</dd>
                   </div>
                 ))}

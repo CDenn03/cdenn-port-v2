@@ -540,6 +540,29 @@ Swapping in real imagery is a one-line data edit — set `image` and the cover d
 
 **R1 is closed as a blocker.** It assumed the three home projects needed custom artwork before Phase 4 could proceed. They do not: the NDA case is answered honestly by the cover, and the pending cases say so plainly. An SVG architecture diagram for bancassurance is now optional rather than required, and only if the client clears one.
 
+### The constraint narrative removed (13 Nov 2026)
+
+The owner read the finished home page and called out that "constraint" had become a tic. They were right, and it was mine: six uses in the copy, carrying a label on every project card, the opening line of "How I work", the contact headline and the brief textarea's placeholder. A word doing that much work stops meaning anything.
+
+Replaced with language that varies by job rather than one synonym swapped for another:
+
+| Was | Now |
+| --- | --- |
+| "The constraint." on each card | "What it has to get right." |
+| "Challenge" as the case-study heading | "What it has to get right" — the same label for the same field, which it was not before |
+| "I start from the constraint, not the stack." | "I start from what a system has to guarantee, not from the stack." |
+| "Start with the constraint." | "Start a conversation." — the same words as the hero button that scrolls there, so the label and its destination agree |
+| "Time zones are not a constraint." | "Time zones are not an issue." — closer to the owner's own answer |
+| "The product, the constraint, and what success looks like." | "The product, what is breaking or missing, and what success looks like." |
+
+The unreferenced `#challenge` anchor became `#requirement` to match its heading.
+
+**A second tic surfaced only by measuring.** `scripts`-level greps conflate copy with identifiers, so `.taste-skill/probe-tics.mjs` now counts words in `main.innerText` on the rendered page, which is the only count that describes reading. It found "built" at 25 occurrences in 548 content words on `/solutions` — because `capability` is 27 of the 33 evidence items, so the badge printed "BUILT" twenty times down the page.
+
+Fixed by inverting the rule: **a badge marks an exception, and its absence is the default.** `evidenceBadge` returns `null` for `capability`, and each page states once that an unlabelled line is an implementation fact. The case-study key prints a "No label" row for it, sorted last. Badge counts on `/solutions` fell from 20 to 0 for the default kind, while the six items that genuinely need a label — one target, one demo, one test, three under NDA — now stand out instead of hiding in a wall of identical chips. "built" dropped from 25 to 6, and those six are prose.
+
+Verified: zero "constraint" in the rendered text of `/`, `/solutions` and a case study. 48 combinations still show 0px horizontal overflow, one `h1` per route, and every first-viewport element inside the fold at all three real widths.
+
 ### Next
 
 Phase 4, content and proof: `/about` reordered to lead with Dennis rather than the name etymology, the services pages rewritten to the voice rules beyond the banned-word removal already done, the `/writing` route and its first pieces, and the FAQ structured data either rendered as visible content or dropped. Real imagery can land whenever it is ready; it is a data edit, not a phase.

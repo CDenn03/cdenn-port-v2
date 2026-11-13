@@ -58,9 +58,9 @@ export default function SolutionsPage() {
               </span>
             </div>
             <p className="max-w-2xl text-lg leading-8 text-ink-muted">
-              Every system I have built, with the constraint that shaped it. Each claim carries how
-              it is evidenced: built, tested, a design target, a demo deployment, or client work
-              under NDA.
+              Every system I have built, and what each one had to get right. An evidence line is
+              an implementation fact unless it is labelled otherwise: tested, a design target, a
+              demo deployment, or client work under NDA.
             </p>
           </div>
 

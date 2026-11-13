@@ -24,11 +24,11 @@ export const AboutSection = () => {
 
           <Reveal>
             <p className="mt-6 text-lg leading-8 text-ink">
-              I start from the constraint, not the stack. Most of the systems I have built were
-              bounded by something awkward and non-negotiable: a tenant boundary that had to hold,
-              a payment callback that could arrive twice, a device that would be offline for a
-              whole working day. I make those trade-offs explicit before writing the code, and
-              visible in the code afterwards.
+              I start from what a system has to guarantee, not from the stack. The work usually
+              turns on one awkward, non-negotiable fact: a tenant boundary that must not leak, a
+              payment callback that can arrive twice, a device that will be offline for a whole
+              working day. I decide how to handle that before writing the code, and leave the
+              reasoning visible in it afterwards.
             </p>
           </Reveal>
           <Reveal>

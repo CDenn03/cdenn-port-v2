@@ -8,10 +8,10 @@ import { evidenceBadge } from "@/src/app/lib/evidence";
 /**
  * The full archive, built to be scanned rather than read.
  *
- * Every row carries the same five things in the same order - index, cover,
- * title and category, the constraint in one line, and two evidence lines with
- * their kind - so a reader comparing ten projects compares like with like. The
- * narrative stays on the case study.
+ * Every row carries the same things in the same order - index, cover, title
+ * and category, a one-line description, the dates and role, and two evidence
+ * lines with their kind - so a reader comparing ten projects compares like
+ * with like. The narrative stays on the case study.
  */
 export default function SolutionsGrid() {
   if (solutions.length === 0) {
@@ -94,9 +94,11 @@ export default function SolutionsGrid() {
                   >
                     <dt className="text-ink-subtle">{item.label}</dt>
                     <dd className="font-semibold text-ink tabular-nums">{item.value}</dd>
-                    <dd className="text-xs uppercase tracking-[0.1em] text-ink-subtle">
-                      {evidenceBadge(item.kind)}
-                    </dd>
+                    {evidenceBadge(item.kind) && (
+                      <dd className="text-xs uppercase tracking-[0.1em] text-ink-subtle">
+                        {evidenceBadge(item.kind)}
+                      </dd>
+                    )}
                   </div>
                 ))}
               </dl>

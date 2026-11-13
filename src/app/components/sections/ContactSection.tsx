@@ -85,11 +85,11 @@ export const ContactSection = () => {
         <div className="lg:col-span-5">
           <Reveal>
             <h2 className="text-3xl font-bold tracking-[-0.03em] text-ink md:text-4xl">
-              Start with the constraint.
+              Start a conversation.
             </h2>
             <p className="mt-5 max-w-lg text-lg leading-8 text-ink-muted">
-              Tell me what needs to work reliably, what is getting in the way, and what success
-              looks like. I&apos;ll reply with the clearest next step.
+              Tell me what you are building, what is getting in the way, and what success looks
+              like. I&apos;ll reply with the clearest next step.
             </p>
           </Reveal>
           <Reveal>
@@ -232,7 +232,7 @@ export const ContactSection = () => {
                     required
                     maxLength={5000}
                     className={inputClass}
-                    placeholder="The product, the constraint, and what success looks like."
+                    placeholder="The product, what is breaking or missing, and what success looks like."
                   />
                 </div>
 
